@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-119",
+  "description": "A component featuring a badge, a title, a 3-column layout of steps, and an image. Each column details a step with a numbered badge and text.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature119"
+  ]
+}

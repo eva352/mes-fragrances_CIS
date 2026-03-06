@@ -1,0 +1,18 @@
+{
+  "title": "Blogpost",
+  "category": "blog",
+  "slug": "blogpost-7",
+  "description": "This component displays a blog post layout with animated transitions for various elements such as the title, author information, and descriptions. It features an image, a publication date, content descriptions, and an author's avatar with details, making it suitable for showcasing articles or stories.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blogpost7",
+    "npm install framer-motion"
+  ]
+}

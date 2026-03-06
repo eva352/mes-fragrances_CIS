@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-162",
+  "description": "A component featuring 1 row with text and an image, followed by 2 more images below, each in a rounded border.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature162"
+  ]
+}

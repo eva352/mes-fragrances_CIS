@@ -1,0 +1,15 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-10",
+  "description": "A promotional hero block with a background pattern, featuring a badge, a heading, a paragraph, two buttons, and a section showcasing logos.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero10"
+  ]
+}

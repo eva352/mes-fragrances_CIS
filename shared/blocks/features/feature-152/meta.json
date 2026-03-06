@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-152",
+  "description": "A component featuring a central title and message, with clickable icons arranged in a staggered layout. Visual enhancements include overlaid decorative circles and gradient effects.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature152",
+    "npm install lucide-react"
+  ]
+}

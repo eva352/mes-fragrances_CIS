@@ -1,0 +1,16 @@
+{
+  "title": "Case-studies",
+  "category": "case-studies",
+  "slug": "case-studies-3",
+  "description": "This component displays a curated selection of case studies, featuring a prominent highlighted case study alongside additional entries. It supports customizable data input for logos, companies, tags, titles, and links, allowing users to explore detailed case study content with engaging visuals and interactive elements.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/case-studies3",
+    "npm install lucide-react"
+  ]
+}

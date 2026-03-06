@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-7",
+  "description": "A 2-column component with a full-width image and a text block featuring an icon, a bold title, descriptive text, and a list with checkmarks.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature7",
+    "npm install lucide-react"
+  ]
+}

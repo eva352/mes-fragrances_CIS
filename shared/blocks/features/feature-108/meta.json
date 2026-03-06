@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-108",
+  "description": "A tabbed component with 3 tabs, each displaying a title, description, badge, a button with text, and an image. Layout includes two columns in larger views.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature108",
+    "npm install lucide-react"
+  ]
+}

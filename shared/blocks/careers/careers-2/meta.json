@@ -1,0 +1,18 @@
+{
+  "title": "Careers",
+  "category": "careers",
+  "slug": "careers-2",
+  "description": "A component showcasing job openings with a header, grid layout (single column expanding to four on large screens) for each job, including title, type, location, and an apply button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/careers2",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-314",
+  "description": "This component displays a dynamic gallery featuring a combination of multiple small cards and a prominent larger card, perfect for showcasing content with distinct headings, images, and descriptions. Equipped with interactive features, it includes motion effects on hover and the flexibility to integrate call-to-action buttons, making it suitable for both informative displays and promotional purposes.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature314",
+    "npm install framer-motion lucide-react"
+  ]
+}

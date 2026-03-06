@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-32",
+  "description": "A component with a title and a 3-column layout for testimonials, one large featured testimonial spans two columns and rows.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature32"
+  ]
+}

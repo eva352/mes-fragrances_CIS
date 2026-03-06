@@ -1,0 +1,14 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-16",
+  "description": "An accordion-style FAQ block with a title and expandable question items, set in a centered layout with a max-width.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "accordion"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq16"
+  ]
+}

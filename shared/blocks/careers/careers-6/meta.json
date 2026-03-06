@@ -1,0 +1,17 @@
+{
+  "title": "Careers",
+  "category": "careers",
+  "slug": "careers-6",
+  "description": "A dual-column block showcasing job openings with badges for categories and icons for job types and locations.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/careers6",
+    "npm install lucide-react"
+  ]
+}

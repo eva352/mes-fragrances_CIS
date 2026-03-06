@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-222",
+  "description": "A component displaying a grid of cards with images, titles, stats, and a \"Read Story\" button. Cards are dynamically populated from a list.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature222",
+    "npm install lucide-react"
+  ]
+}

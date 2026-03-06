@@ -1,0 +1,21 @@
+{
+  "title": "Case-study",
+  "category": "case-study",
+  "slug": "case-study-3",
+  "description": "This component presents a detailed case study layout, including sections for introduction, problem statement, approach, and outcomes, with navigable headings to guide users through different sections of content. It includes features such as breadcrumbs for navigation, avatar integration for showcasing contributors, and social media sharing options, providing a comprehensive storytelling tool with dynamic content interaction.",
+  "dependencies": [
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "alert",
+    "avatar",
+    "breadcrumb",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/case-study3",
+    "npm install lucide-react react-icons"
+  ]
+}

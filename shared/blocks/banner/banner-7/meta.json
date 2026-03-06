@@ -1,0 +1,18 @@
+{
+  "title": "Banner",
+  "category": "banner",
+  "slug": "banner-7",
+  "description": "A dismissible banner with a promotional message, vertical separator, and \"Learn More\" link. Features a close button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/banner7",
+    "npm install lucide-react"
+  ]
+}

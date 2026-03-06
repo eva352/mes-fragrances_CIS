@@ -1,0 +1,15 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-23",
+  "description": "A footer component with a logo, description, link columns, and an animated globe. Includes 3 sections with navigational links and separators.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "separator",
+    "https://magicui.design/r/globe"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer23"
+  ]
+}

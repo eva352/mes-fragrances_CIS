@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-33",
+  "description": "This component is designed to create a visually engaging background with a circuit board pattern, featuring a left fade effect. It allows for customizable class names to adapt its styling according to specific needs.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern33"
+  ]
+}

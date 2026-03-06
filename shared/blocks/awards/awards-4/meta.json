@@ -1,0 +1,13 @@
+{
+  "title": "Awards",
+  "category": "awards",
+  "slug": "awards-4",
+  "description": "A component displays awards in a table with details like logo, name, nomination, and year, with a large title and a date range subtitle.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/awards4"
+  ]
+}

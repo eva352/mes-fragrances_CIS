@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-18",
+  "description": "A grid of customizable UI feature cards, each with an icon, title, description, and a \"Learn more\" link, arranged in up to 3 columns.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature18",
+    "npm install lucide-react"
+  ]
+}

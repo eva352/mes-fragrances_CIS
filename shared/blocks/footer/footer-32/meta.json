@@ -1,0 +1,17 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-32",
+  "description": "This component, called Footer32, provides a customizable footer block featuring a pre-defined heading, descriptive text, a call-to-action button, and integration with social media links for platforms like Twitter, Instagram, and Facebook. It also allows for adding a support email link, making it suitable for enhancing connectivity and engagement on web applications.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://magicui.design/r/rainbow-button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer32",
+    "npm install lucide-react"
+  ]
+}

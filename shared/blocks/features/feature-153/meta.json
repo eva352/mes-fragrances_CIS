@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-153",
+  "description": "A carousel component displaying key features of various platforms, allowing users to navigate through items with previous and next buttons. Each item presents an image, title, description, and a list of detailed info.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature153",
+    "npm install lucide-react"
+  ]
+}

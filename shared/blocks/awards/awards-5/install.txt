@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/awards5
+npm install framer-motion

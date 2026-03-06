@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-292",
+  "description": "A component featuring a hiring tag, a large title with dynamic highlighting, a brief description, and an email signup form alongside a full-cover image in a two-column layout.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "https://ui.aceternity.com/registry/pointer-highlight.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature292",
+    "npm install lucide-react"
+  ]
+}

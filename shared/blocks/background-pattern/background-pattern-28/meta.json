@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-28",
+  "description": "This component, called BackgroundPattern28, is designed to display a customizable full-screen background pattern with a radial gradient effect that centers at a spotlight. It also includes a placeholder for additional pattern components, which can be styled with additional class names via props.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern28"
+  ]
+}

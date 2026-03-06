@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-118",
+  "description": "A feature block highlighting workflow tools with a header, 3 columns of benefits/stats, and a contact prompt. Uses icons and a placeholder image.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature118",
+    "npm install lucide-react"
+  ]
+}

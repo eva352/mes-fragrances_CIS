@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-236",
+  "description": "This component displays a centralized promotional message for a website builder with interactive elements, including animated buttons and dynamic borders, spanning multiple text sizes and has animated ping effects.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "https://magicui.design/r/shine-border"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature236",
+    "npm install framer-motion lucide-react"
+  ]
+}

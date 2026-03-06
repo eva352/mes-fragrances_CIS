@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-312",
+  "description": "This component, Feature312, is designed to showcase impactful digital solutions, highlighting key statistics such as projects launched and client retention rates through visually appealing cards. It includes customizable headings, subheadings, descriptions, an image, and minor brand logos, making it suitable for highlighting accomplishments and client engagement metrics.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature312",
+    "npm install lucide-react"
+  ]
+}

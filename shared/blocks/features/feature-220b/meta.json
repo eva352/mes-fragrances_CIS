@@ -1,0 +1,18 @@
+{
+  "title": "Feature220b",
+  "category": "features",
+  "slug": "feature-220b",
+  "description": "A component showcases statistics and a video/content layout. It has a 2-column grid with stats at the top, a video on the left, and descriptive content on the right.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature220b",
+    "npm install lucide-react"
+  ]
+}

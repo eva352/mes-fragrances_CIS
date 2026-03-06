@@ -1,0 +1,17 @@
+{
+  "title": "Community",
+  "category": "community",
+  "slug": "community-6",
+  "description": "A component featuring cards for social platform links, each with icons, titles, and descriptions, organized in a variable-column layout.",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/community6",
+    "npm install react-icons"
+  ]
+}

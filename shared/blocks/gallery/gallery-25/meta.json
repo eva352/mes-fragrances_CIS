@@ -1,0 +1,16 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-25",
+  "description": "A 4-column animated image gallery, each column with varying image heights and animated transitions on view.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery25",
+    "npm install framer-motion"
+  ]
+}

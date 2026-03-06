@@ -1,0 +1,20 @@
+{
+  "title": "Blogpost",
+  "category": "blog",
+  "slug": "blogpost-3",
+  "description": "A component featuring a central article with dynamic side navigation and a call-to-action block, including images, tables, and alerts. It&#x27;s structured in a 3-column layout for larger displays.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "alert",
+    "avatar",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blogpost3",
+    "npm install lucide-react"
+  ]
+}

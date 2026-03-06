@@ -1,0 +1,16 @@
+{
+  "title": "About",
+  "category": "about",
+  "slug": "about-10",
+  "description": "A two-column about section with sticky sidebar containing avatar and contact link, and main content with bio, philosophy, workspace image, and team list.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/about10",
+    "npm install lucide-react"
+  ]
+}

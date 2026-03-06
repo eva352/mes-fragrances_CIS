@@ -1,0 +1,17 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-115",
+  "description": "A component featuring a centered section with an icon, heading, description, button with an icon, optional trust text, and a large image. Includes a decorative, layered circular backdrop.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero115",
+    "npm install lucide-react"
+  ]
+}

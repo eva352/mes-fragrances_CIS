@@ -1,0 +1,19 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-4",
+  "description": "A component showcasing an FAQ section with expandable answers, highlighted by badges and separators, and includes a support contact link.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "accordion",
+    "badge",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq4",
+    "npm install lucide-react"
+  ]
+}

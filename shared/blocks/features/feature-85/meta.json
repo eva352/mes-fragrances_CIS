@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-85",
+  "description": "A block highlighting features of a project management app with icons, titles, and descriptions arranged in up to 3 columns.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature85",
+    "npm install lucide-react"
+  ]
+}

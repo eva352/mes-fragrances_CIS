@@ -1,0 +1,18 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-8",
+  "description": "A carousel component displaying resources in 3 columns, featuring navigation, separators, and dynamic link icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "carousel",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery8",
+    "npm install lucide-react"
+  ]
+}

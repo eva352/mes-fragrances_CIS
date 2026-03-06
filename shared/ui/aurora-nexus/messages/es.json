@@ -1,0 +1,1677 @@
+{
+  "common": {
+    "brand": "AURORAMIND",
+    "loading": "Cargando…",
+    "unexpectedError": "Error inesperado"
+  },
+  "installation": {
+    "title": "Instalación (dry-run)",
+    "subtitle": "Página dedicada para probar el asistente sin afectar la plataforma en producción.",
+    "note": "Idioma activo: {locale}. No se ejecuta ningún despliegue.",
+    "prereq": {
+      "title": "Requisitos (MVP)",
+      "description": "Este dry-run solo valida el formato de los parámetros y genera archivos redactados. Sin acceso a BD, sin despliegue, sin escrituras en el servidor.",
+      "items": {
+        "docker": "Acceso al servidor + Docker/Docker Compose operativo",
+        "domain": "Dominio público (DNS + reverse-proxy si es necesario)",
+        "postgres": "Base Postgres existente (OVH) + host/usuario/base (la contraseña no es necesaria en dry-run)",
+        "minio": "MinIO/S3 operativo (web UI opcional en V2)",
+        "qdrant": "Qdrant operativo (web UI opcional en V2)",
+        "llm": "Las credenciales LLM (OpenRouter/OpenAI, BYOK) se configuran después en Admin (Providers → Credentials)"
+      },
+      "note": "En producción, nunca uses placeholders (p. ej. change-me-now, sk-or-...)."
+    },
+    "form": {
+      "title": "Parámetros",
+      "description": "Completa los campos necesarios y lanza un dry-run para generar un plan y una previsualización de .env enmascarada.",
+      "tokenLabel": "Token de instalación (opcional)",
+      "tokenPlaceholder": "X-Installation-Token",
+      "tokenHelp": "Si el servidor define INSTALLATION_WIZARD_TOKEN, este token es obligatorio para ejecutar el dry-run.",
+      "appHostname": "Hostname (APP_HOSTNAME)",
+      "publicDomain": "Dominio público (PUBLIC_DOMAIN)",
+      "adminEmail": "Email admin (seed)",
+      "postgresHost": "Host Postgres (externo)",
+      "postgresDb": "Base de datos Postgres",
+      "postgresUser": "Usuario Postgres",
+      "postgresPassword": "Contraseña Postgres",
+    "postgresPasswordPlaceholder": "Opcional (dry-run)",
+    "postgresPasswordHelp": "El dry-run no se conecta a la base. La contraseña se enmascara en la salida."
+  },
+    "actions": {
+      "run": "Ejecutar dry-run",
+      "running": "Ejecutando dry-run…",
+      "downloadEnv": "Descargar env.preview",
+      "downloadPlan": "Descargar plan.json"
+    },
+    "status": {
+      "readyTitle": "Listo",
+      "readyDescription": "Dry-run generado (run_id: {runId}).",
+      "warningsTitle": "Avisos",
+      "errorTitle": "Error"
+    },
+    "results": {
+      "title": "Resultados",
+      "description": "Copia/pega o descarga los archivos para revisión.",
+      "tabs": {
+        "env": ".env (preview enmascarado)",
+        "plan": "Plan (JSON)"
+      },
+      "empty": "Aún no hay resultados."
+    }
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "users": "Usuarios",
+    "apiKeys": "Claves API",
+    "documents": "Documentos",
+    "upload": "Añadir documento",
+    "assistant": "Asistente",
+    "account": "Mi cuenta",
+    "queryStats": "Estadísticas de consultas",
+    "settings": "Ajustes",
+    "support": "Soporte",
+    "search": "Búsqueda",
+    "quickCreate": "Añadir documento",
+    "headers": {
+      "users": "Usuarios",
+      "sources": "Fuentes",
+      "keys": "Claves API",
+      "queryStats": "Estadísticas de consultas",
+      "settings": "Ajustes",
+      "upload": "Añadir documento",
+      "documents": "Documentos",
+      "chat": "Asistente",
+      "dashboard": "Panel",
+      "cache": "Caché LLM",
+      "providers": "Proveedores",
+      "optimizer": "Optimizador IA"
+    },
+    "descriptions": {
+      "users": "Gestiona a los colaboradores y sus permisos.",
+      "sources": "Conecta tus aplicaciones y controla las ingestas.",
+      "keys": "Genera, revisa y revoca accesos máquina.",
+      "queryStats": "Controla los KPI de uso del LLM y el detalle de cada consulta.",
+      "settings": "Configura IA, RAG y Docling.",
+      "upload": "Sube archivos y sigue el pipeline de ingestión.",
+      "documents": "Consulta los documentos indexados y sus reportes.",
+      "chat": "Pregunta al asistente conversacional.",
+      "dashboard": "Vista global de uso, costes y rendimiento.",
+      "cache": "Configurar el caché por tenant/pack.",
+      "providers": "Catálogo de modelos y BYOK.",
+      "optimizer": "Analizar métricas y recomendaciones."
+    },
+    "cache": "Caché LLM",
+    "providers": "Modelos y proveedores",
+    "optimizer": "Optimizador IA"
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "subtitle": "Introduce tus credenciales Aurora.",
+    "cta": "Conectarse",
+    "google": "Continuar con Google",
+    "success": "Conexión correcta",
+    "error": "Error de conexión",
+    "emailLabel": "Email profesional",
+    "passwordLabel": "Contraseña",
+    "helpLink": "¿Necesitas ayuda?",
+    "terms": "Al continuar aceptas nuestras <terms>Condiciones de uso</terms> y la <privacy>Política de privacidad</privacy>."
+  },
+  "documents": {
+    "filters": {
+      "title": "Filtros",
+      "description": "Filtra por palabra clave, fuente o formato para encontrar tus documentos.",
+      "searchLabel": "Búsqueda",
+      "searchPlaceholder": "Título, etiqueta, workspace…",
+      "searchButton": "Buscar",
+      "searchActive": "Filtro de texto aplicado: “{query}”",
+      "sourceLabel": "Fuente",
+      "sourcePlaceholder": "Selecciona una fuente",
+      "sourceAll": "Todas las fuentes",
+      "sourceDisabled": "El filtro de fuente se desactiva cuando hay una búsqueda textual.",
+      "workspaceLabel": "Workspace",
+      "workspacePlaceholder": "Selecciona un workspace",
+      "workspaceAll": "Todos los workspaces",
+      "workspaceDisabled": "Selecciona una fuente para ver sus workspaces.",
+      "typeLabel": "Tipo de documento",
+      "typePlaceholder": "Todos los formatos",
+      "uploaderLabel": "Subido por",
+      "uploaderPlaceholder": "usuario@empresa.com",
+      "typeOptions": {
+        "all": "Todos los formatos",
+        "pdf": "PDF",
+        "docx": "Word (.docx)",
+        "pptx": "PowerPoint (.pptx)",
+        "xlsx": "Excel (.xlsx)",
+        "md": "Markdown",
+        "txt": "Texto plano"
+      },
+      "refresh": "Actualizar",
+      "reset": "Restablecer"
+    },
+    "list": {
+      "title": "Documentos indexados",
+      "count": "{total, plural, one {# documento} other {# documentos}}",
+      "loading": "Cargando documentos…",
+      "table": {
+        "document": "Documento",
+        "source": "Fuente",
+        "uploadedBy": "Añadido por",
+        "tags": "Etiquetas",
+        "score": "Puntuación media",
+        "embeddingCost": "Costo de embeddings",
+        "ingestionDuration": "Duración de ingesta",
+        "updated": "Última actualización",
+        "actions": "Acciones"
+      },
+      "untitled": "Sin título",
+      "statusUnknown": "Estado desconocido",
+      "version": "v{version}",
+      "noValue": "—",
+      "actions": {
+        "report": "Ver informe",
+        "download": "Descargar",
+        "changeSource": "Cambiar fuente",
+        "delete": "Eliminar"
+      },
+      "uploadedBy": "Subido por {user}",
+      "pagination": "Página {page} / {total}",
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "empty": "No hay documentos con estos filtros. Añade un documento o relaja los filtros.",
+      "meta": {
+        "pages": "{count, plural, one {# página} other {# páginas}}"
+      }
+    },
+    "publicLinks": {
+      "manage": "Enlaces públicos",
+      "title": "Enlaces públicos · {title}",
+      "description": "Genera un enlace temporal accesible sin autenticación.",
+      "createLabel": "Duración",
+      "createButton": "Crear enlace",
+      "copy": "Copiar",
+      "copied": "Enlace copiado.",
+      "copyError": "No se pudo copiar el enlace.",
+      "delete": "Revocar",
+      "deleted": "Enlace revocado.",
+      "created": "Enlace público creado.",
+      "empty": "No hay enlaces públicos activos.",
+      "expires": "Expira el {date}",
+      "createdBy": "Creado por {user}",
+      "duration": {
+        "oneHour": "1 hora",
+        "oneDay": "24 horas",
+        "threeDays": "3 días",
+        "sevenDays": "7 días"
+      }
+    },
+    "permissions": {
+      "noReadTitle": "Sin fuentes disponibles",
+      "noReadDescription": "Todavía no tienes permisos de lectura en ninguna fuente.",
+      "contactAdmin": "Contacta con un administrador para activar tus accesos."
+    },
+    "toasts": {
+      "deleteSuccess": "Documento eliminado.",
+      "genericError": "Ha ocurrido un error. Inténtalo de nuevo.",
+      "deleteConfirm": "¿Eliminar este documento y todos sus datos asociados?"
+    },
+    "sourceEdit": {
+      "title": "Cambiar fuente",
+      "description": "Cambia la fuente del documento “{title}”.",
+      "untitled": "Sin título",
+      "fieldLabel": "Fuente",
+      "fieldPlaceholder": "Selecciona una fuente",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "saving": "Guardando…",
+      "errors": {
+        "noDocument": "Documento no encontrado.",
+        "noSource": "Selecciona una fuente."
+      },
+      "toasts": {
+        "success": "Fuente actualizada: {old} → {next}.",
+        "error": "No se pudo cambiar la fuente."
+      }
+    },
+    "report": {
+      "title": "Informe de ingestión",
+      "description": "Historial completo de las pasadas Docling, costes de embeddings y métricas recopiladas.",
+      "untitled": "Documento sin título",
+      "noValue": "—",
+      "labels": {
+        "source": "Fuente",
+        "ingestion": "Ingestión",
+        "storage": "Almacenamiento S3",
+        "version": "Versión",
+        "summary": "Resumen",
+        "filename": "Nombre de archivo",
+        "format": "Formato",
+        "size": "Tamaño",
+        "pageCount": "Número de páginas",
+        "language": "Idioma detectado",
+        "status": "Estado",
+        "startedAt": "Inicio",
+        "finishedAt": "Fin",
+        "chunks": "Chunks indexados",
+        "artifacts": "Artefactos registrados",
+        "page": "Página"
+      },
+      "sections": {
+        "characteristics": "Características",
+        "pipeline": "Pipeline",
+        "embeddings": "Costes de embeddings (total {total})",
+        "passes": "Pasadas Docling",
+        "pages": "Detalle de páginas"
+      },
+      "embeddings": {
+        "entry": "{tokens} tokens • {cost}"
+      },
+      "passes": {
+        "passIdentifier": "Pasada #{number} — {date}",
+        "keywords": "{count, plural, one {{count} palabra clave} other {{count} palabras clave}}",
+        "meanScore": "Puntuación media",
+        "lowScore": "Puntuación más baja"
+      },
+      "pages": {
+        "toggleShow": "Ver detalle de páginas",
+        "toggleHide": "Ocultar",
+        "meanScore": "Puntuación media",
+        "layout": "Diseño",
+        "lowScore": "Puntuación baja",
+        "grade": "Calificación"
+      },
+      "states": {
+        "noJob": "No se encontró ningún job de ingestión para este documento.",
+        "noEmbeddings": "No hay costes de embeddings registrados.",
+        "noPasses": "Todavía no hay pasadas Docling registradas.",
+        "loading": "Cargando informe…",
+        "empty": "Selecciona un documento para ver su informe."
+      }
+    }
+  },
+  "upload": {
+    "title": "Nueva ingestión",
+    "description": "Suelta tus documentos, elige la fuente y deja que AuroraStack orqueste el pipeline.",
+    "noPermission": "No tienes permisos de escritura sobre ninguna fuente. Contacta con un administrador.",
+    "fieldTitle": "Título",
+    "fieldSource": "Fuente",
+    "fieldWorkspace": "Espacio de trabajo",
+    "workspacePlaceholder": "Selecciona un espacio de trabajo",
+    "workspaceDisabled": "Primero selecciona una fuente.",
+    "fieldNotes": "Notas",
+    "placeholderTitle": "Resumen Q2",
+    "placeholderNotes": "Información adicional…",
+    "filesLabel": "Archivos",
+    "dropzonePrompt": "Arrastra tus archivos aquí o",
+    "dropzoneCta": "haz clic para seleccionar",
+    "filePending": "Pendiente",
+    "fileSizeUnitMb": "MB",
+    "buttonClear": "Borrar",
+    "buttonStart": "Iniciar ingestión",
+    "buttonUploading": "Ingestando…",
+    "statusIdle": "En espera de una ingestión",
+    "statusInitializing": "Inicializando ({file})…",
+    "statusUploading": "Subiendo a MinIO ({file})…",
+    "statusCommitting": "Validando ({file})…",
+    "statusCommittingBatch": "Validando lote ({count} archivos)…",
+    "statusJob": "Job {job} — {status}",
+    "statusBatchQueued": "Lote {batch} — queued",
+    "statusBatchCancelled": "Lote {batch} — cancelando",
+    "running": "Ingesta en curso…",
+    "metrics": {
+      "status": "Estado",
+      "chunks": "Chunks generados",
+      "artifacts": "Artefactos"
+    },
+    "cancel": {
+      "button": "Cancelar ingesta",
+      "confirmBody": "¿Seguro que quieres cancelar la ingesta de este documento?",
+      "success": "Ingesta cancelada y limpiada.",
+      "error": "No se pudo cancelar la ingesta. Inténtalo de nuevo."
+    },
+    "queueHint": "AuroraStack almacena los archivos originales y luego prepara los jobs de ingestión.",
+    "pipelineTitle": "Seguimiento del pipeline",
+    "pipelineDescription": "Estado, pasadas OCR y confianza por página.",
+    "formatsHint": "Formatos admitidos: PDF, DOCX, PPTX, XLSX, MD, TXT.",
+    "batchWarning": "ATENCIÓN: se recomienda la ingesta por lotes hasta {maxFiles} archivos (≈ {maxMb} MB máx / archivo).",
+    "reportButton": "Ver informe completo",
+    "passesTitle": "Pasadas de Docling",
+    "passLabel": "Pasada #{pass} — {date}",
+    "passImprovement": "+{value}% confianza",
+    "passConfidence": {
+      "meanScore": "Puntuación media",
+      "lowScore": "Puntuación más baja"
+    },
+    "batch": {
+      "metrics": {
+        "status": "Estado del lote",
+        "docs": "Documentos procesados"
+      },
+      "jobsTitle": "Documentos del lote",
+      "jobSubtitle": "{status} — {date}",
+      "cancel": {
+        "button": "Cancelar lote (queued)",
+        "confirmBody": "¿Cancelar los documentos en cola (queued) de este lote? Los documentos en curso continuarán.",
+        "success": "Cancelación solicitada para los documentos en cola.",
+        "error": "No se pudo cancelar el lote. Inténtalo de nuevo."
+      }
+    },
+    "history": {
+      "title": "Historial de ingestas",
+      "subtitle": "Últimos lotes (haz clic para abrir el seguimiento).",
+      "rowTitle": "Lote {id}",
+      "rowSubtitle": "{status} — {count} docs — {date}",
+      "singleFallback": "Documento ({id})",
+      "kindSingle": "Único",
+      "kindBatch": "Lote",
+      "pagination": "Página {page} / {total}",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "filters": {
+        "search": "Buscar",
+        "searchPlaceholder": "Título, ID, palabra clave…",
+        "period": "Periodo",
+        "period7d": "7 días",
+        "period30d": "30 días",
+        "periodCustom": "Personalizado",
+        "periodAll": "Todo",
+        "from": "Desde",
+        "to": "Hasta",
+        "kind": "Tipo",
+        "kindAll": "Todos",
+        "kindSingle": "Único",
+        "kindBatch": "Lote",
+        "status": "Estado",
+        "statusAll": "Todos",
+        "statusQueued": "Queued",
+        "statusRunning": "Running",
+        "statusDone": "Done",
+        "statusFailed": "Failed",
+        "source": "Fuente",
+        "sourceAll": "Todas",
+        "workspace": "Workspace",
+        "workspaceAll": "Todos"
+      },
+      "empty": "Aún no hay ingestas por lotes."
+    },
+    "story": {
+      "title": "Cómo AuroraStack procesa tus documentos",
+      "subtitle": "Cada etapa queda registrada para auditoría y soporte.",
+      "steps": {
+        "drop": {
+          "title": "Carga segura",
+          "description": "Subes los archivos vía UI o API y Aurora completa las metadatos."
+        },
+        "buffer": {
+          "title": "Almacenamiento intermedio",
+          "description": "AuroraStack almacena los archivos originales y prepara los jobs de ingestión."
+        },
+        "docling": {
+          "title": "Normalización y OCR",
+          "description": "AuroraStack limpia las páginas, aplica OCR si hace falta y genera los chunks. (Esto puede llevar tiempo dependiendo del tamaño del documento.)"
+        },
+        "vector": {
+          "title": "Vectorización",
+          "description": "Se generan embeddings y se sincronizan con la base vectorial para la búsqueda semántica."
+        },
+        "assistant": {
+          "title": "Listo para el asistente",
+          "description": "Los payloads aparecen en el asistente y las estadísticas, y puedes consultar tus documentos."
+        }
+      }
+    }
+  },
+  "account": {
+    "title": "Mi cuenta",
+    "subtitle": "Tu perfil y permisos por fuente.",
+    "profile": {
+      "title": "Perfil",
+      "email": "Email",
+      "role": "Rol",
+      "status": "Estado",
+      "created": "Creado el",
+      "lastLogin": "Último acceso",
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "stats": {
+      "title": "Estadísticas personales",
+      "subtitle": "Actividad realizada con tu cuenta.",
+      "documents": "Documentos subidos",
+      "queries": "Consultas (30 días)",
+      "lastUpload": "Última subida: {date}",
+      "lastQuery": "Última consulta: {date}",
+      "empty": "Sin datos aún"
+    },
+    "permissions": {
+      "title": "Fuentes permitidas",
+      "description": "AuroraStack aplica permisos de lectura/escritura/borrado por fuente.",
+      "read": "Lectura",
+      "write": "Escritura",
+      "delete": "Borrado",
+      "empty": "Todavía no tienes ninguna fuente asociada."
+    },
+    "password": {
+      "title": "Seguridad",
+      "description": "Actualiza tu contraseña de AuroraStack.",
+      "current": "Contraseña actual",
+      "new": "Nueva contraseña",
+      "confirm": "Confirmar contraseña",
+      "cta": "Actualizar contraseña",
+      "loading": "Actualizando…",
+      "success": "Contraseña actualizada.",
+      "error": "No se ha podido actualizar la contraseña.",
+      "mismatch": "Las contraseñas no coinciden."
+    },
+    "support": {
+      "title": "¿Necesitas ayuda?",
+      "description": "Contacta con soporte para actualizar tu información o permisos.",
+      "cta": "Contactar soporte"
+    }
+  },
+  "chat": {
+    "title": "Asistente RAG",
+    "subtitle": "Haz una pregunta y AuroraStack consultará tu conocimiento indexado.",
+    "defaultQuery": "¡Hola Aurora!",
+    "questionLabel": "Pregunta",
+    "sourceLabel": "Fuente",
+    "sourcePlaceholder": "Selecciona una fuente",
+    "sourceAll": "Todas las fuentes",
+    "workspaceLabel": "Espacio de trabajo",
+    "workspacePlaceholder": "Selecciona un espacio de trabajo",
+    "workspaceAll": "Todos los espacios de trabajo",
+    "workspaceDisabled": "Primero selecciona una fuente.",
+    "modelLabel": "Modelo LLM",
+    "modelPlaceholder": "Selecciona un modelo",
+    "modelDefault": "Usar el modelo por defecto",
+    "modelDefaultLabel": "Modelo activo: {model}",
+    "modelDefaultLoading": "Cargando modelo por defecto…",
+    "cta": "Preguntar",
+    "running": "En curso…",
+    "noReadPermission": "No tienes permiso de lectura sobre ninguna fuente.",
+    "answerTitle": "Respuesta",
+    "cacheToggle": "Usar la caché LLM",
+    "cacheOn": "Caché activada",
+    "cacheOff": "Caché desactivada",
+    "citationsTitle": "Fuentes",
+    "citationsToggleShow": "Mostrar fuentes",
+    "citationsToggleHide": "Ocultar fuentes",
+    "citations": {
+      "documentId": "ID de documento",
+      "title": "Título",
+      "sourceApp": "Fuente",
+      "uri": "URI S3",
+      "tenant": "Tenant",
+      "fileType": "Tipo de archivo",
+      "uploadedAt": "Fecha de subida",
+      "documentsCount": "{count} documento(s)",
+      "pagesUsed": "Páginas PDF usadas",
+      "pagesShort": "p.",
+      "passagesCount": "{count} pasaje(s)",
+      "passageLabel": "Pasaje {index}",
+      "pageLabel": "Página PDF",
+      "chunkLabel": "Chunk",
+      "openDocument": "Abrir documento",
+      "opening": "Abriendo…",
+      "openPage": "Abrir página",
+      "copySources": "Copiar fuentes",
+      "showPassages": "Mostrar pasajes",
+      "hidePassages": "Ocultar pasajes",
+      "hideNullFieldsLabel": "Campos vacíos (null)",
+      "showNullFields": "Mostrar",
+      "hideNullFields": "Ocultar",
+      "payload": "Payload de Qdrant",
+      "showDetails": "Mostrar detalles",
+      "hideDetails": "Ocultar detalles"
+    },
+    "valueFallback": "N/D",
+    "feedback": {
+      "prompt": "¿La respuesta te parece coherente?",
+      "requiredNotice": "Gracias por validar el feedback antes de continuar.",
+      "yes": "Sí",
+      "no": "No",
+      "reasonLabel": "Motivo",
+      "commentLabel": "Comentario (opcional)",
+      "submit": "Enviar feedback",
+      "submitting": "Enviando…",
+      "thanks": "¡Gracias por tu feedback!",
+      "options": {
+        "wrong_doc": "Usó el documento equivocado",
+        "too_shallow": "Respuesta correcta pero superficial",
+        "off_topic": "Fuera de tema / mal interpretada",
+        "missing_info": "Información faltante o incompleta",
+        "slow": "Respuesta demasiado lenta",
+        "should_cache": "Debería haber usado la caché",
+        "overuse_cache": "Usa la caché demasiado a menudo",
+        "other": "Otro"
+      }
+    }
+  },
+  "support": {
+    "title": "Centro de soporte",
+    "subtitle": "Encuentra recursos u abre un ticket con Aurora.",
+    "cta": "Contactar con soporte",
+    "cards": {
+      "jira": {
+        "title": "Portal Jira",
+        "description": "Cada solicitud pasa por Jira Service Management para garantizar la trazabilidad y los SLA.",
+        "button": "Abrir Auroramind Pilot"
+      },
+      "priority": {
+        "title": "Canal prioritario",
+        "description": "Para seguimiento en tiempo real (Slack/Teams), menciona #aurora-rag-support.",
+        "button": "Abrir Teams"
+      },
+      "sla": {
+        "title": "Histórico y SLA",
+        "description": "Resumen de compromisos y pasos a seguir ante un incidente.",
+        "slaHeading": "SLA",
+        "critical": "• Crítico: respuesta < 1h, resolución objetivo 4h",
+        "major": "• Mayor: respuesta < 4h, resolución objetivo 24h",
+        "minor": "• Menor: corrección programada para la próxima versión.",
+        "escalationHeading": "Escalado",
+        "escalationStepOne": "1. Crea un ticket (Jira o email) con logs/marcas de tiempo.",
+        "escalationStepTwo": "2. Avisa al equipo por Teams para activar la guardia."
+      }
+    },
+    "links": {
+      "open": "Abrir",
+    "adminGuide": {
+      "title": "Guía de administración",
+      "description": "Recorrido completo por las pantallas y buenas prácticas."
+    },
+    "catalogs": {
+      "title": "Parámetros y catálogos",
+      "description": "Definiciones de claves IA/RAG/Docling y pasos de ajuste."
+    },
+    "apiDoc": {
+      "title": "Documentación API",
+      "description": "Endpoints e integración de apps externas (MVP)."
+    },
+    "localTests": {
+      "title": "Pruebas locales",
+      "description": "Checklist para reproducir un bug en local."
+    },
+    "changelog": {
+      "title": "Changelog",
+      "description": "Seguimiento de mejoras y correcciones (versionado)."
+    },
+    "troubleshooting": {
+      "title": "Resolución de problemas",
+      "description": "Incidentes comunes y correcciones rápidas."
+    },
+    "ragParameters": {
+      "badge": "Roadmap V2",
+      "title": "Guía de parámetros RAG",
+      "subtitle": "Explicaciones detalladas de ajustes IA / RAG / caché / ingestión.",
+      "placeholder": "Contenido pedagógico en preparación.",
+      "categories": {
+        "assistant": {
+          "title": "Asistente y caché",
+          "description": "Prompt del sistema, feedback de usuario, caché LLM y presupuesto de tokens."
+        },
+        "aiModels": {
+          "title": "Modelos IA",
+          "description": "Parámetros LLM y embeddings expuestos en el asistente."
+        },
+        "rag": {
+          "title": "RAG y asistente",
+          "description": "Ajustes de recuperación, chunking y scoring."
+        },
+        "docling": {
+          "title": "Pipeline de ingestión",
+          "description": "Opciones de OCR, extracción y generación de metadatos."
+        },
+        "observability": {
+          "title": "Observabilidad y métricas",
+          "description": "Puntuaciones RAGAS, caché LLM e indicadores de rendimiento."
+        }
+      }
+    }
+  },
+    "ragParameters": {
+      "badge": "Roadmap V2",
+      "title": "Guía de parámetros RAG",
+      "subtitle": "El contenido detallado llegará con la V2. Estas anclas ya respetan el idioma seleccionado.",
+      "placeholder": "Contenido pedagógico disponible en la V2.",
+      "categories": {
+        "assistant": {
+          "title": "Asistente y caché",
+          "description": "Prompt del sistema, feedback de usuario, caché LLM y presupuesto de tokens."
+        },
+        "aiModels": {
+          "title": "Modelos IA",
+          "description": "Parámetros de LLM y embeddings expuestos en el asistente."
+        },
+        "rag": {
+          "title": "RAG y asistente",
+          "description": "Ajustes de recuperación, chunking y scoring."
+        },
+        "docling": {
+          "title": "Pipeline de ingestión",
+          "description": "Opciones de OCR, parsing y extracción de metadatos."
+        },
+        "observability": {
+          "title": "Observabilidad y métricas",
+          "description": "Scores RAGAS, cache LLM e indicadores de rendimiento."
+        }
+      }
+    }
+  },
+  "search": {
+    "title": "Búsqueda centralizada",
+    "subtitle": "Busca un documento, una ingestión o un ajuste.",
+    "description": "Busca un documento, una ingestión o un ajuste. El motor unificado llegará pronto; mientras tanto, prepara tus consultas y filtros.",
+    "form": {
+      "placeholder": "Ej: status:failed source:marketing date>=2024-11-01",
+      "submit": "Lanzar",
+      "clear": "Borrar"
+    },
+    "syntax": {
+      "title": "Sintaxis avanzada",
+      "description": "Combina <code>status:</code>, <code>source:</code>, <code>tenant:</code> o <code>model:</code>. Muy pronto un único campo mostrará documentos, logs y jobs de ingestión."
+    },
+    "suggestions": {
+      "title": "Sugerencias",
+      "description": "Algunas consultas útiles que ya puedes probar.",
+      "empty": "Selecciona una sugerencia o escribe tu propia consulta.",
+      "result": "Resultados simulados para <highlight>{query}</highlight> — los conectores llegarán con el módulo de búsqueda."
+    },
+    "filters": {
+      "title": "Filtros disponibles",
+      "description": "Estos campos se alinearán entre documentos, jobs y logs en la próxima versión.",
+      "documents": "Documentos",
+      "jobs": "Jobs de ingestión",
+      "logs": "Logs de LLM",
+      "documentsFields": "<code>status</code>, <code>source_app</code>, <code>lang</code>, <code>doc_version</code>, <code>tag</code>",
+      "jobsFields": "<code>status</code>, <code>pass</code>, <code>confidence</code>, <code>chunks</code>",
+      "logsFields": "<code>model</code>, <code>tenant</code>, <code>cost</code>, <code>latency</code>"
+    },
+    "results": {
+      "title": "Resultados",
+      "subtitle": "Documentos que coinciden con «{query}»",
+      "placeholder": "Lanza una búsqueda para ver los resultados.",
+      "loading": "Buscando…",
+      "empty": "Ningún documento coincide con esta búsqueda.",
+      "count": "{count, plural, one {# documento encontrado} other {# documentos encontrados}}",
+      "error": "No se pueden mostrar los resultados por el momento.",
+      "updated": "Actualizado el {date}"
+    }
+  },
+  "admin": {
+    "toasts": {
+      "permissionsUpdated": "Permisos actualizados.",
+      "apiKeyCreated": "Clave generada.",
+      "apiKeyUpdated": "Clave actualizada.",
+      "externalKeyUpdated": "Clave externa actualizada.",
+      "sourceCreated": "Fuente creada.",
+      "sourceUpdated": "Fuente actualizada.",
+      "workspaceCreated": "Workspace creado.",
+      "workspaceUpdated": "Workspace actualizado.",
+      "workspaceDeleted": "Workspace eliminado.",
+      "generalSettingsUpdated": "Parámetros generales actualizados.",
+      "localeUpdated": "Idioma actualizado.",
+      "settingsUpdated": "Parámetro actualizado.",
+      "userCreated": "Usuario creado.",
+      "userUpdated": "Usuario actualizado."
+    },
+    "queries": {
+      "title": "Estadísticas de consultas",
+      "subtitle": "Supervisa el uso del LLM, sus costes y rendimiento.",
+      "summary": {
+        "window": "Consultas (período)",
+        "lastDay": "Últimas 24 h",
+        "cost": "Coste total LLM",
+        "costRequests": "Costes de consultas",
+        "avgCost": "Coste medio / consulta",
+        "costPer1k": "Coste / 1.000 consultas",
+        "errorRate": "Tasa de error",
+        "cacheHitRate": "Tasa de caché",
+        "latencyP95": "Latencia P95",
+        "users": "Usuarios activos",
+        "latency": "Latencia media",
+        "tokens": "Tokens medios"
+      },
+      "breakdown": {
+        "sources": "Fuentes destacadas",
+        "scopeTitle": "Alcance de búsqueda",
+        "scopeSubtitle": "Corpus consultado",
+        "users": "Usuarios destacados",
+        "models": "Modelos destacados",
+        "costs": "Costes por modelo"
+      },
+      "labels": {
+        "unknownSource": "Fuente desconocida",
+        "noSource": "Sin fuente",
+        "unknownUser": "Usuario desconocido",
+        "unknownModel": "Modelo desconocido",
+        "unknownProvider": "Proveedor desconocido",
+        "requestsCount": "{count} consultas"
+      },
+      "filters": {
+        "title": "Filtros",
+        "search": "Búsqueda",
+        "searchPlaceholder": "Pregunta o palabra clave…",
+        "user": "Usuario",
+        "userPlaceholder": "usuario@empresa.com",
+        "source": "Fuente",
+        "sourcePlaceholder": "código source_app",
+        "workspace": "Espacio de trabajo",
+        "workspacePlaceholder": "Selecciona un espacio de trabajo",
+        "workspaceDisabled": "Primero selecciona una fuente.",
+        "provider": "Proveedor",
+        "providerPlaceholder": "openai, openrouter…",
+        "feedback": "Feedback",
+        "feedbackPlaceholder": "Todos",
+        "feedbackNone": "Sin feedback",
+        "any": "Todos",
+        "apply": "Aplicar",
+        "reset": "Resetear"
+      },
+      "table": {
+        "question": "Pregunta",
+        "user": "Usuario",
+        "source": "Fuente",
+        "model": "Modelo",
+        "cache": "Cache",
+        "feedback": "Feedback",
+        "feedbackOpen": "Abrir feedback",
+        "status": "Estado",
+        "performedBy": "Realizada por",
+        "cost": "Coste",
+        "created": "Creada el",
+        "latency": "Latencia",
+        "empty": "Ninguna consulta cumple estos filtros.",
+        "pagination": "Página {page} / {pages}",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "cacheStatus": {
+          "hit_exact": "Hit exacto",
+          "hit_semantic": "Hit semántico",
+          "miss": "Miss",
+          "none": "No usado"
+        },
+        "statusMap": {
+          "success": "Éxito",
+          "error": "Error",
+          "timeout": "Timeout",
+          "rate_limited": "Limitado"
+        }
+      },
+      "feedback": {
+        "yes": "Sí",
+        "no": "No"
+      },
+      "detail": {
+        "title": "Detalle de consulta y feedback",
+        "subtitle": "Pregunta, respuesta y feedback del usuario (si existe).",
+        "question": "Pregunta",
+        "answer": "Respuesta",
+        "noAnswer": "No hay respuesta almacenada.",
+        "user": "Usuario",
+        "source": "Fuente",
+        "created": "Fecha",
+        "feedback": "Feedback",
+        "noFeedback": "No hay feedback del usuario para esta consulta.",
+        "noComment": "Sin comentario.",
+        "citations": "Citas (raw)",
+        "notFound": "No se encontraron detalles."
+      }
+    },
+    "settings": {
+      "categories": {
+        "general": {
+          "label": "General",
+          "description": "Identidad, idioma y valores predeterminados de la organización."
+        },
+        "logging": {
+          "label": "Registros",
+          "description": "Reglas de logging (historial, minimización de datos, límites)."
+        },
+        "retention": {
+          "label": "Retención",
+          "description": "Periodos de conservación y purga (RGPD, almacenamiento)."
+        },
+        "ai_models": {
+          "label": "Modelos IA",
+          "description": "Gestiona los modelos de chat y embedding disponibles en Aurora."
+        },
+        "assistant": {
+          "label": "Asistente",
+          "description": "Ajustes de UX (feedback obligatorio, validación)."
+        },
+        "assistantGuide": {
+          "title": "Asistente",
+          "description": "Configuración del prompt y de la experiencia del asistente."
+        },
+        "rag": {
+          "label": "RAG y asistente",
+          "description": "Ajusta los parámetros de recuperación, chunking y guardrails."
+        },
+        "docling": {
+          "label": "Pipeline de ingestión",
+          "description": "Controla las pasadas de normalización, OCR y parsing."
+        },
+        "cache": {
+          "label": "Caché LLM",
+          "description": "Configura modos exacto/semántico/mixto, umbrales y TTL."
+        },
+        "providers": {
+          "label": "Modelos y providers",
+          "description": "Catálogo de proveedores, modelos y credenciales BYOK."
+        },
+        "apiKeys": {
+          "label": "Claves API",
+          "description": "Claves internas/externas necesarias para integraciones."
+        },
+        "sources": {
+          "label": "Fuentes conectadas",
+          "description": "Configura conectores CRM/ATS y APIs externas."
+        },
+        "history": {
+          "label": "Historial",
+          "description": "Trazabilidad de cada cambio de configuración."
+        }
+      },
+      "history": {
+        "filterPlaceholder": "Filtrar por parámetro",
+        "all": "Todos los parámetros",
+        "pageLabel": "Página {page} / {pages}",
+        "empty": "No hay cambios registrados todavía.",
+        "table": {
+          "parameter": "Parámetro",
+          "oldValue": "Valor anterior",
+          "newValue": "Valor nuevo",
+          "user": "Actualizado por",
+          "date": "Fecha"
+        },
+        "prev": "Anterior",
+        "next": "Siguiente"
+      },
+      "panel": {
+        "noSettings": "No hay parámetros disponibles para esta sección.",
+        "restartRequired": "Requiere reinicio",
+        "modelsError": "No se puede cargar el catálogo de OpenRouter ({error}).",
+        "modelsEmpty": "No hay modelos de OpenRouter disponibles.",
+        "selectModel": "Seleccionar un modelo",
+        "updatedAt": "Actualizado {date}",
+        "systemUser": "Sistema",
+        "buttons": {
+          "edit": "Editar",
+          "updating": "Actualizando…"
+        }
+      },
+      "tooltips": {
+        "learnMore": "Más información",
+        "openHelp": "Mostrar ayuda para {parameter}",
+        "aiModels": {
+          "EMBEDDINGS_MODEL": "Elige el modelo de embeddings que convierte tus documentos en vectores. Los modelos más grandes mejoran la relevancia pero requieren reindexar todo y elevan el coste de ingestión.",
+          "LANGCHAIN_MODEL_NAME": "Modelo de chat principal utilizado por el asistente y la API. Usa uno rápido para soporte o uno premium para respuestas expertas.",
+          "SUMMARY_MODEL": "Modelo opcional que genera resúmenes durante la ingestión. Déjalo vacío si no quieres pagar pases adicionales.",
+          "KEYWORDS_MODEL": "Modelo que extrae palabras clave del negocio. Actívalo cuando tus búsquedas dependan de etiquetas semánticas.",
+          "NER_MODEL": "Modelo de extracción de entidades (personas, contratos, cuentas). Mejora los filtros avanzados pero alarga la ingestión."
+        },
+        "rag": {
+          "RETRIEVE_K": "k final tras el rerank. 3–5: respuestas enfocadas, prompt corto y poco ruido; 6–8: buen equilibrio; 10+: útil si los docs están dispersos o las preguntas son abiertas, pero consume más tokens. Consejo: 5–6 en informes estructurados, 8–10 en corpus heterogéneos.",
+          "FETCH_K": "Candidatos brutos antes del MMR. Idealmente 2–3× Retrieve K (ej. FETCH_K=10 si RETRIEVE_K=5). Más alto → MMR puede diversificar mejor, con ligera latencia de BD.",
+          "MMR_LAMBDA": "0,7–0,9: relevancia pura (riesgo de redundancia); 0,4–0,6: equilibrio (por defecto 0,5); 0,2–0,3: alta diversidad si un doc domina. Prueba ~0,4 si el cache/retrieval elige demasiado el mismo doc.",
+          "MAX_CHUNK_SIZE": "Tamaño máx. de chunk en tokens para el embedding. 800–1200 = buen recall pero más vectores/coste; 1500+ = menos entradas pero más riesgo de ruido. Cambiarlo exige re-embedear los docs existentes (solo nuevos sería inconsistente).",
+          "MAX_LLM_TOKENS": "Presupuesto de tokens (prompt + respuesta). Más bajo = menos coste/latencia; más alto = citas más largas y respuestas detalladas. Ajusta según el modelo y tu SLA.",
+          "MAX_WORKERS": "Workers de ingestión en paralelo. Más alto acelera las importaciones pero usa más CPU/RAM y llamadas de embedding. Afecta sobre todo a ingestas futuras (los docs actuales no cambian)."
+        },
+        "docling": {
+          "DOC_OCR": "Activa el OCR en páginas escaneadas para que el texto sea buscable. Aproximadamente duplica el tiempo de ingestión.",
+          "DOC_TABLE_STRUCTURE": "Conserva la estructura de las tablas (columnas, cabeceras). Ideal para RR. HH./Finanzas y añade ~20 % de tiempo.",
+          "DOC_PICTURE_DESCRIPTION": "Genera una descripción textual para cada imagen. Actívala solo en flujos muy visuales.",
+          "DOC_PICTURE_CLASSIFICATION": "Asigna una categoría a las imágenes (logo, diagrama, foto) para acelerar los filtros. Requiere un servicio de visión.",
+          "DOC_FORMULA_ENRICHMENT": "Reconoce y reescribe fórmulas científicas. Actívala únicamente para corpus técnicos.",
+          "DOC_GENERATE_PAGE_IMAGES": "Produce miniaturas de páginas. Necesario para el OCR y las previsualizaciones.",
+          "MAX_CHUNK_SIZE": "Tamaño máx. de chunk antes del embedding (impacta el número de vectores). 800–1200 = buen recall pero más vectores/coste; 1500+ = menos entradas pero más ruido. Los docs existentes no se re-embeben automáticamente.",
+          "MAX_WORKERS": "Número de ingestas en paralelo. Más alto = más rápido, pero más CPU/RAM y llamadas de embedding. Cambio: se recomienda reiniciar el servicio de ingestión.",
+          "BATCH_MAX_FILES": "Límite recomendado (UI) de archivos por lote. No se aplica aún (fase dev).",
+          "BATCH_MAX_FILE_MB": "Tamaño recomendado (UI) por archivo en lote. No se aplica aún (fase dev).",
+          "BATCH_MAX_TOTAL_MB": "Tamaño total recomendado (UI) por lote. No se aplica aún (fase dev).",
+          "OCR_REPROCESS_LAYOUT_THRESHOLD": "Umbral (0-1) que relanza el OCR para corregir el diseño. Bájalo en PDF ruidosos.",
+          "OCR_REPROCESS_LOW_THRESHOLD": "Umbral de calidad global antes de relanzar el OCR. Más bajo = más precisión; más alto = ingestión más rápida.",
+          "OCR_REPROCESS_PARSE_THRESHOLD": "Umbral de aceptación del parsing. Redúcelo si aceptas más correcciones manuales.",
+          "KEYWORDS_MODE": "Define cuándo extraer palabras clave: desactivado, pass0 o both (texto + OCR). \"Both\" aumenta mucho el tiempo de procesamiento.",
+          "KEYWORDS_TOPK": "Número máximo de palabras clave por documento (5-50). Súbelo para más detalle, bájalo para limitar costes.",
+          "KEYWORDS_MINLEN": "Longitud mínima de la palabra clave (caracteres). Súbela para filtrar siglas muy cortas."
+        },
+        "assistant": {
+          "FEEDBACK_REQUIRED": "Obliga a dar feedback Sí/No tras cada respuesta del asistente. Útil en fase de pruebas para medir la calidad.",
+          "ASSISTANT_SYSTEM_PROMPT": "Prompt del sistema que usa el asistente. Personalízalo para ajustar el tono, estilo o estructura de las respuestas."
+        }
+      },
+      "modal": {
+        "invalidJson": "JSON inválido. Proporciona una cadena JSON válida.",
+        "title": "Editar {key}",
+        "description": "Introduce un nuevo valor {type}.",
+        "toggleHelp": "Utiliza el interruptor para alternar los valores booleanos.",
+        "inputPlaceholder": "Introduce un valor…",
+        "jsonHint": "Los campos JSON aceptan objetos JSON en crudo.",
+        "cancel": "Cancelar",
+        "saving": "Guardando…",
+        "save": "Guardar"
+      },
+      "general": {
+        "locale": {
+          "label": "Idioma predeterminado",
+          "description": "Se aplica a todos los administradores una vez guardado."
+        },
+        "fields": {
+          "dateFormat": {
+            "label": "Formato de fecha",
+            "placeholder": "Selecciona un formato"
+          },
+          "companyName": {
+            "label": "Nombre de la empresa",
+            "placeholder": "AURORAMIND"
+          },
+          "companyAddress": {
+            "label": "Dirección de la empresa",
+            "placeholder": "Calle, ciudad, país"
+          },
+          "companyEmail": {
+            "label": "Correo de contacto",
+            "placeholder": "contacto@empresa.com"
+          },
+          "companyPhone": {
+            "label": "Teléfono de contacto",
+            "placeholder": "+34 91 000 00 00"
+          },
+          "companyLogo": {
+            "label": "URL del logo",
+            "placeholder": "https://cdn.ejemplo.com/logo.svg"
+          }
+        },
+        "dateFormats": {
+          "dmy": "DD/MM/AAAA — Europa",
+          "mdy": "MM/DD/AAAA — EE. UU.",
+          "iso": "AAAA-MM-DD — ISO 8601"
+        },
+        "button": {
+          "save": "Guardar cambios",
+          "saving": "Guardando…"
+        }
+      }
+    },
+    "dashboard": {
+      "meta": {
+        "realtime": "Datos en vivo"
+      },
+      "tabs": {
+        "general": "Estadísticas generales",
+        "documents": "Estadísticas de documentos",
+        "queries": "Estadísticas de consultas",
+        "cache": "Estadísticas de observabilidad"
+      },
+      "controls": {
+        "limit": "Mostrar",
+        "top": "Top {count}",
+        "user": "Usuario",
+        "all": "Todos"
+      },
+      "cards": {
+        "documentsLabel": "Documentos indexados",
+        "requests": "Consultas de hoy",
+        "users": "Usuarios activos",
+        "sources": "Fuentes activas",
+        "documentsTotal": "Documentos indexados (total)",
+        "documentsTotalDetail": "Corpus total (todos los tenants)",
+        "documentsAdded": "Documentos añadidos",
+        "documentsAddedDetail": "Documentos añadidos en el período seleccionado",
+        "requestsWindow": "Consultas (período)",
+        "requestsWindowDetail": "Volumen de consultas en el período seleccionado",
+        "usersWindow": "Usuarios (período)",
+        "usersWindowDetail": "Usuarios únicos en el período seleccionado",
+        "ingestionWindow": "Ingestión (período)",
+        "ingestionWindowDetail": "Documentos añadidos en el período seleccionado",
+        "errorRate": "Tasa de error",
+        "errorRateDetail": "Porcentaje de consultas fallidas en el período",
+        "successRate": "Tasa de éxito",
+        "successRateDetail": "Porcentaje de consultas exitosas en el período",
+        "costPer1k": "Coste / 1.000 consultas",
+        "costPer1kDetail": "Gasto IA por 1.000 consultas",
+        "ingestionQueued": "Jobs en curso",
+        "ingestionQueuedDetail": "En cola + en ejecución (período)",
+        "ingestionFailed": "Jobs fallidos",
+        "ingestionFailedDetail": "Jobs de ingestión en estado failed (período)",
+        "ingestionMedianDuration": "Duración mediana de ingestión",
+        "ingestionMedianDurationDetail": "Duración inicio→fin (período)",
+        "sourcesDetail": "Fuentes con actividad reciente",
+        "usersDetail": "Usuarios activos en 7 días",
+        "costs": "Gasto total IA",
+        "costsDetail": "Embeddings + consultas + evaluaciones (período definido)",
+        "ingestionCost": "Coste de ingestión",
+        "ingestionCostDetail": "Coste acumulado de embeddings (período definido)",
+        "documents": {
+          "title": "Documentos indexados",
+          "description": "Total de documentos normalizados disponibles en el asistente.",
+          "empty": "Aún no hay ingestas finalizadas."
+        },
+        "queriesToday": {
+          "title": "Consultas de hoy",
+          "description": "Preguntas realizadas el {date} desde el chat y las API.",
+          "empty": "Ninguna consulta registrada el {date}."
+        },
+        "usersActive": {
+          "title": "Usuarios activos (7 d)",
+          "description": "Colaboradores únicos que realizaron al menos una acción esta semana.",
+          "empty": "Invite a un colaborador para alimentar esta métrica."
+        },
+        "costs": {
+          "title": "Gasto total IA",
+          "description": "Embeddings: {embeddings} · Chat/API: {llm} · Evaluaciones: {ragas}",
+          "empty": "Los costos aparecerán tras las primeras llamadas."
+        }
+      },
+      "charts": {
+        "documents": {
+          "title": "Ingestión",
+          "description": "Supervise el rendimiento de ingesta en las últimas semanas.",
+          "series": "Documentos",
+          "empty": "Sin datos históricos todavía."
+        },
+        "documentsByUploader": {
+          "title": "Documentos indexados por usuario",
+          "description": "Distribución de documentos ingeridos en el período seleccionado.",
+          "series": "Documentos",
+          "empty": "Aún no hay documentos indexados."
+        },
+        "platformCosts": {
+          "title": "Costes IA (período)",
+          "description": "Desglose diario: ingestión, consultas y evaluaciones.",
+          "series": {
+            "ingestion": "Ingestión",
+            "queries": "Consultas",
+            "evaluations": "Evaluaciones"
+          },
+          "empty": "Los costos aparecerán tras las primeras llamadas."
+        },
+        "requestsErrors": {
+          "title": "Consultas y errores",
+          "description": "Volumen diario y fallos en el período seleccionado.",
+          "series": {
+            "requests": "Consultas",
+            "errors": "Errores"
+          },
+          "empty": "Todavía no hay consultas registradas."
+        },
+        "sources": {
+          "title": "Mix de fuentes",
+          "description": "Compare el volumen ingerido por cada aplicación conectada.",
+          "series": "Documentos",
+          "unknown": "Fuente desconocida",
+          "tooltip": "{value} documentos",
+          "empty": "Aún no se ha ingerido ninguna fuente."
+        },
+        "queries": {
+          "title": "Cronología de consultas",
+          "description": "Vista diaria de las preguntas ejecutadas por el LLM.",
+          "series": "Consultas",
+          "empty": "Todavía no hay consultas registradas."
+        },
+        "usersActivity": {
+          "title": "Usuarios vs consultas",
+          "description": "Compare usuarios únicos con el volumen de prompts generados.",
+          "series": {
+            "users": "Usuarios",
+            "queries": "Consultas"
+          },
+          "empty": "Sin actividad de usuarios por ahora."
+        },
+        "costs": {
+          "title": "Costes mensuales de IA",
+          "description": "Suma de costes de ingesta, consultas y evaluaciones por mes.",
+          "series": "Costo total",
+          "empty": "Los costes aparecerán tras las primeras facturas."
+        },
+        "latency": {
+          "title": "Latencia media",
+          "description": "Tiempo medio de respuesta del LLM por día.",
+          "series": "Latencia (ms)",
+          "empty": "La latencia aún no se mide."
+        }
+      },
+      "tenants": {
+        "title": "Tenants y huella vectorial",
+        "description": "Tenants principales clasificados por puntos Qdrant.",
+        "columns": {
+          "tenant": "Tenant",
+          "points": "Puntos Qdrant"
+        },
+        "syncing": "Sincronizando…",
+        "empty": "Sin estadísticas de tenants todavía."
+      }
+    },
+    "usersPage": {
+      "title": "Gestión de usuarios",
+      "description": "Invite a sus compañeros y controle roles y permisos.",
+      "searchPlaceholder": "Buscar por nombre o correo…",
+      "roleFilter": {
+        "placeholder": "Rol",
+        "all": "Todos los roles",
+        "admin": "Administradores",
+        "user": "Usuarios"
+      },
+      "buttons": {
+        "actions": "Acciones",
+        "newUser": "Nuevo usuario",
+        "permissions": "Permisos",
+        "edit": "Editar",
+        "previous": "Anterior",
+        "next": "Siguiente"
+      },
+      "table": {
+        "user": "Usuario",
+        "role": "Rol",
+        "status": "Estado",
+        "statusActive": "Activo",
+        "statusDisabled": "Desactivado",
+        "lastLogin": "Último acceso",
+        "never": "Nunca",
+        "empty": "Ningún usuario coincide con estos filtros."
+      },
+      "pagination": "Página {page} / {pages}",
+      "roles": {
+        "admin": "Administrador",
+        "user": "Usuario"
+      }
+    },
+    "apiKeys": {
+      "form": {
+        "description": "Descripción",
+        "placeholder": "Automatización interna, bot QA…",
+        "expirationDays": "Expiración (días)",
+        "expirationDate": "Fecha de expiración",
+        "helper": "Indique una duración en días o una fecha concreta. Por defecto: 90 días."
+      },
+      "internal": {
+        "title": "Claves internas de Aurora",
+        "description": "Genere claves firmadas para sus servicios y scripts.",
+        "generate": "Generar clave",
+        "table": {
+          "prefix": "Prefijo",
+          "description": "Descripción",
+          "created": "Creada",
+          "expiration": "Expira",
+          "lastUsed": "Último uso",
+          "actions": "Acciones",
+          "empty": "Aún no se ha creado ninguna clave interna."
+        },
+        "buttons": {
+          "usage": "Uso",
+          "edit": "Editar"
+        },
+        "status": {
+          "active": "Activa",
+          "inactive": "Inactiva"
+        }
+      },
+      "external": {
+        "title": "Claves de proveedores",
+        "description": "Guarde de forma segura las claves de OpenAI, OpenRouter u otros proveedores.",
+        "badgeUndefined": "No definida",
+        "button": "Guardar",
+        "saving": "Guardando…",
+        "empty": "Ningún conector requiere aún clave externa."
+      },
+      "dialogs": {
+        "common": {
+          "cancel": "Cancelar"
+        },
+        "create": {
+          "title": "Nueva clave interna",
+          "description": "Describa el uso y la ventana de expiración.",
+          "submit": "Crear",
+          "loading": "Creando…"
+        },
+        "edit": {
+          "title": "Actualizar {prefix}",
+          "description": "Ajuste la descripción o la duración de expiración.",
+          "submit": "Actualizar",
+          "loading": "Guardando…"
+        },
+        "reveal": {
+          "title": "Clave API generada",
+          "description": "Copie la clave ahora, solo se mostrará una vez.",
+          "meta": "Prefijo {prefix} · Expira el {expires}",
+          "close": "He copiado la clave"
+        },
+        "usage": {
+          "title": "Usos — {prefix}",
+          "description": "Llamadas recientes de OpenRouter realizadas con esta clave.",
+          "headers": {
+            "date": "Fecha",
+            "model": "Modelo",
+            "credits": "Créditos",
+            "tokens": "Tokens"
+          },
+          "empty": "Sin usos recientes para esta clave.",
+          "close": "Cerrar"
+        }
+      }
+    },
+    "sourceApps": {
+      "title": "Fuentes conectadas",
+      "description": "Declare los sistemas empresariales autorizados a ingerir documentos en Aurora.",
+      "buttons": {
+        "new": "Añadir fuente",
+        "edit": "Editar"
+      },
+      "table": {
+        "label": "Etiqueta",
+        "description": "Descripción",
+        "icon": "Icono y color",
+        "order": "Orden",
+        "actions": "Acciones",
+        "toggle": "Activar fuente"
+      },
+      "empty": "Aún no se ha configurado ninguna fuente.",
+      "form": {
+        "createTitle": "Nueva fuente",
+        "editTitle": "Editar fuente",
+        "description": "Configure sus conectores empresariales. El nombre técnico debe ser único.",
+        "fields": {
+          "name": {
+            "label": "Nombre técnico",
+            "placeholder": "crm_salesforce",
+            "help": "Solo minúsculas, números, guiones o guiones bajos."
+          },
+          "label": {
+            "label": "Etiqueta",
+            "placeholder": "Salesforce"
+          },
+          "description": {
+            "label": "Descripción",
+            "placeholder": "Usada para contratos comerciales…"
+          },
+          "color": {
+            "label": "Color (hex)",
+            "placeholder": "#3B82F6"
+          },
+          "icon": {
+            "label": "Icono Lucide",
+            "placeholder": "Database"
+          },
+          "display_order": {
+            "label": "Orden de visualización",
+            "placeholder": "0"
+          },
+          "is_active": {
+            "label": "Activar fuente",
+            "description": "Las fuentes inactivas se ocultan de los menús desplegables."
+          }
+        },
+        "actions": {
+          "cancel": "Cancelar",
+          "save": "Guardar",
+          "saving": "Guardando…"
+        },
+        "validation": {
+          "nameRequired": "El nombre es obligatorio.",
+          "nameFormat": "Use solo minúsculas, números, guiones o guiones bajos.",
+          "labelRequired": "La etiqueta es obligatoria.",
+          "colorFormat": "Indique un color hexadecimal válido (ej: #3B82F6).",
+          "iconRequired": "El icono es obligatorio.",
+          "orderRange": "El orden debe estar entre 0 y 99."
+        }
+      }
+    },
+    "workspaces": {
+      "title": "Workspaces",
+      "buttons": {
+        "new": "Añadir workspace",
+        "edit": "Editar",
+        "setDefault": "Definir por defecto"
+      },
+      "table": {
+        "label": "Etiqueta",
+        "default": "Por defecto",
+        "order": "Orden",
+        "actions": "Acciones",
+        "toggle": "Activar workspace"
+      },
+      "badges": {
+        "default": "Defecto"
+      },
+      "empty": "No hay workspaces configurados para esta fuente.",
+      "hint": "Eliminar un workspace elimina permanentemente todos los documentos que contiene (SQL + MinIO + Qdrant).",
+      "delete": {
+        "title": "Eliminar workspace",
+        "description": "Esta acción no se puede deshacer.",
+        "warningTitle": "Acción destructiva",
+        "warningBody": "Se eliminarán todos los documentos de este workspace, pero los jobs de ingesta y los costes permanecen en el historial.",
+        "confirmHelp": "Escriba « {name} » para confirmar la eliminación.",
+        "cancel": "Cancelar",
+        "confirm": "Eliminar",
+        "deleting": "Eliminando…"
+      },
+      "form": {
+        "createTitle": "Nuevo workspace",
+        "editTitle": "Editar workspace",
+        "description": "Los workspaces están vinculados a una fuente y sirven para categorizar documentos.",
+        "fields": {
+          "name": {
+            "label": "Nombre técnico",
+            "placeholder": "dev",
+            "help": "Solo minúsculas, números, guiones o guiones bajos."
+          },
+          "label": {
+            "label": "Etiqueta",
+            "placeholder": "Desarrollo"
+          },
+          "description": {
+            "label": "Descripción",
+            "placeholder": "Agrupa documentos relacionados…"
+          },
+          "color": {
+            "label": "Color (hex)",
+            "placeholder": "#3B82F6"
+          },
+          "icon": {
+            "label": "Icono Lucide"
+          },
+          "display_order": {
+            "label": "Orden de visualización",
+            "placeholder": "0"
+          },
+          "is_default": {
+            "label": "Workspace por defecto",
+            "description": "Se usa cuando no se proporciona workspace en la ingesta."
+          },
+          "is_active": {
+            "label": "Activar workspace",
+            "description": "Los workspaces inactivos no pueden recibir nuevos documentos."
+          }
+        },
+        "actions": {
+          "cancel": "Cancelar",
+          "save": "Guardar",
+          "saving": "Guardando…"
+        },
+        "validation": {
+          "nameRequired": "El nombre es obligatorio.",
+          "nameFormat": "Use solo minúsculas, números, guiones o guiones bajos.",
+          "defaultReserved": "El nombre \"default\" está reservado.",
+          "labelRequired": "La etiqueta es obligatoria.",
+          "colorFormat": "Indique un color hexadecimal válido (ej: #3B82F6).",
+          "iconRequired": "El icono es obligatorio.",
+          "orderRange": "El orden debe estar entre 0 y 99."
+        }
+      }
+    },
+    "observability": {
+      "filters": {
+        "title": "Filtros",
+        "subtitle": "Limitar métricas por periodo y pack.",
+        "period": "Periodo",
+        "days": "{count} días",
+        "pack": "ID de pack",
+        "packPlaceholder": "UUID (opcional)"
+      },
+      "cards": {
+        "requests": "Peticiones",
+        "cache": "Tasa de caché",
+        "cost": "Costo LLM",
+        "ragasCost": "Costo evaluaciones",
+        "feedback": "Satisfacción usuarios",
+        "ragasCoverage": "Cobertura RAGAS",
+        "savings": "Ahorros caché",
+        "latency": "Latencia P95",
+        "quality": "Calidad RAG",
+        "optimizer": "Recomendaciones",
+        "cacheDetail": "Aciertos exactos y semánticos del periodo",
+        "feedbackDetail": "Porcentaje de respuestas marcadas como coherentes (Sí)",
+        "latencyDetail": "P95 en la ventana seleccionada",
+        "qualityDetail": "Puntaje RAGAS de fidelidad (0-100)",
+        "ragasCostDetail": "Suma de llamadas de evaluación RAGAS",
+        "ragasCoverageDetail": "Evaluaciones / peticiones",
+        "savingsDetail": "Ahorro estimado gracias a los hits de caché",
+        "optimizerDetail": "Recomendaciones pendientes de validar"
+      },
+      "labels": {
+        "errorRate": "tasa de error",
+        "loading": "Cargando…",
+        "noData": "Sin datos.",
+        "cost": "Costo",
+        "cacheHitRate": "Tasa de caché",
+        "feedbackYes": "Sí",
+        "feedbackNo": "No",
+        "feedbackReason": "Motivo",
+        "feedbackReasons": {
+          "wrong_doc": "Usó el documento equivocado",
+          "too_shallow": "Respuesta correcta pero superficial",
+          "off_topic": "Fuera de tema / mal interpretada",
+          "missing_info": "Información faltante o incompleta",
+          "slow": "Respuesta demasiado lenta",
+          "should_cache": "Debería haber usado la caché",
+          "overuse_cache": "Usa la caché demasiado a menudo",
+          "other": "Otro"
+        },
+        "defaultPack": "Pack por defecto",
+        "cacheStatus": {
+          "hit_exact": "Hit exacto",
+          "hit_semantic": "Hit semántico",
+          "miss": "Miss",
+          "none": "Desactivado"
+        }
+      },
+      "charts": {
+        "requestsTitle": "Peticiones y errores",
+        "requestsSubtitle": "Volumen y fallos",
+        "cacheTitle": "Reparto de caché",
+        "cacheSubtitle": "Por estado",
+        "costTitle": "Costo y caché en el tiempo",
+        "costSubtitle": "EUR vs tasa de caché",
+        "cacheHitTitle": "Tasa de caché en el tiempo",
+        "cacheHitSubtitle": "Hits exactos + semánticos (porcentaje)",
+        "costTimelineTitle": "Costo de peticiones LLM en el tiempo",
+        "costTimelineSubtitle": "Suma de costos de peticiones (EUR)",
+        "feedbackYesNoTitle": "Feedback usuarios",
+        "feedbackYesNoSubtitle": "Sí vs No",
+        "feedbackReasonsTitle": "Motivos de feedback negativo",
+        "feedbackReasonsSubtitle": "Principales motivos de \"No\"",
+        "feedbackTimelineTitle": "Satisfacción en el tiempo",
+        "feedbackTimelineSubtitle": "Porcentaje de respuestas marcadas como coherentes"
+      },
+      "filtersShort": {
+        "period": "Periodo",
+        "days": "{count} días",
+        "options": {
+          "7": "7 días",
+          "30": "30 días",
+          "90": "90 días",
+          "custom": "Rango personalizado"
+        },
+        "from": "Inicio",
+        "to": "Fin"
+      },
+      "tooltips": {
+        "cacheHit": "Porcentaje de peticiones servidas por caché exacto o semántico en el periodo.",
+        "cacheCost": "Costo acumulado de peticiones LLM (sin embeddings) en el periodo.",
+        "ragasCost": "Costo acumulado de las llamadas de evaluación RAGAS.",
+        "ragasCoverage": "Número de peticiones evaluadas por RAGAS respecto al volumen total de peticiones en el período.",
+        "savings": "Ahorro estimado gracias a los hits de caché, basado en el costo medio de un miss.",
+        "latencyP95": "Percentil 95 de tiempo de respuesta LLM (incluyendo retrieval).",
+        "ragQuality": "Síntesis de los scores RAGAS: cuanto más cerca de 100, mejor la respuesta.",
+        "faithfulness": "Fidelidad de la respuesta a las fuentes citadas (0-100).",
+        "answer_relevancy": "Pertinencia de la respuesta respecto a la pregunta (0-100).",
+        "context_precision": "Precisión del contexto aportado respecto a la pregunta (0-100).",
+        "context_recall": "Cobertura del contexto necesaria para responder (0-100).",
+        "feedback": "Porcentaje de respuestas marcadas \"Sí\" por los usuarios en el periodo.",
+        "feedbackReasons": "Distribución de motivos cuando la respuesta se marca como no coherente.",
+        "feedbackTimeline": "Tendencia de respuestas marcadas como coherentes (Sí)."
+      },
+      "learnMore": "Saber más",
+      "metrics": {
+        "faithfulness": "Fidelidad",
+        "answerRelevancy": "Relevancia de la respuesta",
+        "contextPrecision": "Precisión del contexto",
+        "contextRecall": "Cobertura del contexto"
+      },
+      "lists": {
+        "cachePacks": "Packs más costosos",
+        "cachePacksSubtitle": "Eficiencia de caché por pack",
+        "pack": "Pack",
+        "requests": "Peticiones",
+        "cacheHit": "Caché",
+        "cost": "Costo",
+        "model": "Modelo",
+        "ragasTitle": "Calidad RAG (RAGAS)",
+        "ragasSubtitle": "Puntuaciones globales de fidelidad y relevancia",
+        "cacheStatusTitle": "Estado de caché",
+        "cacheStatusSubtitle": "Hits, miss, desactivado",
+        "cacheGlobalTitle": "Resumen global de caché",
+        "cacheGlobalSubtitle": "Estadísticas consolidadas (sin packs)",
+        "cacheGlobalTracked": "Peticiones registradas",
+        "cacheGlobalModel": "Modelo más usado"
+      }
+    },
+    "cache": {
+      "title": "Configuración de caché LLM",
+      "subtitle": "Ajustar caché por tenant y pack.",
+      "form": {
+        "title": "Parámetros",
+        "subtitle": "TTL y umbrales semánticos."
+      },
+      "fields": {
+        "tenant": "Tenant",
+        "tenantPlaceholder": "Seleccionar tenant",
+        "pack": "ID de pack",
+        "packPlaceholder": "UUID (opcional)",
+        "enabled": "Caché activado",
+        "mode": "Modo",
+        "modes": {
+          "mixed": "Mixto",
+          "exact": "Solo exacto",
+          "semantic": "Solo semántico",
+          "disabled": "Desactivado"
+        },
+        "ttl": "TTL (segundos)",
+        "maxHits": "Máx hits",
+        "semanticThreshold": "Umbral semántico",
+        "semanticTopK": "Top K semántico",
+        "optional": "Opcional",
+        "ragasModel": "Modelo de evaluación RAGAS",
+        "ragasModelPlaceholder": "ej: openai/gpt-4o-mini",
+        "modelDefault": "Modelo por defecto (asistente)"
+      },
+      "actions": {
+        "save": "Guardar"
+      },
+      "help": {
+        "ttl": "Caducidad de respuestas en caché.",
+        "semantic": "Score mínimo para reutilizar caché semántico.",
+        "ragasModel": "Modelo LLM usado para calcular los scores RAGAS (evaluación).",
+        "costPrompt": "Coste prompt: ${value}/M tokens",
+        "costCompletion": "Coste completion: ${value}/M tokens",
+        "costImage": "Coste imagen: ${value}/K imágenes"
+      },
+      "status": {
+        "saved": "Guardado."
+      }
+    },
+    "providers": {
+      "title": "Modelos y proveedores",
+      "subtitle": "Catálogo y BYOK.",
+      "fields": {
+        "tenant": "Tenant",
+        "tenantPlaceholder": "Elegir tenant",
+        "provider": "Proveedor",
+        "providerPlaceholder": "Elegir proveedor",
+        "apiKey": "Clave API",
+        "apiKeyPlaceholder": "sk-...",
+        "extraConfig": "Config extra (JSON)",
+        "enabled": "Activo",
+        "updated": "Actualizado"
+      },
+      "actions": {
+        "save": "Guardar"
+      },
+      "status": {
+        "saved": "Guardado."
+      },
+      "errors": {
+        "invalidJson": "El JSON no es válido."
+      },
+      "credentials": {
+        "title": "Credenciales",
+        "subtitle": "Llaves cifradas, no se muestran completas.",
+        "listTitle": "Credenciales configuradas",
+        "listSubtitle": "BYOK por tenant."
+      },
+      "labels": {
+        "configured": "Configurado ({last})",
+        "missing": "Falta",
+        "enabled": "Activo",
+        "disabled": "Inactivo",
+        "empty": "Sin credenciales.",
+        "recommended": "Recomendado"
+      },
+      "models": {
+        "title": "Catálogo de modelos",
+        "subtitle": "Actualizado desde proveedores.",
+        "name": "Modelo",
+        "context": "Contexto",
+        "prompt": "Prompt /1M",
+        "completion": "Completion /1M",
+        "currency": "Moneda"
+      }
+    },
+    "optimizer": {
+      "title": "Aurora Optimizer",
+      "subtitle": "Analizar métricas y recomendaciones.",
+      "fields": {
+        "tenant": "Tenant",
+        "tenantPlaceholder": "Seleccionar tenant",
+        "pack": "ID de pack",
+        "packPlaceholder": "UUID (opcional)",
+        "period": "Periodo (días)",
+        "language": "Idioma",
+        "targetCache": "Tasa de caché objetivo",
+        "maxLatency": "Latencia P95 máx (ms)",
+        "costPer1k": "Costo máx /1k req (EUR)",
+        "minFaithfulness": "Fidelidad mínima",
+        "minRelevancy": "Relevancia mínima",
+        "alertEmail": "Correo de alerta",
+        "enableAlerts": "Habilitar alertas"
+      },
+      "actions": {
+        "run": "Lanzar análisis",
+        "save": "Guardar"
+      },
+      "status": {
+        "runScheduled": "Análisis programado.",
+        "saved": "Guardado."
+      },
+      "settings": {
+        "title": "Objetivos y umbrales",
+        "subtitle": "Valores de referencia."
+      },
+      "runs": {
+        "title": "Ejecuciones",
+        "subtitle": "Historial de análisis.",
+        "period": "Periodo",
+        "status": "Estado",
+        "trigger": "Disparador",
+        "created": "Creado",
+        "finished": "Finalizado"
+      },
+      "recommendations": {
+        "title": "Recomendaciones",
+        "subtitle": "Nunca aplicadas automáticamente.",
+        "category": "Categoría",
+        "metric": "Métrica",
+        "values": "Valores",
+        "confidence": "Confianza",
+        "status": "Estado",
+        "current": "Actual",
+        "target": "Objetivo"
+      },
+      "labels": {
+        "empty": "Sin recomendaciones."
+      }
+    }
+  }
+}

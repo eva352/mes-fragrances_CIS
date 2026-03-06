@@ -1,0 +1,22 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-9",
+  "description": "A component with a contact form and methods listed in columns, featuring input fields, checkboxes, and buttons for submissions alongside icons for email, phone, and office directions.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "checkbox",
+    "input",
+    "label",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact9",
+    "npm install lucide-react"
+  ]
+}

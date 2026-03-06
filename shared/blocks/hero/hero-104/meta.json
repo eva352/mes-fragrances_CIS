@@ -1,0 +1,18 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-104",
+  "description": "A component showcasing an interactive layout with a catchy headline, description, action buttons, benefits list, and a creative grid of images and data visualization with a video popup feature.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "dialog"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero104",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-299",
+  "description": "This component provides a comprehensive visualization of a system's architecture, detailing key features such as data hubs, contributor networks, and authorization processes, enhanced by icon representations for each element. It helps users understand connections and dependencies within the infrastructure, with an illustrative browser mockup for contextual reference.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://magicui.design/r/safari"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature299",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-250",
+  "description": "A component displaying a title, subtitle, and an animated, interactive illustration with networked CPUs and dynamic beams connecting them, laid out in a flexible column or row arrangement depending on screen size.",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature250",
+    "npm install lucide-react motion"
+  ]
+}

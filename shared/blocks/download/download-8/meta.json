@@ -1,0 +1,19 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-8",
+  "description": "This component displays a download block with a featured image, a title, an auto-detect download button with its last update date, and a list of download options for various platforms categorized in a 2-column layout.",
+  "dependencies": [
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "https://ui.aceternity.com/registry/glare-card.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download8",
+    "npm install lucide-react react-icons"
+  ]
+}

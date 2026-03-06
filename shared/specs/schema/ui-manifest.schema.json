@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aurora-stack.local/schema/ui-manifest.schema.json",
+  "title": "Aurora UI Manifest",
+  "type": "object",
+  "required": ["version", "items"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "string" },
+    "source": { "type": "string" },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "modes": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["website", "webapp"] }
+    },
+    "allowedIn": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["website", "webapp", "customBlock"] }
+    },
+    "items": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/item" }
+    }
+  },
+  "$defs": {
+    "item": {
+      "type": "object",
+      "required": ["key", "title", "group", "status", "allowedIn", "files"],
+      "additionalProperties": false,
+      "properties": {
+        "key": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "group": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["installed", "planned", "legacy"]
+        },
+        "allowedIn": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["website", "webapp", "customBlock"] }
+        },
+        "files": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
+

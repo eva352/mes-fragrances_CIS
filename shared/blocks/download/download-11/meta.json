@@ -1,0 +1,15 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-11",
+  "description": "A component displaying a download section with options for .MSI and .EXE files, Windows compatibility info, and dynamic bordered images.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "https://magicui.design/r/border-beam"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download11"
+  ]
+}

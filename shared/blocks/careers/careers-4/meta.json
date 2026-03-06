@@ -1,0 +1,14 @@
+{
+  "title": "Careers",
+  "category": "careers",
+  "slug": "careers-4",
+  "description": "A component displaying job openings with categories, titles, and locations, styled with a central heading and grid layout for job listings.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/careers4"
+  ]
+}

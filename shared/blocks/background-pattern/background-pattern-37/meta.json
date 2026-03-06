@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-37",
+  "description": "This component is designed to showcase a full-screen background with a visually engaging circuit board pattern, featuring gradient lines and an elliptical mask effect. It can be used as a backdrop for various user interface elements, enhancing the visual appeal of the application while allowing custom class styling through props.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern37"
+  ]
+}

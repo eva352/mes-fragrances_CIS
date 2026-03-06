@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/footer4
+npm install react-icons lucide-react

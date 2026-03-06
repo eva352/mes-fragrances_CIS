@@ -1,0 +1,15 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-7",
+  "description": "A 2-column FAQ block featuring a title, a supportive call-to-action with an external link, and a multi-expand accordion of questions and answers.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "accordion",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq7"
+  ]
+}

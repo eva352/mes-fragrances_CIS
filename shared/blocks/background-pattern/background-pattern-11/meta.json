@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-11",
+  "description": "This component renders a full-screen section with a diagonal cross grid background pattern, making it suitable for visually distinct layouts. It accepts a `className` prop for additional styling customization and includes a placeholder for further content integration.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern11"
+  ]
+}

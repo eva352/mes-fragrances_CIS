@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/gallery10
+npm install lucide-react

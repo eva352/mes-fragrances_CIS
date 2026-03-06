@@ -1,0 +1,20 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-1",
+  "description": "A component with a two-column layout, integrating a promotional header, bullet points with icons, overlapping avatars, company logos, and a detailed form for demo booking.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button",
+    "input",
+    "select"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact1",
+    "npm install lucide-react"
+  ]
+}

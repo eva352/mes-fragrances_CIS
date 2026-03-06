@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-6",
+  "description": "This component renders a full-screen background pattern with a top fade grid effect, providing a visually appealing design element. It allows for custom styling through an optional className prop, offering flexibility in integration with other components.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern6"
+  ]
+}

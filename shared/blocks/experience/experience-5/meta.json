@@ -1,0 +1,13 @@
+{
+  "title": "Experience",
+  "category": "experience",
+  "slug": "experience-5",
+  "description": "A component displays work experience entries in a 2-column layout, with logos, roles, companies, periods, and descriptions.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/experience5"
+  ]
+}

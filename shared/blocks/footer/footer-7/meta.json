@@ -1,0 +1,16 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-7",
+  "description": "A footer component with a logo, description, social icons, link sections, and legal info spread over two rows. Includes 3 columns of navigational links.",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer7",
+    "npm install react-icons"
+  ]
+}

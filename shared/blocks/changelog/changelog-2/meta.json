@@ -1,0 +1,19 @@
+{
+  "title": "Changelog",
+  "category": "changelog",
+  "slug": "changelog-2",
+  "description": "A changelog component with a title, NEW badge, description, email signup, and dated entries with images, headlines, and text links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "input"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/changelog2",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-1",
+  "description": "This component generates a full-screen background pattern with a radial gradient effect, applying customizable styles through optional class names. It features a placeholder pattern element and a visually striking top primary radial gradient.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern1"
+  ]
+}

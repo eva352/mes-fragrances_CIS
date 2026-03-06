@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-157",
+  "description": "A component displaying a \"Services\" header, a large title, and 2 columns each featuring an image, title, and description.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature157"
+  ]
+}

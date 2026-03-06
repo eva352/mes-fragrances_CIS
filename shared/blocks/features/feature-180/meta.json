@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-180",
+  "description": "A component contrasting two scenarios with/without a product through icons and text in a 2-column layout, highlighting benefits and downfalls.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature180",
+    "npm install lucide-react"
+  ]
+}

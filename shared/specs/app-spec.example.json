@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "kind": "aurora.app",
+  "project": {
+    "id": "aurora_stack",
+    "title": "AuroraStack",
+    "theme": {
+      "mode": "system",
+      "palette": "northern-light"
+    }
+  },
+  "shell": {
+    "layout": "sidebar",
+    "navigation": [
+      {
+        "id": "nav_dashboard",
+        "title": "Dashboard",
+        "path": "/dashboard"
+      },
+      {
+        "id": "nav_settings",
+        "title": "Settings",
+        "path": "/settings"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "page_dashboard",
+      "path": "/dashboard",
+      "title": "Dashboard",
+      "objective": "Donner une vue d’ensemble rapide.",
+      "description": "Sur cette page, l’admin voit les chiffres clés et l’activité récente.",
+      "successCriteria": [
+        "Les KPI principaux sont visibles immédiatement",
+        "Le graphique se charge sans erreur"
+      ],
+      "sections": [
+        {
+          "id": "sec_kpis",
+          "type": "custom",
+          "title": "KPIs",
+          "layout": {
+            "kind": "grid",
+            "options": {
+              "columns": 4,
+              "gap": "md"
+            }
+          },
+          "nodes": [
+            {
+              "id": "kpi_mrr",
+              "componentKey": "aurora-kpi-card",
+              "props": {
+                "label": "MRR",
+                "value": "$42,000",
+                "trend": "+12%"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sec_chart",
+          "type": "custom",
+          "title": "Revenue",
+          "layout": {
+            "kind": "stack",
+            "options": {
+              "gap": "md"
+            }
+          },
+          "nodes": [
+            {
+              "id": "revenue_line",
+              "componentKey": "chart",
+              "props": {
+                "variant": "line",
+                "height": 320
+              },
+              "bindings": {
+                "dataSource": "revenueByDay"
+              }
+            }
+          ]
+        }
+      ],
+      "dataSources": [
+        {
+          "id": "revenueByDay",
+          "kind": "http",
+          "endpoint": "/api/v1/metrics/revenue_by_day",
+          "notes": "L'agent IA doit créer l'endpoint + la logique métier."
+        }
+      ]
+    }
+  ]
+}

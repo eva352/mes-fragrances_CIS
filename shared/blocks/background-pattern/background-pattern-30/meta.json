@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-30",
+  "description": "This component renders a full-screen background pattern with radial gradients, designed to enhance visual appeal. It provides a placeholder for additional pattern content, allowing for customizable styling through optional class names.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern30"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-61",
+  "description": "A two-column layout component with an image on the left and descriptive text on the right, featuring large padding and text emphasis adjustments at different sizes.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature61"
+  ]
+}

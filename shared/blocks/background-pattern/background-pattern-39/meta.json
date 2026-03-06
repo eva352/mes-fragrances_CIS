@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-39",
+  "description": "The BackgroundPattern39 component creates a visually appealing section with a dynamic white grid and dots background, perfect for enhancing the aesthetics of a user interface. It allows for customization through additional class names and integrates seamlessly with other components by serving as a decorative and functional backdrop.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern39"
+  ]
+}

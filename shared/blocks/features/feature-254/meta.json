@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-254",
+  "description": "Interactive block with layered orbiting circles of images, a central message \"Connecting Devs,\" and a call-to-action button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "https://magicui.design/r/orbiting-circles"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature254",
+    "npm install lucide-react"
+  ]
+}

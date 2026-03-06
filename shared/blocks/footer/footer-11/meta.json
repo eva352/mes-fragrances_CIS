@@ -1,0 +1,16 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-11",
+  "description": "A component with a logo, menu links across 3 columns, social media icons, and a large image. Offers product, company, and legal info sections.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer11",
+    "npm install lucide-react"
+  ]
+}

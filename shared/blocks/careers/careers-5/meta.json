@@ -1,0 +1,16 @@
+{
+  "title": "Careers",
+  "category": "careers",
+  "slug": "careers-5",
+  "description": "A component displaying job openings with titles, categories, descriptions, and details on type and location. It has a header and lists jobs in a single column.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/careers5",
+    "npm install lucide-react"
+  ]
+}

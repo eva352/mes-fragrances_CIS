@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/contact4
+npm install embla-carousel-fade

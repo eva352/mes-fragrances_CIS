@@ -1,0 +1,17 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-6",
+  "description": "A component displaying download options for different software versions and platforms, highlighting the latest version with a badge. Offers a two-column layout for platform links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download6",
+    "npm install lucide-react"
+  ]
+}

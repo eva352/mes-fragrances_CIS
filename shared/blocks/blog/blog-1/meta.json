@@ -1,0 +1,15 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-1",
+  "description": "A component with a blog posts layout, featuring a category filter and a 1-3 column grid of posts with summaries, images, and labels.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "select"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog1"
+  ]
+}

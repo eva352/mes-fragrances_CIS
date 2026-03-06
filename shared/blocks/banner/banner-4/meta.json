@@ -1,0 +1,17 @@
+{
+  "title": "Banner",
+  "category": "banner",
+  "slug": "banner-4",
+  "description": "An informational banner component with a title, description, and link button. Includes an icon and close function.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/banner4",
+    "npm install lucide-react"
+  ]
+}

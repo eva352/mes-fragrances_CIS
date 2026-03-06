@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-7",
+  "description": "This component creates a visually dynamic background with a grid pattern and a radial fade effect, allowing users to apply customizable styles through the `className` prop. It is ideal for enhancing the aesthetic appeal of an interface where a patterned backdrop is desired.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern7"
+  ]
+}

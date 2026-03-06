@@ -1,0 +1,13 @@
+{
+  "title": "Case-study",
+  "category": "case-study",
+  "slug": "case-study-8",
+  "description": "The component \"CaseStudy8\" is designed to present a detailed narrative with accompanying visuals, including an image and structured text sections for titles, paragraphs, and lists. It also incorporates an informational sidebar that displays company-related details such as logo, size, location, and website, offering users comprehensive content and context in one cohesive block.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/case-study8"
+  ]
+}

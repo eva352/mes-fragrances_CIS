@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-272",
+  "description": "A 3-step guide block with a centered title, intro text, and a grid of 3 columns each detailing a step. Features arrows pointing between steps.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.aceternity.com/registry/background-beams.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature272",
+    "npm install lucide-react"
+  ]
+}

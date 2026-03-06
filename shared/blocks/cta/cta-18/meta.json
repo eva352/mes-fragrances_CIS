@@ -1,0 +1,17 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-18",
+  "description": "A call-to-action component with two columns: text (with a title and buttons) on one side, and unique, angled placeholder images on the other.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta18",
+    "npm install lucide-react"
+  ]
+}

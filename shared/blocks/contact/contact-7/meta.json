@@ -1,0 +1,16 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-7",
+  "description": "A contact block with title, description, and 3 columns for email, address, and phone, each with icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact7",
+    "npm install lucide-react"
+  ]
+}

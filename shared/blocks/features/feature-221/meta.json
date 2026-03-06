@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-221",
+  "description": "A component showcasing 4 unique features in a 2-column layout with gradient badges, detailed descriptions, and a \"Learn More\" button. It includes a prominent title and subtitle.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature221",
+    "npm install lucide-react"
+  ]
+}

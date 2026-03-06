@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-181",
+  "description": "A component showcasing four key features in a grid layout. Each card has a large masked index number, feature details, and a time badge.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature181",
+    "npm install lucide-react"
+  ]
+}

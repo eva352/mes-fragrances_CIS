@@ -1,0 +1,4 @@
+npx shadcn add @shadcnblocks/hero40
+npm install lucide-react
+npx shadcn@latest add https://magicui.design/r/marquee
+npx shadcn@latest add button

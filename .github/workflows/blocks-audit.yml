@@ -1,0 +1,49 @@
+name: Blocks Import Audit
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "frontend/blocks/registry/**"
+      - "shared/blocks/**"
+      - "scripts/blocks/audit_block_imports.py"
+      - "scripts/blocks/publish-to-frontend.mjs"
+      - "frontend/components/**"
+      - "frontend/lib/**"
+      - "frontend/hooks/**"
+  pull_request:
+    paths:
+      - "frontend/blocks/registry/**"
+      - "shared/blocks/**"
+      - "scripts/blocks/audit_block_imports.py"
+      - "scripts/blocks/publish-to-frontend.mjs"
+      - "frontend/components/**"
+      - "frontend/lib/**"
+      - "frontend/hooks/**"
+
+jobs:
+  audit-block-imports:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Publish blocks to frontend (dry check)
+        run: node scripts/blocks/publish-to-frontend.mjs
+
+      - name: Ensure published outputs are committed
+        run: git diff --exit-code
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run blocks import audit
+        run: python3 scripts/blocks/audit_block_imports.py

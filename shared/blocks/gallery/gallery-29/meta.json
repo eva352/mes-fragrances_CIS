@@ -1,0 +1,14 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-29",
+  "description": "A component displaying a gallery title, description, and a marquee of images with a central featured image that reveals a caption on hover, surrounded by fading edges and decorative skew elements.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "https://magicui.design/r/marquee"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery29"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-209",
+  "description": "A gallery component with a text and button panel on left and image carousel on right, including image thumbnails for selection and a patterned background overlay.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature209",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-16",
+  "description": "A component displaying a carousel and tabs for navigating items, which comprise an image, title, description, and note. Features include dynamic tab indicators and previous/next buttons.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "carousel",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery16"
+  ]
+}

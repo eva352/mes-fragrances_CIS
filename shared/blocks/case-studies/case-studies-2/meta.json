@@ -1,0 +1,14 @@
+{
+  "title": "Case-studies",
+  "category": "case-studies",
+  "slug": "case-studies-2",
+  "description": "This component displays case studies highlighting user testimonials and key performance metrics such as satisfaction rates and ROI improvement. It features visual and text elements including user quotes, images, and company logos to illustrate the impact and effectiveness of a product or service.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/case-studies2"
+  ]
+}

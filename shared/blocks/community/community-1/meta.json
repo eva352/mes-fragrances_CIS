@@ -1,0 +1,17 @@
+{
+  "title": "Community",
+  "category": "community",
+  "slug": "community-1",
+  "description": "A component featuring a logo, a call-to-action for joining a community, and social buttons for Twitter, GitHub, and Discord.",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/community1",
+    "npm install react-icons"
+  ]
+}

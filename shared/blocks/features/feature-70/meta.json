@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-70",
+  "description": "A carousel-based component showcasing features with descriptions, navigable by interactive list items. Layout includes an image carousel and a detailed description list on two columns.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature70",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-4",
+  "description": "A component featuring a main title, a card with text and an oversized image, and a 2-column layout with another card and a quote box.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature4",
+    "npm install lucide-react"
+  ]
+}

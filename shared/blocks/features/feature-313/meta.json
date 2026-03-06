@@ -1,0 +1,20 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-313",
+  "description": "This component features a visually engaging card grid and an interactive video section, allowing users to explore various topics through dynamic media content. It supports image and video displays, with animations and user-interactive elements for enhanced user experience.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card",
+    "dialog"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature313",
+    "npm install framer-motion lucide-react"
+  ]
+}

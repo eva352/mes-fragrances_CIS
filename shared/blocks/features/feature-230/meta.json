@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-230",
+  "description": "A component showcasing cloud service benefits using a large header, description, and 4 feature callouts with icons, arranged in a 4:6 column layout.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature230",
+    "npm install lucide-react"
+  ]
+}

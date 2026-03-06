@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-92",
+  "description": "A component showcasing tools integrations and social media links in a 3-column layout followed by a 6-icon row for connectivity options.",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature92",
+    "npm install react-icons"
+  ]
+}

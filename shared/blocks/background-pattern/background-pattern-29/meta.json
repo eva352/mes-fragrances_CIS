@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-29",
+  "description": "This component renders a full-screen background pattern with a top radial glow effect, designed to enhance the visual appeal of any interface. It allows customization through additional class names and includes a placeholder for pattern elements.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern29"
+  ]
+}

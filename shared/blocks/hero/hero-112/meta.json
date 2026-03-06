@@ -1,0 +1,19 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-112",
+  "description": "A component showcases tutorials with a video dialog, user join counter, course stats, and membership CTA. It uses a two-column layout with icons and avatars.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button",
+    "dialog"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero112",
+    "npm install lucide-react"
+  ]
+}

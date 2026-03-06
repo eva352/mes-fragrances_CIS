@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-74",
+  "description": "A component with a title, description, and 2-column grid each hosting an image and text describing different features, with a \"Book a demo\" link.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature74",
+    "npm install lucide-react"
+  ]
+}

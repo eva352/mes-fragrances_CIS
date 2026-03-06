@@ -1,0 +1,16 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-4",
+  "description": "A blog component with a header, \"View all posts\" button, and a grid layout (up to 3 columns) displaying posts with image, label, title, summary, author avatar, and publish date.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog4"
+  ]
+}

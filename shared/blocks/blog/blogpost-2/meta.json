@@ -1,0 +1,17 @@
+{
+  "title": "Blogpost",
+  "category": "blog",
+  "slug": "blogpost-2",
+  "description": "A component with a sticky aside featuring a back link, title, and author&#x27;s avatar, paired with a main article including an image and text content.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blogpost2",
+    "npm install lucide-react"
+  ]
+}

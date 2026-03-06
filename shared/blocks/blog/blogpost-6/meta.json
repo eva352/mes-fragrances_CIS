@@ -1,0 +1,19 @@
+{
+  "title": "Blogpost",
+  "category": "blog",
+  "slug": "blogpost-6",
+  "description": "A blog post component with dynamic breadcrumb navigation, author bio, social sharing, and interactive chapter selection.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "breadcrumb",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blogpost6",
+    "npm install lucide-react"
+  ]
+}

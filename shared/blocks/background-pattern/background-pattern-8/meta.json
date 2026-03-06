@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-8",
+  "description": "This component, named BackgroundPattern8, is designed to create a visually appealing full-screen background with a fade grid pattern effect. It includes a customizable className prop for flexible styling and incorporates a radial gradient mask to enhance the design.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern8"
+  ]
+}

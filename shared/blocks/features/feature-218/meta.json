@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-218",
+  "description": "A component featuring two columns with a 1:2 ratio, showcasing a promotional message and a call-to-action button on the left, and an image with a unique fade effect on the right.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature218",
+    "npm install lucide-react"
+  ]
+}

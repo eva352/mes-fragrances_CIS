@@ -1,0 +1,23 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-22",
+  "description": "A component features a 3-column layout, with the first two columns merged to showcase an app download CTA and mockups, and the third column for email subscriptions.",
+  "dependencies": [
+    "@hookform/resolvers",
+    "lucide-react",
+    "react-hook-form",
+    "react-icons",
+    "zod"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "field",
+    "input"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta22",
+    "npm install @hookform/resolvers lucide-react react-hook-form react-icons zod"
+  ]
+}

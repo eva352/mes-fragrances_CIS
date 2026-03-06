@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/case-study3
+npm install lucide-react react-icons

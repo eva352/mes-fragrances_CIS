@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-285",
+  "description": "A component with a 2-column layout featuring a brand logo, title, text, and button on one side and dual vertical marquees with interactive images on the other. Unique for image blur on hover.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "https://magicui.design/r/marquee"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature285",
+    "npm install framer-motion lucide-react"
+  ]
+}

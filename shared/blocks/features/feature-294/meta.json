@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-294",
+  "description": "This component showcases 5 features with icons, titles, and descriptions, arranged in up to 3 columns, and includes a sparkle effect background.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature294",
+    "npm install lucide-react"
+  ]
+}

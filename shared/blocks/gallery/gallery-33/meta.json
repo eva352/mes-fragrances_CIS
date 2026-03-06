@@ -1,0 +1,17 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-33",
+  "description": "A gallery component showcasing items in a grid that adjusts from 1 to 3 columns based on screen size. Features hover effects and links to more details.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.aceternity.com/registry/lens.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery33",
+    "npm install lucide-react"
+  ]
+}

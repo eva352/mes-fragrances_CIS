@@ -1,0 +1,18 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-9",
+  "description": "A component for software downloads showcases features, buy/download options, platform compatibility icons in 2 columns.",
+  "dependencies": [
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download9",
+    "npm install lucide-react react-icons"
+  ]
+}

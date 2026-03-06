@@ -1,0 +1,15 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-30",
+  "description": "This component displays overlapping avatars, a bold title, a descriptive paragraph, and a featured button with a playful tagline next to a custom line graphic.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta30"
+  ]
+}

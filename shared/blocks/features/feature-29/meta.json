@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-29",
+  "description": "A component with a 2-column layout including images and text blocks, showcasing features via placeholders and descriptions.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature29"
+  ]
+}

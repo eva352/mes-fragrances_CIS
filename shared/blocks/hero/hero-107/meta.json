@@ -1,0 +1,18 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-107",
+  "description": "A component with a dual-column layout, featuring an attention-grabbing headline, a decorative button with unique animation, and a side image embellished with a \"Hire Me\" call-to-action button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero107",
+    "npm install lucide-react"
+  ]
+}

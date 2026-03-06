@@ -1,0 +1,13 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-28",
+  "description": "A component displaying five tech blog posts in a grid with adaptive column counts based on screen size, featuring prominent display for the first post.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog28"
+  ]
+}

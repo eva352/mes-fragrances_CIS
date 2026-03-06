@@ -1,0 +1,24 @@
+{
+  "title": "Book-a-demo",
+  "category": "book-a-demo",
+  "slug": "book-a-demo-1",
+  "description": "This component is designed to facilitate user engagement by providing a form for booking a demo, along with showcasing key benefits and a carousel of company logos. It features input fields for user information and preferences, a select dropdown for source discovery, and incorporates motion effects for enhanced visual presentation.",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "card",
+    "input",
+    "label",
+    "select",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/book-a-demo1",
+    "npm install lucide-react motion"
+  ]
+}

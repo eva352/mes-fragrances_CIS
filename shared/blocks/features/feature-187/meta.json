@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-187",
+  "description": "A component displays a 3-step process with titles and descriptions in a three-column layout. Each step is uniquely marked and connected by a visual guide.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature187"
+  ]
+}

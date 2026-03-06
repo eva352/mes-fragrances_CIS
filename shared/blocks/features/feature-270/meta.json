@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-270",
+  "description": "A component displaying customizable feature blocks with images, titles, and descriptions in a grid of 2 or 3 columns, depending on screen size.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature270",
+    "npm install motion"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-14",
+  "description": "A blog component showcasing 1 main post in a 2-column layout and 3 popular posts in a 3-column layout, featuring images, categories, and summaries.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog14"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Careers",
+  "category": "careers",
+  "slug": "careers-3",
+  "description": "A block displaying job openings by category, with titles, descriptions, locations, and links. Uses badges for categories and icons for location/navigation.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/careers3",
+    "npm install lucide-react"
+  ]
+}

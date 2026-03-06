@@ -1,0 +1,22 @@
+{
+  "title": "Book-a-demo",
+  "category": "book-a-demo",
+  "slug": "book-a-demo-2",
+  "description": "This component is a demonstration booking block that includes a contact form, a section for animated testimonials, and a footer highlighting trusted partners or clients. The contact form allows users to enter personal details and company information, while the testimonials section uses animations to display user feedback from various organizations.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "label",
+    "select",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/book-a-demo2",
+    "npm install framer-motion lucide-react"
+  ]
+}

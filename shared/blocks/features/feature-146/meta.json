@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-146",
+  "description": "A component featuring title sections, text descriptions, and images across two rows with unique dashed border decorations.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature146"
+  ]
+}

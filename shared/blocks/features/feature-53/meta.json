@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-53",
+  "description": "A component displaying a grid of logos and titles, transitioning from 2 to 4 columns, with unique numbering for each item.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature53"
+  ]
+}

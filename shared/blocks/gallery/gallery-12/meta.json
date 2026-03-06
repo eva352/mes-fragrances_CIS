@@ -1,0 +1,18 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-12",
+  "description": "A component displaying a carousel of features with images, titles, and descriptions, navigable via prev/next buttons. It includes a heading and subtext above the carousel.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery12",
+    "npm install lucide-react"
+  ]
+}

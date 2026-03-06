@@ -1,0 +1,19 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-27",
+  "description": "A footer block with animated visibility, featuring a \"Connect with Me\" call-to-action, social links with hover effects, and copyright information.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer27",
+    "npm install framer-motion lucide-react"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-206",
+  "description": "A component featuring a title, description, and a grid of images paired with texts to explain various features. Grid adjusts from 2 to 4 columns.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature206"
+  ]
+}

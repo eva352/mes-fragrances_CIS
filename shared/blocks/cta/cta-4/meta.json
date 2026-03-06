@@ -1,0 +1,17 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-4",
+  "description": "A call-to-action block with a title, description, button, and list of features. Uses a 2-column layout within a larger container.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta4",
+    "npm install lucide-react"
+  ]
+}

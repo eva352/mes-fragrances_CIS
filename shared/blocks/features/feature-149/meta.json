@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-149",
+  "description": "A component featuring dual interactive panels with a central decorative divider, expanding on hover. Each contains a button, heading, and text, against a backdrop image with gradient overlays.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature149"
+  ]
+}

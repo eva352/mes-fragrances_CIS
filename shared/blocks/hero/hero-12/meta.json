@@ -1,0 +1,17 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-12",
+  "description": "A promotional component with a unique radial gradient background, a centered layout featuring a logo, a bold title with styled text, body text, two call-to-action buttons, and a showcase area for technology logos with hover effects.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero12",
+    "npm install lucide-react"
+  ]
+}

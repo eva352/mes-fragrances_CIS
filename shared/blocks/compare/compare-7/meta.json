@@ -1,0 +1,15 @@
+{
+  "title": "Compare",
+  "category": "compare",
+  "slug": "compare-7",
+  "description": "A comparison table component with 3 columns highlighting features of two frameworks with tooltips for additional info.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "table",
+    "tooltip"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/compare7"
+  ]
+}

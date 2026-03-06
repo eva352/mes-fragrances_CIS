@@ -1,0 +1,21 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-5",
+  "description": "A component providing options to download software, with tabs for Linux, MacOS, and a waitlist for Windows. Features version selection and size details.",
+  "dependencies": [
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "separator",
+    "tabs",
+    "https://www.kibo-ui.com/r/snippet.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download5",
+    "npm install lucide-react react-icons"
+  ]
+}

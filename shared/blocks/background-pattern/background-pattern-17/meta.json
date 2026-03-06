@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-17",
+  "description": "This component creates a visually appealing background pattern using a diagonal cross grid with a radial fade effect, set to fill a full-screen height layout. It supports additional customization through optional class names and integrates a placeholder for further content display.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern17"
+  ]
+}

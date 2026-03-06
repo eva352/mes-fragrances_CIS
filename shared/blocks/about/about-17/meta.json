@@ -1,0 +1,13 @@
+{
+  "title": "About",
+  "category": "about",
+  "slug": "about-17",
+  "description": "A seven-column profile section with role and timezone info, bio text, interactive tab navigation, and tab-controlled image display.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/about17"
+  ]
+}

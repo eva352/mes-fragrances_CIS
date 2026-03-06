@@ -1,0 +1,14 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-5",
+  "description": "A FAQ component with a badge, heading, and description at the top, followed by a list of questions and answers presented in a single-column layout. Each item features a numeric label.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq5"
+  ]
+}

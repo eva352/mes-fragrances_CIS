@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-34",
+  "description": "This component displays a heading, a subheading, and a 3-column layout with a mix of images, texts, and a grid showcasing numeric values and icons.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature34"
+  ]
+}

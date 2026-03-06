@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-322",
+  "description": "This component, named `Feature322`, highlights several features and includes a testimonial, all enhanced with animations using \"framer-motion\" to create an engaging user experience. It consists of interactive feature cards that display dynamic content such as titles, subtitles, statistics, and visuals, along with an animated scroll progress indicator and a testimonial section to offer a comprehensive overview.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature322",
+    "npm install framer-motion"
+  ]
+}

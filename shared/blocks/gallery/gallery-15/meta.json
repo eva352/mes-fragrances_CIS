@@ -1,0 +1,19 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-15",
+  "description": "A gallery component showcasing services with carousel functionality, navigation buttons, and a progress indicator.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery15",
+    "npm install lucide-react"
+  ]
+}

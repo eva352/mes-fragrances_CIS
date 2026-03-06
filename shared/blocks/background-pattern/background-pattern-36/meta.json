@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-36",
+  "description": "A component that creates a visually interesting background pattern using a combination of linear gradients and radial masks, designed to mimic a circuit board appearance. Ideal for adding dynamic visual flair to a full-page layout while allowing custom styling through class name overrides.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern36"
+  ]
+}

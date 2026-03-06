@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-78",
+  "description": "Feature block with tabs, showcasing three features, each with an image, title, description. Features a demo link with an animated arrow icon.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature78",
+    "npm install lucide-react"
+  ]
+}

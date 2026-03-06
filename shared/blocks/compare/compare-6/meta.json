@@ -1,0 +1,18 @@
+{
+  "title": "Compare",
+  "category": "compare",
+  "slug": "compare-6",
+  "description": "A component displaying a comparative analysis of models in a table with tabs for model selection. Features statue indicators and fixed columns.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "table",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/compare6",
+    "npm install lucide-react"
+  ]
+}

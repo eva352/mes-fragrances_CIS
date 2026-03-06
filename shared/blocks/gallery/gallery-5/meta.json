@@ -1,0 +1,19 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-5",
+  "description": "A feature gallery component with a carousel layout, toggles for selecting features, and next/prev buttons. It displays items in two columns, with icons, text, and images.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "carousel",
+    "toggle-group"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery5",
+    "npm install lucide-react"
+  ]
+}

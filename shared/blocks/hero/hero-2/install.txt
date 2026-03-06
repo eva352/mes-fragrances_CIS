@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/hero30
+npx shadcn@latest add button

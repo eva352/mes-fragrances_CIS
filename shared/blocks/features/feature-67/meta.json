@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-67",
+  "description": "A component displaying a group title and a 2-column grid of 6 feature cards, each with an icon, title, and description.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature67",
+    "npm install lucide-react"
+  ]
+}

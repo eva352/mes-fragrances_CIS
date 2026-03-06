@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-10",
+  "description": "A block titled \"Why Us?\" with a subtitle, arranged in up to 4 columns featuring icons for Performance, Innovation, Quality, and Accessibility, each with a brief description.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature10",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "About",
+  "category": "about",
+  "slug": "about-28",
+  "description": "A two-column about section with alternating image and text blocks, featuring staggered image pairs and multi-paragraph text with optional CTA.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/about28"
+  ]
+}

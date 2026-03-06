@@ -1,0 +1,20 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-10",
+  "description": "A component featuring a contact form with a title, decorative dashed line separator, address/email/social links, and an inquiry form with fields for name, email, company, employee count, and message.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "label",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact10",
+    "npm install lucide-react"
+  ]
+}

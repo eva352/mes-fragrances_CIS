@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-256",
+  "description": "A component displaying developer tools and guides, with two distinct sections. Tools section has a 2-3 column layout with icons; Guides use a 1-2 column format with text.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "https://ui.aceternity.com/registry/card-spotlight.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature256"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-4",
+  "description": "This component creates a full-screen background with a diagonal fade grid pattern using CSS gradients and masking techniques. It allows for additional styling through an optional className prop and includes a placeholder for pattern customization.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern4"
+  ]
+}

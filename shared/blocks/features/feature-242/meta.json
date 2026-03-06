@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-242",
+  "description": "A carousel block with testimonials, navigation arrows, and a current indicator, featuring interactive elements and overlaid text on images.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature242",
+    "npm install lucide-react"
+  ]
+}

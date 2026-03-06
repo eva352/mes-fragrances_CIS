@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-57",
+  "description": "A component showcasing a feature list with an image carousel. It has selectable tabs that scroll images into view and update dynamically.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature57",
+    "npm install lucide-react"
+  ]
+}

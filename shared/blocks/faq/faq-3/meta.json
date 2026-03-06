@@ -1,0 +1,14 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-3",
+  "description": "A FAQ component with collapsible questions, a support section with avatars and a contact button.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "accordion"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq3"
+  ]
+}

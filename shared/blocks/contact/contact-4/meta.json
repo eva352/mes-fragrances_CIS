@@ -1,0 +1,17 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-4",
+  "description": "A contact component with a title, introduction, 3-column layout for different contact options, and a carousel showcasing locations with maps and details.",
+  "dependencies": [
+    "embla-carousel-fade"
+  ],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact4",
+    "npm install embla-carousel-fade"
+  ]
+}

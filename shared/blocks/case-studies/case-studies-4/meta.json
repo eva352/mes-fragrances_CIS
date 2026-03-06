@@ -1,0 +1,18 @@
+{
+  "title": "Case-studies",
+  "category": "case-studies",
+  "slug": "case-studies-4",
+  "description": "This component displays a case study block highlighting significant improvements and achievements, featuring key statistics, an author profile, and a summary. It includes a call-to-action button that guides users to read the full story, making it useful for showcasing success stories or customer testimonials.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/case-studies4",
+    "npm install lucide-react"
+  ]
+}

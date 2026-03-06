@@ -1,0 +1,24 @@
+{
+  "title": "Ecommerce-footer",
+  "category": "footer",
+  "slug": "ecommerce-footer-20",
+  "description": "This component is a versatile and interactive footer block designed to enhance user engagement through features like a newsletter subscription form and social media links. It organizes helpful site links, payment methods, and additional footer information, making it a comprehensive footer solution for any web application.",
+  "dependencies": [
+    "@hookform/resolvers",
+    "lucide-react",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "utils",
+    "accordion",
+    "button",
+    "field",
+    "input-group",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/ecommerce-footer20",
+    "npm install @hookform/resolvers lucide-react react-hook-form zod"
+  ]
+}

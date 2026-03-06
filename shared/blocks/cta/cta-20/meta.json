@@ -1,0 +1,15 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-20",
+  "description": "A call-to-action block with centered text, a large button labeled \"Get Started,\" flanked by separators, within a single-column layout.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta20"
+  ]
+}

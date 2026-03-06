@@ -1,0 +1,19 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-19",
+  "description": "Component displays a carousel of images with overlay text & a \"Know More\" link. Offers animated entrances and card effects.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react",
+    "swiper"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery19",
+    "npm install framer-motion lucide-react swiper"
+  ]
+}

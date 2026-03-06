@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-20",
+  "description": "This component creates a full-screen background pattern featuring a right-fade dashed grid effect, offering a distinctive and visually engaging backdrop for various applications. It integrates a customizable placeholder element to enhance functionality, making it ideal for layouts that require an interactive or decorative background feature.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern20"
+  ]
+}

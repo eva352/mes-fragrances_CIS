@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-65",
+  "description": "A component featuring a grid of four columns, displaying categorized items with expandable sections for detailed content and tags. Each item includes an icon, title, and customizable color bar.",
+  "dependencies": [
+    "clsx",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature65",
+    "npm install clsx lucide-react"
+  ]
+}

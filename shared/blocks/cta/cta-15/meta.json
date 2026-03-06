@@ -1,0 +1,14 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-15",
+  "description": "A component featuring a call to action with gradient background, text, and buttons on one side, and an image with a subtle overlay effect on the other. Designed in a two-column layout that adjusts to single column on smaller screens.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta15"
+  ]
+}

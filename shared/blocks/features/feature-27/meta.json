@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-27",
+  "description": "A component featuring an \"Overview\" badge, centered title, and text, followed by two columns of images with captions, and a full-width image with a caption.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature27"
+  ]
+}

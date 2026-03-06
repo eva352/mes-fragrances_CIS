@@ -1,0 +1,19 @@
+{
+  "title": "Feature220a",
+  "category": "features",
+  "slug": "feature-220a",
+  "description": "A component featuring badges, headings, text, a large button, and a video. It includes stats in a 3-column layout, a dotted background pattern, and primary color highlights.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature220a",
+    "npm install lucide-react"
+  ]
+}

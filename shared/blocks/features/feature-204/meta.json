@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-204",
+  "description": "A split layout component with an image on one side and text areas alongside features on the other, including a call-to-action button and icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature204",
+    "npm install lucide-react"
+  ]
+}

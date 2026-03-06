@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/feature289
+npm install lucide-react radix-ui qss motion

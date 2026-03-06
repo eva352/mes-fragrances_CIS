@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-91",
+  "description": "Two-column feature block, contrasting \"Team Leads\" and \"Developers\" with icons, links, and bordered list items.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature91",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-2",
+  "description": "A component displaying download options for desktop, iOS, and Android, alongside descriptions and buttons/links for each platform, arranged in a three-column layout.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download2",
+    "npm install lucide-react"
+  ]
+}

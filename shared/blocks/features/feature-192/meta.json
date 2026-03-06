@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-192",
+  "description": "An accordion component presenting features with selectable items on one side and corresponding images on the other. It includes dynamic image display based on selection.",
+  "dependencies": [],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature192"
+  ]
+}

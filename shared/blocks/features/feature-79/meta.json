@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-79",
+  "description": "A feature block with a tagline, title, and description, followed by a grid of one main and three smaller linked feature items, each with hover effects and directional arrows.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature79",
+    "npm install lucide-react"
+  ]
+}

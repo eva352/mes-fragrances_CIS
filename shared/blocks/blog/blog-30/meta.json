@@ -1,0 +1,18 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-30",
+  "description": "A component displaying blog posts in a column layout, including images, titles, dates, and descriptions. Features a \"Read\" button with an arrow icon.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog30",
+    "npm install lucide-react"
+  ]
+}

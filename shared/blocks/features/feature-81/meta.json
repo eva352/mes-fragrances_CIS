@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-81",
+  "description": "A component showcasing a feature group with a tagline, title, and description. Includes a 4-column grid with clickable images and \"Read more\" links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature81",
+    "npm install lucide-react"
+  ]
+}

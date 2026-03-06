@@ -1,0 +1,18 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-22",
+  "description": "An interactive gallery block with coverflow effect, auto-slide feature, and social media links. Displays images in a carousel, each paired with name and role. Includes left/right navigation buttons.",
+  "dependencies": [
+    "lucide-react",
+    "react-icons",
+    "swiper"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery22",
+    "npm install lucide-react react-icons swiper"
+  ]
+}

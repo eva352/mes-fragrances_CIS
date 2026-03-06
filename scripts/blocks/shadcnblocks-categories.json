@@ -1,0 +1,145 @@
+{
+  "about": [
+    "about"
+  ],
+  "hero": [
+    "hero"
+  ],
+  "features": [
+    "feature",
+    "features"
+  ],
+  "pricing": [
+    "pricing",
+    "rate-card"
+  ],
+  "faq": [
+    "faq"
+  ],
+  "contact": [
+    "contact"
+  ],
+  "testimonial": [
+    "testimonial",
+    "testimonials"
+  ],
+  "logos": [
+    "logos",
+    "logo"
+  ],
+  "stats": [
+    "stats",
+    "stats-card"
+  ],
+  "process": [
+    "process"
+  ],
+  "team": [
+    "team"
+  ],
+  "services": [
+    "service",
+    "services"
+  ],
+  "gallery": [
+    "gallery"
+  ],
+  "reviews": [
+    "reviews"
+  ],
+  "trust-strip": [
+    "trust-strip"
+  ],
+  "banner": [
+    "banner"
+  ],
+  "promo-banner": [
+    "promo-banner"
+  ],
+  "background-pattern": [
+    "background-pattern"
+  ],
+  "cta": [
+    "cta"
+  ],
+  "navbar": [
+    "navbar"
+  ],
+  "footer": [
+    "footer",
+    "ecommerce-footer"
+  ],
+  "blog": [
+    "blog"
+  ],
+  "blog-post": [
+    "blogpost",
+    "blog-post"
+  ],
+  "case-studies": [
+    "case-studies"
+  ],
+  "case-study": [
+    "case-study"
+  ],
+  "awards": [
+    "awards"
+  ],
+  "industries": [
+    "industries"
+  ],
+  "integration": [
+    "integration"
+  ],
+  "resources": [
+    "resources"
+  ],
+  "resource": [
+    "resource"
+  ],
+  "project": [
+    "project"
+  ],
+  "projects": [
+    "projects"
+  ],
+  "experience": [
+    "experience"
+  ],
+  "timeline": [
+    "timeline"
+  ],
+  "community": [
+    "community"
+  ],
+  "careers": [
+    "careers"
+  ],
+  "changelog": [
+    "changelog"
+  ],
+  "compare": [
+    "compare"
+  ],
+  "compare-products": [
+    "compare-products"
+  ],
+  "book-a-demo": [
+    "book-a-demo"
+  ],
+  "download": [
+    "download"
+  ],
+  "waitlist": [
+    "waitlist"
+  ],
+  "signup": [
+    "signup"
+  ],
+  "incentives": [
+    "incentives"
+  ],
+  "offer-modal": [
+    "offer-modal"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-25",
+  "description": "This component generates a visually appealing background pattern with a bottom-left fade dashed grid effect, suitable for enhancing the design of user interfaces. It allows customization through the `className` prop and utilizes a placeholder for additional content placement.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern25"
+  ]
+}

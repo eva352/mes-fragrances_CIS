@@ -1,0 +1,16 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-17",
+  "description": "A component showcases blog articles with filtering. Layout includes an article display area (3-column wide) and a category filter sidebar (1-column), plus introductory text. Features dynamic filtering by category.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog17"
+  ]
+}

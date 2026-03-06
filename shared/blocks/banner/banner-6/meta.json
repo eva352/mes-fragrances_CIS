@@ -1,0 +1,18 @@
+{
+  "title": "Banner",
+  "category": "banner",
+  "slug": "banner-6",
+  "description": "A dismissible banner featuring overlapping avatars, a text description, and a close button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/banner6",
+    "npm install lucide-react"
+  ]
+}

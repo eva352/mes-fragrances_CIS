@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-249",
+  "description": "A component displaying a large, animated title with gradient and a below image, structured in a single column layout.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://magicui.design/r/aurora-text"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature249",
+    "npm install motion"
+  ]
+}

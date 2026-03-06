@@ -1,0 +1,20 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-12",
+  "description": "A blog preview block with a header, three article cards in a 3-column layout, and a \"View All Blogs\" button. Each card includes an image, title, summary, author avatar, and read time.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "badge",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog12",
+    "npm install lucide-react"
+  ]
+}

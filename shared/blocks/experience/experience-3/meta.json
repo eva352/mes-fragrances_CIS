@@ -1,0 +1,17 @@
+{
+  "title": "Experience",
+  "category": "experience",
+  "slug": "experience-3",
+  "description": "A component displaying professional experience with a title, introduction text, download resume button, last updated date, and a list of job positions with descriptions and periods.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/experience3",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/blogpost7
+npm install framer-motion

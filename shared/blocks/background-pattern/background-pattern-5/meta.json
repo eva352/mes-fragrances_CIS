@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-5",
+  "description": "This component creates a full-screen background pattern with a diagonal fade grid effect, ideal for enhancing the visual appeal of a user interface. It utilizes a linear gradient and radial mask to achieve the design, allowing for customization through the `className` prop.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern5"
+  ]
+}

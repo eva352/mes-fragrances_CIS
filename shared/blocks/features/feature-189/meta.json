@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-189",
+  "description": "This component showcases a 2-column layout: overlapping images on the left and a content section with a headline, feature list, and button on the right.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature189",
+    "npm install lucide-react"
+  ]
+}

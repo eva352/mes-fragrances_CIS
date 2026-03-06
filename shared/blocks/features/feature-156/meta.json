@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-156",
+  "description": "A component displaying tabs with 3 columns, featuring dynamic visual content for software development themes upon tab selection.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature156"
+  ]
+}

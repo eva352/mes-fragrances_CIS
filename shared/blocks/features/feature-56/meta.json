@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-56",
+  "description": "A component displaying a primary feature block followed by a 3-column layout, each containing a feature description and image.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature56"
+  ]
+}

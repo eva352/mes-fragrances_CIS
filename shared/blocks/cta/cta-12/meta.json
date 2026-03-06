@@ -1,0 +1,14 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-12",
+  "description": "A call-to-action block featuring a heading, description, email input field, and a subscribe button arranged in a column, centered.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta12"
+  ]
+}

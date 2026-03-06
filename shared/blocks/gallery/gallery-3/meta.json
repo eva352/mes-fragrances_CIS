@@ -1,0 +1,19 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-3",
+  "description": "A carousel component showcasing case studies with navigational arrows and dynamic scroll availability indicators, including images, titles, descriptions, and read more links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery3",
+    "npm install lucide-react"
+  ]
+}

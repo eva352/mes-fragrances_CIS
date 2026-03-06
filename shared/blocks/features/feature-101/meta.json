@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-101",
+  "description": "A layout showcasing capabilities with a title, description, and 5 feature blocks in a 3-column grid. Unique elements include icons, hover animations on images, and varied block sizing.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature101",
+    "npm install lucide-react"
+  ]
+}

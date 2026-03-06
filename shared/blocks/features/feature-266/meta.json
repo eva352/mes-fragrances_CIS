@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-266",
+  "description": "A component showcasing a \"FRAGMENTS OF LIGHT & STILLNESS\" collection with a three-column grid of cards featuring image tooltips, staggered animations, and a hover effect enhancing visual context.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card",
+    "tooltip"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature266",
+    "npm install framer-motion"
+  ]
+}

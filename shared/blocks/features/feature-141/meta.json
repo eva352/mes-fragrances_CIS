@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-141",
+  "description": "A component with a title, description, a 3x3 grid with a central image, a highlighted message, a badge, divider, testimonial, and attribution.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature141"
+  ]
+}

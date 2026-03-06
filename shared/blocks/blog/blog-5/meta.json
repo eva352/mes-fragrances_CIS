@@ -1,0 +1,16 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-5",
+  "description": "A blog component showcasing posts in a grid layout with image, label, title, summary, and author info. Includes a header with a title and optional button.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog5"
+  ]
+}

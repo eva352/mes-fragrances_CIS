@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-66",
+  "description": "A component featuring a title and a 2-column grid of large, hover-zoom image cards with overlaid text and logos, scaling to 1-column on smaller screens.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature66"
+  ]
+}

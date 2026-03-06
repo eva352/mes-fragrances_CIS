@@ -1,0 +1,17 @@
+{
+  "title": "Community",
+  "category": "community",
+  "slug": "community-2",
+  "description": "A component showcasing 4 social platform links in a 1-2-4 column layout, encouraging community engagement through actions like follow, connect, contribute, and join.",
+  "dependencies": [
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/community2",
+    "npm install lucide-react react-icons"
+  ]
+}

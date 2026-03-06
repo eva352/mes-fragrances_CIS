@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-173",
+  "description": "A component showcasing metrics with icons in a 3-column layout, highlighting improvements in bugs, notifications, and chaos. Features gradient cards.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature173",
+    "npm install lucide-react"
+  ]
+}

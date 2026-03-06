@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/cta22
+npm install @hookform/resolvers lucide-react react-hook-form react-icons zod

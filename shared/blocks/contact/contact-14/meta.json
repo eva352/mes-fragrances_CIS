@@ -1,0 +1,17 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-14",
+  "description": "A two-column contact component with avatar, contact details, and form fields for name & phone, plus a button.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button",
+    "card",
+    "input"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact14"
+  ]
+}

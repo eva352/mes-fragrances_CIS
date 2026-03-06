@@ -1,0 +1,17 @@
+{
+  "title": "Feature217a",
+  "category": "features",
+  "slug": "feature-217a",
+  "description": "A component displaying 3 columns of features, each with an icon, title, and summary focused on accessibility. It includes a header with a title, paragraph, and an image within an aspect ratio block against a dynamic background.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature217a",
+    "npm install lucide-react"
+  ]
+}

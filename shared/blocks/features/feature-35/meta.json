@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-35",
+  "description": "A 4-column component with a large title spans 2 rows, followed by 3 content blocks, each with a title, text, and link. An arrow icon accents links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature35",
+    "npm install lucide-react"
+  ]
+}

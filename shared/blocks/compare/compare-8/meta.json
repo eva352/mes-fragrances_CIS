@@ -1,0 +1,16 @@
+{
+  "title": "Compare",
+  "category": "compare",
+  "slug": "compare-8",
+  "description": "A comparison component showcasing features with icons, descriptions, and status indicators for two frameworks, including tooltips for certain features.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/compare8",
+    "npm install lucide-react"
+  ]
+}

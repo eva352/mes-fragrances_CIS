@@ -1,0 +1,18 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-10",
+  "description": "An FAQ component with a title, intro text, and accordion-style questions. It includes a badge icon and a bordered layout.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "accordion",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq10",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-20",
+  "description": "A two-column FAQ section with heading and contact link on the left, and categorized accordion questions on the right.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "accordion"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq20"
+  ]
+}

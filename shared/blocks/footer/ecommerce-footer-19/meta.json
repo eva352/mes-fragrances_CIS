@@ -1,0 +1,26 @@
+{
+  "title": "Ecommerce-footer",
+  "category": "footer",
+  "slug": "ecommerce-footer-19",
+  "description": "This component provides a comprehensive footer block for digital platforms, featuring sections for a newsletter subscription, contact information, and footer navigation links. It includes integrated social media links and payment method icons, offering a versatile foundation for enhancing user engagement and site navigation.",
+  "dependencies": [
+    "@hookform/resolvers",
+    "lucide-react",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "utils",
+    "accordion",
+    "aspect-ratio",
+    "button",
+    "card",
+    "field",
+    "input",
+    "select"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/ecommerce-footer19",
+    "npm install @hookform/resolvers lucide-react react-hook-form zod"
+  ]
+}

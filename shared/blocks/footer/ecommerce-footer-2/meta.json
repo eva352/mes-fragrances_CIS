@@ -1,0 +1,23 @@
+{
+  "title": "Ecommerce-footer",
+  "category": "footer",
+  "slug": "ecommerce-footer-2",
+  "description": "This component is a footer block designed for webpage applications, featuring sections for newsletter subscriptions, navigational footer links, and social media icons. It includes form validation using a schema to ensure proper email input and utilizes an accordion layout for organized display of various informational links.",
+  "dependencies": [
+    "@hookform/resolvers",
+    "lucide-react",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "utils",
+    "accordion",
+    "button",
+    "field",
+    "input-group"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/ecommerce-footer2",
+    "npm install @hookform/resolvers lucide-react react-hook-form zod"
+  ]
+}

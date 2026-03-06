@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-267",
+  "description": "A dual-column block featuring an animated 3D marquee with images, a subscription input form, and dynamic text sections, highlighted by an icon.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "https://ui.aceternity.com/registry/3d-marquee.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature267",
+    "npm install lucide-react"
+  ]
+}

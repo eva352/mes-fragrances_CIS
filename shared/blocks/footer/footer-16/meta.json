@@ -1,0 +1,18 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-16",
+  "description": "A footer component featuring logo, contact button, social icons, and navigation in accordion for smaller screens or columns layout.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "accordion",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer16",
+    "npm install lucide-react"
+  ]
+}

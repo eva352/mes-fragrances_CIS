@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-68",
+  "description": "A component that showcases six features with icons, titles, and descriptions in a 1-2-3 column layout, with an introductory section.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature68",
+    "npm install lucide-react"
+  ]
+}

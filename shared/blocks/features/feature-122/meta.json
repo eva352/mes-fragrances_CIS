@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-122",
+  "description": "A component with a grid layout of feature blocks, including a prominent highlighted block with a call-to-action button and an image. It uses icons and hover effects.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature122",
+    "npm install lucide-react"
+  ]
+}

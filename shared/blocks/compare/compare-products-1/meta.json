@@ -1,0 +1,20 @@
+{
+  "title": "Compare-products",
+  "category": "compare",
+  "slug": "compare-products-1",
+  "description": "This component allows users to compare multiple products side-by-side by displaying their specifications and key features in a tabular format. It includes interactive elements such as badges, pricing details, product ratings, and an option to directly add items to the cart.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "badge",
+    "button",
+    "table"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/compare-products1",
+    "npm install lucide-react"
+  ]
+}

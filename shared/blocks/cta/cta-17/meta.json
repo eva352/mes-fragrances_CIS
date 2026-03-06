@@ -1,0 +1,14 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-17",
+  "description": "A centered call-to-action block with a patterned background, featuring a large title, a descriptive paragraph, and two large buttons for actions.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta17"
+  ]
+}

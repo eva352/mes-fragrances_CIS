@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-200",
+  "description": "A component displaying 3 columns of features, each with icons, titles, and lists, distinguished by unique background gradients.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature200",
+    "npm install lucide-react"
+  ]
+}

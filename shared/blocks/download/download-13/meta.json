@@ -1,0 +1,18 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-13",
+  "description": "This component provides a user interface for downloading a desktop application, featuring functionalities like copying installation commands and selecting specific download versions for Windows. It includes buttons for direct downloading and a visual indication of successful clipboard operations.",
+  "dependencies": [
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download13",
+    "npm install lucide-react react-icons"
+  ]
+}

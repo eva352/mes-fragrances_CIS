@@ -1,0 +1,18 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-3",
+  "description": "A component displaying a download card with a logo, a heading, a description, version, file size, system requirements, download and view buttons, and trust indicators.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download3",
+    "npm install lucide-react"
+  ]
+}

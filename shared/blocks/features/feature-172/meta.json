@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-172",
+  "description": "A feature block splits into a 2-item top grid and a 3-item bottom grid, offering detailed insights and visuals for solutions. Unique image alignments highlight offerings.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature172"
+  ]
+}

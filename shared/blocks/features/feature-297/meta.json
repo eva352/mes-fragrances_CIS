@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-297",
+  "description": "A three-column component showcasing features with images, numerical identifiers, and titles. Each column enlarges the image on hover.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature297"
+  ]
+}

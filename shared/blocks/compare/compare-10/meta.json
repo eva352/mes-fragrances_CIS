@@ -1,0 +1,17 @@
+{
+  "title": "Compare",
+  "category": "compare",
+  "slug": "compare-10",
+  "description": "A component contrasting \"Legacy\" vs \"New\" features in a two-column layout, highlighting issues with old tools and advantages of modern solutions, using symbols and separators.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/compare10",
+    "npm install lucide-react"
+  ]
+}

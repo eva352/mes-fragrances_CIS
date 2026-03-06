@@ -1,0 +1,20 @@
+{
+  "title": "Compare-products",
+  "category": "compare",
+  "slug": "compare-products-3",
+  "description": "This component allows users to compare up to four products by showcasing details such as price, rating, reviews, and key highlights. Features include the ability to add or remove products for comparison and a call-to-action button to add selected products to the cart.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card",
+    "scroll-area",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/compare-products3",
+    "npm install lucide-react"
+  ]
+}

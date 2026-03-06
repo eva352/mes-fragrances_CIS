@@ -1,0 +1,13 @@
+{
+  "title": "Awards",
+  "category": "awards",
+  "slug": "awards-2",
+  "description": "An awards listing component with a 2 column grid layout, displaying award titles and years across two sections.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/awards2"
+  ]
+}

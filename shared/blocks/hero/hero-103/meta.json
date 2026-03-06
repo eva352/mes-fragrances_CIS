@@ -1,0 +1,20 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-103",
+  "description": "A component with a split layout containing text and CTA buttons on one side, and a layered image gallery on the other, followed by a logo carousel.",
+  "dependencies": [
+    "embla-carousel-auto-scroll",
+    "embla-carousel-autoplay",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero103",
+    "npm install embla-carousel-auto-scroll embla-carousel-autoplay lucide-react"
+  ]
+}

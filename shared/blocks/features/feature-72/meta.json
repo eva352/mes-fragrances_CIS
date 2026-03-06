@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-72",
+  "description": "A component showcasing features with a heading, description, demo link, and a grid of feature cards, including images and texts, structured in up to 2 columns.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature72",
+    "npm install lucide-react"
+  ]
+}

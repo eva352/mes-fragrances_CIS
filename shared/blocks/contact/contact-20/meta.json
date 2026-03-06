@@ -1,0 +1,20 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-20",
+  "description": "A contact component with a heading, subtext, and a 3-column layout for contact info and a form. Features inputs, a select menu, and a submit button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "select",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact20",
+    "npm install lucide-react"
+  ]
+}

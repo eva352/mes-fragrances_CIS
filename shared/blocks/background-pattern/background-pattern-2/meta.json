@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-2",
+  "description": "This component serves as a customizable background pattern block, featuring a radial gradient design with placeholder support. It allows users to apply additional styling through an optional className prop for seamless integration with existing styles.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern2"
+  ]
+}

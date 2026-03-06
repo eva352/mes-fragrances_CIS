@@ -1,0 +1,14 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-31",
+  "description": "A product showcase block with a dynamic grid layout of 1-4 columns, displaying items with hover effects, titles, and prices.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "https://ui.aceternity.com/registry/direction-aware-hover.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery31"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Changelog",
+  "category": "changelog",
+  "slug": "changelog-4",
+  "description": "A changelog component with social links, a scroll progress indicator, and two updates sections featuring avatars, dates, large text headers, and detailed lists.",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/changelog4",
+    "npm install react-icons"
+  ]
+}

@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/feature288
+npm install radix-ui qss motion

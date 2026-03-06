@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/cta23
+npm install lucide-react

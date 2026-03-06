@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-275",
+  "description": "A component showcasing \"Secrets Behind Success\" with a central title, a description, and a 3-column layout of interactive cards that reveal details on hover.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.aceternity.com/registry/canvas-reveal-effect.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature275",
+    "npm install framer-motion"
+  ]
+}

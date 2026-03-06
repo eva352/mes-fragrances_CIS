@@ -1,0 +1,18 @@
+{
+  "title": "Changelog",
+  "category": "changelog",
+  "slug": "changelog-1",
+  "description": "A component displaying a changelog with entries including version info, date, and details. Features badges, buttons, and conditional rendering of lists and images.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/changelog1",
+    "npm install lucide-react"
+  ]
+}

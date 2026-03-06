@@ -1,0 +1,445 @@
+{
+  "version": "1.0",
+  "source": "shadcn-ui + aurora-modules",
+  "notes": [
+    "Ce manifest décrit ce que l'agent IA peut utiliser/générer.",
+    "Les entrées `planned` servent de backlog; seules les entrées `installed` sont garanties."
+  ],
+  "modes": ["website", "webapp"],
+  "allowedIn": ["website", "webapp", "customBlock"],
+  "items": [
+    {
+      "key": "accordion",
+      "title": "Accordion",
+      "group": "disclosure",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/accordion.tsx"]
+    },
+    {
+      "key": "alert",
+      "title": "Alert",
+      "group": "feedback",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/alert.tsx"]
+    },
+    {
+      "key": "alert-dialog",
+      "title": "Alert Dialog",
+      "group": "overlays",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/alert-dialog.tsx"]
+    },
+    {
+      "key": "avatar",
+      "title": "Avatar",
+      "group": "identity",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/avatar.tsx"]
+    },
+    {
+      "key": "badge",
+      "title": "Badge",
+      "group": "feedback",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/badge.tsx"]
+    },
+    {
+      "key": "breadcrumb",
+      "title": "Breadcrumb",
+      "group": "navigation",
+      "status": "installed",
+      "allowedIn": ["website", "webapp"],
+      "files": ["frontend/components/ui/breadcrumb.tsx"]
+    },
+    {
+      "key": "button-group",
+      "title": "Button Group",
+      "group": "actions",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/button-group.tsx"]
+    },
+    {
+      "key": "button",
+      "title": "Button",
+      "group": "actions",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/button.tsx"]
+    },
+    {
+      "key": "calendar",
+      "title": "Calendar",
+      "group": "date-time",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/calendar.tsx"]
+    },
+    {
+      "key": "card",
+      "title": "Card",
+      "group": "layout",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/card.tsx"]
+    },
+    {
+      "key": "chart",
+      "title": "Chart",
+      "group": "data-viz",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/chart.tsx"],
+      "notes": ["Implémenté via ECharts (Next.js Client Component)."]
+    },
+    {
+      "key": "checkbox",
+      "title": "Checkbox",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/checkbox.tsx"]
+    },
+    {
+      "key": "combobox",
+      "title": "Combobox",
+      "group": "forms",
+      "status": "planned",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": []
+    },
+    {
+      "key": "command",
+      "title": "Command",
+      "group": "navigation",
+      "status": "installed",
+      "allowedIn": ["webapp"],
+      "files": ["frontend/components/ui/command.tsx"]
+    },
+    {
+      "key": "context-menu",
+      "title": "Context Menu",
+      "group": "navigation",
+      "status": "installed",
+      "allowedIn": ["webapp"],
+      "files": ["frontend/components/ui/context-menu.tsx"]
+    },
+    {
+      "key": "data-table",
+      "title": "Data Table",
+      "group": "data",
+      "status": "planned",
+      "allowedIn": ["webapp"],
+      "files": []
+    },
+    {
+      "key": "date-picker",
+      "title": "Date Picker",
+      "group": "date-time",
+      "status": "planned",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": []
+    },
+    {
+      "key": "dialog",
+      "title": "Dialog",
+      "group": "overlays",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/dialog.tsx"]
+    },
+    {
+      "key": "drawer",
+      "title": "Drawer",
+      "group": "overlays",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/drawer.tsx"]
+    },
+    {
+      "key": "dropdown-menu",
+      "title": "Dropdown Menu",
+      "group": "overlays",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/dropdown-menu.tsx"]
+    },
+    {
+      "key": "empty",
+      "title": "Empty",
+      "group": "feedback",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/empty.tsx"]
+    },
+    {
+      "key": "field",
+      "title": "Field",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/field.tsx"]
+    },
+    {
+      "key": "form",
+      "title": "Form",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/form.tsx"]
+    },
+    {
+      "key": "input",
+      "title": "Input",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/input.tsx"]
+    },
+    {
+      "key": "input-group",
+      "title": "Input Group",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/input-group.tsx"]
+    },
+    {
+      "key": "input-otp",
+      "title": "Input OTP",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/input-otp.tsx"]
+    },
+    {
+      "key": "kbd",
+      "title": "Kbd",
+      "group": "typography",
+      "status": "installed",
+      "allowedIn": ["website", "webapp"],
+      "files": ["frontend/components/ui/kbd.tsx"]
+    },
+    {
+      "key": "label",
+      "title": "Label",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/label.tsx"]
+    },
+    {
+      "key": "menubar",
+      "title": "Menubar",
+      "group": "navigation",
+      "status": "installed",
+      "allowedIn": ["webapp"],
+      "files": ["frontend/components/ui/menubar.tsx"]
+    },
+    {
+      "key": "navigation-menu",
+      "title": "Navigation Menu",
+      "group": "navigation",
+      "status": "installed",
+      "allowedIn": ["website"],
+      "files": ["frontend/components/ui/navigation-menu.tsx"]
+    },
+    {
+      "key": "pagination",
+      "title": "Pagination",
+      "group": "navigation",
+      "status": "installed",
+      "allowedIn": ["website", "webapp"],
+      "files": ["frontend/components/ui/pagination.tsx"]
+    },
+    {
+      "key": "popover",
+      "title": "Popover",
+      "group": "overlays",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/popover.tsx"]
+    },
+    {
+      "key": "progress",
+      "title": "Progress",
+      "group": "feedback",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/progress.tsx"]
+    },
+    {
+      "key": "radio-group",
+      "title": "Radio Group",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/radio-group.tsx"]
+    },
+    {
+      "key": "scroll-area",
+      "title": "Scroll Area",
+      "group": "layout",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/scroll-area.tsx"]
+    },
+    {
+      "key": "select",
+      "title": "Select",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/select.tsx"]
+    },
+    {
+      "key": "separator",
+      "title": "Separator",
+      "group": "layout",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/separator.tsx"]
+    },
+    {
+      "key": "sheet",
+      "title": "Sheet",
+      "group": "overlays",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/sheet.tsx"]
+    },
+    {
+      "key": "sidebar",
+      "title": "Sidebar",
+      "group": "navigation",
+      "status": "installed",
+      "allowedIn": ["webapp"],
+      "files": ["frontend/components/ui/sidebar.tsx"]
+    },
+    {
+      "key": "skeleton",
+      "title": "Skeleton",
+      "group": "feedback",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/skeleton.tsx"]
+    },
+    {
+      "key": "sonner",
+      "title": "Sonner",
+      "group": "feedback",
+      "status": "installed",
+      "allowedIn": ["webapp"],
+      "files": ["frontend/components/ui/sonner.tsx"]
+    },
+    {
+      "key": "spinner",
+      "title": "Spinner",
+      "group": "feedback",
+      "status": "planned",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": []
+    },
+    {
+      "key": "switch",
+      "title": "Switch",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/switch.tsx"]
+    },
+    {
+      "key": "table",
+      "title": "Table",
+      "group": "data",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/table.tsx"]
+    },
+    {
+      "key": "tabs",
+      "title": "Tabs",
+      "group": "navigation",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/tabs.tsx"]
+    },
+    {
+      "key": "textarea",
+      "title": "Textarea",
+      "group": "forms",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/textarea.tsx"]
+    },
+    {
+      "key": "toggle",
+      "title": "Toggle",
+      "group": "actions",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/toggle.tsx"]
+    },
+    {
+      "key": "toggle-group",
+      "title": "Toggle Group",
+      "group": "actions",
+      "status": "installed",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": ["frontend/components/ui/toggle-group.tsx"]
+    },
+    {
+      "key": "tooltip",
+      "title": "Tooltip",
+      "group": "feedback",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/tooltip.tsx"]
+    },
+    {
+      "key": "typography",
+      "title": "Typography",
+      "group": "typography",
+      "status": "installed",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": ["frontend/components/ui/typography.tsx"]
+    },
+    {
+      "key": "aurora-empty-state",
+      "title": "Empty State (Aurora)",
+      "group": "aurora-modules",
+      "status": "planned",
+      "allowedIn": ["website", "webapp", "customBlock"],
+      "files": []
+    },
+    {
+      "key": "aurora-kpi-card",
+      "title": "KPI Card (Aurora)",
+      "group": "aurora-modules",
+      "status": "planned",
+      "allowedIn": ["webapp", "customBlock"],
+      "files": []
+    },
+    {
+      "key": "aurora-filter-bar",
+      "title": "Filter Bar (Aurora)",
+      "group": "aurora-modules",
+      "status": "planned",
+      "allowedIn": ["webapp"],
+      "files": []
+    },
+    {
+      "key": "aurora-chat-panel",
+      "title": "Chat Panel (Aurora)",
+      "group": "aurora-modules",
+      "status": "planned",
+      "allowedIn": ["webapp"],
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-32",
+  "description": "An interactive gallery component with dimension-variable, overlapping images and blur effect on hover. Contains descriptive text animations.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery32",
+    "npm install framer-motion"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Banner",
+  "category": "banner",
+  "slug": "banner-5",
+  "description": "A dismissible banner component with an icon, title, description, and external link button. Features a close button, adapts layout from column to row on wider screens.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/banner5",
+    "npm install lucide-react"
+  ]
+}

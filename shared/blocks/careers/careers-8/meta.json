@@ -1,0 +1,15 @@
+{
+  "title": "Careers",
+  "category": "careers",
+  "slug": "careers-8",
+  "description": "A dynamic job listing component with a filter for departments, displaying job categories and openings in grids up to 3 columns wide.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "label",
+    "select"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/careers8"
+  ]
+}

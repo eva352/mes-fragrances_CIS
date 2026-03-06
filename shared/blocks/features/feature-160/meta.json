@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-160",
+  "description": "A tabbed component with 4 items, each with an icon, title, and description. Clicking a tab shows a related image. Uses a grid layout for tabs.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature160",
+    "npm install lucide-react"
+  ]
+}

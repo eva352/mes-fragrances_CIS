@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/feature114
+npm install embla-carousel-auto-scroll lucide-react

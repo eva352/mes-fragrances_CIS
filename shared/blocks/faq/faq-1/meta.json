@@ -1,0 +1,14 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-1",
+  "description": "An accordion-style FAQ component with a customizable heading and list of questions and answers.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "accordion"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq1"
+  ]
+}

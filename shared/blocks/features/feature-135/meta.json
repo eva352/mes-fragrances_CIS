@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-135",
+  "description": "A component showcasing core features and highlights with icons, titles, and descriptions in a two-column layout.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature135",
+    "npm install lucide-react"
+  ]
+}

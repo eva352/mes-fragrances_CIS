@@ -1,0 +1,15 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-148",
+  "description": "This component displays a title, description, and a grid of 6 cards, each containing an image, title, and description, arranged in 1-3 columns based on screen size.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature148"
+  ]
+}

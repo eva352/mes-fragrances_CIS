@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-227",
+  "description": "A 2-column block featuring a large title, descriptive text, and bullet points with icons on one side, and an image with overlaid gradients on the other.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature227",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Banner",
+  "category": "banner",
+  "slug": "banner-3",
+  "description": "A subscription block featuring a title, description, email input, and subscribe button. Includes a dismissible icon and adapts layout between single and multi-column views.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/banner3",
+    "npm install lucide-react"
+  ]
+}

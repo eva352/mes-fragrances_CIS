@@ -1,0 +1,17 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-31",
+  "description": "A component displaying a title, subtitle, and a CTA button, surrounded by logos arranged in a semi-circle, with a gradient background.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta31",
+    "npm install lucide-react"
+  ]
+}

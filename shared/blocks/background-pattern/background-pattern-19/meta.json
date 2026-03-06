@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-19",
+  "description": "This component creates a full-screen container featuring a dashed grid background pattern, ideal for visually structuring content in an engaging way. It accepts customizable class names to allow for flexible styling and integration into various design themes.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern19"
+  ]
+}

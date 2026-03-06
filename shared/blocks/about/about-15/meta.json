@@ -1,0 +1,13 @@
+{
+  "title": "About",
+  "category": "about",
+  "slug": "about-15",
+  "description": "A dark two-column about section with rotated polaroid-style photo card on the left and headline with body text on the right.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/about15"
+  ]
+}

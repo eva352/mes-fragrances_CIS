@@ -1,0 +1,23 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-111",
+  "description": "A component showcases an email form, heading, description, features like \"No Credit Card Required,\" 3 placeholder images with different aspect ratios, and a grid of fictional company logos.",
+  "dependencies": [
+    "@hookform/resolvers",
+    "lucide-react",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "button",
+    "field",
+    "input"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero111",
+    "npm install @hookform/resolvers lucide-react react-hook-form zod"
+  ]
+}

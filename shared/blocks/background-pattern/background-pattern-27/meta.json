@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-27",
+  "description": "This component serves as a flexible background block that fills the entire viewport with a gradient and a placeholder pattern. It allows for customization through an optional className prop, enabling users to incorporate unique styling or additional functionality.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern27"
+  ]
+}

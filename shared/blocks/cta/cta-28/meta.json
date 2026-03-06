@@ -1,0 +1,17 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-28",
+  "description": "A component featuring a dual-column layout with text, a list, and a button in one column, and layered images in the other. It highlights enterprise solutions.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta28",
+    "npm install lucide-react"
+  ]
+}

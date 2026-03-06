@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/about13
+npm install react

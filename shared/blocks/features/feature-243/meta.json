@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-243",
+  "description": "A component displaying a vertical timeline layout of steps, each with an icon, title, and description. It uses cards for step details.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature243",
+    "npm install lucide-react"
+  ]
+}

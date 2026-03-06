@@ -1,0 +1,13 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-8",
+  "description": "A component featuring a \"Contact\" header, subtext, an image, email addresses, and office locations in a 2-column layout with styled divs.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact8"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-2",
+  "description": "A contact component with a title, description, and details column, plus a message form; includes fields for names, email, subject, and message.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "label",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact2"
+  ]
+}

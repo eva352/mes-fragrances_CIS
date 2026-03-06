@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/gallery35
+npm install framer-motion lucide-react

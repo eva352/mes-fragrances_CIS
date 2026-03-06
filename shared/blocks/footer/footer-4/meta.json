@@ -1,0 +1,21 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-4",
+  "description": "A footer component with a logo, social icons, link sections, a newsletter subscription, and legal links. GridLayout adapts to 6 columns on large screens.",
+  "dependencies": [
+    "react-icons",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "separator",
+    "context-menu"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer4",
+    "npm install react-icons lucide-react"
+  ]
+}

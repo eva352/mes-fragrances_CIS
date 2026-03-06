@@ -1,0 +1,12 @@
+{
+  "title": "About 2",
+  "category": "about",
+  "slug": "about-2",
+  "source": {
+    "file": "shared/blocks/shadcn blocks.txt"
+  },
+  "install": [
+    "npx shadcn add @shadcnblocks/about13",
+    "npm install react"
+  ]
+}

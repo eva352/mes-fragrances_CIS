@@ -1,0 +1,13 @@
+{
+  "title": "About",
+  "category": "about",
+  "slug": "about-18",
+  "description": "A seven-column about section with mission and drive content blocks, each with label, headline, and supporting text, separated by a two-image row.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/about18"
+  ]
+}

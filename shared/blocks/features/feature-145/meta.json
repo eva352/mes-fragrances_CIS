@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-145",
+  "description": "A component featuring a customizable accordion for showcasing features with text and images, including a dynamic image display area that updates based on accordion selection.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "accordion"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature145"
+  ]
+}

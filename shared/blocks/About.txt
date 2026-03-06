@@ -1,0 +1,722 @@
+About 3 : 
+npx shadcn add @shadcnblocks/about1
+npm install lucide-react
+import { CircleArrowRight, Files, Settings } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+interface About1Props {
+  className?: string;
+}
+
+const About1 = ({ className }: About1Props) => {
+  return (
+    <section className={cn("py-32", className)}>
+      <div className="container flex flex-col gap-16 lg:gap-28">
+        <div className="flex flex-col gap-4 lg:gap-8">
+          <h1 className="text-4xl font-semibold tracking-tighter lg:text-7xl">
+            About Us
+          </h1>
+          <p className="max-w-xl text-xl">
+            Shadcnblocks.com makes it easy to build customer portals, CRMs,
+            internal tools, and other business applications for your team. In
+            minutes, not months.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          <img
+            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+            alt="placeholder"
+            className="size-full max-h-96 rounded-2xl object-cover"
+          />
+          <div className="flex flex-col justify-between gap-10 rounded-2xl bg-muted bg-[url('https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/christin-hume-Hcfwew744z4-unsplash.jpg')] bg-cover bg-center p-10">
+            <p className="text-sm font-semibold text-white">OUR MISSION</p>
+            <p className="text-lg font-medium text-white">
+              We believe that building software should be insanely easy. That
+              everyone should have the freedom to create the tools they need,
+              without any developers, designers or drama.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-6 md:gap-20">
+          <div className="max-w-xl">
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight md:text-5xl">
+              We make creating software easy.
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              We aim to help empower 1,000,000 teams to create their own
+              software. Here is how we plan on doing it.
+            </p>
+          </div>
+          <div className="grid gap-10 md:grid-cols-3">
+            <div className="flex flex-col">
+              <div className="mb-5 flex size-12 items-center justify-center rounded-2xl bg-accent">
+                <Files className="size-5" />
+              </div>
+              <h3 className="mt-2 mb-3 text-lg font-semibold">
+                Being radically open
+              </h3>
+              <p className="text-muted-foreground">
+                We believe there’s no room for big egos and there’s always time
+                to help each other. We strive to give and receive feedback,
+                ideas, perspectives
+              </p>
+            </div>
+            <div className="flex flex-col">
+              <div className="mb-5 flex size-12 items-center justify-center rounded-2xl bg-accent">
+                <CircleArrowRight className="size-5" />
+              </div>
+              <h3 className="mt-2 mb-3 text-lg font-semibold">
+                Moving the needle
+              </h3>
+              <p className="text-muted-foreground">
+                Boldly, bravely and with clear aims. We seek out the big
+                opportunities and double down on the most important things to
+                work on.
+              </p>
+            </div>
+            <div className="flex flex-col">
+              <div className="mb-5 flex size-12 items-center justify-center rounded-2xl bg-accent">
+                <Settings className="size-5" />
+              </div>
+              <h3 className="mt-2 mb-3 text-lg font-semibold">
+                Optimizing for empowerment
+              </h3>
+              <p className="text-muted-foreground">
+                We believe that everyone should be empowered to do whatever they
+                think is in the company&apos;s best interests.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { About1 };
+
+
+About 4
+npx shadcn add @shadcnblocks/about19
+npm install react
+import React from "react";
+
+import { cn } from "@/lib/utils";
+
+interface About19Props {
+  className?: string;
+}
+
+const About19 = ({ className }: About19Props) => {
+  return (
+    <section className={cn("py-32", className)}>
+      <div className="container">
+        <div className="grid grid-cols-1 gap-15 lg:grid-cols-7 lg:gap-1">
+          <div className="col-span-4 h-120 border">
+            <img
+              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri4/img2.png"
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          <div className="col-span-3 ml-auto max-w-4xl space-y-15 lg:pl-15">
+            <h1 className="text-2xl font-medium tracking-tight">
+              We are a team of creators, thinkers, and builders who believe in
+              crafting experiences that truly connect. Our story is built on
+              passion, innovation, and the drive to bring meaningful ideas to
+              life.
+            </h1>
+            <p className="text-base text-foreground/40 lg:text-lg">
+              We ask: What’s the goal? Who’s it for? How do we make it
+              effortless? we begin with why, who, and how to make it better.
+            </p>
+            <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
+              <p className="flex-1 text-sm text-foreground/40">
+                We aim to bring diverse minds together, turning ideas into
+                experiences that matter.
+              </p>
+              <div className="flex w-fit items-center gap-2">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri3/avatar1.png"
+                  className="size-10"
+                  alt="avatr"
+                />
+                <div>
+                  <h3 className="font-medium tracking-tight">John Doe</h3>
+                  <p className="text-sm text-foreground/40">
+                    Creative Director
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { About19 };
+
+
+About 5
+npx shadcn add @shadcnblocks/about8
+npm install react
+npx shadcn@latest add carousel
+import { type SVGProps, useId } from "react";
+
+import { cn } from "@/lib/utils";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+
+interface About8Props {
+  className?: string;
+}
+
+const About8 = ({ className }: About8Props) => {
+  return (
+    <section className={cn("py-32", className)}>
+      {/* Hero Section */}
+      <section className="relative container max-w-5xl py-10 md:py-12 lg:py-15">
+        <div className="">
+          <h1 className="text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
+            A different
+            <br />
+            kind of bank.
+          </h1>
+          <p className="mt-4 max-w-2xl text-2xl text-muted-foreground md:text-3xl">
+            We&apos;re on a mission to transform financial services by
+            harnessing vast amounts of untapped financial data.
+          </p>
+        </div>
+        {/* Background decoration */}
+        <>
+          <div className="absolute -inset-40 z-[-1] [mask-image:radial-gradient(circle_at_center,black_0%,black_20%,transparent_80%)]">
+            <PlusSigns className="h-full w-full text-foreground/[0.05]" />
+          </div>
+        </>
+      </section>
+
+      {/* Stats Section */}
+      <section className="container max-w-5xl border-y py-5">
+        <h2 className="font-mono text-sm font-semibold tracking-widest text-accent-foreground">
+          By the numbers
+        </h2>
+        <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div>
+            <h3 className="text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+              $150M
+            </h3>
+            <p className="mt-1 font-medium text-muted-foreground">Raised</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+              20K
+            </h3>
+            <p className="mt-1 font-medium text-muted-foreground">Companies</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+              1.3B
+            </h3>
+            <p className="mt-1 font-medium text-muted-foreground">
+              Monthly transactions
+            </p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+              1.5K
+            </h3>
+            <p className="mt-1 font-medium text-muted-foreground">
+              Connections per minute
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="container max-w-5xl py-10 md:py-12 lg:py-15">
+        <div className="max-w-2xl space-y-5 md:space-y-8 lg:space-y-10">
+          <p className="text-lg">
+            Financial services have changed, are changing, and will continue to
+            change — for the better. Now is the time for finance to be
+            developer-first and API-driven. But in order to do this — it needs a
+            new foundation.
+          </p>
+
+          <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+            We were always told that banks can&apos;t be platforms.
+          </h2>
+          <p className="text-lg">
+            Everyone tried fixing the problem by layering APIs on legacy
+            systems, creating abstractions and inefficiencies. We have spent
+            years building and scaling companies like Plaid, Stripe, and Affirm,
+            confronting these limitations firsthand. The current solutions
+            aren&apos;t good enough. We believe that banking infrastructure must
+            be reimagined as an API platform. But we had to start from ground
+            zero.
+          </p>
+        </div>
+      </section>
+
+      {/* Image Grid Section */}
+      <section className="my-5 pb-10 md:my-8 md:pb-12 lg:my-12 lg:pb-15">
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+        >
+          <CarouselContent className="-ml-4">
+            <CarouselItem className="basis-[80%] lg:basis-1/3 xl:basis-[40%]">
+              <div className="relative h-[330px] lg:h-[440px] xl:h-[600px]">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                  alt="Charter team member working"
+                  className="object-cover"
+                />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="basis-[80%] lg:basis-1/3 xl:basis-[40%]">
+              <div className="relative h-[330px] lg:h-[440px] xl:h-[600px]">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                  alt="Modern workspace setup"
+                  className="object-cover"
+                />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="basis-[80%] lg:basis-1/3 xl:basis-[40%]">
+              <div className="relative h-[330px] lg:h-[440px] xl:h-[600px]">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                  alt="Team collaboration"
+                  className="object-cover"
+                />
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
+      </section>
+
+      {/* CoreAPI Section */}
+      <section className="container">
+        <div className="mr-0 ml-auto max-w-2xl space-y-5 md:space-y-8 lg:space-y-10">
+          <p className="text-lg">
+            We started building CoreAPI in 2019 and launched in 2022. Every
+            endpoint has been designed from the ground up — with no technical
+            debt or legacy systems. We are purpose-built to power financial
+            innovation for the next hundred years.
+          </p>
+
+          <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+            We are a bit of a unique company — not your standard tech or fintech
+            company.
+          </h2>
+
+          <p className="text-lg">
+            We are 100% founder and team-owned, profitable, and we keep our team
+            lean. Over time, this page will become more polished, but for now,
+            we&apos;re focused on delivering for developers.
+          </p>
+        </div>
+      </section>
+
+      {/* Founding Team Section */}
+      <section className="container py-10 md:py-12 lg:py-15">
+        <div className="grid gap-5 md:grid-cols-2 md:gap-10 lg:gap-16">
+          <div className="order-2 md:order-1">
+            <h2 className="text-4xl font-semibold tracking-tight md:text-4xl">
+              The founding team
+            </h2>
+            <p className="mt-5 text-lg md:mt-6">
+              We started building CoreAPI in 2019 and launched in 2022. Every
+              endpoint has been designed from the ground up — with no technical
+              debt or legacy systems. We are purpose-built to power financial
+              innovation for the next hundred years. We are 100% founder and
+              team-owned, profitable, and we keep our team lean. Over time, this
+              page will become more polished, but for now, we&apos;re focused on
+              delivering for developers. If you&apos;re interested in building
+              the future of financial APIs, check out our open roles below.
+            </p>
+          </div>
+          <img
+            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+            alt="Founding team collaboration"
+            width={480}
+            height={400}
+            className="order-1 object-cover md:order-2"
+          />
+        </div>
+      </section>
+    </section>
+  );
+};
+
+interface PlusSignsProps extends SVGProps<SVGSVGElement> {
+  className?: string;
+}
+
+const PlusSigns = ({ className, ...props }: PlusSignsProps) => {
+  const GAP = 16;
+  const STROKE_WIDTH = 1;
+  const PLUS_SIZE = 6;
+  const id = useId();
+  const patternId = `plus-pattern-${id}`;
+
+  return (
+    <svg width={GAP * 2} height={GAP * 2} className={className} {...props}>
+      <defs>
+        <pattern
+          id={patternId}
+          x="0"
+          y="0"
+          width={GAP}
+          height={GAP}
+          patternUnits="userSpaceOnUse"
+        >
+          <line
+            x1={GAP / 2}
+            y1={(GAP - PLUS_SIZE) / 2}
+            x2={GAP / 2}
+            y2={(GAP + PLUS_SIZE) / 2}
+            stroke="currentColor"
+            strokeWidth={STROKE_WIDTH}
+          />
+          <line
+            x1={(GAP - PLUS_SIZE) / 2}
+            y1={GAP / 2}
+            x2={(GAP + PLUS_SIZE) / 2}
+            y2={GAP / 2}
+            stroke="currentColor"
+            strokeWidth={STROKE_WIDTH}
+          />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill={`url(#${patternId})`} />
+    </svg>
+  );
+};
+
+export { About8 };
+
+
+About 6
+npx shadcn add @shadcnblocks/about6
+import { cn } from "@/lib/utils";
+
+interface About6Props {
+  className?: string;
+}
+
+const About6 = ({ className }: About6Props) => {
+  return (
+    <section className={cn("py-32", className)}>
+      <div className="container">
+        <div className="flex flex-col items-center justify-start gap-6 lg:flex-row">
+          <div className="flex w-full flex-col items-start justify-start gap-24 lg:w-1/2">
+            <div className="pr-6">
+              <h1 className="mb-6 text-4xl font-bold md:text-5xl lg:mb-10 lg:text-6xl">
+                Our Story
+              </h1>
+              <p className="mb-9 lg:text-xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                alias repellendus perferendis earum facilis est soluta
+                consequatur placeat hic aliquid exercitationem, ex molestias nam
+                veniam distinctio maxime culpa magnam autem.
+              </p>
+              <p className="text-muted-foreground">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Similique dolore quas placeat expedita aliquam rerum tempore
+                amet, sequi ipsa ad quam, adipisci exercitationem nihil,
+                sapiente laborum minus doloribus consequuntur sed. Quo
+                repudiandae nihil quas voluptates, aut beatae reiciendis aliquid
+                perspiciatis quae explicabo inventore temporibus laborum,
+                nostrum omnis quos excepturi dolorum reprehenderit vel labore
+                eaque libero perferendis? Qui illo numquam beatae?
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
+              <img
+                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/annie-spratt-MChSQHxGZrQ-unsplash.jpg"
+                alt="about 1"
+                className="aspect-[0.7] w-full rounded-lg object-cover md:w-1/2"
+              />
+              <div className="flex w-full flex-col items-center justify-center gap-6 md:w-1/2">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/annie-spratt-AkftcHujUmk-unsplash.jpg"
+                  alt="about 2"
+                  className="aspect-[1.1] rounded-lg object-cover"
+                />
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/annie-spratt-vGgn0xLdy8s-unsplash.jpg"
+                  alt="about 3"
+                  className="aspect-[0.7] rounded-lg object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex w-full flex-col items-center justify-center gap-12 pt-12 lg:w-1/2 lg:pt-48">
+            <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
+              <img
+                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/johnson-wang-iI4sR_nkkbc-unsplash.jpg"
+                alt="about 4"
+                className="aspect-[0.9] w-full rounded-lg object-cover md:w-1/2"
+              />
+              <div className="flex w-full flex-col items-center justify-center gap-6 md:w-1/2">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/nastuh-abootalebi-eHD8Y1Znfpk-unsplash.jpg"
+                  alt="about 5"
+                  className="aspect-[0.8] rounded-lg object-cover"
+                />
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/alvin-engler-bIhpiQA009k-unsplash.jpg"
+                  alt="about 6"
+                  className="aspect-[0.9] rounded-lg object-cover"
+                />
+              </div>
+            </div>
+            <div className="px-8">
+              <h1 className="mb-8 text-2xl font-semibold lg:mb-6">
+                Our Workplace
+              </h1>
+              <p className="mb-9 lg:text-xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+                quae vel rem tenetur illum aspernatur. Ea, facere soluta cumque
+                laboriosam repudiandae quaerat inventore dolores saepe pariatur,
+                adipisci atque voluptate doloribus!
+              </p>
+              <p className="text-muted-foreground">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
+                aliquid laudantium minus distinctio exercitationem odio non
+                nihil blanditiis quae, beatae assumenda ad reiciendis soluta
+                dolorem. Natus repellendus quidem dolorum temporibus!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { About6 };
+
+About 7
+npx shadcn add @shadcnblocks/about2
+import { cn } from "@/lib/utils";
+
+interface About2Props {
+  className?: string;
+}
+
+const About2 = ({ className }: About2Props) => {
+  return (
+    <section className={cn("py-32", className)}>
+      <div className="flex flex-col gap-28">
+        <div className="container flex flex-col gap-10 text-center md:gap-24">
+          <div className="mx-auto flex max-w-3xl flex-col gap-6">
+            <h1 className="text-4xl font-medium md:text-6xl">Our Background</h1>
+            <p className="text-lg text-muted-foreground md:text-xl">
+              Discover how our solution simplifies complex processes, making it
+              easier to manage key operations and deliver exceptional
+              experiences.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-12">
+            <img
+              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+              alt="placeholder"
+              className="size-full max-h-96 rounded-xl object-cover md:col-span-5"
+            />
+            <img
+              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg"
+              alt="placeholder"
+              className="size-full max-h-96 rounded-xl object-cover md:col-span-4"
+            />
+            <img
+              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg"
+              alt="placeholder"
+              className="size-full max-h-96 rounded-xl object-cover md:col-span-3"
+            />
+          </div>
+        </div>
+        <div className="container flex flex-col gap-16">
+          <h2 className="max-w-3xl text-4xl font-medium md:text-5xl">
+            We excel in our field, but skill isn&apos;t everything we offer.
+          </h2>
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
+            <div className="flex flex-col gap-6 border-b pb-8">
+              <p className="text-4xl font-medium md:text-5xl">21M</p>
+              <p className="text-muted-foreground">Global Reach of Users</p>
+            </div>
+            <div className="flex flex-col gap-6 border-b pb-8">
+              <p className="text-4xl font-medium md:text-5xl">12+</p>
+              <p className="text-muted-foreground">Years of Expertise</p>
+            </div>
+            <div className="flex flex-col gap-6 border-b pb-8">
+              <p className="text-4xl font-medium md:text-5xl">654</p>
+              <p className="text-muted-foreground">Projects Completed</p>
+            </div>
+            <div className="flex flex-col gap-6 border-b pb-8">
+              <p className="text-4xl font-medium md:text-5xl">113k+</p>
+              <p className="text-muted-foreground">Monthly Active Users</p>
+            </div>
+            <div className="flex flex-col gap-6 border-b pb-8">
+              <p className="text-4xl font-medium md:text-5xl">461k</p>
+              <p className="text-muted-foreground">Registered Accounts</p>
+            </div>
+            <div className="flex flex-col gap-6 border-b pb-8">
+              <p className="text-4xl font-medium md:text-5xl">98+</p>
+              <p className="text-muted-foreground">Daily Users</p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-muted/50 py-24">
+          <div className="container flex flex-col items-center gap-11">
+            <p className="text-center text-xl font-medium">
+              Trusted by leading product teams worldwide.
+            </p>
+            <div className="grid grid-cols-2 gap-x-7 gap-y-12 lg:grid-cols-4">
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg"
+                  alt="logo"
+                  className="h-8 w-auto md:h-14"
+                />
+                <p className="text-xl font-semibold md:text-4xl">Acme</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-2.svg"
+                  alt="logo"
+                  className="h-8 w-auto md:h-14"
+                />
+                <p className="text-xl font-semibold md:text-4xl">Creative</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-3.svg"
+                  alt="logo"
+                  className="h-8 w-auto md:h-14"
+                />
+                <p className="text-xl font-semibold md:text-4xl">Octan</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-4.svg"
+                  alt="logo"
+                  className="h-8 w-auto md:h-14"
+                />
+                <p className="text-xl font-semibold md:text-4xl">Newco</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-5.svg"
+                  alt="logo"
+                  className="h-8 w-auto md:h-14"
+                />
+                <p className="text-xl font-semibold md:text-4xl">Contoso</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-6.svg"
+                  alt="logo"
+                  className="h-8 w-auto md:h-14"
+                />
+                <p className="text-xl font-semibold md:text-4xl">Fabrikam</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg"
+                  alt="logo"
+                  className="h-8 w-auto md:h-14"
+                />
+                <p className="text-xl font-semibold md:text-4xl">Litware</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-2.svg"
+                  alt="logo"
+                  className="h-8 w-auto md:h-14"
+                />
+                <p className="text-xl font-semibold md:text-4xl">Northwind</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container flex flex-col items-center gap-14">
+          <h2 className="text-center text-4xl font-semibold md:text-5xl">
+            See the Benefits Firsthand
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:col-span-2 md:grid-cols-2 md:flex-row lg:col-span-1 lg:grid-cols-1 lg:flex-col">
+              <img
+                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg"
+                alt="placeholder"
+                className="max-h-96 w-full rounded-xl object-cover"
+              />
+              <div className="flex flex-col justify-center rounded-xl bg-muted p-8">
+                <p className="mb-2 text-4xl font-medium">21M</p>
+                <p className="mb-6 font-semibold">Global Users</p>
+                <p className="text-muted-foreground">
+                  Streamline tasks and boost efficiency by up to 80% using our
+                  tools.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                alt="placeholder"
+                className="h-full rounded-xl object-cover"
+              />
+              <div className="absolute right-6 bottom-6 left-6 rounded-xl bg-background p-4">
+                <div className="mb-4 flex items-center gap-2">
+                  <img
+                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg"
+                    alt="placeholder"
+                    className="h-7 w-auto"
+                  />
+                  <span className="text-lg font-semibold">Acme.</span>
+                </div>
+                <p className="mb-6 text-sm">
+                  Our solution helps you reduce costs by half with improved
+                  operations.
+                </p>
+                <div className="flex items-baseline gap-1">
+                  <span className="font-medium">John Doe,</span>
+                  <span className="text-sm text-muted-foreground">
+                    CEO at Acme.
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-6">
+              <div className="rounded-xl bg-muted p-8">
+                <p className="mb-2 text-4xl font-medium">97%</p>
+                <p className="mb-6 font-semibold">Minimized Errors</p>
+                <p className="text-muted-foreground">
+                  Achieve greater accuracy and efficiency with our advanced
+                  toolkit.
+                </p>
+              </div>
+              <img
+                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg"
+                alt="placeholder"
+                className="max-h-96 rounded-xl object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { About2 };

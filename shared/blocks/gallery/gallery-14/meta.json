@@ -1,0 +1,14 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-14",
+  "description": "A gallery component with a carousel of items, featuring dynamic navigation dots that expand with titles on the active item. Layout includes a headline, description, and 2-column design with imagery.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery14"
+  ]
+}

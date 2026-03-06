@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-26",
+  "description": "This component creates a visually appealing background pattern using intersecting linear and radial gradients, ideal for adding texture and depth to any layout. It also allows the integration of additional features or content by utilizing a placeholder element.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern26"
+  ]
+}

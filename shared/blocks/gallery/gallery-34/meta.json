@@ -1,0 +1,17 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-34",
+  "description": "A gallery component displaying items in up to 3 columns, featuring interactive image blur on hover and icons indicating different characteristics.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery34",
+    "npm install framer-motion lucide-react"
+  ]
+}

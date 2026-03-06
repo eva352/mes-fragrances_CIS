@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-202",
+  "description": "A component showcasing 7 architectural solutions each with an icon, title, and description, arranged in a 3-column grid format, with one covering two columns.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature202",
+    "npm install lucide-react"
+  ]
+}

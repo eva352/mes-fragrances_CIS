@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-295",
+  "description": "This component displays projects with filters for categories and roles, and a toggle to show all. It features a 1-3 column grid of project cards.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "select"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature295",
+    "npm install lucide-react"
+  ]
+}

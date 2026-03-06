@@ -1,0 +1,18 @@
+{
+  "title": "Changelog",
+  "category": "changelog",
+  "slug": "changelog-5",
+  "description": "A component that displays changelogs with features like a sticky timeline navigation, vertical separators, and scroll-spy functionality for active section highlighting.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/changelog5",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-32",
+  "description": "This component is designed to promote engagement by showcasing a compelling heading, supportive description, and two action buttons for user interaction. It also displays key statistics in a visually appealing grid format to highlight significant achievements or features.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta32"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-343",
+  "description": "A bento-style features section with a centered heading and two rows of feature cards separated by dashed lines, featuring images and icon grids.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature343"
+  ]
+}

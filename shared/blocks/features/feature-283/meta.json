@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-283",
+  "description": "A component with an interactive image gallery, headline, text, and button. Features draggable, animate-on-scroll images with hover effects.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature283",
+    "npm install framer-motion lucide-react"
+  ]
+}

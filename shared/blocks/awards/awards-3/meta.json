@@ -1,0 +1,16 @@
+{
+  "title": "Awards",
+  "category": "awards",
+  "slug": "awards-3",
+  "description": "An awards list component with a hover animation, featuring award titles, categories, and years. Uses colored indicators per award.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/awards3",
+    "npm install lucide-react"
+  ]
+}

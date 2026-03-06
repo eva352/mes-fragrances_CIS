@@ -1,0 +1,18 @@
+{
+  "title": "Feature215a",
+  "category": "features",
+  "slug": "feature-215a",
+  "description": "A component showcasing a grid of cards with videos, icons, and texts. Features hover-to-play videos and links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature215a",
+    "npm install lucide-react"
+  ]
+}

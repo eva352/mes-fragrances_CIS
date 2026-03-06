@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-28",
+  "description": "A two-column component featuring image placeholders, badges, and \"learn more\" links with right-pointing chevrons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature28",
+    "npm install lucide-react"
+  ]
+}

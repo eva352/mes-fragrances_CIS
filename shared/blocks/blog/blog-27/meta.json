@@ -1,0 +1,26 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-27",
+  "description": "A component displaying blog articles with filters, featuring a breadcrumb navigator, an email form, and a \"Load More\" button, arranged in up to three columns.",
+  "dependencies": [
+    "@hookform/resolvers",
+    "lucide-react",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "breadcrumb",
+    "button",
+    "card",
+    "checkbox",
+    "field",
+    "label"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog27",
+    "npm install @hookform/resolvers lucide-react react-hook-form zod"
+  ]
+}

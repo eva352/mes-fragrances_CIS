@@ -1,0 +1,14 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-27",
+  "description": "A team carousel featuring images, names, and roles with navigation buttons, looping functionality. Displays items 2 on medium screens, 1/4 on large.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery27"
+  ]
+}

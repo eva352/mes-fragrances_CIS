@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/hero103
+npm install embla-carousel-auto-scroll embla-carousel-autoplay lucide-react

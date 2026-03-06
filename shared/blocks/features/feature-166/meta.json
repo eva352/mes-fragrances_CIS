@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-166",
+  "description": "A component displaying a main heading, description, and four features in a 3:2 column layout, each with a title, description, and image.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature166"
+  ]
+}

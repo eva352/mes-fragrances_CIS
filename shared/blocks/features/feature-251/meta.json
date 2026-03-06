@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-251",
+  "description": "A component featuring four cards with animations, icons, and text for showcasing features such as workflows, task tracking, and integrations.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card",
+    "https://magicui.design/r/globe"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature251",
+    "npm install motion"
+  ]
+}

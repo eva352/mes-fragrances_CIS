@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/feature236
+npm install framer-motion lucide-react

@@ -1,0 +1,14 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-100",
+  "description": "A component featuring a 2-column layout, with text and a call-to-action button on one side and an image on the other. Unique for its visual layering effect.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero100"
+  ]
+}

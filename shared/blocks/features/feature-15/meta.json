@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-15",
+  "description": "A component with a title/description header and a 2-column grid of features, each with icons, titles, and text.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature15",
+    "npm install lucide-react"
+  ]
+}

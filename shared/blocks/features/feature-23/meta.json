@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-23",
+  "description": "A module showcasing 3 features with images, titles, descriptions, and &#x27;Learn more&#x27; links in a 3-column layout.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature23",
+    "npm install lucide-react"
+  ]
+}

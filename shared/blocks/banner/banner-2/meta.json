@@ -1,0 +1,17 @@
+{
+  "title": "Banner",
+  "category": "banner",
+  "slug": "banner-2",
+  "description": "An alert component with dismissible functionality, featuring a title, description, and button. It shows an icon, supports hidden on mobile devices.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/banner2",
+    "npm install lucide-react"
+  ]
+}

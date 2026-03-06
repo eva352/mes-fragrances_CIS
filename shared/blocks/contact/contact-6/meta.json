@@ -1,0 +1,23 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-6",
+  "description": "A contact form component with two columns: one for direct contact info using icons and one for a submission form.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card",
+    "checkbox",
+    "input",
+    "label",
+    "separator",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact6",
+    "npm install lucide-react"
+  ]
+}

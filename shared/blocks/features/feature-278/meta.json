@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-278",
+  "description": "A component showcasing 6 feature cards with icons, titles, and descriptions that highlight unique qualities, arranged in a grid up to 3 columns wide, with a dynamic hover effect.",
+  "dependencies": [
+    "framer-motion",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature278",
+    "npm install framer-motion react-icons"
+  ]
+}

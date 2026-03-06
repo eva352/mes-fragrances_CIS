@@ -1,0 +1,16 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-30",
+  "description": "A footer component showcasing contact info, navigation, social links, and legal terms in a multi-column layout, plus a prominent brand name display.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer30",
+    "npm install lucide-react"
+  ]
+}

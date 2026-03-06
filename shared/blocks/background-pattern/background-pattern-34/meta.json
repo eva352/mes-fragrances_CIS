@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-34",
+  "description": "This component, named BackgroundPattern34, creates a visually appealing background pattern with a top fade circuit board effect suitable for full-screen displays. It utilizes linear gradients and radial masks to achieve its stylish look, and it accepts an optional className prop for additional styling.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern34"
+  ]
+}

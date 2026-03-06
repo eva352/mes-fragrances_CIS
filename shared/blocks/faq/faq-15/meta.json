@@ -1,0 +1,16 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-15",
+  "description": "An FAQ component with a title and a 2-column layout of items, each featuring an icon, heading, and description.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq15",
+    "npm install lucide-react"
+  ]
+}

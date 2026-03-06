@@ -1,0 +1,17 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-1",
+  "description": "A gallery block showcasing 3 case studies with dynamic resizing; includes images, logos, text, and interactive effects on mouse hover.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery1",
+    "npm install lucide-react"
+  ]
+}

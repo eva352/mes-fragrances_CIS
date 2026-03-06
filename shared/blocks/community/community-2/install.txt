@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/community2
+npm install lucide-react react-icons

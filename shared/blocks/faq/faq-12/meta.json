@@ -1,0 +1,15 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-12",
+  "description": "An FAQ component displaying questions under categories with a clickable sidebar for navigation. Features include dynamic active state updates and smooth scrolling.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "accordion",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq12"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-1",
+  "description": "A component features a card split into text and image sections, with a call-to-action button and decorative icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta1",
+    "npm install lucide-react"
+  ]
+}

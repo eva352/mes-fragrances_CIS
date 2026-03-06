@@ -1,0 +1,17 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-7",
+  "description": "A two-column call-to-action component featuring bullet points with checkmarks and a \"Get Started\" button, decorated with a geometric background.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta7",
+    "npm install lucide-react"
+  ]
+}

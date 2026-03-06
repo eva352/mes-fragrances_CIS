@@ -1,0 +1,18 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-6",
+  "description": "A carousel component with a heading, &#x27;Book a demo&#x27; link, scrolling buttons, and dynamic content blocks comprising images, titles, and summaries.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery6",
+    "npm install lucide-react"
+  ]
+}

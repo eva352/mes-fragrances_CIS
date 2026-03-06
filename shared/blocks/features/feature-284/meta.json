@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-284",
+  "description": "A grid component displaying features with images, titles, descriptions, and badges. Incorporates a glowing effect on hover. GridLayout varies from 1-4 columns.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.aceternity.com/registry/glowing-effect.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature284",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/changelog4
+npm install react-icons

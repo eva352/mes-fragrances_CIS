@@ -1,0 +1,17 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-16",
+  "description": "A component featuring a centered call-to-action with a decorative icon, a bold headline, and two buttons. It&#x27;s set against a darkened full-width background image.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta16",
+    "npm install lucide-react"
+  ]
+}

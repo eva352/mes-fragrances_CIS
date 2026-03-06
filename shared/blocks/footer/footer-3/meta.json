@@ -1,0 +1,21 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-3",
+  "description": "A footer component with a logo, navigation links in 2-5 columns, social icons, newsletter subscription form, and legal links.",
+  "dependencies": [
+    "react-icons",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "label",
+    "context-menu"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer3",
+    "npm install react-icons lucide-react"
+  ]
+}

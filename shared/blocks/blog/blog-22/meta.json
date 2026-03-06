@@ -1,0 +1,18 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-22",
+  "description": "A blog component showcasing a featured post with image, title, and author avatar followed by a list of secondary posts in a two-column layout with images.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog22",
+    "npm install lucide-react"
+  ]
+}

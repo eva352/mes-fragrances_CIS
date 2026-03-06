@@ -1,0 +1,20 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-281",
+  "description": "A testimonial display component featuring an animated card stack with user feedback, adjustable through attributes like offset and scale. Includes a \"Read More\" button.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature281",
+    "npm install framer-motion lucide-react react-icons"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-261",
+  "description": "A component featuring a grid layout with varying content blocks, including image backgrounds, statistics, pricing, and avatar groupings, aimed at promoting design quality, efficiency, and a premium library.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature261",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/hero111
+npm install @hookform/resolvers lucide-react react-hook-form zod

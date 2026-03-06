@@ -1,0 +1,14 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-6",
+  "description": "A component showcasing FAQs in a two-column layout, each entry numbered and containing a question and answer. Includes a headline and descriptive subtext at the top.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq6"
+  ]
+}

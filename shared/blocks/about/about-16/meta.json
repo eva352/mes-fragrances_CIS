@@ -1,0 +1,13 @@
+{
+  "title": "About",
+  "category": "about",
+  "slug": "about-16",
+  "description": "A six-column about section with sticky Why Us label, quote-style headline, supporting text, full-width image, and three-row stats list.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/about16"
+  ]
+}

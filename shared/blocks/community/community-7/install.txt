@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/community7
+npm install react-icons

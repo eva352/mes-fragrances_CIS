@@ -1,0 +1,19 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-21",
+  "description": "Interactive gallery component with image slider, effect animations, and a call-to-action button.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react",
+    "swiper"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery21",
+    "npm install framer-motion lucide-react swiper"
+  ]
+}

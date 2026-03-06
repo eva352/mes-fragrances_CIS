@@ -1,0 +1,16 @@
+{
+  "title": "Changelog",
+  "category": "changelog",
+  "slug": "changelog-8",
+  "description": "A component displaying a changelog with a scrollspy sidebar. Features dynamic scroll highlighting & smooth navigation to sections.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "scroll-area",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/changelog8"
+  ]
+}

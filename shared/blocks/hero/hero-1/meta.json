@@ -1,0 +1,14 @@
+{
+  "title": "hero 1",
+  "category": "hero",
+  "slug": "hero-1",
+  "source": {
+    "file": "shared/blocks/shadcn blocks.txt"
+  },
+  "install": [
+    "npx shadcn add @shadcnblocks/hero40",
+    "npm install lucide-react",
+    "npx shadcn@latest add https://magicui.design/r/marquee",
+    "npx shadcn@latest add button"
+  ]
+}

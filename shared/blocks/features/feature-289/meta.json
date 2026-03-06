@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-289",
+  "description": "A component featuring a large title and a tech stack list with clickable links, arranged in a 2-column layout with adjustable gap sizes.",
+  "dependencies": [
+    "lucide-react",
+    "radix-ui",
+    "qss",
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature289",
+    "npm install lucide-react radix-ui qss motion"
+  ]
+}

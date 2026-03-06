@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/hero101
+npm install lucide-react

@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/blogpost1
+npm install date-fns lucide-react

@@ -1,0 +1,17 @@
+{
+  "title": "Compare",
+  "category": "compare",
+  "slug": "compare-9",
+  "description": "A comparative component showcases metrics & technical analysis of 3 models with status indicators, hover effects on data rows, and a detailed breakdown of each model's performance in a grid layout.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "table"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/compare9",
+    "npm install lucide-react"
+  ]
+}

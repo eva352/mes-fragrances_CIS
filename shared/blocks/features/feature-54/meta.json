@@ -1,0 +1,15 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-54",
+  "description": "A tabbed component showcasing features with images and subfeatures. Includes 5 tabs, images for each feature, and a 3-column layout for subfeatures.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature54"
+  ]
+}

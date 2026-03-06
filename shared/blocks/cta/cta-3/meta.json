@@ -1,0 +1,18 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-3",
+  "description": "A 2-column component featuring a call-to-action with buttons and two card links for documentation and getting started guides, adorned with icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta3",
+    "npm install lucide-react"
+  ]
+}

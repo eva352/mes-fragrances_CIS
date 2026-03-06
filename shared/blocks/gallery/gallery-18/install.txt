@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/gallery18
+npm install swiper

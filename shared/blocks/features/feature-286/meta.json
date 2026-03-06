@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-286",
+  "description": "A component featuring an intro, 3 cards with glowing stars, pricing, and a \"View All\" button. Each card has \"Add to cart\" functionality and displays collection names and prices.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "https://ui.aceternity.com/registry/glowing-stars.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature286",
+    "npm install lucide-react"
+  ]
+}

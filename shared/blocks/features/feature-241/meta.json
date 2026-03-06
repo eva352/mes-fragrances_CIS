@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-241",
+  "description": "A component displaying a header and a grid of cards, each with an icon, title, and description about team features. Grid has 2 columns. Cards animate on hover.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature241",
+    "npm install lucide-react"
+  ]
+}

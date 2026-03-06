@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-55",
+  "description": "A centered feature block with a title, description, and button. Uses a single-column layout with adjustable text sizes.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature55"
+  ]
+}

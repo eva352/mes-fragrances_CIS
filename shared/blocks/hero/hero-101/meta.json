@@ -1,0 +1,19 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-101",
+  "description": "A component with a promotional header, featuring a title, description, start button, and demo video button that triggers a modal with a video player. It also displays partner logos below.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "button",
+    "dialog"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero101",
+    "npm install lucide-react"
+  ]
+}

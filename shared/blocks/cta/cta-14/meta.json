@@ -1,0 +1,14 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-14",
+  "description": "A component featuring a full-width background image with a dark overlay, centered text, and two buttons. It includes a bold title, a description, and offers a free trial.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta14"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Awards",
+  "category": "awards",
+  "slug": "awards-1",
+  "description": "A component displaying a \"Milestones\" heading and a table listing awards with names, descriptions, and years, across 5 columns.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/awards1"
+  ]
+}

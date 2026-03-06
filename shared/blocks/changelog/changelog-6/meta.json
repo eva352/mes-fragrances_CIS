@@ -1,0 +1,19 @@
+{
+  "title": "Changelog",
+  "category": "changelog",
+  "slug": "changelog-6",
+  "description": "A changelog component displays updates with dialogs for detailed view, including versions, dates, images, contributors, and excerpts. Features tooltip actions.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "dialog",
+    "tooltip"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/changelog6",
+    "npm install lucide-react"
+  ]
+}

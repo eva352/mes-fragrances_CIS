@@ -1,0 +1,18 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-23",
+  "description": "Interactive gallery with expandable images and detailed captions on hover, featuring a statement and button on the left.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery23",
+    "npm install framer-motion lucide-react"
+  ]
+}

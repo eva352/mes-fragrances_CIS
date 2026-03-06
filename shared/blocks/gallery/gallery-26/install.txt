@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/gallery26
+npm install framer-motion

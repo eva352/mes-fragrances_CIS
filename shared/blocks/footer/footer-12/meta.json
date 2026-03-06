@@ -1,0 +1,16 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-12",
+  "description": "A footer component with three sections for navigation links, social media, and legal text. Includes an image with external link indicators for social media.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer12",
+    "npm install lucide-react"
+  ]
+}

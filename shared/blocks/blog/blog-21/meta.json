@@ -1,0 +1,19 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-21",
+  "description": "A carousel component displaying blog posts with navigation arrows, tags, and a \"View All Articles\" button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog21",
+    "npm install lucide-react"
+  ]
+}

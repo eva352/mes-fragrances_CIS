@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/contact17
+npm install lucide-react react-hook-form

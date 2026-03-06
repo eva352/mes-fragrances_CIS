@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-21",
+  "description": "This component renders a full-screen block with a dashed grid background pattern, featuring a gradient and masking effects for added visual depth. It is ideal for uses requiring an engaging graphical backdrop, and customization via the className prop allows for further stylistic adjustments.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern21"
+  ]
+}

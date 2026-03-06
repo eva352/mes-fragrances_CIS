@@ -1,0 +1,14 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-13",
+  "description": "A component with a call-to-action, a title, text, email input, and a subscription button. Features a privacy policy link. Layout adjusts across sizes.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta13"
+  ]
+}

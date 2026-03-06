@@ -1,0 +1,16 @@
+{
+  "title": "Awards",
+  "category": "awards",
+  "slug": "awards-5",
+  "description": "A component displays a list of awards in a 6-column layout with interactive elements that reveal award images on hover.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/awards5",
+    "npm install framer-motion"
+  ]
+}

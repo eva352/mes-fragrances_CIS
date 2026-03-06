@@ -1,0 +1,14 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-27",
+  "description": "A dual-column block featuring a bold headline, two sub-sections with large titles, buttons for actions, and layered images with a phone mockup.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta27"
+  ]
+}

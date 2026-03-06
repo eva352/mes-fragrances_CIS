@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/gallery22
+npm install lucide-react react-icons swiper

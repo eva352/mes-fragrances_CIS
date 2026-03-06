@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/case-studies3
+npm install lucide-react

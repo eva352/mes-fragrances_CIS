@@ -1,0 +1,17 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-108",
+  "description": "A component featuring a large title about earning from real estate, a list of benefits with check icons, and a &#x27;Start Now&#x27; button. Includes an image section on the right.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero108",
+    "npm install lucide-react"
+  ]
+}

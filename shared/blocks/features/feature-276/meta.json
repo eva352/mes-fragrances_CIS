@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-276",
+  "description": "A component displaying a 3-column grid of cards for features like \"Plug & Play\", \"Customizable\", each with an icon, title, and description. It highlights a card on hover.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature276",
+    "npm install framer-motion lucide-react"
+  ]
+}

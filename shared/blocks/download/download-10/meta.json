@@ -1,0 +1,17 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-10",
+  "description": "A component promoting software downloads, subdivided into 3 columns for Desktop, Mobile, and Web versions with respective download options.",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download10",
+    "npm install react-icons"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-140",
+  "description": "A carousel block displaying items with titles, descriptions, and images in a flex layout, includes previous and next controls. Each item combines text and a full-width image.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature140"
+  ]
+}

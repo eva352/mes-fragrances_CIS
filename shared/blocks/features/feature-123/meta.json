@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-123",
+  "description": "A component with a title and text block on one side, and a column of features with titles and descriptions on the other. Features highlighted by a color gradient bar.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature123"
+  ]
+}

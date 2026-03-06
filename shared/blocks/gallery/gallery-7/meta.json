@@ -1,0 +1,18 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-7",
+  "description": "A component that combines a 2-column text intro with a looping AI-themed image carousel. Unique feature: staggered image positions.",
+  "dependencies": [
+    "embla-carousel-auto-scroll",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery7",
+    "npm install embla-carousel-auto-scroll lucide-react"
+  ]
+}

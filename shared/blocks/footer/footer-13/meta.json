@@ -1,0 +1,18 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-13",
+  "description": "This component is a multi-section footer block featuring a call-to-action, newsletter signup, navigational links, and social media connections. It includes 4 columns of navigation links and uses buttons and input for interactions.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer13",
+    "npm install lucide-react"
+  ]
+}

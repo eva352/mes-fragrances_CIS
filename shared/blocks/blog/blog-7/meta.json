@@ -1,0 +1,19 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-7",
+  "description": "A blog showcase block with a header, description, and 3-column grid of posts, featuring images, titles, summaries, and read-more links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog7",
+    "npm install lucide-react"
+  ]
+}

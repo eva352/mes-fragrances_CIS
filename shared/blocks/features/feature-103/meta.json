@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-103",
+  "description": "A component showcasing core capabilities with a badge, a heading, and links in a 2-column layout expanding to 3 columns. Features interactive elements and an arrow icon.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature103",
+    "npm install lucide-react"
+  ]
+}

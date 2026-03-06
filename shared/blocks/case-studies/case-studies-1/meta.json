@@ -1,0 +1,13 @@
+{
+  "title": "Case-studies",
+  "category": "case-studies",
+  "slug": "case-studies-1",
+  "description": "This component showcases a set of visually engaging case study cards, each with interactive hover effects, designed to highlight how various solutions can enhance business growth and performance. Users can explore different case studies through dynamic imagery, logos, and descriptive text, providing insights into how these offerings can benefit their operations.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/case-studies1"
+  ]
+}

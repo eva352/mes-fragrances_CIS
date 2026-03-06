@@ -1,0 +1,12 @@
+{
+  "title": "HEro 2",
+  "category": "hero",
+  "slug": "hero-2",
+  "source": {
+    "file": "shared/blocks/shadcn blocks.txt"
+  },
+  "install": [
+    "npx shadcn add @shadcnblocks/hero30",
+    "npx shadcn@latest add button"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-7",
+  "description": "A component showcasing app download options with a bold title, a badge, and stylized placeholders for 3 phones, arranged dynamically by screen width.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "https://magicui.design/r/iphone"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download7"
+  ]
+}

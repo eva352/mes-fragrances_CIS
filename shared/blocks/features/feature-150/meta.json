@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-150",
+  "description": "A component showcasing 2 CRM solutions with hover effects, images, and a \"Learn More\" or \"Get Started\" button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature150",
+    "npm install lucide-react"
+  ]
+}

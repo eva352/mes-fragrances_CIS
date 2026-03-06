@@ -1,0 +1,15 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-252",
+  "description": "A component with a visual ripple effect, encapsulating a header, a subtext, and a button within a bordered, rounded container.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "https://magicui.design/r/ripple"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature252"
+  ]
+}

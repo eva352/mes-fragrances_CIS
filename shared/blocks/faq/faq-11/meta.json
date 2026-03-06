@@ -1,0 +1,14 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-11",
+  "description": "An FAQ component with a column for inquiry intro and a column for categories. Features collapsible accordions for answers.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "accordion"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq11"
+  ]
+}

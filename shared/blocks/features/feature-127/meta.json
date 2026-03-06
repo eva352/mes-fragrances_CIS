@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-127",
+  "description": "This block showcases utilities with dynamic grid visuals and descriptive cards, detailing features through icons, titles, and texts alongside faded image backgrounds.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature127",
+    "npm install lucide-react"
+  ]
+}

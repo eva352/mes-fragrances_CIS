@@ -1,0 +1,13 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-132",
+  "description": "A component displaying a welcome message, a description, a \"Get Started\" button, and a 4-column layout of items with images, titles, and descriptions.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature132"
+  ]
+}

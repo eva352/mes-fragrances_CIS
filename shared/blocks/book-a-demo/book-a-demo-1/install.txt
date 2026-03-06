@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/book-a-demo1
+npm install lucide-react motion

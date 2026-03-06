@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/contact7
+npm install lucide-react

@@ -1,0 +1,19 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-31",
+  "description": "A footer component with dynamic animation, featuring navigation, social links, subscription form, location, and privacy terms. Includes email contact, 2-column grid for links, and an animated logo.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer31",
+    "npm install framer-motion lucide-react"
+  ]
+}

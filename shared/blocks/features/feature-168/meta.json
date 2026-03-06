@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-168",
+  "description": "A component that showcases 3 productivity features with titles, descriptions, and visuals in a 3-column layout, including a highlighted \"Features\" Badge and a main heading.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature168",
+    "npm install lucide-react"
+  ]
+}

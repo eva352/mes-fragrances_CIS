@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-197",
+  "description": "This component displays features in an accordion with dynamic image updates. Layout includes 2 columns, interactive tabs on the left, image preview on the right.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "accordion"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature197"
+  ]
+}

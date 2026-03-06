@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-280",
+  "description": "A layout showcasing user testimonials and a feature list with a title, separated into two columns, including checkboxes for features.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.aceternity.com/registry/card-stack.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature280",
+    "npm install lucide-react"
+  ]
+}

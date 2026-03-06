@@ -1,0 +1,16 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-26",
+  "description": "A gallery block with animated blur vignettes around images, arranged in a 5-column grid. Features image reveal animations on scroll.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery26",
+    "npm install framer-motion"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-2",
+  "description": "A FAQ component displaying questions and answers in a column, with a customizable heading and dynamic content.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq2"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-64",
+  "description": "A component displaying a \"Coming Soon\" badge, a title, a descriptive paragraph, and two feature blocks in a 7-column grid, with the first block spanning 4 columns and the second 3 columns.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature64"
+  ]
+}

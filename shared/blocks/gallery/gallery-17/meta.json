@@ -1,0 +1,14 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-17",
+  "description": "A carousel component featuring an image gallery with navigation arrows and pagination dots. Each image scales and adjusts opacity on selection.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery17"
+  ]
+}

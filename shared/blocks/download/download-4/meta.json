@@ -1,0 +1,19 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-4",
+  "description": "A component showcasing a professional suite download with features, version details, and download options in a two-column layout within a main card.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download4",
+    "npm install lucide-react"
+  ]
+}

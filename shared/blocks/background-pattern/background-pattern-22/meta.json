@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-22",
+  "description": "This component creates a visually dynamic background pattern, featuring a dashed grid overlay with a top fade effect and a radial gradient. It serves as a versatile design block for enhancing the visual appeal of a user interface layout.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern22"
+  ]
+}

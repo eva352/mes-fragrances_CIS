@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-159",
+  "description": "A 4-column component displaying icons with titles and text descriptions. Includes a \"See all\" link on the last item.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature159",
+    "npm install lucide-react"
+  ]
+}

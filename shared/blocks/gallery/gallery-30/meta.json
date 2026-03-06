@@ -1,0 +1,16 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-30",
+  "description": "An interactive gallery component with dynamically shuffled images that are draggable. Includes title and description.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery30",
+    "npm install framer-motion"
+  ]
+}

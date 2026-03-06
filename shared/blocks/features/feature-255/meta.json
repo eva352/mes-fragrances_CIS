@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-255",
+  "description": "A component displaying a list of top contributors with images, titles, and descriptions. Includes a header with a \"View all\" button.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature255"
+  ]
+}

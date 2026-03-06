@@ -1,0 +1,17 @@
+{
+  "title": "Experience",
+  "category": "experience",
+  "slug": "experience-2",
+  "description": "A component showcasing professional experiences in a 6-column layout with sticky summary and contact on the left and detailed list on the right.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/experience2",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Blogpost",
+  "category": "blog",
+  "slug": "blogpost-1",
+  "description": "A blog post component featuring title, author with avatar, publication date, and content including images, alerts, and a table.",
+  "dependencies": [
+    "date-fns",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "alert",
+    "avatar"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blogpost1",
+    "npm install date-fns lucide-react"
+  ]
+}

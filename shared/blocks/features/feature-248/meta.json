@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-248",
+  "description": "A centered text reveal component with a dark background, featuring a motivational message, adaptable to large screens up to 86rem wide.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature248",
+    "npm install motion"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-9",
+  "description": "A multi-layout footer block featuring marketing messages, a pricing card, link sections, and legal/social links. Incorporates colorful icons and hover effects.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer9",
+    "npm install lucide-react"
+  ]
+}

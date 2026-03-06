@@ -1,0 +1,19 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-9",
+  "description": "A component featuring a central title, description, badges, two textual cards, and an image in a three-column layout; includes \"Read more\" buttons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature9",
+    "npm install lucide-react"
+  ]
+}

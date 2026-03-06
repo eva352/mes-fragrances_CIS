@@ -1,0 +1,16 @@
+{
+  "title": "Feature217b",
+  "category": "features",
+  "slug": "feature-217b",
+  "description": "This component showcases three accessibility features with icons in a 3-column layout, including titles and summaries, against a dynamic background.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature217b",
+    "npm install lucide-react"
+  ]
+}

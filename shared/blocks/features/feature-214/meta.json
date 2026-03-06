@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-214",
+  "description": "A carousel showcasing AI-powered features with autoplaying video cards on hover, including icons and brief descriptions.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature214",
+    "npm install lucide-react"
+  ]
+}

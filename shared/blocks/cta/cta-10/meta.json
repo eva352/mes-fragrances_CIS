@@ -1,0 +1,14 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-10",
+  "description": "A call-to-action component with a heading, description, and optional primary and secondary buttons arranged in a single column that becomes a row on larger screens.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta10"
+  ]
+}

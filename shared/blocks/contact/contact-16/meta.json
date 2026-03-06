@@ -1,0 +1,18 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-16",
+  "description": "A contact component with a title, descriptive text, links for phone and email, and a form with name, email, and message input fields, plus a submit button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact16",
+    "npm install lucide-react"
+  ]
+}

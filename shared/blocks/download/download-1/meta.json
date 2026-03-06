@@ -1,0 +1,18 @@
+{
+  "title": "Download",
+  "category": "download",
+  "slug": "download-1",
+  "description": "A component with a heading and description, containing three cards for different platforms (desktop, iOS, android) each with titles, subtitles, descriptions, and download options.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/download1",
+    "npm install lucide-react"
+  ]
+}

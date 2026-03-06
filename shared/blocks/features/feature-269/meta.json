@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-269",
+  "description": "A feature block lists 12 advantages with icons in a two-column grid and highlights services with an image in an adjacent visual card.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.aceternity.com/registry/3d-card.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature269",
+    "npm install lucide-react"
+  ]
+}

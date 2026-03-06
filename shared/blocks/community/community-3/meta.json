@@ -1,0 +1,19 @@
+{
+  "title": "Community",
+  "category": "community",
+  "slug": "community-3",
+  "description": "A component showcasing a community invitation with social icons, descriptions, and a 1-3 column layout of cards for different platforms.",
+  "dependencies": [
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/community3",
+    "npm install lucide-react react-icons"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-199",
+  "description": "A component displaying a dynamic list of features with images - 3:2 column split, scrolls to highlight features.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature199"
+  ]
+}

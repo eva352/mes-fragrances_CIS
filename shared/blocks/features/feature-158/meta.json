@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-158",
+  "description": "A component displaying three key features with images & descriptions, centered titles, and a \"View More\" button. Each feature is in a column within a row for desktops.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature158"
+  ]
+}

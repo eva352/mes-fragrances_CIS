@@ -1,0 +1,19 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-18",
+  "description": "A contact component with an email link, support features listed, and a form with fields for name, optional phone, email, message, and a submit button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact18",
+    "npm install lucide-react"
+  ]
+}

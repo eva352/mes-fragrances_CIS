@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/footer7
+npm install react-icons

@@ -1,0 +1,17 @@
+{
+  "title": "Case-studies",
+  "category": "case-studies",
+  "slug": "case-studies-5",
+  "description": "This component is a carousel block that showcases a series of testimonials with accompanying logos and images. It allows users to navigate through different slides, displaying dynamic content and animations for an engaging user experience.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/case-studies5",
+    "npm install framer-motion"
+  ]
+}

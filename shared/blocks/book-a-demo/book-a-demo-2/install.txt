@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/book-a-demo2
+npm install framer-motion lucide-react

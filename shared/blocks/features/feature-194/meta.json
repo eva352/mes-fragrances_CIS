@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-194",
+  "description": "A component showcasing 4 unique features with icons in a 4-column layout, each with a description and \"Learn more\" link.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature194",
+    "npm install lucide-react"
+  ]
+}

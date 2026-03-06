@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-19",
+  "description": "A component displaying tabs each with a title, description, list of features, and an image, arranged in a 2-column layout for larger screens.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature19",
+    "npm install lucide-react"
+  ]
+}

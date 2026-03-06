@@ -1,0 +1,20 @@
+{
+  "title": "Case-study",
+  "category": "case-study",
+  "slug": "case-study-1",
+  "description": "This component displays a detailed case study highlighting improvements in system reliability through AI monitoring, featuring key metrics, narrative sections, and visual elements. It also includes breadcrumbs for navigation, alerts for important notes, and buttons for user interactions such as contacting or learning more.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "alert",
+    "breadcrumb",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/case-study1",
+    "npm install lucide-react"
+  ]
+}

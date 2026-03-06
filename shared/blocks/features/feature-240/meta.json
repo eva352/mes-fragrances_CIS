@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-240",
+  "description": "A carousel component showcasing services with images, titles, and descriptions. Items reveal further details on hover. Navigation arrows are provided.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature240",
+    "npm install lucide-react"
+  ]
+}

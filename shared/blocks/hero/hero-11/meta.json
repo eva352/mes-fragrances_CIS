@@ -1,0 +1,17 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-11",
+  "description": "A hero component with a center-aligned title, description, and button above a full-width image placeholder. Features a logo and uses a single-column layout.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero11",
+    "npm install lucide-react"
+  ]
+}

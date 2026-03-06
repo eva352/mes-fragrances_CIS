@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-182",
+  "description": "A component showcasing three feature cards with images, titles, descriptions, and icons, plus a section with two action buttons and a descriptive heading.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature182",
+    "npm install lucide-react"
+  ]
+}

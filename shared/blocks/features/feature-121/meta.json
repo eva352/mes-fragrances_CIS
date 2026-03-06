@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-121",
+  "description": "A component displays features in a grid, each with an icon, title, and description. Interactive blocks reveal descriptions on click.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature121",
+    "npm install lucide-react"
+  ]
+}

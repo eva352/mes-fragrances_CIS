@@ -1,0 +1,16 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-18",
+  "description": "A card-carousel gallery with autoplay, displaying portraits with annotated names in a looping mode.",
+  "dependencies": [
+    "swiper"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery18",
+    "npm install swiper"
+  ]
+}

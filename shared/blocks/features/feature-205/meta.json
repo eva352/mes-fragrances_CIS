@@ -1,0 +1,15 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-205",
+  "description": "A two-column component featuring interactive tabs (Efficiency, Collaboration, Insights) with descriptive text and related images showcasing benefits.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "scroll-area",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature205"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-18",
+  "description": "A footer component with social links, language settings, privacy dialog, and navigation sections in a column layout that expands to a row at larger sizes.",
+  "dependencies": [
+    "@hookform/resolvers",
+    "lucide-react",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "dialog",
+    "drawer",
+    "dropdown-menu",
+    "field",
+    "switch"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer18",
+    "npm install @hookform/resolvers lucide-react react-hook-form zod"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Compare",
+  "category": "compare",
+  "slug": "compare-3",
+  "description": "A 3-column comparison block showcasing features between two options, highlighted with icons and badges for visual differentiation.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/compare3",
+    "npm install lucide-react"
+  ]
+}

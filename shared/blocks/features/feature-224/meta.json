@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-224",
+  "description": "A component showcasing AI features in nature via a carousel, each slide displaying a title, icon, and description with a vibrant background.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature224",
+    "npm install lucide-react"
+  ]
+}

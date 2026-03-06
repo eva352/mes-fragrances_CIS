@@ -1,0 +1,21 @@
+{
+  "title": "Blogpost",
+  "category": "blog",
+  "slug": "blogpost-5",
+  "description": "A blog post component with dynamic navigation highlighting active sections, breadcrumbs, author info, and social share buttons. Layout includes an 8:3 column split for content and sidebar.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "alert",
+    "avatar",
+    "breadcrumb",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blogpost5",
+    "npm install lucide-react"
+  ]
+}

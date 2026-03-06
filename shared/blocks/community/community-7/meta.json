@@ -1,0 +1,16 @@
+{
+  "title": "Community",
+  "category": "community",
+  "slug": "community-7",
+  "description": "A component showcasing social media platforms in a 3-column layout, with icons, links, online status, and follower counts.",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/community7",
+    "npm install react-icons"
+  ]
+}

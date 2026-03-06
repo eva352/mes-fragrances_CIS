@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-31",
+  "description": "This component renders a full-screen background featuring a circuit board pattern using CSS gradients, ideal for creating a visually engaging backdrop. It includes the ability to integrate additional styles through a customizable className property and incorporates a pattern placeholder for potential content.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern31"
+  ]
+}

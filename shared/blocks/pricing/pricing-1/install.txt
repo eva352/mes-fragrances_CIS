@@ -1,0 +1,6 @@
+npx shadcn add @shadcnblocks/pricing9
+npm install lucide-react react
+npx shadcn@latest add button
+npx shadcn@latest add card
+npx shadcn@latest add switch
+npx shadcn@latest add tooltip

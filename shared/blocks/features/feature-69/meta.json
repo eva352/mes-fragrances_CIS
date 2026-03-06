@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-69",
+  "description": "A carousel component with an image slider and a side list detailing features. It evolves around dynamically updating content based on user interaction.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature69",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-112",
+  "description": "This component displays a section with a title, subtitle, and a link followed by a 3-column layout of cards, each featuring an image, title, and link.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature112",
+    "npm install lucide-react"
+  ]
+}

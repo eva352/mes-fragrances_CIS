@@ -1,0 +1,14 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-14",
+  "description": "An FAQ component with a central heading, a subtitle, and grouped questions within collapsible cards, each representing a category. Includes a decorative background.",
+  "dependencies": [],
+  "registryDependencies": [
+    "accordion",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq14"
+  ]
+}

@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/feature248
+npm install motion

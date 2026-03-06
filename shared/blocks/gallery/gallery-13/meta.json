@@ -1,0 +1,17 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-13",
+  "description": "A carousel component showcasing items with images, titles, descriptions, and icons in a 2:3 column layout. It dynamically updates the active display and navigation functionality.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery13",
+    "npm install lucide-react"
+  ]
+}

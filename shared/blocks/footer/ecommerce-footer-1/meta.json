@@ -1,0 +1,24 @@
+{
+  "title": "Ecommerce-footer",
+  "category": "footer",
+  "slug": "ecommerce-footer-1",
+  "description": "This component serves as a comprehensive footer block featuring a newsletter subscription form, a multilingual section for various language selections, and contact information including social media links. It includes customizable sections for footer links, enabling users to provide important information such as policies and collections, enhancing navigation and connectivity options for the user.",
+  "dependencies": [
+    "@hookform/resolvers",
+    "lucide-react",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "field",
+    "input",
+    "select",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/ecommerce-footer1",
+    "npm install @hookform/resolvers lucide-react react-hook-form zod"
+  ]
+}

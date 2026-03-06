@@ -1,0 +1,18 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-4",
+  "description": "A component showcasing a scrollable gallery with navigation buttons and indicators, featuring images, titles, and descriptions for each item.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery4",
+    "npm install lucide-react"
+  ]
+}

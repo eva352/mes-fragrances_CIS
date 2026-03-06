@@ -1,0 +1,21 @@
+{
+  "title": "Blogpost",
+  "category": "blog",
+  "slug": "blogpost-4",
+  "description": "A component displaying an article with breadcrumbs, author details, and sections with dynamic navigation. It features sticky social share icons and a \"Back to top\" button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "alert",
+    "avatar",
+    "breadcrumb",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blogpost4",
+    "npm install lucide-react"
+  ]
+}

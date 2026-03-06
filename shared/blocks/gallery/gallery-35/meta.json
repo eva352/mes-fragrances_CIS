@@ -1,0 +1,17 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-35",
+  "description": "This component, Gallery35, displays a scrollable gallery of visual cards with accompanying text and images, featuring smooth scrolling and pagination controls for easy navigation. Users can control the autoplay functionality, allowing for an interactive viewing experience.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery35",
+    "npm install framer-motion lucide-react"
+  ]
+}

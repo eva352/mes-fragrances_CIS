@@ -1,0 +1,681 @@
+About 1
+npx shadcn add @shadcnblocks/about14
+npm install react
+import React from "react";
+
+import { cn } from "@/lib/utils";
+
+interface About14Props {
+  className?: string;
+}
+
+const About14 = ({ className }: About14Props) => {
+  return (
+    <section className={cn("py-32", className)}>
+      <div className="container space-y-10 lg:space-y-20">
+        <div className="w-full grid-cols-6 gap-10 space-y-5 lg:grid lg:space-y-0">
+          <h1 className="col-span-2 text-5xl font-semibold tracking-tighter lg:text-8xl">
+            Our story
+          </h1>
+          <div />
+          <div className="col-span-3 flex items-center justify-center">
+            <p className="w-fit text-foreground/40 lg:translate-y-2">
+              We ask: What&apos;s the goal? Who&apos;s it for? How do we make it
+              effortless?
+              <br className="hidden lg:block" />
+              We begin with why, who, and how to make it better.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri4/img1.png"
+            alt="about us iamge"
+            className="mt-4 h-132 w-full object-cover"
+          />
+        </div>
+        <div className="grid grid-cols-1 gap-10 space-y-12 lg:grid-cols-6 lg:space-y-0">
+          <p className="hidden text-foreground/40 lg:block">
+            Our Crew, Our story
+          </p>
+          <div className="order-2 col-span-2 lg:order-none lg:pr-24 lg:pl-10">
+            <p className="text-foreground/40">
+              We aim to bring diverse minds together, turning ideas into
+              experiences that matter.
+            </p>
+            <div className="mt-5 flex items-center gap-5 lg:mt-12">
+              <img
+                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri3/avatar1.png"
+                className="size-12"
+                alt="avatr"
+              />
+              <div>
+                <h3 className="text-lg font-medium tracking-tight">John Doe</h3>
+                <p className="text-sm text-foreground/40">Creative Director</p>
+              </div>
+            </div>
+          </div>
+          <div className="order-1 col-span-3 lg:order-none lg:mt-0 lg:pl-10">
+            <h2 className="text-2xl font-medium tracking-tight lg:text-3xl">
+              We are a team of creators, thinkers, and builders who believe in
+              crafting experiences that truly connect. Our story is built on
+              passion, innovation, and the drive to bring meaningful ideas to
+              life.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { About14 };
+
+
+About 2
+npx shadcn add @shadcnblocks/about13
+npm install react
+import React from "react";
+
+import { cn } from "@/lib/utils";
+
+interface About13Props {
+  className?: string;
+}
+
+const About13 = ({ className }: About13Props) => {
+  return (
+    <section className={cn("py-32", className)}>
+      <div className="container space-y-10 lg:space-y-20">
+        <div className="w-full grid-cols-6 gap-10 lg:grid">
+          <div />
+          <h1 className="col-span-4 text-5xl font-semibold tracking-tighter lg:pr-24 lg:pl-10 lg:text-8xl">
+            Our story
+          </h1>
+        </div>
+        <div className="grid-cols-6 space-y-12 lg:grid lg:space-y-0 xl:gap-10">
+          <p className="hidden text-foreground/40 lg:block">
+            Our Crew, Our story
+          </p>
+          <div className="col-span-2 lg:pr-24 lg:pl-10">
+            <p className="text-foreground/40">
+              We aim to bring diverse minds together, turning ideas into
+              experiences that matter.
+            </p>
+            <div className="mt-5 flex items-center gap-5 lg:mt-20">
+              <img
+                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri3/avatar1.png"
+                className="size-12"
+                alt="avatr"
+              />
+              <div>
+                <h3 className="text-lg font-medium tracking-tight">John Doe</h3>
+                <p className="text-sm text-foreground/40">Creative Director</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-3 mt-32 lg:mt-0 lg:pl-10">
+            <h2 className="text-2xl font-medium tracking-tight lg:text-3xl">
+              We are a team of creators, thinkers, and builders who believe in
+              crafting experiences that truly connect. Our story is built on
+              passion, innovation, and the drive to bring meaningful ideas to
+              life.
+            </h2>
+            <p className="mt-6 text-base text-foreground/40 lg:mt-18 lg:text-lg">
+              We ask: What&apos;s the goal? Who&apos;s it for? How do we make it
+              effortless? We begin with why, who, and how to make it better.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri4/img10.png"
+            alt="about us iamge"
+            className="mt-4 h-150 w-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { About13 };
+
+hero 1
+npx shadcn add @shadcnblocks/hero40
+npm install lucide-react
+npx shadcn@latest add https://magicui.design/r/marquee
+npx shadcn@latest add button
+import {
+  ArrowRight,
+  ChartLine,
+  Check,
+  Cloud,
+  CloudCog,
+  Play,
+  Share2,
+  Sparkles,
+  Video,
+} from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+import { Marquee } from "@/components/magicui/marquee";
+import { Button } from "@/components/ui/button";
+
+const integrations = [
+  {
+    name: "Storage",
+    description: "Store your videos in your favorite storage solution.",
+    icon: Cloud,
+  },
+  {
+    name: "AI",
+    description: "Use AI to generate videos, images, and more.",
+    icon: Sparkles,
+  },
+  {
+    name: "Video Editing",
+    description: "Edit your videos with your favorite video editing software.",
+    icon: Video,
+  },
+  {
+    name: "Video Hosting",
+    description: "Host your videos on your favorite video hosting solution.",
+    icon: CloudCog,
+  },
+  {
+    name: "Social Media",
+    description: "Share your videos on your favorite social media platforms.",
+    icon: Share2,
+  },
+  {
+    name: "Analytics",
+    description:
+      "Track video performance with your favorite analytics solution.",
+    icon: ChartLine,
+  },
+];
+
+interface Hero40Props {
+  className?: string;
+}
+
+const Hero40 = ({ className }: Hero40Props) => {
+  return (
+    <section className={cn("py-32", className)}>
+      <div className="container">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="flex flex-col gap-6">
+            <h1 className="text-6xl font-bold">
+              Integrate with your favorite tools
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Connect your favorite tools to your video production workflow.
+              Streamline your creative process by integrating with the platforms
+              and services you already use every day.
+            </p>
+            <div className="flex gap-4">
+              <Button variant="outline" size="lg">
+                <span>Watch Demo</span>
+                <Play />
+              </Button>
+              <Button size="lg">
+                <span>Get Started</span>
+                <ArrowRight />
+              </Button>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2">
+                <Check className="size-4 text-green-500" />
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-bold">100+</span> integrations available
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="size-4 text-green-500" />
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-bold">30-day</span> free trial
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="size-4 text-green-500" />
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-bold">24/7</span> support included
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-6">
+            <img
+              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+              alt="placeholder"
+              className="aspect-video w-full rounded-lg border border-border object-cover"
+            />
+            <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+              <Marquee className="[--duration:30s]">
+                {integrations.map((integration) => (
+                  <div
+                    key={integration.name}
+                    className="flex max-w-72 gap-2 rounded-lg border border-border p-4 dark:bg-muted"
+                  >
+                    <integration.icon className="mt-0.5 size-4 shrink-0" />
+                    <div className="flex flex-col gap-2">
+                      <p className="text-sm">{integration.name}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {integration.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </Marquee>
+              <Marquee reverse className="[--duration:30s]">
+                {integrations.map((integration) => (
+                  <div
+                    key={integration.name}
+                    className="flex max-w-72 gap-2 rounded-lg border border-border p-4 dark:bg-muted"
+                  >
+                    <integration.icon className="mt-0.5 size-4 shrink-0" />
+                    <div className="flex flex-col gap-2">
+                      <p className="text-sm">{integration.name}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {integration.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </Marquee>
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { Hero40 };
+
+
+HEro 2
+npx shadcn add @shadcnblocks/hero30
+npx shadcn@latest add button
+import { cn } from "@/lib/utils";
+
+import { Button } from "@/components/ui/button";
+
+interface Hero30Props {
+  className?: string;
+}
+
+const Hero30 = ({ className }: Hero30Props) => {
+  return (
+    <section className={cn("relative overflow-hidden py-32", className)}>
+      <div className="relative container">
+        <div className="grid items-center gap-8 lg:grid-cols-2">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
+              Welcome to Our Website
+            </h1>
+            <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
+              doloremque mollitia fugiat omnis! Porro facilis quo animi
+              consequatur. Explicabo.
+            </p>
+            <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+              <Button variant="outline" className="w-full sm:w-auto">
+                Secondary
+              </Button>
+              <Button className="w-full sm:w-auto">Primary</Button>
+            </div>
+          </div>
+          <div className="relative mt-16 -mb-16 flex justify-center gap-4 lg:mt-0 lg:mb-0 lg:justify-end">
+            {/* Mesh background */}
+            <div className="absolute -inset-8 z-0 rounded-2xl bg-linear-to-r from-amber-100 via-red-200 to-teal-100 opacity-70 blur-3xl"></div>
+
+            {/* Images with relative positioning to appear above the mesh */}
+            <div className="relative z-10">
+              <img
+                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                alt="placeholder hero"
+                className="h-[400px] rounded-lg border border-border object-cover object-center sm:max-w-[320px]"
+              />
+            </div>
+            <div className="relative z-10 hidden flex-col gap-4 sm:flex md:hidden 2xl:flex">
+              <div className="w-[256px] flex-1 overflow-clip rounded-lg border border-border bg-background"></div>
+              <div className="aspect-2/1 w-[256px] overflow-clip rounded-lg border border-border bg-background"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { Hero30 };
+
+
+pricing 1
+npx shadcn add @shadcnblocks/pricing9
+npm install lucide-react react
+npx shadcn@latest add button
+npx shadcn@latest add card
+npx shadcn@latest add switch
+npx shadcn@latest add tooltip
+"use client";
+
+import { CheckIcon, Info, MinusIcon } from "lucide-react";
+import { Fragment, useState } from "react";
+
+import { cn } from "@/lib/utils";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Switch } from "@/components/ui/switch";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+type TierName = "Free" | "Pro" | "Premium";
+
+interface Tier {
+  name: string;
+  price: string;
+  annualPrice: string;
+  description: string;
+}
+
+interface Feature {
+  name: string;
+  tiers: Partial<Record<TierName, boolean>>;
+  tooltip?: string;
+}
+
+interface Section {
+  name: string;
+  features: Feature[];
+}
+
+const tiers: Tier[] = [
+  {
+    name: "Free",
+    price: "$0",
+    annualPrice: "$0",
+    description: "Quis suspendisse ut fermentum neque vivamus.",
+  },
+  {
+    name: "Pro",
+    price: "$10",
+    annualPrice: "$100",
+    description: "Quis eleifend a tincidunt pellentesque.",
+  },
+  {
+    name: "Premium",
+    price: "$15",
+    annualPrice: "$150",
+    description: "Orci volutpat ut sed sed neque, dui eget.",
+  },
+];
+const sections: Section[] = [
+  {
+    name: "Key Features",
+    features: [
+      {
+        name: "Live Collaboration",
+        tiers: { Free: true, Pro: true, Premium: true },
+        tooltip: "Lorem ipsum dolor sit amet, consectetur",
+      },
+      {
+        name: "Unlimited projects",
+        tiers: { Free: true, Pro: true, Premium: true },
+        tooltip: "Lorem ipsum dolor sit amet, consectetur",
+      },
+      {
+        name: "Custom permissions",
+        tiers: { Pro: true, Premium: true },
+        tooltip: "Lorem ipsum dolor sit amet, consectetur",
+      },
+      {
+        name: "Team members",
+        tiers: {
+          Premium: true,
+        },
+        tooltip: "Lorem ipsum dolor sit amet, consectetur",
+      },
+    ],
+  },
+  {
+    name: "Reporting",
+    features: [
+      {
+        name: "Basic reports",
+        tiers: { Free: true, Pro: true, Premium: true },
+        tooltip: "Lorem ipsum dolor sit amet, consectetur",
+      },
+      {
+        name: "Advanced reports",
+        tiers: { Pro: true, Premium: true },
+        tooltip: "Lorem ipsum dolor sit amet, consectetur",
+      },
+      {
+        name: "Custom reports",
+        tiers: { Premium: true },
+        tooltip: "Lorem ipsum dolor sit amet, consectetur",
+      },
+      {
+        name: "Export data",
+        tiers: { Premium: true },
+        tooltip: "Lorem ipsum dolor sit amet, consectetur",
+      },
+    ],
+  },
+];
+
+interface Pricing9Props {
+  className?: string;
+}
+
+const Pricing9 = ({ className }: Pricing9Props) => {
+  const [isAnnual, setIsAnnual] = useState(false);
+  return (
+    <section className={cn("py-24 sm:py-32", className)}>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
+            Choose Your Plan
+          </p>
+        </div>
+        <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-muted-foreground">
+          Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et
+          quasi.
+        </p>
+        <div className="mt-10 flex flex-col items-center gap-2 lg:hidden">
+          <span className="flex items-center gap-3 text-base font-medium">
+            Annual
+            <Switch
+              checked={isAnnual}
+              onCheckedChange={() => setIsAnnual(!isAnnual)}
+            />
+            Monthly
+          </span>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-md space-y-8 sm:mt-16 lg:hidden">
+          {tiers.map((tier) => (
+            <Card key={tier.name} className="p-8">
+              <CardHeader className="p-0">
+                <div className="flex flex-col gap-2 text-center">
+                  <span className="text-xl leading-7 font-bold uppercase">
+                    <CardTitle className="text-xl">{tier.name}</CardTitle>
+                  </span>
+                  <span className="text-sm font-normal text-muted-foreground">
+                    {tier.description}
+                  </span>
+                </div>
+                <div className="flex flex-col justify-center gap-x-1 pt-8 text-center">
+                  <span className="text-4xl font-bold">
+                    {isAnnual ? tier.annualPrice : tier.price}
+                  </span>
+                  <span className="text-sm leading-6 text-muted-foreground">
+                    /month
+                  </span>
+                </div>
+              </CardHeader>
+              <Button className="mt-8 w-full">Buy plan</Button>
+              <CardContent className="p-0">
+                <ul className="mt-10 space-y-4 text-sm leading-6">
+                  <TooltipProvider>
+                    {sections.map((section) => (
+                      <li key={section.name}>
+                        <ul role="list" className="space-y-4">
+                          {section.features.map(
+                            (feature) =>
+                              feature.tiers[tier.name as TierName] && (
+                                <li
+                                  key={feature.name}
+                                  className="flex items-center justify-between"
+                                >
+                                  <span className="flex items-center gap-3">
+                                    <CheckIcon className="h-5 w-5 flex-none" />
+                                    <span>{feature.name}</span>
+                                  </span>
+                                  <Tooltip>
+                                    <TooltipTrigger>
+                                      <Info className="ml-1 h-4 w-4 text-muted-foreground" />
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                      {feature.tooltip}
+                                    </TooltipContent>
+                                  </Tooltip>
+                                </li>
+                              ),
+                          )}
+                        </ul>
+                      </li>
+                    ))}
+                  </TooltipProvider>
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="isolate mt-20 hidden lg:block">
+          <div className="relative -mx-8">
+            {tiers.map((tier, idx) => (
+              <div
+                className="absolute inset-x-4 inset-y-0 -z-10 flex"
+                key={tier.name}
+              >
+                <div
+                  className="flex w-1/4 px-4"
+                  style={{
+                    marginLeft: `${(idx + 1) * 25}%`,
+                  }}
+                >
+                  <div className="w-full border-x" />
+                </div>
+              </div>
+            ))}
+            <table className="w-full table-fixed border-separate border-spacing-x-8 text-left">
+              <thead>
+                <tr>
+                  <td />
+                  {tiers.map((tier) => (
+                    <th key={tier.name} className="px-6 pt-6 xl:px-8 xl:pt-8">
+                      <div className="flex flex-col gap-2 text-center">
+                        <span className="text-xl leading-7 font-bold uppercase">
+                          {tier.name}
+                        </span>
+                        <span className="text-sm font-normal text-muted-foreground">
+                          {tier.description}
+                        </span>
+                      </div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>
+                    <div className="flex flex-col gap-2">
+                      <p className="text-sm font-normal text-muted-foreground">
+                        Billings
+                      </p>
+                      <span className="flex items-center gap-3 text-base font-medium">
+                        Annual
+                        <Switch
+                          checked={isAnnual}
+                          onCheckedChange={() => setIsAnnual(!isAnnual)}
+                        />
+                        Monthly
+                      </span>
+                    </div>
+                  </th>
+                  {tiers.map((tier) => (
+                    <td key={tier.name} className="px-6 pt-10 xl:px-8">
+                      <div className="flex flex-col justify-center gap-x-1 text-center">
+                        <span className="text-4xl font-bold">
+                          {isAnnual ? tier.annualPrice : tier.price}
+                        </span>
+                        <span className="text-sm leading-6 text-muted-foreground">
+                          /month
+                        </span>
+                      </div>
+                      <Button className="mt-8 w-full">Get Started</Button>
+                    </td>
+                  ))}
+                </tr>
+                {sections.map((section, sectionIdx) => (
+                  <Fragment key={section.name}>
+                    <tr>
+                      <th
+                        className={cn(
+                          "pb-4 text-sm leading-6 font-semibold",
+                          sectionIdx === 0 ? "pt-8" : "pt-16",
+                        )}
+                      >
+                        {section.name}
+                      </th>
+                    </tr>
+                    <TooltipProvider delayDuration={200}>
+                      {section.features.map((feature) => (
+                        <tr key={feature.name}>
+                          <th className="flex items-center justify-between py-4 text-sm leading-6 font-normal">
+                            {feature.name}
+                            <Tooltip>
+                              <TooltipTrigger>
+                                <Info className="ml-1 h-4 w-4 text-muted-foreground hover:text-foreground" />
+                              </TooltipTrigger>
+                              <TooltipContent>{feature.tooltip}</TooltipContent>
+                            </Tooltip>
+                          </th>
+                          {tiers.map((tier) => (
+                            <td key={tier.name} className="px-6 py-4 xl:px-8">
+                              <>
+                                {feature.tiers[tier.name as TierName] ? (
+                                  <CheckIcon className="mx-auto h-5 w-5" />
+                                ) : (
+                                  <MinusIcon className="mx-auto h-5 w-5 text-muted-foreground" />
+                                )}
+                              </>
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </TooltipProvider>
+                  </Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+export { Pricing9 };

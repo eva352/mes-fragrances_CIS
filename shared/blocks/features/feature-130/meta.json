@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-130",
+  "description": "A component showcasing business integrations with 3 segments, including icons, titles, and text. Features a 3-column layout with images.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature130",
+    "npm install lucide-react"
+  ]
+}

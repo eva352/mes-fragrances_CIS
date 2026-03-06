@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/feature245
+npm install framer-motion

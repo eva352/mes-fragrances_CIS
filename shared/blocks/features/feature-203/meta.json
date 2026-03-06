@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-203",
+  "description": "A component displaying 4 cards in a 2-column grid, each with an icon, title, description, and a list of features with check icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature203",
+    "npm install lucide-react"
+  ]
+}

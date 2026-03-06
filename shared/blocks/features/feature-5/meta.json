@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-5",
+  "description": "A component with a 3-column layout on large screens, shrinking to 2 and then 1 column. Features 2 cards, one double the width of the other, each with icons, text, and images.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature5",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Compare",
+  "category": "compare",
+  "slug": "compare-4",
+  "description": "A comparison component contrasting traditional vs cloud-native approaches across multiple metrics with hover-to-highlight functionality and a \"Get Started\" button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/compare4",
+    "npm install lucide-react"
+  ]
+}

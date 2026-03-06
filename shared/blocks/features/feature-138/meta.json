@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-138",
+  "description": "A component featuring three sections, each with an image and text side-by-side, headers, and a \"Learn more\" link. Alternates image/text order between sections.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature138",
+    "npm install lucide-react"
+  ]
+}

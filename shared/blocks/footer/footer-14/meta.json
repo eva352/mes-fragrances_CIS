@@ -1,0 +1,14 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-14",
+  "description": "A footer component with logo, newsletter, navigation links across three columns, and social icons. Includes a succinct company description and subscription form.",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer14",
+    "npm install react-icons"
+  ]
+}

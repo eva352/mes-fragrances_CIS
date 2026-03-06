@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-2",
+  "description": "A dual-column component with an image on one side, and text content with two buttons on the other. Features customizable title, description, image, and buttons.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature2"
+  ]
+}

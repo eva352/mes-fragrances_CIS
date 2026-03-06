@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-129",
+  "description": "A tabbed component showcasing integrations like Slack & Google Drive, featuring descriptions, images, and \"Learn more\" links. Has a title and subtitle.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature129"
+  ]
+}

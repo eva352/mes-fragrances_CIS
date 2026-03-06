@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-116",
+  "description": "This component displays a title, subtitle, and a grid of images (3 columns, 2 rows) with hover effects and call-to-action links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature116",
+    "npm install lucide-react"
+  ]
+}

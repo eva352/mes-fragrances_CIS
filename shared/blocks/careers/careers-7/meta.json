@@ -1,0 +1,13 @@
+{
+  "title": "Careers",
+  "category": "careers",
+  "slug": "careers-7",
+  "description": "A component listing job categories and jobs with titles, locations, and \"View listing\" buttons in a structured layout.",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/careers7"
+  ]
+}

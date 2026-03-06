@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-191",
+  "description": "A component featuring a highlighted message and a 3-column layout of cards, each card displaying a sequence badge, a title, description, and image.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature191",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-20",
+  "description": "A gallery component displaying overlapping, draggable images with dynamic animation. Includes textual content and a button, all within a single column layout.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery20",
+    "npm install framer-motion lucide-react"
+  ]
+}

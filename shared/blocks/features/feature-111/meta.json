@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-111",
+  "description": "A component showcasing features with 2 columns, badges, headings, descriptions, links, and images. Unique for its centered content and outlined badges.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature111",
+    "npm install lucide-react"
+  ]
+}

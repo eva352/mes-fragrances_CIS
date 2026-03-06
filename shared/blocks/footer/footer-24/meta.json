@@ -1,0 +1,16 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-24",
+  "description": "A footer component with a bold heading, sections for email, social links, phone, and navigation links. It also includes a design attribution.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer24",
+    "npm install lucide-react"
+  ]
+}

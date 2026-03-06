@@ -1,0 +1,14 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-5",
+  "description": "A component featuring an image and a call-to-action (CTA) side by side in a two-column layout, with an appealing button and engaging text.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta5"
+  ]
+}

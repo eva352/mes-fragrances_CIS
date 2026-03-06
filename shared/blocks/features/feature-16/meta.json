@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-16",
+  "description": "A component featuring a three-column layout, each with icons (Timer, ZoomIn, Zap) for \"Performance\", \"Quality\", and \"Innovation\", with descriptions.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature16",
+    "npm install lucide-react"
+  ]
+}

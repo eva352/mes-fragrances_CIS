@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-73",
+  "description": "A component displays a heading, description, and a link followed by a grid of features with images, each detailing a specific capability. Two-column layout for larger screens, single for smaller.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature73",
+    "npm install lucide-react"
+  ]
+}

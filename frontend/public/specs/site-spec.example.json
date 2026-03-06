@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "kind": "aurora.site",
+  "project": {
+    "id": "aurora_stack",
+    "title": "AuroraStack",
+    "theme": {
+      "mode": "system",
+      "palette": "northern-light"
+    }
+  },
+  "pages": [
+    {
+      "slug": "landing",
+      "title": "Landing",
+      "path": "/site",
+      "blocks": [
+        {
+          "id": "blk_landing_hero_1",
+          "type": "registry",
+          "category": "hero",
+          "slug": "hero-1",
+          "title": "Hero 1"
+        },
+        {
+          "id": "blk_landing_pricing_1",
+          "type": "registry",
+          "category": "pricing",
+          "slug": "pricing-1",
+          "title": "Pricing 1"
+        },
+        {
+          "id": "blk_landing_custom_1",
+          "type": "custom",
+          "title": "Custom section",
+          "layout": {
+            "kind": "split",
+            "options": {
+              "gap": "lg",
+              "align": "center",
+              "ratio": "6/6"
+            }
+          },
+          "nodes": [
+            {
+              "id": "node_title",
+              "componentKey": "typography",
+              "props": {
+                "as": "h2",
+                "text": "Titre de section"
+              }
+            },
+            {
+              "id": "node_cta",
+              "componentKey": "button",
+              "props": {
+                "variant": "default",
+                "label": "Call to action"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

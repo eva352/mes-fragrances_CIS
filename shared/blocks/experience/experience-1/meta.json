@@ -1,0 +1,17 @@
+{
+  "title": "Experience",
+  "category": "experience",
+  "slug": "experience-1",
+  "description": "A component listing experiences with download CV button, 3-column layout for period, title/description, and company.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/experience1",
+    "npm install lucide-react"
+  ]
+}

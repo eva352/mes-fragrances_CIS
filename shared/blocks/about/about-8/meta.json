@@ -1,0 +1,14 @@
+{
+  "title": "About",
+  "category": "about",
+  "slug": "about-8",
+  "description": "A fintech-style about section with plus-sign pattern background, stats row, mission narrative, image carousel, and founding team.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/about8"
+  ]
+}

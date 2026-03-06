@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/footer27
+npm install framer-motion lucide-react

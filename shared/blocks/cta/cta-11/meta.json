@@ -1,0 +1,13 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-11",
+  "description": "A component with heading, description, and up to two buttons, arranged vertically with emphasis styling.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta11"
+  ]
+}

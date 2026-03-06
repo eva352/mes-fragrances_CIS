@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-40",
+  "description": "This component serves as a versatile background pattern featuring a combination of linear and radial gradients, creating a grid with dots effect. It is designed to seamlessly integrate into your project with customizable styles through additional class names.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern40"
+  ]
+}

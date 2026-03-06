@@ -1,0 +1,15 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-164",
+  "description": "This component consists of a tabbed gallery (with 3 items) alongside descriptive text and a &#x27;Learn more&#x27; button, arranged in a two-column layout.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature164"
+  ]
+}

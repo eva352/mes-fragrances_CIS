@@ -1,0 +1,19 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-19",
+  "description": "A component featuring enterprise solution highlights, with a badge, heading, text, and action buttons on one side. The other side contains links to documentation and demos, divided by a separator.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta19",
+    "npm install lucide-react"
+  ]
+}

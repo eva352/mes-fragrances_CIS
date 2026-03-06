@@ -1,0 +1,20 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-12",
+  "description": "A feature block using a carousel to display slides on various topics. Includes a progress bar and navigation buttons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "card",
+    "carousel",
+    "progress"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature12",
+    "npm install lucide-react"
+  ]
+}

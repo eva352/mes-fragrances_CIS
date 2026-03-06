@@ -1,0 +1,18 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-16",
+  "description": "A blog section showcasing articles with dates, titles, categories, and team logos in a 4-column layout, featuring hover effects and navigation icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog16",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-25",
+  "description": "A footer component with a background image, featuring a personal message, social and portfolio links, contact details, and legal links in a 1-2-4 column layout.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer25"
+  ]
+}

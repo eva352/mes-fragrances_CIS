@@ -1,0 +1,14 @@
+{
+  "title": "Compare",
+  "category": "compare",
+  "slug": "compare-5",
+  "description": "A component displays two options with images, text, and buttons, split across two columns, and features an \"OR\" marker centrally between columns.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/compare5"
+  ]
+}

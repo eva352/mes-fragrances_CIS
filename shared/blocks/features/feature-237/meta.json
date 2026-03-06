@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-237",
+  "description": "This component displays a grid of cards detailing system features, each with metrics, status, and deployment info. Two-column layout on medium screens.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature237",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-198",
+  "description": "A component showcasing 3 cards with icons, titles, and descriptions, each highlighting unique software benefits. Positioned dynamically for visual interest.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature198",
+    "npm install lucide-react"
+  ]
+}

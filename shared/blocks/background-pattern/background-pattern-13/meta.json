@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-13",
+  "description": "This component renders a visually engaging background pattern featuring a left fade diagonal cross grid, suitable for enhancing the aesthetic appeal of any interface. It provides flexibility by allowing custom styles through a class name prop, making it easily adaptable to different design needs.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern13"
+  ]
+}

@@ -1,0 +1,40 @@
+.DS_Store
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Node / Next
+frontend/node_modules
+frontend/.next
+frontend/.turbo
+frontend/out
+
+# Python
+**/__pycache__/
+**/.pytest_cache/
+**/.venv
+**/env/
+**/venv/
+**/*.pyc
+
+# Build artifacts
+dist
+build
+coverage
+*.log
+
+# Runtime specs (local-only)
+llm_specs/
+
+# Env files (never commit secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local

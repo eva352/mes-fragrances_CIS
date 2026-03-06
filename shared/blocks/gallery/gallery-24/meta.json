@@ -1,0 +1,18 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-24",
+  "description": "An interactive gallery block that showcases images with dynamic resizing and details on hover or click, including an \"Add to Cart\" button.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery24",
+    "npm install framer-motion lucide-react"
+  ]
+}

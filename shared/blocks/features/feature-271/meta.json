@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-271",
+  "description": "A component showcasing features with an animated background, a central title, a labeled introduction, and a two-column list, each with an icon and a description.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature271",
+    "npm install lucide-react"
+  ]
+}

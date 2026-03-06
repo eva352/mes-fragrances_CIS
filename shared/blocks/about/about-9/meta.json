@@ -1,0 +1,13 @@
+{
+  "title": "About",
+  "category": "about",
+  "slug": "about-9",
+  "description": "A personal profile section with large team photo, role and location info with flag icon, bio text, and secondary workspace image.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/about9"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Careers",
+  "category": "careers",
+  "slug": "careers-9",
+  "description": "A component listing job openings with department, role, location, and a link, featuring a heading, introduction, and a call-to-action for unsolicited applications.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/careers9",
+    "npm install lucide-react"
+  ]
+}

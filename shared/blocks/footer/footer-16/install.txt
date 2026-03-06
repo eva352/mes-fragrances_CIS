@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/footer16
+npm install lucide-react

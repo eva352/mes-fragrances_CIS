@@ -1,0 +1,20 @@
+{
+  "title": "Community",
+  "category": "community",
+  "slug": "community-5",
+  "description": "A component featuring a GitHub profile card with stats (stars, forks, contributors), decorative grid pattern, and links to social media (Discord, Twitter, LinkedIn).",
+  "dependencies": [
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "card",
+    "https://magicui.design/r/grid-pattern"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/community5",
+    "npm install lucide-react react-icons"
+  ]
+}

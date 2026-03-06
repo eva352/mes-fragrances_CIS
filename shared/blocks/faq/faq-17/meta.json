@@ -1,0 +1,17 @@
+{
+  "title": "Faq",
+  "category": "faq",
+  "slug": "faq-17",
+  "description": "A component comprising FAQs with an accordion layout, personal profile section, and a contact link. Features a 5-column layout, customizable questions, answers, and profile info.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "accordion"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/faq17",
+    "npm install lucide-react"
+  ]
+}

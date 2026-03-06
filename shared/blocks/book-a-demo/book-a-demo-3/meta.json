@@ -1,0 +1,22 @@
+{
+  "title": "Book-a-demo",
+  "category": "book-a-demo",
+  "slug": "book-a-demo-3",
+  "description": "The component combines a demo booking form with testimonial display functionality, aimed at facilitating user interaction through form inputs such as name, email, location, and more. It features customizable properties for headings, descriptions, and testimonials, making it suitable for user feedback and engagement with multiple selection options.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "card",
+    "input",
+    "label",
+    "select",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/book-a-demo3",
+    "npm install lucide-react"
+  ]
+}

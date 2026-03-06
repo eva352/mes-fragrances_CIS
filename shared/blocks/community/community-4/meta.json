@@ -1,0 +1,17 @@
+{
+  "title": "Community",
+  "category": "community",
+  "slug": "community-4",
+  "description": "A component with a title, description, and a grid of links to social platforms, each with an icon, a unique color background, headings, and descriptions.",
+  "dependencies": [
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/community4",
+    "npm install lucide-react react-icons"
+  ]
+}

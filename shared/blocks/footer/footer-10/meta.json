@@ -1,0 +1,13 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-10",
+  "description": "A time-updating footer with 3 columns, displaying a copyright date, current London time, and an email. Features an auto-updating clock functionality.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer10"
+  ]
+}

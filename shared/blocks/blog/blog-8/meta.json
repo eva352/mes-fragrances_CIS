@@ -1,0 +1,17 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-8",
+  "description": "A component displaying blog posts in a grid with images, summaries, tags, and author details. Features include text hover effects and a read-more link.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog8",
+    "npm install lucide-react"
+  ]
+}

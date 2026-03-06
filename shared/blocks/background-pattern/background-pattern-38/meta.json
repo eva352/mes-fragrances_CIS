@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-38",
+  "description": "This component creates a visually engaging background pattern with a center-fade circuit board design, ideal for adding dynamic aesthetics to full-screen sections. It allows customization through a `className` prop, enabling users to style the pattern to fit various themes and layouts.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern38"
+  ]
+}

@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/feature127
+npm install lucide-react

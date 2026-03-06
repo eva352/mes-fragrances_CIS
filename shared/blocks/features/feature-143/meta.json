@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-143",
+  "description": "A component showcasing features with a badge & a grid layout. Utilizes a 3x3 grid for visuals, lists features with icons, and emphasizes modern design.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature143",
+    "npm install lucide-react"
+  ]
+}

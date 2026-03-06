@@ -1,0 +1,19 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-10",
+  "description": "A testimonial carousel component with text content, navigation buttons, and progress indicator. It has a dual-column layout with quotes and images.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery10",
+    "npm install lucide-react"
+  ]
+}

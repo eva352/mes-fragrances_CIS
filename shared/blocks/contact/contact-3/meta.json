@@ -1,0 +1,17 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-3",
+  "description": "A contact component with a heading, two buttons, and sections for support, sales, inquiries, verification, and global offices. Uses icons and grid layouts.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact3",
+    "npm install lucide-react"
+  ]
+}

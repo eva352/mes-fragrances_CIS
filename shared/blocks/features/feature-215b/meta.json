@@ -1,0 +1,18 @@
+{
+  "title": "Feature215b",
+  "category": "features",
+  "slug": "feature-215b",
+  "description": "A component featuring a collection of horizontal cards, each with a video, icon, title, summary, and link. Cards activate video on hover.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature215b",
+    "npm install lucide-react"
+  ]
+}

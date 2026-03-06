@@ -1,0 +1,15 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-213",
+  "description": "A component showcasing features through tabs, detailing functionality with related images and summaries. Includes a main title, 3 tabbed descriptions, and images set in a 16:9 aspect ratio.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature213"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-282",
+  "description": "A 2-column component featuring an interactive encryption card and detailed text on encryption technology, with security highlights listed using bullet-like icons.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "https://ui.aceternity.com/registry/evervault-card.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature282"
+  ]
+}

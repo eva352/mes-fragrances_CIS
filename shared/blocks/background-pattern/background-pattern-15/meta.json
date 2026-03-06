@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-15",
+  "description": "This component creates a visually engaging background pattern with diagonal cross grids and a bottom fade effect, enhancing the aesthetic of any interface. It accepts a customizable className prop to adjust styling and integrates a placeholder element for additional content layering.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern15"
+  ]
+}

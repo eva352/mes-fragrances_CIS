@@ -1,0 +1,17 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-11",
+  "description": "A component with a sticky header displaying \"Blog Posts\" and navigation links, beside a 2-column grid of blog entries featuring images and titles.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog11",
+    "npm install lucide-react"
+  ]
+}

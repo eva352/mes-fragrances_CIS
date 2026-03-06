@@ -1,0 +1,15 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-287",
+  "description": "A component displaying a title and a grid of cards (4 columns wide on larger screens, fewer on smaller). Each card includes a glowing stars effect, a title, and text. A button below the grid invites user interaction.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "https://ui.aceternity.com/registry/glowing-stars.json"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature287"
+  ]
+}

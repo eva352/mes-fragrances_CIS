@@ -1,0 +1,61 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${AURORA_DB_NAME:-aurora_stack}
+      POSTGRES_USER: ${AURORA_DB_USER:-aurora_stack}
+      POSTGRES_PASSWORD: ${AURORA_DB_PASSWORD:-aurora_stack}
+    ports:
+      - "${AURORA_BIND_HOST:-127.0.0.1}:${AURORA_DB_PORT:-19432}:5432"
+    volumes:
+      - aurora_stack_db:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      # Option avancée : si DATABASE_URL est défini dans .env.local/.env, il prend le dessus (Postgres externe).
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://${AURORA_DB_USER:-aurora_stack}:${AURORA_DB_PASSWORD:-aurora_stack}@db:5432/${AURORA_DB_NAME:-aurora_stack}}
+      AURORA_PROJECT_TITLE: ${AURORA_PROJECT_TITLE:-Mon projet}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@example.com}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-change_me}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change_me}
+      JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
+      JWT_ACCESS_TOKEN_EXPIRE_MINUTES: ${JWT_ACCESS_TOKEN_EXPIRE_MINUTES:-60}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:19100,https://stack.auroramind.fr}
+      AURORA_ENCRYPTION_KEY: ${AURORA_ENCRYPTION_KEY:-}
+      AURORA_OPENROUTER_BASE_URL: ${AURORA_OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
+      AURORA_LLM_SPECS_DIR: /llm_specs
+      AURORA_SHARED_SPECS_DIR: /aurora_shared_specs
+      AURORA_DOCS_DIR: /aurora_docs
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "${AURORA_BIND_HOST:-127.0.0.1}:${AURORA_BACKEND_PORT:-19101}:8000"
+    volumes:
+      - ./llm_specs:/llm_specs
+      - ./shared/specs:/aurora_shared_specs:ro
+      - ./docs:/aurora_docs:ro
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_BACKEND_ORIGIN: http://backend:8000
+        NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL:-/api/v1}
+        NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-AuroraStack}
+    environment:
+      NEXT_BACKEND_ORIGIN: http://backend:8000
+      NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL:-/api/v1}
+      NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-AuroraStack}
+    ports:
+      - "${AURORA_BIND_HOST:-127.0.0.1}:${AURORA_FRONTEND_PORT:-19100}:3000"
+    volumes:
+      - ./llm_specs:/llm_specs
+    restart: unless-stopped
+
+volumes:
+  aurora_stack_db:

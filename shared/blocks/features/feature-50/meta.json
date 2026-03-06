@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-50",
+  "description": "A component with a central message and a button, followed by a grid of 3 visual blocks, each with text and \"Learn more\" buttons. One spans full-width, others take half.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature50",
+    "npm install lucide-react"
+  ]
+}

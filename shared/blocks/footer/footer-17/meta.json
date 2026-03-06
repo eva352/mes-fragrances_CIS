@@ -1,0 +1,20 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-17",
+  "description": "A footer component with theme toggle, navigation links, social links, theme-specific logo, and a system status indicator.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "drawer",
+    "dropdown-menu",
+    "toggle-group"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer17",
+    "npm install lucide-react"
+  ]
+}

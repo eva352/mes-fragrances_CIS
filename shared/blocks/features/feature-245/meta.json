@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-245",
+  "description": "A component showcasing eight feature highlights with animated text and decorative slashes, centered around a single card image, structured in a dual-column layout.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "utils",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature245",
+    "npm install framer-motion"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-175",
+  "description": "This component displays features using tabs with vertical orientation, switches images and descriptions onClick, includes custom icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "tabs"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature175",
+    "npm install lucide-react"
+  ]
+}

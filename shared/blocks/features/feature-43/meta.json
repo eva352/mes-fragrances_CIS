@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-43",
+  "description": "A component showcasing 6 reasons with icons, titles, and descriptions in a 3-column grid for \"Why Work With Us?\".",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature43",
+    "npm install lucide-react"
+  ]
+}

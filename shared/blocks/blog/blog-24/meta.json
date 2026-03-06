@@ -1,0 +1,19 @@
+{
+  "title": "Blog",
+  "category": "blog",
+  "slug": "blog-24",
+  "description": "A component displaying a collection of blog posts with images, titles, summaries, labels, authors, and dates, plus a view-all button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "card"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/blog24",
+    "npm install lucide-react"
+  ]
+}

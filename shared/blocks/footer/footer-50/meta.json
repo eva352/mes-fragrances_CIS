@@ -1,0 +1,17 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-50",
+  "description": "A footer with centered CTA section, navigation links, social links, and a large gradient brand wordmark at the bottom.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer50",
+    "npm install lucide-react"
+  ]
+}

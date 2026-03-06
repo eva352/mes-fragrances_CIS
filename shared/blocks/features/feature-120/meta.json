@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-120",
+  "description": "A component showcasing business tools with a 2-column layout, avatars, quotes, action button, and a 4-column stats grid.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "avatar",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature120"
+  ]
+}

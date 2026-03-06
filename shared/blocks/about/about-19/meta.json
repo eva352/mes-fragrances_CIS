@@ -1,0 +1,13 @@
+{
+  "title": "About",
+  "category": "about",
+  "slug": "about-19",
+  "description": "A seven-column about section with large bordered image on the left and headline, text, quote attribution with avatar on the right.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/about19"
+  ]
+}

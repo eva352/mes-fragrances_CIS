@@ -1,0 +1,18 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-8",
+  "description": "A footer component with a logo, description, social icons, link sections, newsletter signup, and copyright info arranged in a grid layout.",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer8",
+    "npm install react-icons"
+  ]
+}

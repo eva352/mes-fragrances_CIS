@@ -1,0 +1,14 @@
+{
+  "title": "Gallery",
+  "category": "gallery",
+  "slug": "gallery-28",
+  "description": "A gallery block featuring a carousel of curated interior design images with a centralized heading, description, and navigation buttons.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "carousel"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/gallery28"
+  ]
+}

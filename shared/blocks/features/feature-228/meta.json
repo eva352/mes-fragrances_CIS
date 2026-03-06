@@ -1,0 +1,17 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-228",
+  "description": "A component showcasing smart home features with a 2-column layout: one side highlights benefits (intuitive lighting, security, ecosystem integration, social connectivity) with icons, the other displays images.",
+  "dependencies": [
+    "lucide-react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature228",
+    "npm install lucide-react react-icons"
+  ]
+}

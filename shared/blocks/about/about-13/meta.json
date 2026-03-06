@@ -1,0 +1,13 @@
+{
+  "title": "About",
+  "category": "about",
+  "slug": "about-13",
+  "description": "A six-column about section with large story headline, team intro text, avatar profile card, philosophy paragraph, and full-width image.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/about13"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-2",
+  "description": "A footer component with a logo and tagline, 1-4 columns of menu items, and a bottom row for copyright and policy links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "context-menu"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer2",
+    "npm install lucide-react"
+  ]
+}

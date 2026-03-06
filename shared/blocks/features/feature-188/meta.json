@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-188",
+  "description": "A component displaying 3 resources with titles, descriptions, and images, structured in a bordered container with horizontal dividers.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature188",
+    "npm install lucide-react"
+  ]
+}

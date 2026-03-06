@@ -1,0 +1,19 @@
+{
+  "title": "Hero",
+  "category": "hero",
+  "slug": "hero-116",
+  "description": "A content block with a video pop-up feature, including a headline, subtext, and two action buttons, enriched with interactive image placements.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "aspect-ratio",
+    "button",
+    "dialog"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/hero116",
+    "npm install lucide-react"
+  ]
+}

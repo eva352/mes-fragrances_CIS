@@ -1,0 +1,17 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-26",
+  "description": "A component featuring a full-width image background, overlaid with a call-to-action (CTA) message and a large button. Below, two detailed information blocks are displayed side-by-side, each with an icon, title, and description.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta26",
+    "npm install lucide-react"
+  ]
+}

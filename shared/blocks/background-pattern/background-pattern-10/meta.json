@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-10",
+  "description": "This component creates a visually appealing background with a grid pattern using CSS gradients, which is centered and takes up the full width and height of the viewport. It allows for customization through additional class names and serves as a decorative backdrop that can be used in various user interfaces.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern10"
+  ]
+}

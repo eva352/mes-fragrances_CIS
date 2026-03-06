@@ -1,0 +1,17 @@
+{
+  "title": "Footer",
+  "category": "footer",
+  "slug": "footer-15",
+  "description": "This component is a footer block featuring a logo, a slogan, social links, navigation with categorized links, a newsletter form, and copyright text. It also includes a badge indicating operational status.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/footer15",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-76",
+  "description": "A component showcasing a UI Library&#x27;s features in a grid layout with 4 columns. Includes icons, titles, and descriptions for each feature.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature76",
+    "npm install lucide-react"
+  ]
+}

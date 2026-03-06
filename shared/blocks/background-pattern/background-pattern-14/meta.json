@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-14",
+  "description": "This component serves as a full-screen background pattern block, featuring a diagonally oriented cross grid with a top fade effect. It allows customization through optional styling via class names and includes a placeholder pattern element.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern14"
+  ]
+}

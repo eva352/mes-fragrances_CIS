@@ -1,0 +1,18 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-82",
+  "description": "A component showcasing integration options with icons and descriptions, structured in up to 4 columns, including a headline, subtext, and a button above a separator.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature82",
+    "npm install lucide-react"
+  ]
+}

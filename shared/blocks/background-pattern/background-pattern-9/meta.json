@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-9",
+  "description": "This component, BackgroundPattern9, creates a visually appealing background with a grid pattern and a radial fade effect in the bottom right corner, which serves as a decorative element. It allows for customizable styling through an optional className prop, ensuring integration with different design systems.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern9"
+  ]
+}

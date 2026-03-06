@@ -1,0 +1,15 @@
+{
+  "title": "Background-pattern",
+  "category": "background-pattern",
+  "slug": "background-pattern-3",
+  "description": "This component creates a full-screen flex container with a customizable linear grid background pattern suitable for visually enhancing layouts. It integrates a placeholder for overlay patterns, allowing developers to easily adapt or extend its visual design features.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/background-pattern3"
+  ]
+}

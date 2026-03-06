@@ -1,0 +1,17 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-5",
+  "description": "A contact form block with a title, description, fields for name, email, phone, and message, a privacy policy checkbox, and a submit button.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "input",
+    "label",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact5"
+  ]
+}

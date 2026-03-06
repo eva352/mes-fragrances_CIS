@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/feature278
+npm install framer-motion react-icons

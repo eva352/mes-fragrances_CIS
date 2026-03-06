@@ -1,0 +1,19 @@
+{
+  "title": "Cta",
+  "category": "cta",
+  "slug": "cta-23",
+  "description": "A component with a newsletter subscription form, badge, heading, description, and features list, styled with icons and varying text sizes.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "badge",
+    "button",
+    "input"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/cta23",
+    "npm install lucide-react"
+  ]
+}

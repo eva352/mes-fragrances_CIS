@@ -1,0 +1,17 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-19",
+  "description": "A contact component with a two-column layout; one for text and buttons, and one for a full-height image. Features bold headings, a contact number, email, and a \"Get in touch\" button with an icon.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact19",
+    "npm install lucide-react"
+  ]
+}

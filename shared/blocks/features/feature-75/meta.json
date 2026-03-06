@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-75",
+  "description": "A component with a title and text on one side; three action blocks on the other, each with a tagline, description, and a \"Learn more\" button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature75",
+    "npm install lucide-react"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Changelog",
+  "category": "changelog",
+  "slug": "changelog-3",
+  "description": "A component displaying updates with sections for dates, tags (e.g., &#x27;Maintenance&#x27;), and content including images. Uses a two-column layout on desktop.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "separator"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/changelog3"
+  ]
+}

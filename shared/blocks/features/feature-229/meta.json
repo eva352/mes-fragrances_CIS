@@ -1,0 +1,16 @@
+{
+  "title": "Feature",
+  "category": "features",
+  "slug": "feature-229",
+  "description": "A component with 3 columns, listing features under \"Security,\" \"Integration & APIs,\" and \"Support\" categories, each with their icons and items marked by check icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/feature229",
+    "npm install lucide-react"
+  ]
+}

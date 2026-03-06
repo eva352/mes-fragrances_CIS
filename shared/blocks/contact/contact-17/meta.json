@@ -1,0 +1,22 @@
+{
+  "title": "Contact",
+  "category": "contact",
+  "slug": "contact-17",
+  "description": "A contact form component with 2 columns; one for form input, including text and select fields, and another for process steps and company logos. Includes FAQs and resources links.",
+  "dependencies": [
+    "lucide-react",
+    "react-hook-form"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "field",
+    "input",
+    "select",
+    "textarea"
+  ],
+  "install": [
+    "npx shadcn add @shadcnblocks/contact17",
+    "npm install lucide-react react-hook-form"
+  ]
+}

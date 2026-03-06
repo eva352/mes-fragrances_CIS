@@ -1,0 +1,2 @@
+npx shadcn add @shadcnblocks/footer24
+npm install lucide-react
