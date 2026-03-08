@@ -4,6 +4,10 @@ Ce fichier suit l’esprit de “Keep a Changelog” (adapté).
 
 ## [Unreleased]
 <!-- BEGIN:AUTOGEN -->
+### Documentation
+- add CIS cleanup procedure for new app
+- update changelog
+
 ### Maintenance
 - publish current CIS snapshot
 <!-- END:AUTOGEN -->
