@@ -11,8 +11,8 @@ class AuroraTheme(BaseModel):
 
 
 class AuroraProjectInfo(BaseModel):
-    id: str = "aurora_stack"
-    title: str = "AuroraStack"
+    id: str = "pilot"
+    title: str = "Pilot"
     theme: AuroraTheme = Field(default_factory=AuroraTheme)
 
 

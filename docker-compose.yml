@@ -2,13 +2,13 @@ services:
   db:
     image: postgres:17-alpine
     environment:
-      POSTGRES_DB: ${AURORA_DB_NAME:-aurora_stack}
-      POSTGRES_USER: ${AURORA_DB_USER:-aurora_stack}
-      POSTGRES_PASSWORD: ${AURORA_DB_PASSWORD:-aurora_stack}
+      POSTGRES_DB: ${PILOT_DB_NAME:-pilot}
+      POSTGRES_USER: ${PILOT_DB_USER:-pilot}
+      POSTGRES_PASSWORD: ${PILOT_DB_PASSWORD:-pilot}
     ports:
-      - "${AURORA_BIND_HOST:-127.0.0.1}:${AURORA_DB_PORT:-19432}:5432"
+      - "${PILOT_BIND_HOST:-127.0.0.1}:${PILOT_DB_PORT:-19433}:5432"
     volumes:
-      - aurora_stack_db:/var/lib/postgresql/data
+      - pilot_db:/var/lib/postgresql/data
     restart: unless-stopped
 
   backend:
@@ -16,26 +16,27 @@ services:
       context: ./backend
     environment:
       # Option avancée : si DATABASE_URL est défini dans .env.local/.env, il prend le dessus (Postgres externe).
-      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://${AURORA_DB_USER:-aurora_stack}:${AURORA_DB_PASSWORD:-aurora_stack}@db:5432/${AURORA_DB_NAME:-aurora_stack}}
-      AURORA_PROJECT_TITLE: ${AURORA_PROJECT_TITLE:-Mon projet}
-      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@example.com}
-      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-change_me}
-      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change_me}
-      JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
-      JWT_ACCESS_TOKEN_EXPIRE_MINUTES: ${JWT_ACCESS_TOKEN_EXPIRE_MINUTES:-60}
-      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:19100,https://stack.auroramind.fr}
-      AURORA_ENCRYPTION_KEY: ${AURORA_ENCRYPTION_KEY:-}
-      AURORA_OPENROUTER_BASE_URL: ${AURORA_OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
-      AURORA_LLM_SPECS_DIR: /llm_specs
-      AURORA_SHARED_SPECS_DIR: /aurora_shared_specs
-      AURORA_DOCS_DIR: /aurora_docs
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://${PILOT_DB_USER:-pilot}:${PILOT_DB_PASSWORD:-pilot}@db:5432/${PILOT_DB_NAME:-pilot}}
+      PILOT_DATABASE_URL: ${PILOT_DATABASE_URL:-postgresql+psycopg://${PILOT_DB_USER:-pilot}:${PILOT_DB_PASSWORD:-pilot}@db:5432/${PILOT_DB_NAME:-pilot}}
+      PILOT_PROJECT_TITLE: ${PILOT_PROJECT_TITLE:-Pilot}
+      PILOT_ADMIN_EMAIL: ${PILOT_ADMIN_EMAIL:-admin@example.com}
+      PILOT_ADMIN_PASSWORD: ${PILOT_ADMIN_PASSWORD:-change_me}
+      PILOT_JWT_SECRET_KEY: ${PILOT_JWT_SECRET_KEY:-change_me}
+      PILOT_JWT_ALGORITHM: ${PILOT_JWT_ALGORITHM:-HS256}
+      PILOT_JWT_ACCESS_TOKEN_EXPIRE_MINUTES: ${PILOT_JWT_ACCESS_TOKEN_EXPIRE_MINUTES:-60}
+      PILOT_ALLOWED_ORIGINS: ${PILOT_ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:19100,https://pilot.auroramind.fr}
+      PILOT_ENCRYPTION_KEY: ${PILOT_ENCRYPTION_KEY:-}
+      PILOT_OPENROUTER_BASE_URL: ${PILOT_OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
+      PILOT_LLM_SPECS_DIR: /llm_specs
+      PILOT_SHARED_SPECS_DIR: /pilot_shared_specs
+      PILOT_DOCS_DIR: /pilot_docs
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
     ports:
-      - "${AURORA_BIND_HOST:-127.0.0.1}:${AURORA_BACKEND_PORT:-19101}:8000"
+      - "${PILOT_BIND_HOST:-127.0.0.1}:${PILOT_BACKEND_PORT:-19101}:8000"
     volumes:
       - ./llm_specs:/llm_specs
-      - ./shared/specs:/aurora_shared_specs:ro
-      - ./docs:/aurora_docs:ro
+      - ./shared/specs:/pilot_shared_specs:ro
+      - ./docs:/pilot_docs:ro
     depends_on:
       - db
     restart: unless-stopped
@@ -45,17 +46,17 @@ services:
       context: ./frontend
       args:
         NEXT_BACKEND_ORIGIN: http://backend:8000
-        NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL:-/api/v1}
-        NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-AuroraStack}
+        NEXT_PUBLIC_PILOT_BACKEND_URL: ${NEXT_PUBLIC_PILOT_BACKEND_URL:-/api/v1}
+        NEXT_PUBLIC_PILOT_APP_NAME: ${NEXT_PUBLIC_PILOT_APP_NAME:-Pilot}
     environment:
       NEXT_BACKEND_ORIGIN: http://backend:8000
-      NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL:-/api/v1}
-      NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-AuroraStack}
+      NEXT_PUBLIC_PILOT_BACKEND_URL: ${NEXT_PUBLIC_PILOT_BACKEND_URL:-/api/v1}
+      NEXT_PUBLIC_PILOT_APP_NAME: ${NEXT_PUBLIC_PILOT_APP_NAME:-Pilot}
     ports:
-      - "${AURORA_BIND_HOST:-127.0.0.1}:${AURORA_FRONTEND_PORT:-19100}:3000"
+      - "${PILOT_BIND_HOST:-127.0.0.1}:${PILOT_FRONTEND_PORT:-19100}:3000"
     volumes:
       - ./llm_specs:/llm_specs
     restart: unless-stopped
 
 volumes:
-  aurora_stack_db:
+  pilot_db:

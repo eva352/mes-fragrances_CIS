@@ -27,4 +27,4 @@ app.include_router(
 
 @app.get("/")
 def read_root():
-    return {"message": "AuroraStack SaaS backend ready"}
+    return {"message": "Pilot backend ready"}

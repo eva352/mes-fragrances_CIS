@@ -45,7 +45,7 @@ def upgrade() -> None:
         {
             "id": str(uuid.uuid4()),
             "slug": "default",
-            "spec": '{"version":"1.0","kind":"aurora.app","project":{"id":"aurora_stack","title":"AuroraStack","theme":{"mode":"system","palette":"northern-light"}},"shell":{"layout":"sidebar","navigation":[{"id":"nav_dashboard","title":"Dashboard","path":"/"},{"id":"nav_settings","title":"Settings","path":"/settings"}]},"pages":[{"id":"page_dashboard","path":"/","title":"Dashboard","sections":[],"dataSources":[]}]}',
+            "spec": '{"version":"1.0","kind":"aurora.app","project":{"id":"pilot","title":"Pilot","theme":{"mode":"system","palette":"northern-light"}},"shell":{"layout":"sidebar","navigation":[{"id":"nav_dashboard","title":"Dashboard","path":"/"},{"id":"nav_settings","title":"Settings","path":"/settings"}]},"pages":[{"id":"page_dashboard","path":"/","title":"Dashboard","sections":[],"dataSources":[]}]}',
         },
     )
 

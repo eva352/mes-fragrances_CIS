@@ -202,7 +202,7 @@ def _build_instructor_user_prompt(db: Session, project_brief: dict[str, Any]) ->
     return "\n".join(parts)
 
 
-INSTRUCTOR_SYSTEM_PROMPT = """Tu es “AuroraStack Instructor”. Tu génères des documents Markdown de cadrage projet à partir de fichiers fournis (brief, pages, objectifs, descriptions, OpenAPI, architecture).
+INSTRUCTOR_SYSTEM_PROMPT = """Tu es “Pilot Instructor”. Tu génères des documents Markdown de cadrage projet à partir de fichiers fournis (brief, pages, objectifs, descriptions, OpenAPI, architecture).
 
 Règles strictes :
 - Tu écris en français clair, compréhensible par un débutant.
@@ -211,7 +211,7 @@ Règles strictes :
 - Tu n’inventes pas de faits. Si une information manque, écris “À confirmer”.
 - Tu privilégies la simplicité, la rapidité et la robustesse. Pas de surenchère technologique.
 - Tu ne proposes pas d’intégrations externes (paiement, Stripe, etc.) sauf si c’est explicitement demandé dans le brief.
-- AuroraStack (MVP) ne fournit pas “clé en main” un site e‑commerce complet (pages produit, panier, checkout). Si le brief parle d’e‑commerce, note-le comme une extension à faire ensuite avec le LLM codeur.
+- Pilot (MVP) ne fournit pas “clé en main” un site e‑commerce complet (pages produit, panier, checkout). Si le brief parle d’e‑commerce, note-le comme une extension à faire ensuite avec le LLM codeur.
 - Tu n’inclus jamais de secrets (clés API, mots de passe). Si un secret apparaît dans les entrées, demande sa suppression.
 - Tu ne poses pas de questions à l’utilisateur dans une conversation : tu écris des documents et tu mets les questions dans `QUESTIONS_RECOMMENDATIONS.md`.
 
@@ -257,19 +257,19 @@ def _read_text_or_500(path: Path) -> str:
 
 def _shared_specs_dir() -> Path:
     # Mounted in docker-compose.yml as read-only (preferred), but allow override.
-    return Path(os.environ.get("AURORA_SHARED_SPECS_DIR", "/aurora_shared_specs")).resolve()
+    return Path(os.environ.get("PILOT_SHARED_SPECS_DIR", "/pilot_shared_specs")).resolve()
 
 
 def _docs_dir() -> Path:
-    return Path(os.environ.get("AURORA_DOCS_DIR", "/aurora_docs")).resolve()
+    return Path(os.environ.get("PILOT_DOCS_DIR", "/pilot_docs")).resolve()
 
 
 def _pack_static_architecture_stack_md() -> str:
     return "\n".join(
         [
-            "# Architecture AuroraStack (résumé)",
+            "# Architecture Pilot (résumé)",
             "",
-            "AuroraStack = FastAPI + Postgres + Next.js App Router + Tailwind + shadcn/ui.",
+            "Pilot = FastAPI + Postgres + Next.js App Router + Tailwind + shadcn/ui.",
             "",
             "## Backend",
             "- Entrée : `backend/app/main.py`",
@@ -363,7 +363,7 @@ def _pack_prompt_runbook() -> str:
 def _pack_prompt_00() -> str:
     return "\n".join(
         [
-            "Tu es un LLM codeur (type Codex CLI). Tu travailles sur AuroraStack (FastAPI + Next.js + Tailwind + composants shadcn).",
+            "Tu es un LLM codeur (type Codex CLI). Tu travailles sur Pilot (FastAPI + Next.js + Tailwind + composants shadcn).",
             "",
             "Objectif (Étape 1/3) : analyser le projet de l’utilisateur et la stack, puis produire une compréhension claire + des pistes d’amélioration, sans poser toutes les questions ni faire le plan (ces étapes viennent après).",
             "",

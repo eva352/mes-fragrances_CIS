@@ -15,8 +15,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { AuroraThemeProjectSync } from "@/components/aurora-theme-project-sync";
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_APP_NAME ?? "AuroraStack",
-  description: "Base officielle UI Aurora (thème Northern Light)",
+  title: process.env.NEXT_PUBLIC_PILOT_APP_NAME ?? "Pilot",
+  description: "Pilot - Gestion de tickets",
 };
 
 export default async function RootLayout({

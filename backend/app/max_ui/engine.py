@@ -247,7 +247,7 @@ def _infer_sections_from_landing(section_order: str) -> list[str]:
     if "about" in text or "mission" in text:
         add("about")
     if "testimonial" in text or "social proof" in text or "reviews" in text or "ratings" in text:
-        # CIS doesn't have a testimonials category yet; timeline is the closest available section-like block.
+        # Pilot doesn't have a testimonials category yet; timeline is the closest available section-like block.
         add("timeline")
     if "faq" in text:
         add("tabs")

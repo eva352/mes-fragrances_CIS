@@ -263,7 +263,7 @@ def read_app_spec(_: CurrentUser):
     updated = datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc)
 
     return AppSpecRead(
-        id=uuid.uuid5(uuid.NAMESPACE_URL, "aurora_stack:default"),
+        id=uuid.uuid5(uuid.NAMESPACE_URL, "pilot:default"),
         slug="default",
         spec=spec,
         created_at=created,
@@ -288,7 +288,7 @@ def upsert_app_spec(payload: AppSpecUpsert, _: CurrentUser):
     updated = datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc)
 
     return AppSpecRead(
-        id=uuid.uuid5(uuid.NAMESPACE_URL, "aurora_stack:default"),
+        id=uuid.uuid5(uuid.NAMESPACE_URL, "pilot:default"),
         slug="default",
         spec=spec,
         created_at=created,

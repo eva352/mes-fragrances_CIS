@@ -195,7 +195,7 @@ def _website_fallback_plan(available: list[AvailableBlock], pattern: MaxUiPatter
         "pricing": "pricing-9",
     }
     for section in pattern.sections:
-        # In CIS blocks, section == category most of the time.
+        # In Pilot blocks, section == category most of the time.
         candidates = by_category.get(section) or []
         if not candidates:
             continue
@@ -353,7 +353,7 @@ async def suggest_structure(payload: SuggestWebsiteStructureRequest | SuggestWeb
 
         sys = "\n".join(
             [
-                "Tu es “CIS Orchestrator”. Tu dois proposer une structure de page website en choisissant UNIQUEMENT des blocs existants.",
+                "Tu es “Pilot Orchestrator”. Tu dois proposer une structure de page website en choisissant UNIQUEMENT des blocs existants.",
                 "",
                 "Règles strictes :",
                 "- Output STRICT JSON (un seul objet), sans markdown, sans texte autour.",
@@ -472,7 +472,7 @@ async def suggest_structure(payload: SuggestWebsiteStructureRequest | SuggestWeb
 
     sys = "\n".join(
         [
-            "Tu es “CIS Orchestrator”. Tu dois proposer une structure de webapp (pages + navigation) en choisissant UNIQUEMENT des templates existants.",
+            "Tu es “Pilot Orchestrator”. Tu dois proposer une structure de webapp (pages + navigation) en choisissant UNIQUEMENT des templates existants.",
             "",
             "Règles strictes :",
             "- Output STRICT JSON (un seul objet), sans markdown, sans texte autour.",

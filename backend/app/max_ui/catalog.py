@@ -10,7 +10,7 @@ DATA_DIR = Path(__file__).parent / "data"
 def list_product_types() -> list[str]:
     """
     Returns the canonical Max UI website "Product Type" taxonomy used in products.csv.
-    This list is used to align CIS brief inputs with Max UI reasoning/pattern selection.
+    This list is used to align Pilot brief inputs with Max UI reasoning/pattern selection.
     """
     path = DATA_DIR / "products.csv"
     if not path.exists():

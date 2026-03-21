@@ -63,7 +63,7 @@ def read_project_brief(_: CurrentUser):
     updated = datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc)
 
     return ProjectBriefRead(
-        id=uuid.uuid5(uuid.NAMESPACE_URL, "aurora_stack:project-brief:default"),
+        id=uuid.uuid5(uuid.NAMESPACE_URL, "pilot:project-brief:default"),
         slug="default",
         brief=brief,
         created_at=created,
@@ -84,7 +84,7 @@ def upsert_project_brief(payload: ProjectBriefUpsert, _: CurrentUser):
     updated = datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc)
 
     return ProjectBriefRead(
-        id=uuid.uuid5(uuid.NAMESPACE_URL, "aurora_stack:project-brief:default"),
+        id=uuid.uuid5(uuid.NAMESPACE_URL, "pilot:project-brief:default"),
         slug="default",
         brief=brief,
         created_at=created,

@@ -14,7 +14,7 @@ export type AuroraTheme = {
 };
 
 export const DEFAULT_AURORA_THEME_ID = "northern-light";
-export const AURORA_THEME_STORAGE_KEY = "aurora-theme";
+export const AURORA_THEME_STORAGE_KEY = "pilot_theme";
 
 export const AURORA_THEMES: AuroraTheme[] = [
   {
