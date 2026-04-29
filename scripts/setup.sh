@@ -285,9 +285,15 @@ if [[ -z "$jwt_secret" || "$jwt_secret" == "change_me" || "${#jwt_secret}" -lt 3
   set_env_kv JWT_SECRET_KEY "$(random_secret)"
 fi
 
-enc_key="$(get_env_kv AURORA_ENCRYPTION_KEY 2>/dev/null || true)"
+enc_key="$(get_env_kv PILOT_ENCRYPTION_KEY 2>/dev/null || true)"
 if [[ -z "$enc_key" || "$enc_key" == "change_me" ]]; then
-  set_env_kv AURORA_ENCRYPTION_KEY "$(fernet_key)"
+  legacy_enc_key="$(get_env_kv AURORA_ENCRYPTION_KEY 2>/dev/null || true)"
+  if [[ -n "$legacy_enc_key" && "$legacy_enc_key" != "change_me" ]]; then
+    enc_key="$legacy_enc_key"
+  else
+    enc_key="$(fernet_key)"
+  fi
+  set_env_kv PILOT_ENCRYPTION_KEY "$enc_key"
 fi
 
 jwt_alg="$(get_env_kv JWT_ALGORITHM 2>/dev/null || true)"

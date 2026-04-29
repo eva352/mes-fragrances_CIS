@@ -218,9 +218,15 @@ if ([string]::IsNullOrWhiteSpace($jwtSecret) -or $jwtSecret -eq "change_me" -or 
   Set-EnvValue "JWT_SECRET_KEY" (New-RandomSecret)
 }
 
-$encKey = (Get-EnvValue "AURORA_ENCRYPTION_KEY")
+$encKey = (Get-EnvValue "PILOT_ENCRYPTION_KEY")
 if ([string]::IsNullOrWhiteSpace($encKey) -or $encKey -eq "change_me") {
-  Set-EnvValue "AURORA_ENCRYPTION_KEY" (New-FernetKey)
+  $legacyEncKey = (Get-EnvValue "AURORA_ENCRYPTION_KEY")
+  if (-not [string]::IsNullOrWhiteSpace($legacyEncKey) -and $legacyEncKey -ne "change_me") {
+    $encKey = $legacyEncKey
+  } else {
+    $encKey = New-FernetKey
+  }
+  Set-EnvValue "PILOT_ENCRYPTION_KEY" $encKey
 }
 
 $jwtAlg = (Get-EnvValue "JWT_ALGORITHM")

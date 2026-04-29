@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from . import health, auth, users, site_pages, ui_library, app_spec, project_brief, llm, structure, max_ui
+from . import health, auth, users, site_pages, ui_library, app_spec, project_brief, llm, structure, max_ui, perfumes
 
 router = APIRouter()
 
@@ -14,3 +14,4 @@ router.include_router(project_brief.router)
 router.include_router(llm.router)
 router.include_router(structure.router)
 router.include_router(max_ui.router)
+router.include_router(perfumes.router)

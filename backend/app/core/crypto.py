@@ -5,17 +5,28 @@ import os
 from cryptography.fernet import Fernet, InvalidToken
 
 
-ENV_KEY = "AURORA_ENCRYPTION_KEY"
+ENV_KEYS = ("PILOT_ENCRYPTION_KEY", "AURORA_ENCRYPTION_KEY")
+
+
+def _get_raw_key() -> tuple[str, str]:
+    for env_key in ENV_KEYS:
+        raw = (os.environ.get(env_key) or "").strip()
+        if raw:
+            return env_key, raw
+
+    primary = ENV_KEYS[0]
+    legacy = ENV_KEYS[1]
+    raise RuntimeError(
+        f"Missing {primary} (legacy fallback: {legacy}; required for OpenRouter BYOK storage)."
+    )
 
 
 def _get_fernet() -> Fernet:
-    raw = (os.environ.get(ENV_KEY) or "").strip()
-    if not raw:
-        raise RuntimeError(f"Missing {ENV_KEY} (required for OpenRouter BYOK storage).")
+    env_key, raw = _get_raw_key()
     try:
         return Fernet(raw.encode("utf-8"))
     except Exception as exc:
-        raise RuntimeError(f"Invalid {ENV_KEY} (must be a Fernet key).") from exc
+        raise RuntimeError(f"Invalid {env_key} (must be a Fernet key).") from exc
 
 
 def encrypt_secret(value: str) -> str:

@@ -1,7 +1,10 @@
 import { getAuthToken } from "@/lib/auth/token";
 
-const BASE_BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL ?? "/api/v1";
+const BASE_BACKEND_URL = (
+  process.env.NEXT_PUBLIC_PILOT_BACKEND_URL ||
+  process.env.NEXT_PUBLIC_BACKEND_URL ||
+  "/api/v1"
+).replace(/\/$/, "");
 
 function buildAuthHeaders(): HeadersInit {
   const token = getAuthToken();
@@ -11,7 +14,6 @@ function buildAuthHeaders(): HeadersInit {
 export async function apiGet<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE_BACKEND_URL}${path}`, {
     method: "GET",
-    credentials: "include",
     headers: buildAuthHeaders(),
   });
 
@@ -25,7 +27,6 @@ export async function apiGet<T>(path: string): Promise<T> {
 export async function apiGetFile(path: string): Promise<{ blob: Blob; filename: string }> {
   const res = await fetch(`${BASE_BACKEND_URL}${path}`, {
     method: "GET",
-    credentials: "include",
     headers: buildAuthHeaders(),
   });
 
@@ -49,7 +50,6 @@ export async function apiPost<T>(path: string, data: any): Promise<T> {
       ...buildAuthHeaders(),
     },
     body: JSON.stringify(data),
-    credentials: "include",
   });
 
   if (!res.ok) {
@@ -68,7 +68,6 @@ export async function apiPut<T>(path: string, data: any): Promise<T> {
       ...buildAuthHeaders(),
     },
     body: JSON.stringify(data),
-    credentials: "include",
   });
 
   if (!res.ok) {
@@ -83,7 +82,6 @@ export async function apiDelete(path: string): Promise<void> {
   const res = await fetch(`${BASE_BACKEND_URL}${path}`, {
     method: "DELETE",
     headers: buildAuthHeaders(),
-    credentials: "include",
   });
 
   if (!res.ok) {

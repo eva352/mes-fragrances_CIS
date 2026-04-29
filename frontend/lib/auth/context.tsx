@@ -3,19 +3,21 @@
 import {
   createContext,
   useContext,
-  useState,
   useEffect,
+  useState,
   type ReactNode,
 } from "react";
+import { useRouter } from "next/navigation";
+
 import {
   getMe,
   login as apiLogin,
   logout as apiLogout,
   removeAuthToken,
-  type User,
   type LoginPayload,
+  type User,
 } from "@/lib/api/auth";
-import { useRouter } from "next/navigation";
+import { getAuthToken } from "@/lib/auth/token";
 
 type AuthContextType = {
   user: User | null;
@@ -34,17 +36,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     async function loadUser() {
+      if (!getAuthToken()) {
+        setUser(null);
+        setIsLoading(false);
+        return;
+      }
+
       try {
         const userData = await getMe();
         setUser(userData);
-      } catch (error) {
-        // Token invalide ou expiré, l'utilisateur n'est pas connecté
+      } catch {
         removeAuthToken();
         setUser(null);
       } finally {
         setIsLoading(false);
       }
     }
+
     loadUser();
   }, []);
 
@@ -52,10 +60,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true);
     try {
       await apiLogin(payload);
-      const userData = await getMe();
-      setUser(userData);
       router.push("/");
+
+      try {
+        const userData = await getMe();
+        setUser(userData);
+      } catch {
+        // Token is already stored; do not block navigation on profile fetch.
+        setUser(null);
+      }
     } catch (error) {
+      removeAuthToken();
       setUser(null);
       throw error;
     } finally {
@@ -69,7 +84,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     router.push("/login");
   };
 
-  const isAuthenticated = !!user;
+  const isAuthenticated = !!user || !!getAuthToken();
 
   return (
     <AuthContext.Provider

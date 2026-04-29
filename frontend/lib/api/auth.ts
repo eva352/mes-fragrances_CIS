@@ -2,8 +2,11 @@ import { apiGet, apiPost } from "./client";
 import { getAuthToken, removeAuthToken, setAuthToken } from "@/lib/auth/token";
 export { removeAuthToken } from "@/lib/auth/token";
 
-const BASE_BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL ?? "/api/v1";
+const BASE_BACKEND_URL = (
+  process.env.NEXT_PUBLIC_PILOT_BACKEND_URL ||
+  process.env.NEXT_PUBLIC_BACKEND_URL ||
+  "/api/v1"
+).replace(/\/$/, "");
 
 // Définition des types de base pour l'API
 export type User = {
@@ -43,7 +46,6 @@ export async function logout(): Promise<{ message: string }> {
     headers: {
       Authorization: `Bearer ${token}`,
     },
-    credentials: "include",
   });
 
   removeAuthToken();

@@ -12,14 +12,15 @@ type Login04Props = {
 };
 
 export function Login04({ onLogin, error }: Login04Props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitting(true);
     try {
+      const form = new FormData(event.currentTarget);
+      const email = String(form.get("email") ?? "").trim();
+      const password = String(form.get("password") ?? "");
       await onLogin(email, password);
     } finally {
       setSubmitting(false);
@@ -40,10 +41,9 @@ export function Login04({ onLogin, error }: Login04Props) {
           <Label htmlFor="email">Adresse e-mail</Label>
           <Input
             id="email"
+            name="email"
             type="email"
             placeholder="vous@exemple.com"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
             autoComplete="email"
             required
           />
@@ -53,10 +53,9 @@ export function Login04({ onLogin, error }: Login04Props) {
           <Label htmlFor="password">Mot de passe</Label>
           <Input
             id="password"
+            name="password"
             type="password"
             placeholder="********"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
             autoComplete="current-password"
             required
           />

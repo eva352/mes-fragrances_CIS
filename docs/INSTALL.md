@@ -47,9 +47,9 @@ Identifiants de connexion : utilisez l’email/mot de passe admin saisis pendant
 ```bash
 cp .env.example .env.local
 ```
-2) Éditez `.env.local` (au minimum `AURORA_DB_PASSWORD`, `ADMIN_PASSWORD` et `JWT_SECRET_KEY`).
+2) Éditez `.env.local` (au minimum `PILOT_DB_PASSWORD`, `PILOT_ADMIN_PASSWORD` et `PILOT_JWT_SECRET_KEY`).
 3) (Optionnel) OpenRouter (génération de docs) :
-   - Renseignez `AURORA_ENCRYPTION_KEY` (clé de chiffrement côté serveur, utilisée pour stocker la clé OpenRouter BYOK).
+   - Renseignez `PILOT_ENCRYPTION_KEY` (clé de chiffrement côté serveur, utilisée pour stocker la clé OpenRouter BYOK).
    - Génération rapide (Python) :
      ```bash
      python -c "import base64, os; print(base64.urlsafe_b64encode(os.urandom(32)).decode())"
@@ -68,7 +68,7 @@ Par défaut, les ports sont bindés sur `127.0.0.1` pour sécurité. Utilisez un
 ```bash
 ssh -L 19100:localhost:19100 -L 19101:localhost:19101 -L 19432:localhost:19432 user@server -N
 ```
-Adaptez les ports selon votre `.env.local` (ou `.env`), puis ouvrez `http://localhost:<AURORA_FRONTEND_PORT>/login`.
+Adaptez les ports selon votre `.env.local` (ou `.env`), puis ouvrez `http://localhost:<PILOT_FRONTEND_PORT>/login`.
 
 ## Mettre à jour AuroraStack (après installation)
 > Important : AuroraStack sert de base pour ton projet. Si tu as déjà beaucoup modifié le code, une mise à jour peut créer des conflits. La méthode la plus simple est de mettre à jour tôt, ou de fusionner sélectivement.
@@ -109,30 +109,30 @@ docker compose --env-file .env.local exec -T backend python -m alembic upgrade h
 
 ## Cas “j’ai déjà Postgres sur le serveur”
 Ce n’est pas un problème : la stack embarque **son propre Postgres** via Docker et expose par défaut le port `19432` (au lieu de `5432`).
-Si besoin, changez `AURORA_DB_PORT` dans `.env.local` (ou `.env`), ou relancez l’installation one-pass après avoir supprimé le fichier env.
+Si besoin, changez `PILOT_DB_PORT` dans `.env.local` (ou `.env`), ou relancez l’installation one-pass après avoir supprimé le fichier env.
 
 ## Base de données : se connecter à Postgres
 AuroraStack embarque **Postgres 17** via Docker Compose (`service: db`). Les identifiants sont dans `.env.local` :
-- `AURORA_DB_NAME`, `AURORA_DB_USER`, `AURORA_DB_PASSWORD`, `AURORA_DB_PORT`
+- `PILOT_DB_NAME`, `PILOT_DB_USER`, `PILOT_DB_PASSWORD`, `PILOT_DB_PORT`
 
 ### Connexion (CLI) — recommandé
 Sans rien installer sur ta machine (depuis le conteneur) :
 ```bash
-docker compose --env-file .env.local exec -T db psql -U "$AURORA_DB_USER" -d "$AURORA_DB_NAME"
+docker compose --env-file .env.local exec -T db psql -U "$PILOT_DB_USER" -d "$PILOT_DB_NAME"
 ```
 
 Si tu as `psql` installé en local :
 ```bash
-psql "postgresql://$AURORA_DB_USER:$AURORA_DB_PASSWORD@127.0.0.1:$AURORA_DB_PORT/$AURORA_DB_NAME"
+psql "postgresql://$PILOT_DB_USER:$PILOT_DB_PASSWORD@127.0.0.1:$PILOT_DB_PORT/$PILOT_DB_NAME"
 ```
 
 ### Connexion (outil graphique)
 Exemples (DBeaver / TablePlus / DataGrip, etc.) :
 - Host : `127.0.0.1`
-- Port : `AURORA_DB_PORT` (par défaut `19432`)
-- Database : `AURORA_DB_NAME`
-- User : `AURORA_DB_USER`
-- Password : `AURORA_DB_PASSWORD`
+- Port : `PILOT_DB_PORT` (par défaut `19432`)
+- Database : `PILOT_DB_NAME`
+- User : `PILOT_DB_USER`
+- Password : `PILOT_DB_PASSWORD`
 
 ### Connexion via pgAdmin (interne ou externe)
 pgAdmin est l’outil officiel (gratuit) pour administrer Postgres.
@@ -146,10 +146,10 @@ Pré-requis : la stack tourne (`docker compose up ...`) et le port DB est expos�
    - Name : `AuroraStack (local)` (ou ce que tu veux)
 3) Onglet **Connection**
    - Host name/address : `127.0.0.1`
-   - Port : `AURORA_DB_PORT` (par défaut `19432`)
-   - Maintenance database : `AURORA_DB_NAME` (par défaut `aurora_stack`)
-   - Username : `AURORA_DB_USER`
-   - Password : `AURORA_DB_PASSWORD`
+   - Port : `PILOT_DB_PORT` (par défaut `19432`)
+   - Maintenance database : `PILOT_DB_NAME` (par défaut `aurora_stack`)
+   - Username : `PILOT_DB_USER`
+   - Password : `PILOT_DB_PASSWORD`
    - (Option) coche “Save password”
 4) Clique **Save**, puis explore les tables.
 

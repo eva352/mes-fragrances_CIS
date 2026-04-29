@@ -5,6 +5,8 @@ import { Login04 } from "@/components/login-04";
 import { useAuth } from "@/lib/auth/context";
 import { APP_NAME } from "@/lib/brand";
 
+const LOGIN_BUILD_LABEL = "login-build-2026-03-28-3";
+
 export default function LoginPage() {
   const { login, isAuthenticated, isLoading } = useAuth();
   const [error, setError] = useState<string | null>(null);
@@ -27,7 +29,11 @@ export default function LoginPage() {
       await login({ email, password });
     } catch (e) {
       console.error(e);
-      setError("Identifiants invalides ou erreur de connexion.");
+      setError(
+        e instanceof Error
+          ? `Erreur de connexion: ${e.message}`
+          : "Identifiants invalides ou erreur de connexion.",
+      );
     }
   };
 
@@ -42,6 +48,7 @@ export default function LoginPage() {
           <p className="text-sm text-muted-foreground">
             Acces simple via e-mail et mot de passe pour entrer dans le dashboard.
           </p>
+          <p className="text-[11px] text-muted-foreground">{LOGIN_BUILD_LABEL}</p>
         </div>
         <Login04 onLogin={handleLogin} error={error} />
       </div>
