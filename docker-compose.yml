@@ -61,5 +61,24 @@ services:
       - ./llm_specs:/llm_specs
     restart: unless-stopped
 
+  caddy:
+    image: caddy:2
+    environment:
+      PILOT_PUBLIC_DOMAIN: ${PILOT_PUBLIC_DOMAIN}
+      PILOT_PUBLIC_WWW_DOMAIN: ${PILOT_PUBLIC_WWW_DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - frontend
+      - backend
+    restart: unless-stopped
+
 volumes:
   pilot_db:
+  caddy_data:
+  caddy_config:
