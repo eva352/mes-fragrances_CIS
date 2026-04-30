@@ -28,11 +28,11 @@ pwd_context = CryptContext(
 def upgrade() -> None:
     connection = op.get_bind()
 
-    admin_email = os.getenv("ADMIN_EMAIL", "admin@example.com")
+    admin_email = os.getenv("ADMIN_EMAIL") or os.getenv("PILOT_ADMIN_EMAIL", "admin@example.com")
 
     admin_password_hash = os.getenv("ADMIN_PASSWORD_HASH")
     if not admin_password_hash:
-        admin_password = os.getenv("ADMIN_PASSWORD", "change_me")
+        admin_password = os.getenv("ADMIN_PASSWORD") or os.getenv("PILOT_ADMIN_PASSWORD", "change_me")
         admin_password_hash = pwd_context.hash(admin_password)
 
     # Upsert admin user: if exists, sync password; else insert.
@@ -66,4 +66,3 @@ def upgrade() -> None:
 def downgrade() -> None:
     # No downgrade for password sync.
     pass
-

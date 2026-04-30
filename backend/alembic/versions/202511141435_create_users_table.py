@@ -39,11 +39,11 @@ def upgrade() -> None:
     # Insert default admin user
     connection = op.get_bind()
 
-    admin_email = os.getenv("ADMIN_EMAIL", "admin@example.com")
+    admin_email = os.getenv("ADMIN_EMAIL") or os.getenv("PILOT_ADMIN_EMAIL", "admin@example.com")
 
     admin_password_hash = os.getenv("ADMIN_PASSWORD_HASH")
     if not admin_password_hash:
-        admin_password = os.getenv("ADMIN_PASSWORD", "change_me")
+        admin_password = os.getenv("ADMIN_PASSWORD") or os.getenv("PILOT_ADMIN_PASSWORD", "change_me")
         admin_password_hash = pwd_context.hash(admin_password)
     
     # Insert admin user

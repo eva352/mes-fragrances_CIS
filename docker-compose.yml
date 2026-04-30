@@ -6,7 +6,7 @@ services:
       POSTGRES_USER: ${PILOT_DB_USER:-pilot}
       POSTGRES_PASSWORD: ${PILOT_DB_PASSWORD:-pilot}
     ports:
-      - "${PILOT_BIND_HOST:-127.0.0.1}:${PILOT_DB_PORT:-19433}:5432"
+      - "${PILOT_DB_BIND_HOST:-${PILOT_BIND_HOST:-127.0.0.1}}:${PILOT_DB_PORT:-19433}:5432"
     volumes:
       - pilot_db:/var/lib/postgresql/data
     restart: unless-stopped
@@ -21,6 +21,9 @@ services:
       PILOT_PROJECT_TITLE: ${PILOT_PROJECT_TITLE:-Pilot}
       PILOT_ADMIN_EMAIL: ${PILOT_ADMIN_EMAIL:-admin@example.com}
       PILOT_ADMIN_PASSWORD: ${PILOT_ADMIN_PASSWORD:-change_me}
+      # Backward compatibility for Alembic revisions that still read ADMIN_*.
+      ADMIN_EMAIL: ${PILOT_ADMIN_EMAIL:-admin@example.com}
+      ADMIN_PASSWORD: ${PILOT_ADMIN_PASSWORD:-change_me}
       PILOT_JWT_SECRET_KEY: ${PILOT_JWT_SECRET_KEY:-change_me}
       PILOT_JWT_ALGORITHM: ${PILOT_JWT_ALGORITHM:-HS256}
       PILOT_JWT_ACCESS_TOKEN_EXPIRE_MINUTES: ${PILOT_JWT_ACCESS_TOKEN_EXPIRE_MINUTES:-60}
@@ -32,7 +35,7 @@ services:
       PILOT_DOCS_DIR: /pilot_docs
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
     ports:
-      - "${PILOT_BIND_HOST:-127.0.0.1}:${PILOT_BACKEND_PORT:-19101}:8000"
+      - "${PILOT_BACKEND_BIND_HOST:-${PILOT_BIND_HOST:-127.0.0.1}}:${PILOT_BACKEND_PORT:-19101}:8000"
     volumes:
       - ./llm_specs:/llm_specs
       - ./shared/specs:/pilot_shared_specs:ro
@@ -53,7 +56,7 @@ services:
       NEXT_PUBLIC_PILOT_BACKEND_URL: ${NEXT_PUBLIC_PILOT_BACKEND_URL:-/api/v1}
       NEXT_PUBLIC_PILOT_APP_NAME: ${NEXT_PUBLIC_PILOT_APP_NAME:-Pilot}
     ports:
-      - "${PILOT_BIND_HOST:-127.0.0.1}:${PILOT_FRONTEND_PORT:-19100}:3000"
+      - "${PILOT_FRONTEND_BIND_HOST:-${PILOT_BIND_HOST:-127.0.0.1}}:${PILOT_FRONTEND_PORT:-19100}:3000"
     volumes:
       - ./llm_specs:/llm_specs
     restart: unless-stopped
