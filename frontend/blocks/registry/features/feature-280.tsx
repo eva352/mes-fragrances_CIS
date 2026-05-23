@@ -120,4 +120,4 @@ const CARDS = [
   },
 ];
 
-export default Feature280;
+export default Highlight;

@@ -127,3 +127,5 @@ export const Footer14 = () => {
     </section>
   );
 };
+
+export default Footer14;

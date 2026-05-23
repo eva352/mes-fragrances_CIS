@@ -80,3 +80,5 @@ export function Feature194() {
     </section>
   );
 }
+
+export default Feature194;

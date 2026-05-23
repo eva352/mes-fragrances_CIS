@@ -78,6 +78,8 @@ export function Feature195() {
   );
 }
 
+export default Feature195;
+
 interface PlusSignsProps extends SVGProps<SVGSVGElement> {
   className?: string;
 }

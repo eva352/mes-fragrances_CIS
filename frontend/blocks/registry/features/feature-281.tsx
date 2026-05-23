@@ -238,4 +238,4 @@ const CardStack = ({
   );
 };
 
-export default Feature281;
+export default Highlight;

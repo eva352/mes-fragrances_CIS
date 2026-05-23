@@ -145,4 +145,4 @@ export const BorderIllustration = ({
   );
 };
 
-export default Feature274;
+export default BorderIllustration;

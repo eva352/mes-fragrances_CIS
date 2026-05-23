@@ -102,8 +102,16 @@ function stripShadcnblocksMentions(code) {
 }
 
 function extractComponentName(code) {
-  const match = code.match(/export\s*{\s*([A-Za-z0-9_]+)\s*};/);
-  if (match) return match[1];
+  const patterns = [
+    /export\s+default\s+function\s+([A-Z][A-Za-z0-9_]*)\s*\(/,
+    /export\s+function\s+([A-Z][A-Za-z0-9_]*)\s*\(/,
+    /export\s+const\s+([A-Z][A-Za-z0-9_]*)\s*=/,
+    /export\s*{\s*([A-Z][A-Za-z0-9_]*)\s*};/,
+  ];
+  for (const pattern of patterns) {
+    const match = code.match(pattern);
+    if (match) return match[1];
+  }
   return null;
 }
 
@@ -237,6 +245,7 @@ async function main() {
       title,
       slug,
       file: `./registry/${category}/${slug}`,
+      componentName: extractComponentName(code),
     });
 
     report.push({
@@ -259,13 +268,18 @@ async function main() {
   }
 
   const importLines = [];
+  const resolveLines = [];
   const categoryLines = [];
 
   for (const category of manifestCategoryList) {
     const blocksLines = [];
     for (const blk of category.blocks) {
       const ident = toIdentifier(`${category.slug} ${blk.slug}`);
-      importLines.push(`import ${ident} from "${blk.file}";`);
+      const componentExpr = blk.componentName
+        ? `${ident}Module.default ?? ${ident}Module.${blk.componentName}`
+        : `${ident}Module.default`;
+      importLines.push(`import * as ${ident}Module from "${blk.file}";`);
+      resolveLines.push(`const ${ident} = (${componentExpr}) as AuroraBlockComponent;`);
       blocksLines.push(`      { title: ${JSON.stringify(blk.title)}, slug: ${JSON.stringify(blk.slug)}, Component: ${ident} },`);
     }
     categoryLines.push(
@@ -273,7 +287,7 @@ async function main() {
     );
   }
 
-  const manifestTs = `/* eslint-disable @typescript-eslint/consistent-type-imports */\nimport type { ComponentType } from \"react\";\n\n${importLines.join("\n")}\n\nexport type AuroraBlockComponent = ComponentType<any>;\n\nexport interface AuroraBlockDefinition {\n  title: string;\n  slug: string;\n  Component: AuroraBlockComponent;\n}\n\nexport interface AuroraBlockCategory {\n  slug: string;\n  title: string;\n  blocks: AuroraBlockDefinition[];\n}\n\nexport const auroraBlockCatalog: AuroraBlockCategory[] = [\n${categoryLines.join("\n")}\n];\n`;
+  const manifestTs = `/* eslint-disable @typescript-eslint/consistent-type-imports */\nimport type { ComponentType } from \"react\";\n\n${importLines.join("\n")}\n\nexport type AuroraBlockComponent = ComponentType<any>;\n\n${resolveLines.join("\n")}\n\nexport interface AuroraBlockDefinition {\n  title: string;\n  slug: string;\n  Component: AuroraBlockComponent;\n}\n\nexport interface AuroraBlockCategory {\n  slug: string;\n  title: string;\n  blocks: AuroraBlockDefinition[];\n}\n\nexport const auroraBlockCatalog: AuroraBlockCategory[] = [\n${categoryLines.join("\n")}\n];\n`;
   await fs.mkdir(path.dirname(OUT_MANIFEST), { recursive: true });
   await fs.writeFile(OUT_MANIFEST, manifestTs, "utf8");
 

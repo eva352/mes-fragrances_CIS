@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  BrushCleaning,
+  Brush,
   Clock,
   CodeXml,
   Plug2,
@@ -49,7 +49,7 @@ const Feature276 = ({ className }: Feature276Props) => {
       title: "Clean Code",
       description:
         "Well-structured, readable code following industry best practices",
-      icon: BrushCleaning,
+      icon: Brush,
     },
     {
       title: "Performance",

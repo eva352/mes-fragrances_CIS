@@ -123,4 +123,4 @@ export const AuroraBackground = ({
   );
 };
 
-export default Feature271;
+export default AuroraBackground;
