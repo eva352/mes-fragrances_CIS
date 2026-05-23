@@ -17,7 +17,9 @@ class PerfumeCardRead(BaseModel):
     brand: str
     image_url: str | None = Field(default=None, alias="imageUrl")
     short_description: str | None = Field(default=None, alias="shortDescription")
+    gender: str | None = None
     olfactive_family: str | None = Field(default=None, alias="olfactiveFamily")
+    key_notes: list[str] = Field(default_factory=list, alias="keyNotes")
     budget_tier: str | None = Field(default=None, alias="budgetTier")
     lowest_price: float | None = Field(default=None, alias="lowestPrice")
     currency: str | None = None
@@ -38,6 +40,25 @@ class PerfumeDetailRead(PerfumeCardRead):
 class PerfumeFeaturedRead(BaseModel):
     new_arrivals: list[PerfumeCardRead] = Field(default_factory=list, alias="newArrivals")
     best_sellers: list[PerfumeCardRead] = Field(default_factory=list, alias="bestSellers")
+
+    model_config = ConfigDict(populate_by_name=True)
+
+
+class PerfumeFilterValueRead(BaseModel):
+    value: str
+    label: str
+    count: int
+
+
+class PerfumePriceRangeRead(BaseModel):
+    min: float | None = None
+    max: float | None = None
+
+
+class PerfumeFilterOptionsRead(BaseModel):
+    genders: list[PerfumeFilterValueRead] = Field(default_factory=list)
+    families: list[PerfumeFilterValueRead] = Field(default_factory=list)
+    price_range: PerfumePriceRangeRead = Field(default_factory=PerfumePriceRangeRead, alias="priceRange")
 
     model_config = ConfigDict(populate_by_name=True)
 

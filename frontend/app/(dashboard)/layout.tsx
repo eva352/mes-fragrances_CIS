@@ -12,6 +12,7 @@ import { getAppSpec, type AppSpec, type AppSpecEnvelope } from "@/lib/api/app-sp
 function getPageTitle(pathname: string) {
   const map: Record<string, string> = {
     "/": "Dashboard",
+    "/dashboard": "Dashboard",
     "/aide": "Aide",
     "/support": "Support",
     "/documentation": "Documentation",

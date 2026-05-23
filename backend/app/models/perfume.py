@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, DateTime, String, Text
+from sqlalchemy import Boolean, Column, DateTime, Numeric, String, Text
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.sql import func
 import uuid
@@ -16,6 +16,8 @@ class Perfume(Base):
     image_url = Column(String, nullable=True)
     short_description = Column(Text, nullable=True)
     description = Column(Text, nullable=True)
+    gender = Column(String, nullable=True)
+    source_price = Column(Numeric(10, 2), nullable=True)
     olfactive_family = Column(String, nullable=True)
     budget_tier = Column(String, nullable=True)
     top_notes = Column(JSONB, nullable=False, default=list)

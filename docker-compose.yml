@@ -1,3 +1,9 @@
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "5"
+
 services:
   db:
     image: postgres:17-alpine
@@ -9,16 +15,30 @@ services:
       - "${PILOT_DB_BIND_HOST:-${PILOT_BIND_HOST:-127.0.0.1}}:${PILOT_DB_PORT:-19433}:5432"
     volumes:
       - pilot_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PILOT_DB_USER:-pilot} -d ${PILOT_DB_NAME:-pilot} -h 127.0.0.1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 256
+    mem_limit: 1g
+    mem_reservation: 512m
+    cpus: 1.0
+    logging: *default-logging
     restart: unless-stopped
 
   backend:
     build:
       context: ./backend
+    user: "1001:1001"
     environment:
       # Option avancée : si DATABASE_URL est défini dans .env.local/.env, il prend le dessus (Postgres externe).
       DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://${PILOT_DB_USER:-pilot}:${PILOT_DB_PASSWORD:-pilot}@db:5432/${PILOT_DB_NAME:-pilot}}
       PILOT_DATABASE_URL: ${PILOT_DATABASE_URL:-postgresql+psycopg://${PILOT_DB_USER:-pilot}:${PILOT_DB_PASSWORD:-pilot}@db:5432/${PILOT_DB_NAME:-pilot}}
-      PILOT_PROJECT_TITLE: ${PILOT_PROJECT_TITLE:-Pilot}
+      PILOT_PROJECT_TITLE: ${PILOT_PROJECT_TITLE:-mes-fragrances}
       PILOT_ADMIN_EMAIL: ${PILOT_ADMIN_EMAIL:-admin@example.com}
       PILOT_ADMIN_PASSWORD: ${PILOT_ADMIN_PASSWORD:-change_me}
       # Backward compatibility for Alembic revisions that still read ADMIN_*.
@@ -41,7 +61,30 @@ services:
       - ./shared/specs:/pilot_shared_specs:ro
       - ./docs:/pilot_docs:ro
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m,noexec,nosuid,nodev
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "python - <<'PY'\nimport sys, urllib.request\ntry:\n    r = urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health', timeout=3)\n    sys.exit(0 if r.status == 200 else 1)\nexcept Exception:\n    sys.exit(1)\nPY",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 256
+    mem_limit: 1536m
+    mem_reservation: 512m
+    cpus: 1.5
+    logging: *default-logging
     restart: unless-stopped
 
   frontend:
@@ -50,15 +93,39 @@ services:
       args:
         NEXT_BACKEND_ORIGIN: http://backend:8000
         NEXT_PUBLIC_PILOT_BACKEND_URL: ${NEXT_PUBLIC_PILOT_BACKEND_URL:-/api/v1}
-        NEXT_PUBLIC_PILOT_APP_NAME: ${NEXT_PUBLIC_PILOT_APP_NAME:-Pilot}
+        NEXT_PUBLIC_PILOT_APP_NAME: ${NEXT_PUBLIC_PILOT_APP_NAME:-mes-fragrances}
+    user: "1001:1001"
     environment:
       NEXT_BACKEND_ORIGIN: http://backend:8000
       NEXT_PUBLIC_PILOT_BACKEND_URL: ${NEXT_PUBLIC_PILOT_BACKEND_URL:-/api/v1}
-      NEXT_PUBLIC_PILOT_APP_NAME: ${NEXT_PUBLIC_PILOT_APP_NAME:-Pilot}
+      NEXT_PUBLIC_PILOT_APP_NAME: ${NEXT_PUBLIC_PILOT_APP_NAME:-mes-fragrances}
+      NPM_CONFIG_UPDATE_NOTIFIER: "false"
+      NPM_CONFIG_CACHE: /tmp/npm
     ports:
       - "${PILOT_FRONTEND_BIND_HOST:-${PILOT_BIND_HOST:-127.0.0.1}}:${PILOT_FRONTEND_PORT:-19100}:3000"
     volumes:
-      - ./llm_specs:/llm_specs
+      - ./llm_specs:/llm_specs:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m,noexec,nosuid,nodev
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:3000/login || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 45s
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 256
+    mem_limit: 2g
+    mem_reservation: 768m
+    cpus: 2.0
+    logging: *default-logging
     restart: unless-stopped
 
   caddy:
@@ -66,6 +133,9 @@ services:
     environment:
       PILOT_PUBLIC_DOMAIN: ${PILOT_PUBLIC_DOMAIN}
       PILOT_PUBLIC_WWW_DOMAIN: ${PILOT_PUBLIC_WWW_DOMAIN}
+      PILOT_PUBLIC_ADMIN_DOMAIN: ${PILOT_PUBLIC_ADMIN_DOMAIN}
+      PILOT_ADMIN_BASIC_AUTH_USER: ${PILOT_ADMIN_BASIC_AUTH_USER}
+      PILOT_ADMIN_BASIC_AUTH_HASH: ${PILOT_ADMIN_BASIC_AUTH_HASH}
     ports:
       - "80:80"
       - "443:443"
@@ -74,8 +144,30 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     depends_on:
-      - frontend
-      - backend
+      frontend:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,noexec,nosuid,nodev
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:2019/config/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    pids_limit: 128
+    mem_limit: 256m
+    mem_reservation: 96m
+    cpus: 0.5
+    logging: *default-logging
     restart: unless-stopped
 
 volumes:

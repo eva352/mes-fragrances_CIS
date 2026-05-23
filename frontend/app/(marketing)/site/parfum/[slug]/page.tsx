@@ -33,7 +33,7 @@ export async function generateMetadata({
 
   return {
     title: `${perfume.name} | ${perfume.brand}`,
-    description: perfume.shortDescription || perfume.description || `Comparer les offres pour ${perfume.name}.`,
+    description: perfume.shortDescription || perfume.description || `Découvrir ${perfume.name}, son univers olfactif et les offres partenaires disponibles.`,
   };
 }
 
@@ -99,13 +99,17 @@ export default async function PerfumeDetailPage({
             </div>
             <p className="mt-4 text-xs uppercase tracking-[0.22em] text-[hsl(var(--mf-ink-soft))]">{perfume.brand}</p>
             <h1 className="mt-2 font-serif text-4xl text-[hsl(var(--mf-ink))] md:text-5xl">{perfume.name}</h1>
+            <p className="mt-4 text-xs uppercase tracking-[0.22em] text-[hsl(var(--mf-ink-soft))]">Pourquoi il peut vous plaire</p>
             <p className="mt-4 text-base leading-8 text-[hsl(var(--mf-ink-soft))]">{perfume.description || perfume.shortDescription}</p>
           </div>
 
           <section className="space-y-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-[hsl(var(--mf-ink-soft))]">Comparer les offres</p>
-              <h2 className="mt-2 font-serif text-3xl text-[hsl(var(--mf-ink))]">Boutiques partenaires</h2>
+              <p className="text-xs uppercase tracking-[0.22em] text-[hsl(var(--mf-ink-soft))]">Où le découvrir ou l&apos;acheter</p>
+              <h2 className="mt-2 font-serif text-3xl text-[hsl(var(--mf-ink))]">Offres partenaires</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-[hsl(var(--mf-ink-soft))]">
+                Lorsque des offres sont disponibles, elles apparaissent ici pour prolonger la découverte du parfum plus simplement.
+              </p>
             </div>
             <OfferList offers={perfume.offers} />
           </section>

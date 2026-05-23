@@ -1,17 +1,60 @@
+(_security_headers) {
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        Content-Security-Policy "default-src 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data: https: blob:; font-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self' https: wss:; frame-src 'none'; form-action 'self'; upgrade-insecure-requests"
+        Permissions-Policy "accelerometer=(), ambient-light-sensor=(), autoplay=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), usb=()"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        -Server
+        -X-Powered-By
+    }
+}
+
+(_admin_gate) {
+    basic_auth {
+        {$PILOT_ADMIN_BASIC_AUTH_USER} {$PILOT_ADMIN_BASIC_AUTH_HASH}
+    }
+}
+
 {$PILOT_PUBLIC_WWW_DOMAIN} {
     redir https://{$PILOT_PUBLIC_DOMAIN}{uri} 308
 }
 
-{$PILOT_PUBLIC_DOMAIN} {
+{$PILOT_PUBLIC_ADMIN_DOMAIN} {
     encode zstd gzip
+    import _security_headers
 
-    @root path /
-    redir @root /site 308
+    @admin_root path /
+    redir @admin_root /dashboard 308
 
     @api path /api/v1/*
     handle @api {
         reverse_proxy backend:8000
     }
+
+    @admin_front path / /app /app/* /dashboard /dashboard/* /builder /builder/* /documentation /documentation/* /profil /profil/* /settings /settings/* /support /support/* /aide /aide/* /ui/components /ui/components/*
+    handle @admin_front {
+        import _admin_gate
+        reverse_proxy frontend:3000
+    }
+
+    handle {
+        reverse_proxy frontend:3000
+    }
+}
+
+{$PILOT_PUBLIC_DOMAIN} {
+    encode zstd gzip
+    import _security_headers
+
+    @api path /api/v1/*
+    handle @api {
+        reverse_proxy backend:8000
+    }
+
+    @private path /login /app /app/* /dashboard /dashboard/* /builder /builder/* /documentation /documentation/* /profil /profil/* /settings /settings/* /support /support/* /aide /aide/* /ui/components /ui/components/*
+    redir @private / 308
 
     handle {
         reverse_proxy frontend:3000

@@ -2,20 +2,26 @@ import { Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PUBLIC_PATHS } from "@/lib/site/public-paths";
 
 export function SearchInlineForm({
-  action = "/site/recherche",
+  action = PUBLIC_PATHS.search,
   defaultValue = "",
   compact = false,
   placeholder = "Rechercher un parfum…",
+  hiddenInputs = [],
 }: {
   action?: string;
   defaultValue?: string;
   compact?: boolean;
   placeholder?: string;
+  hiddenInputs?: Array<{ name: string; value: string }>;
 }) {
   return (
     <form action={action} className={compact ? "flex flex-col gap-3 sm:flex-row" : "flex flex-col gap-3 md:flex-row"}>
+      {hiddenInputs.map((input, index) => (
+        <input key={`${input.name}-${input.value}-${index}`} type="hidden" name={input.name} value={input.value} />
+      ))}
       <div className="relative flex-1">
         <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[hsl(var(--mf-rose-strong))]" />
         <Input

@@ -22,7 +22,7 @@ function buildEmptyBrief(): ProjectBrief {
   return {
     version: "1.0",
     kind: "aurora.projectBrief",
-    title: "Mon projet",
+    title: "mes-fragrances",
     oneLiner: "",
     projectType: "website",
     targetUsers: "",

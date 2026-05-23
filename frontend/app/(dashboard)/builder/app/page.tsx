@@ -69,6 +69,7 @@ function HelpTip({ text }: { text: string }) {
 }
 
 const RESERVED_SLUGS = new Set([
+  "dashboard",
   "settings",
   "aide",
   "support",
@@ -102,7 +103,7 @@ function slugifyTitle(title: string) {
 
 function isFixedBackofficePage(path: string) {
   const p = normalizeLegacyAppPath(path);
-  return p === "/" || p === "/settings" || p === "/aide";
+  return p === "/" || p === "/dashboard" || p === "/settings" || p === "/aide";
 }
 
 function buildUniquePathForTitle(params: {

@@ -60,7 +60,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true);
     try {
       await apiLogin(payload);
-      router.push("/");
+      router.push("/dashboard");
 
       try {
         const userData = await getMe();

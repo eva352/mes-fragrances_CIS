@@ -7,6 +7,7 @@ import type { QuizAnswers, QuizResult } from "@/lib/api/public-perfumes";
 import { getQuizRecommendations } from "@/lib/api/public-perfumes";
 import { PerfumeCard } from "@/components/site/perfume-card";
 import { Button } from "@/components/ui/button";
+import { PUBLIC_PATHS } from "@/lib/site/public-paths";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -365,14 +366,14 @@ export function QuizWizard() {
     return (
       <div className="space-y-8">
         <div className="rounded-[2rem] border border-white/70 bg-white/85 p-6 shadow-[0_24px_60px_rgba(120,83,98,0.12)] backdrop-blur md:p-8">
-          <p className="text-xs uppercase tracking-[0.24em] text-zinc-500">Profil trouvé</p>
+          <p className="text-xs uppercase tracking-[0.24em] text-zinc-500">Ton profil olfactif</p>
           <h2 className="mt-3 font-serif text-3xl text-zinc-900 md:text-4xl">{result.profile.title}</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-600 md:text-base">{result.profile.subtitle}</p>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-600 md:text-base">{result.profile.description}</p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             <div className="rounded-[1.5rem] border border-zinc-200 bg-white px-5 py-5">
-              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Familles conseillées</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Familles qui te correspondent</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {result.profile.olfactiveFamilies.map((family) => (
                   <span key={family} className="rounded-full bg-rose-50 px-3 py-1 text-sm text-zinc-700">
@@ -382,7 +383,7 @@ export function QuizWizard() {
               </div>
             </div>
             <div className="rounded-[1.5rem] border border-zinc-200 bg-white px-5 py-5">
-              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Mots-clés</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Mots-clés de ton univers</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {result.profile.keywords.map((keyword) => (
                   <span key={keyword} className="rounded-full bg-zinc-100 px-3 py-1 text-sm text-zinc-700">
@@ -398,7 +399,7 @@ export function QuizWizard() {
               Refaire le test
             </Button>
             <Button asChild className="rounded-full">
-              <Link href="/site/recherche">Explorer aussi la recherche</Link>
+              <Link href={PUBLIC_PATHS.catalog}>Explorer nos parfums</Link>
             </Button>
           </div>
         </div>
@@ -406,9 +407,9 @@ export function QuizWizard() {
         <div className="space-y-4">
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">Sélection parfum</p>
-            <h3 className="font-serif text-3xl text-zinc-900">3 pistes cohérentes avec votre profil</h3>
+            <h3 className="font-serif text-3xl text-zinc-900">Des parfums qui pourraient te correspondre</h3>
             <p className="max-w-2xl text-sm leading-7 text-zinc-600">
-              On garde volontairement une sélection courte et lisible, pour comparer vite et sans vous perdre.
+              Voici une sélection courte et lisible pour t&apos;aider à explorer des parfums cohérents avec ton profil olfactif.
             </p>
           </div>
 

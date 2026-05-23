@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from typing import Annotated
 import uuid
 import json
+import logging
 
 from app.api.deps import get_current_user
 from app.models.user import User
@@ -11,9 +12,11 @@ from app.core.llm_specs import ensure_llm_specs_dir
 
 router = APIRouter()
 CurrentUser = Annotated[User, Depends(get_current_user)]
+logger = logging.getLogger(__name__)
 
 
 RESERVED_DYNAMIC_PATHS = {
+    "/dashboard",
     "/login",
     "/builder",
     "/builder/app",
@@ -50,7 +53,7 @@ def slugify_title(title: str) -> str:
     text = re.sub(r"[^a-z0-9]+", "-", text).strip("-")
     base = text or "page"
 
-    if base in {"settings", "aide", "support", "documentation", "profil", "login", "builder", "ui", "site", "api"}:
+    if base in {"dashboard", "settings", "aide", "support", "documentation", "profil", "login", "builder", "ui", "site", "api"}:
         return f"{base}-page"
 
     return base
@@ -243,7 +246,13 @@ def read_app_spec(_: CurrentUser):
 
     if not path.exists():
         spec = build_default_spec()
-        path.write_text(json.dumps(spec.model_dump(by_alias=True), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        try:
+            path.write_text(
+                json.dumps(spec.model_dump(by_alias=True), indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+        except PermissionError:
+            logger.warning("Unable to create %s during read_app_spec; serving in-memory default spec", path)
 
     try:
         raw = json.loads(path.read_text(encoding="utf-8"))
@@ -253,10 +262,13 @@ def read_app_spec(_: CurrentUser):
 
     spec, changed = normalize_app_spec(spec)
     if changed:
-        path.write_text(
-            json.dumps(spec.model_dump(by_alias=True), indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
+        try:
+            path.write_text(
+                json.dumps(spec.model_dump(by_alias=True), indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+        except PermissionError:
+            logger.warning("Unable to persist normalized %s during read_app_spec; serving normalized response only", path)
 
     stat = path.stat()
     created = datetime.fromtimestamp(stat.st_ctime, tz=timezone.utc)

@@ -144,7 +144,7 @@ if (($createdEnv -or $needsProjectTitlePrompt -or $needsAdminEmailPrompt -or $ne
   }
 
   if ($createdEnv -or $needsProjectTitlePrompt) {
-    if ([string]::IsNullOrWhiteSpace($projectTitle)) { $projectTitle = "Mon projet" }
+    if ([string]::IsNullOrWhiteSpace($projectTitle)) { $projectTitle = "mes-fragrances" }
     $inputTitle = Read-Host "Nom du projet (affiché dans l'interface) [$projectTitle]"
     if (-not [string]::IsNullOrWhiteSpace($inputTitle)) { $projectTitle = $inputTitle }
     Set-EnvValue "AURORA_PROJECT_TITLE" $projectTitle
@@ -191,12 +191,12 @@ if (($needsAdminEmailPrompt -or $needsAdminPasswordPrompt) -and (-not $isInterac
 }
 
 if ([string]::IsNullOrWhiteSpace($projectTitle)) {
-  Set-EnvValue "AURORA_PROJECT_TITLE" "Mon projet"
+  Set-EnvValue "AURORA_PROJECT_TITLE" "mes-fragrances"
 }
 
 if ([string]::IsNullOrWhiteSpace($publicAppName)) {
   $publicAppName = (Get-EnvValue "AURORA_PROJECT_TITLE")
-  if ([string]::IsNullOrWhiteSpace($publicAppName)) { $publicAppName = "Mon projet" }
+  if ([string]::IsNullOrWhiteSpace($publicAppName)) { $publicAppName = "mes-fragrances" }
   Set-EnvValue "NEXT_PUBLIC_APP_NAME" $publicAppName
 }
 

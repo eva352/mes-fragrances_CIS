@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from collections.abc import Iterable
 from decimal import Decimal
@@ -14,7 +14,10 @@ from app.schemas.perfume import (
     PerfumeCardRead,
     PerfumeDetailRead,
     PerfumeFeaturedRead,
+    PerfumeFilterOptionsRead,
+    PerfumeFilterValueRead,
     PerfumeOfferRead,
+    PerfumePriceRangeRead,
     QuizPersonalityProfileRead,
     QuizRecommendationItem,
     QuizRecommendationRequest,
@@ -22,6 +25,14 @@ from app.schemas.perfume import (
 )
 
 router = APIRouter()
+
+
+GENDER_LABELS = {
+    "femme": "Femme",
+    "homme": "Homme",
+    "unisex": "Unisexe",
+    "enfant": "Enfant",
+}
 
 
 PROFILE_DETAILS: dict[str, dict[str, Any]] = {
@@ -315,16 +326,29 @@ def _build_offer(offer: PerfumeOffer) -> PerfumeOfferRead:
 
 def _build_card(perfume: Perfume, offers: list[PerfumeOffer]) -> PerfumeCardRead:
     lowest_offer = min(offers, key=lambda item: item.price) if offers else None
+    fallback_price = _to_float(perfume.source_price)
+    key_notes: list[str] = []
+
+    for note in [*(perfume.top_notes or []), *(perfume.heart_notes or []), *(perfume.base_notes or [])]:
+        normalized = str(note).strip()
+        if not normalized or normalized in key_notes:
+            continue
+        key_notes.append(normalized)
+        if len(key_notes) == 3:
+            break
+
     return PerfumeCardRead(
         slug=perfume.slug,
         name=perfume.name,
         brand=perfume.brand,
         image_url=perfume.image_url,
         short_description=perfume.short_description,
+        gender=_normalize_gender(perfume.gender),
         olfactive_family=perfume.olfactive_family,
+        key_notes=key_notes,
         budget_tier=perfume.budget_tier,
-        lowest_price=_to_float(lowest_offer.price) if lowest_offer else None,
-        currency=lowest_offer.currency if lowest_offer else None,
+        lowest_price=_to_float(lowest_offer.price) if lowest_offer else fallback_price,
+        currency=lowest_offer.currency if lowest_offer else ("EUR" if fallback_price is not None else None),
         is_new_arrival=bool(perfume.is_new_arrival),
         is_best_seller=bool(perfume.is_best_seller),
     )
@@ -332,6 +356,19 @@ def _build_card(perfume: Perfume, offers: list[PerfumeOffer]) -> PerfumeCardRead
 
 def _normalize(text: str) -> str:
     return " ".join((text or "").strip().lower().split())
+
+
+def _normalize_gender(value: str | None) -> str | None:
+    normalized = _normalize(value or "")
+    if normalized == "femme":
+        return "femme"
+    if normalized == "homme":
+        return "homme"
+    if normalized in {"mixte", "unisexe", "unisex"}:
+        return "unisex"
+    if normalized == "enfant":
+        return "enfant"
+    return None
 
 
 def _matches_query(perfume: Perfume, query: str) -> bool:
@@ -362,6 +399,81 @@ def _candidate_perfumes(db: Session) -> list[Perfume]:
         .order_by(Perfume.is_best_seller.desc(), Perfume.name.asc())
         .all()
     )
+
+
+def _normalize_family_values(values: Iterable[str] | None) -> set[str]:
+    return {_normalize(value) for value in (values or []) if _normalize(value)}
+
+
+def _normalize_gender_values(values: Iterable[str] | None) -> set[str]:
+    normalized: set[str] = set()
+    for value in values or []:
+        canonical = _normalize_gender(value)
+        if canonical:
+            normalized.add(canonical)
+    return normalized
+
+
+def _normalize_price_bounds(min_price: float | None, max_price: float | None) -> tuple[float | None, float | None]:
+    if min_price is not None and max_price is not None and min_price > max_price:
+        return max_price, min_price
+    return min_price, max_price
+
+
+def _matches_filters(
+    perfume: Perfume,
+    card: PerfumeCardRead,
+    genders: set[str],
+    families: set[str],
+    min_price: float | None,
+    max_price: float | None,
+) -> bool:
+    if genders:
+        perfume_gender = _normalize_gender(perfume.gender)
+        if perfume_gender not in genders:
+            return False
+
+    if families:
+        perfume_family = _normalize(perfume.olfactive_family or "")
+        if perfume_family not in families:
+            return False
+
+    price = card.lowest_price
+    if min_price is not None and (price is None or price < min_price):
+        return False
+    if max_price is not None and (price is None or price > max_price):
+        return False
+    return True
+
+
+def _search_cards(
+    db: Session,
+    query: str,
+    limit: int,
+    genders: Iterable[str] | None = None,
+    families: Iterable[str] | None = None,
+    min_price: float | None = None,
+    max_price: float | None = None,
+) -> list[PerfumeCardRead]:
+    normalized_genders = _normalize_gender_values(genders)
+    normalized_families = _normalize_family_values(families)
+    min_price, max_price = _normalize_price_bounds(min_price, max_price)
+
+    perfumes = _candidate_perfumes(db)
+    offers_map = _load_offers_map(db, [perfume.id for perfume in perfumes])
+    results: list[PerfumeCardRead] = []
+
+    for perfume in perfumes:
+        if not _matches_query(perfume, query):
+            continue
+        card = _build_card(perfume, offers_map.get(perfume.id, []))
+        if not _matches_filters(perfume, card, normalized_genders, normalized_families, min_price, max_price):
+            continue
+        results.append(card)
+        if len(results) >= limit:
+            break
+
+    return results
 
 
 def _build_profile(profile_key: str) -> QuizPersonalityProfileRead:
@@ -457,11 +569,65 @@ def search_perfumes(
     db: DBSession,
     q: str = Query(default="", min_length=0, max_length=100),
     limit: int = Query(default=18, ge=1, le=5000),
+    gender: list[str] | None = Query(default=None),
+    family: list[str] | None = Query(default=None),
+    min_price: float | None = Query(default=None, alias="minPrice", ge=0),
+    max_price: float | None = Query(default=None, alias="maxPrice", ge=0),
 ):
     query = _normalize(q)
-    perfumes = [perfume for perfume in _candidate_perfumes(db) if _matches_query(perfume, query)]
+    return _search_cards(
+        db=db,
+        query=query,
+        limit=limit,
+        genders=gender,
+        families=family,
+        min_price=min_price,
+        max_price=max_price,
+    )
+
+
+@router.get("/perfumes/filters", response_model=PerfumeFilterOptionsRead, tags=["perfumes"])
+def perfume_filters(db: DBSession):
+    perfumes = _candidate_perfumes(db)
     offers_map = _load_offers_map(db, [perfume.id for perfume in perfumes])
-    return [_build_card(perfume, offers_map.get(perfume.id, [])) for perfume in perfumes[:limit]]
+
+    gender_counts: dict[str, int] = {}
+    family_counts: dict[str, int] = {}
+    min_price: float | None = None
+    max_price: float | None = None
+
+    for perfume in perfumes:
+        gender = _normalize_gender(perfume.gender)
+        if gender:
+            gender_counts[gender] = gender_counts.get(gender, 0) + 1
+
+        family_label = " ".join((perfume.olfactive_family or "").strip().split())
+        if family_label:
+            family_counts[family_label] = family_counts.get(family_label, 0) + 1
+
+        lowest_price = _build_card(perfume, offers_map.get(perfume.id, [])).lowest_price
+        if lowest_price is None:
+            continue
+        if min_price is None or lowest_price < min_price:
+            min_price = lowest_price
+        if max_price is None or lowest_price > max_price:
+            max_price = lowest_price
+
+    return PerfumeFilterOptionsRead(
+        genders=[
+            PerfumeFilterValueRead(
+                value=value,
+                label=GENDER_LABELS.get(value, value.title()),
+                count=count,
+            )
+            for value, count in sorted(gender_counts.items(), key=lambda item: (item[0] != "femme", item[0] != "homme", item[0]))
+        ],
+        families=[
+            PerfumeFilterValueRead(value=value, label=value, count=count)
+            for value, count in sorted(family_counts.items(), key=lambda item: item[0].lower())
+        ],
+        price_range=PerfumePriceRangeRead(min=min_price, max=max_price),
+    )
 
 
 @router.get("/perfumes/featured", response_model=PerfumeFeaturedRead, tags=["perfumes"])
@@ -552,4 +718,3 @@ def get_quiz_recommendations(payload: QuizRecommendationRequest, db: DBSession):
         )
 
     return QuizRecommendationResponse(profile=profile, recommendations=recommendations)
-

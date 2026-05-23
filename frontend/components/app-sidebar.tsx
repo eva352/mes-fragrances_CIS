@@ -41,17 +41,19 @@ import { useAuth } from "@/lib/auth/context";
 import { useBuilderPreferences } from "@/lib/builder-preferences";
 import { useAppRuntime } from "@/components/app-runtime-context";
 import { APP_NAME } from "@/lib/brand";
+import { toPublicSiteUrl } from "@/lib/site/public-url";
 
 const navMain = [
   {
     title: "Dashboard",
-    url: "/",
+    url: "/dashboard",
     icon: Command,
   },
 ];
 
 const reservedMainPaths = new Set([
   "/",
+  "/dashboard",
   "/settings",
   "/aide",
   "/support",
@@ -235,7 +237,7 @@ export function AppSidebar(
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <Link
-                    href="/site"
+                    href={toPublicSiteUrl("/")}
                     target="_blank"
                     rel="noreferrer"
                     prefetch={false}

@@ -211,7 +211,7 @@ if [[ "$is_tty" == "true" && ( "$created_env" == "true" || "$needs_project_title
   fi
 
   if [[ "$created_env" == "true" || "$needs_project_title_prompt" == "true" ]]; then
-    default_project_title="${project_title:-Mon projet}"
+    default_project_title="${project_title:-mes-fragrances}"
     read -r -p "Nom du projet (affiché dans l'interface) [${default_project_title}] : " input_title
     project_title="${input_title:-$default_project_title}"
     set_env_kv AURORA_PROJECT_TITLE "$project_title"
@@ -251,11 +251,11 @@ if [[ "$is_tty" == "true" && ( "$created_env" == "true" || "$needs_project_title
 fi
 
 if [[ -z "$project_title" ]]; then
-  set_env_kv AURORA_PROJECT_TITLE "Mon projet"
+  set_env_kv AURORA_PROJECT_TITLE "mes-fragrances"
 fi
 
 if [[ -z "$public_app_name" ]]; then
-  set_env_kv NEXT_PUBLIC_APP_NAME "${project_title:-Mon projet}"
+  set_env_kv NEXT_PUBLIC_APP_NAME "${project_title:-mes-fragrances}"
 fi
 
 if [[ -z "$admin_email" ]]; then

@@ -15,7 +15,7 @@ export function OfferList({ offers }: { offers: PerfumeOffer[] }) {
   if (!offers.length) {
     return (
       <div className="rounded-[1.75rem] border border-dashed border-[hsl(var(--mf-line))] bg-[hsla(var(--mf-cream),0.76)] p-6 text-sm text-[hsl(var(--mf-ink-soft))]">
-        Aucune offre n'est disponible pour le moment. Tu pourras brancher les liens partenaires plus tard.
+        Aucune offre partenaire n&apos;est disponible pour le moment. Les options d&apos;achat apparaîtront ici dès qu&apos;elles seront disponibles.
       </div>
     );
   }
@@ -34,7 +34,7 @@ export function OfferList({ offers }: { offers: PerfumeOffer[] }) {
           </div>
           <Button asChild className="rounded-full px-5 shadow-[0_16px_28px_rgba(178,140,146,0.18)]">
             <a href={offer.affiliateUrl} target="_blank" rel="nofollow sponsored noreferrer">
-              Voir l'offre
+              Voir l&apos;offre partenaire
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>

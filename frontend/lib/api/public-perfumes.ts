@@ -1,10 +1,14 @@
-﻿export type PerfumeCard = {
+export type PerfumeGender = "femme" | "homme" | "unisex" | "enfant";
+
+export type PerfumeCard = {
   slug: string;
   name: string;
   brand: string;
   imageUrl?: string | null;
   shortDescription?: string | null;
+  gender?: PerfumeGender | string | null;
   olfactiveFamily?: string | null;
+  keyNotes: string[];
   budgetTier?: string | null;
   lowestPrice?: number | null;
   currency?: string | null;
@@ -31,6 +35,30 @@ export type PerfumeDetail = PerfumeCard & {
 export type FeaturedPerfumes = {
   newArrivals: PerfumeCard[];
   bestSellers: PerfumeCard[];
+};
+
+export type PerfumeFilterValue = {
+  value: string;
+  label: string;
+  count: number;
+};
+
+export type PerfumeFilterOptions = {
+  genders: PerfumeFilterValue[];
+  families: PerfumeFilterValue[];
+  priceRange: {
+    min: number | null;
+    max: number | null;
+  };
+};
+
+export type PublicPerfumeSearchOptions = {
+  q?: string;
+  limit?: number;
+  genders?: string[];
+  families?: string[];
+  minPrice?: number | null;
+  maxPrice?: number | null;
 };
 
 export type QuizAnswers = {
@@ -105,14 +133,43 @@ export async function getFeaturedPerfumes(): Promise<FeaturedPerfumes> {
   return publicFetch<FeaturedPerfumes>("/perfumes/featured");
 }
 
+export async function getPublicPerfumeFilters(): Promise<PerfumeFilterOptions> {
+  return publicFetch<PerfumeFilterOptions>("/perfumes/filters");
+}
+
 export async function searchPublicPerfumes(
-  query: string,
-  options?: { limit?: number },
+  queryOrOptions: string | PublicPerfumeSearchOptions = "",
+  options: Omit<PublicPerfumeSearchOptions, "q"> = {},
 ): Promise<PerfumeCard[]> {
-  const params = new URLSearchParams({ q: query });
-  if (options?.limit != null) {
-    params.set("limit", String(options.limit));
+  const resolved = typeof queryOrOptions === "string" ? { q: queryOrOptions, ...options } : queryOrOptions;
+  const params = new URLSearchParams();
+
+  params.set("q", resolved.q?.trim() ?? "");
+
+  if (resolved.limit != null) {
+    params.set("limit", String(resolved.limit));
   }
+
+  for (const gender of resolved.genders ?? []) {
+    if (gender) {
+      params.append("gender", gender);
+    }
+  }
+
+  for (const family of resolved.families ?? []) {
+    if (family) {
+      params.append("family", family);
+    }
+  }
+
+  if (resolved.minPrice != null) {
+    params.set("minPrice", String(resolved.minPrice));
+  }
+
+  if (resolved.maxPrice != null) {
+    params.set("maxPrice", String(resolved.maxPrice));
+  }
+
   return publicFetch<PerfumeCard[]>(`/perfumes/search?${params.toString()}`);
 }
 
@@ -126,4 +183,3 @@ export async function getQuizRecommendations(answers: QuizAnswers): Promise<Quiz
     body: JSON.stringify(answers),
   });
 }
-

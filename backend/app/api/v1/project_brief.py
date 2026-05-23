@@ -18,7 +18,11 @@ CurrentUser = Annotated[User, Depends(get_current_user)]
 
 
 def _default_brief() -> ProjectBrief:
-    project_title = (os.getenv("AURORA_PROJECT_TITLE") or "").strip() or "Mon projet"
+    project_title = (
+        os.getenv("PILOT_PROJECT_TITLE")
+        or os.getenv("AURORA_PROJECT_TITLE")
+        or ""
+    ).strip() or "mes-fragrances"
     return ProjectBrief(
         title=project_title,
         oneLiner="",
