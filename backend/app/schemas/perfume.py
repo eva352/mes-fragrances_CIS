@@ -1,12 +1,23 @@
+from datetime import datetime
+
 from pydantic import BaseModel, ConfigDict, Field
 
 
 class PerfumeOfferRead(BaseModel):
-    merchant_name: str = Field(alias="merchantName")
+    id: int
+    advertiser_name: str = Field(alias="advertiserName")
+    title: str
     price: float
     currency: str
-    availability: str | None = None
+    delivery_cost: float | None = Field(default=None, alias="deliveryCost")
+    total_price: float | None = Field(default=None, alias="totalPrice")
     affiliate_url: str = Field(alias="affiliateUrl")
+    merchant_url: str | None = Field(default=None, alias="merchantUrl")
+    image_url: str | None = Field(default=None, alias="imageUrl")
+    in_stock: bool | None = Field(default=None, alias="inStock")
+    stock_status: str | None = Field(default=None, alias="stockStatus")
+    last_seen_at: datetime | None = Field(default=None, alias="lastSeenAt")
+    last_price_change_at: datetime | None = Field(default=None, alias="lastPriceChangeAt")
 
     model_config = ConfigDict(populate_by_name=True)
 

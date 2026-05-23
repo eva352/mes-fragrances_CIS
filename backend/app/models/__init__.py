@@ -1,3 +1,5 @@
+from .advertiser import Advertiser
+from .affiliate_offer import AffiliateOffer
 from .user import User
 from .site_page import SitePage
 from .perfume import Perfume

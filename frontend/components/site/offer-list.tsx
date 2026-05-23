@@ -3,7 +3,10 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { PerfumeOffer } from "@/lib/api/public-perfumes";
 
-function formatPrice(price: number, currency: string) {
+function formatPrice(price: number | null | undefined, currency: string) {
+  if (price == null) {
+    return null;
+  }
   return new Intl.NumberFormat("fr-FR", {
     style: "currency",
     currency,
@@ -11,11 +14,36 @@ function formatPrice(price: number, currency: string) {
   }).format(price);
 }
 
+function formatDateLabel(value: string | null | undefined) {
+  if (!value) {
+    return null;
+  }
+
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    return null;
+  }
+
+  return new Intl.DateTimeFormat("fr-FR", {
+    dateStyle: "medium",
+  }).format(parsed);
+}
+
+function getStockLabel(offer: PerfumeOffer) {
+  if (offer.inStock === true) {
+    return offer.stockStatus || "En stock";
+  }
+  if (offer.inStock === false) {
+    return offer.stockStatus || "Indisponible";
+  }
+  return offer.stockStatus || "Stock inconnu";
+}
+
 export function OfferList({ offers }: { offers: PerfumeOffer[] }) {
   if (!offers.length) {
     return (
       <div className="rounded-[1.75rem] border border-dashed border-[hsl(var(--mf-line))] bg-[hsla(var(--mf-cream),0.76)] p-6 text-sm text-[hsl(var(--mf-ink-soft))]">
-        Aucune offre n'est disponible pour le moment. Tu pourras brancher les liens partenaires plus tard.
+        Aucune offre partenaire n&apos;est disponible pour le moment. Les options d&apos;achat apparaîtront ici dès qu&apos;elles seront disponibles.
       </div>
     );
   }
@@ -24,17 +52,31 @@ export function OfferList({ offers }: { offers: PerfumeOffer[] }) {
     <div className="space-y-3">
       {offers.map((offer) => (
         <div
-          key={`${offer.merchantName}-${offer.price}`}
+          key={offer.id}
           className="flex flex-col gap-4 rounded-[1.75rem] border border-[hsla(var(--mf-line),0.9)] bg-[hsla(var(--mf-cream),0.88)] p-4 shadow-[0_18px_48px_rgba(168,135,131,0.10)] backdrop-blur sm:flex-row sm:items-center sm:justify-between"
         >
-          <div className="space-y-1">
-            <p className="text-xs uppercase tracking-[0.2em] text-[hsl(var(--mf-ink-soft))]">{offer.merchantName}</p>
-            <p className="text-xl font-semibold text-[hsl(var(--mf-ink))]">{formatPrice(offer.price, offer.currency)}</p>
-            <p className="text-sm text-[hsl(var(--mf-ink-soft))]">{offer.availability || "Disponibilité à vérifier"}</p>
+          <div className="space-y-2">
+            <div className="space-y-1">
+              <p className="text-xs uppercase tracking-[0.2em] text-[hsl(var(--mf-ink-soft))]">{offer.advertiserName}</p>
+              <h3 className="text-lg font-semibold text-[hsl(var(--mf-ink))]">{offer.title}</h3>
+            </div>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-[hsl(var(--mf-ink-soft))]">
+              <span className="text-xl font-semibold text-[hsl(var(--mf-ink))]">{formatPrice(offer.price, offer.currency)}</span>
+              {offer.deliveryCost != null ? <span>Livraison {formatPrice(offer.deliveryCost, offer.currency)}</span> : null}
+              {offer.totalPrice != null && offer.totalPrice !== offer.price ? (
+                <span>Prix total {formatPrice(offer.totalPrice, offer.currency)}</span>
+              ) : null}
+            </div>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-[hsl(var(--mf-ink-soft))]">
+              <span>{getStockLabel(offer)}</span>
+              {formatDateLabel(offer.lastPriceChangeAt || offer.lastSeenAt) ? (
+                <span>Dernière mise à jour {formatDateLabel(offer.lastPriceChangeAt || offer.lastSeenAt)}</span>
+              ) : null}
+            </div>
           </div>
           <Button asChild className="rounded-full px-5 shadow-[0_16px_28px_rgba(178,140,146,0.18)]">
-            <a href={offer.affiliateUrl} target="_blank" rel="nofollow sponsored noreferrer">
-              Voir l'offre
+            <a href={offer.affiliateUrl} target="_blank" rel="sponsored nofollow noopener noreferrer">
+              Voir l&apos;offre
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>
