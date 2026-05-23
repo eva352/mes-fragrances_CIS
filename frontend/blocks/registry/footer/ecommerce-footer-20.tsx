@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowRight, Plus } from "@/components/icons";
+import { ArrowRight, Plus } from "lucide-react";
 import { Fragment, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";

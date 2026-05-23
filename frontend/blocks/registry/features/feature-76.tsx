@@ -1,4 +1,4 @@
-import { Blocks, BookOpen, Palette, Zap } from "@/components/icons";
+import { Blocks, BookOpen, Palette, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

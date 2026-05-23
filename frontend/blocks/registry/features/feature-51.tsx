@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Cog, Lightbulb, ListChecks } from "@/components/icons";
+import { Cog, Lightbulb, ListChecks } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

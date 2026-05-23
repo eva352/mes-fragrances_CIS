@@ -1,4 +1,4 @@
-import { ArrowRight, Heart, Lightbulb, Shield, UserPen } from "@/components/icons";
+import { ArrowRight, Heart, Lightbulb, Shield, UserPen } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

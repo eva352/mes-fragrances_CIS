@@ -1,4 +1,4 @@
-import type { LucideIcon } from "@/components/icons";
+import type { LucideIcon } from "lucide-react";
 import {
   ArrowUpRight,
   ChartBarIcon,
@@ -12,7 +12,7 @@ import {
   Settings,
   UserIcon,
   Zap,
-} from "@/components/icons";
+} from "lucide-react";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";

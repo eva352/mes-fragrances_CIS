@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayIcon } from "@/components/icons";
+import { PlayIcon } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

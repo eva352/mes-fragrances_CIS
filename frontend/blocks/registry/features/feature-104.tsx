@@ -6,7 +6,7 @@ import {
   Monitor,
   Target,
   TrendingUp,
-} from "@/components/icons";
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

@@ -1,4 +1,4 @@
-import { Download, Monitor, Smartphone, Tablet } from "@/components/icons";
+import { Download, Monitor, Smartphone, Tablet } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

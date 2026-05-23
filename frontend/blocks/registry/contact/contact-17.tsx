@@ -1,6 +1,6 @@
 "use client";
 
-import { Check } from "@/components/icons";
+import { Check } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 
 import { cn } from "@/lib/utils";

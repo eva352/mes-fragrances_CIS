@@ -1,7 +1,7 @@
 "use client";
 import AutoScroll from "embla-carousel-auto-scroll";
 import Autoplay from "embla-carousel-autoplay";
-import { ChevronRight } from "@/components/icons";
+import { ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

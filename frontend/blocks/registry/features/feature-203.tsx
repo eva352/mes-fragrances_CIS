@@ -4,7 +4,7 @@ import {
   HeadphonesIcon,
   PuzzleIcon,
   ShieldCheckIcon,
-} from "@/components/icons";
+} from "lucide-react";
 import { Fragment } from "react";
 
 import { cn } from "@/lib/utils";

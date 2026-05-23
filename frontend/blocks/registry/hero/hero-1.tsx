@@ -8,7 +8,7 @@ import {
   Share2,
   Sparkles,
   Video,
-} from "@/components/icons";
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

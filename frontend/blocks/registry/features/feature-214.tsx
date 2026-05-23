@@ -1,5 +1,5 @@
 "use client";
-import type { LucideIcon } from "@/components/icons";
+import type { LucideIcon } from "lucide-react";
 import {
   AudioLines,
   Captions,
@@ -8,7 +8,7 @@ import {
   ListMinus,
   ScanFace,
   TextQuote,
-} from "@/components/icons";
+} from "lucide-react";
 import { useRef } from "react";
 
 import { cn } from "@/lib/utils";

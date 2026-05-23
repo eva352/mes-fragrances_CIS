@@ -1,4 +1,4 @@
-import { AudioLines, Box, Globe, ShieldUser, Users } from "lucide-react";
+import { AudioLines, Box, Globe, Shield, Users } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";
@@ -19,7 +19,7 @@ const features = [
       "Optimized performance with minimal bundle size and instant loading.",
   },
   {
-    icon: ShieldUser,
+    icon: Shield,
     title: "Secure by Default",
     description:
       "Enterprise-grade security with built-in protection and compliance.",

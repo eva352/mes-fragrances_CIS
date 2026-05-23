@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Forward } from "@/components/icons";
+import { Forward } from "lucide-react";
 import React, { useState } from "react";
 
 import { cn } from "@/lib/utils";

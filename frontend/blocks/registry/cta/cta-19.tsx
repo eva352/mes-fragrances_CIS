@@ -1,4 +1,4 @@
-import { FileCode, Layers } from "@/components/icons";
+import { FileCode, Layers } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

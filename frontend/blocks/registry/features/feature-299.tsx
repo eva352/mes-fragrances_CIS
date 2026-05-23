@@ -1,4 +1,4 @@
-import { Box, Globe, Rocket, ShieldUser, User, Users } from "@/components/icons";
+import { Box, Globe, Rocket, Shield, User, Users } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -23,7 +23,7 @@ const features = [
   },
   {
     title: "Authorization (Roles, Policies, Controls)",
-    icon: ShieldUser,
+    icon: Shield,
   },
   {
     title: "Partnership (Networks, Communities, Alliances)",

@@ -1,4 +1,4 @@
-import { BarChart, Check, Shield, Zap } from "@/components/icons";
+import { BarChart, Check, Shield, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

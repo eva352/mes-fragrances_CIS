@@ -1,4 +1,4 @@
-import { Cog, Gem, Landmark, LocateFixed } from "@/components/icons";
+import { Cog, Gem, Landmark, LocateFixed } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";

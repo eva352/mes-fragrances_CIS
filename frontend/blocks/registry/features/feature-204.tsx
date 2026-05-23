@@ -1,4 +1,4 @@
-import { Combine, Gauge, Zap } from "@/components/icons";
+import { Combine, Gauge, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

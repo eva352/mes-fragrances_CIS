@@ -13,7 +13,7 @@ import {
   ScrollText,
   Sparkles,
   Users,
-} from "@/components/icons";
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

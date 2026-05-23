@@ -1,4 +1,4 @@
-import { Blocks, ChartPie, Filter, UsersRound } from "@/components/icons";
+import { Blocks, ChartPie, Filter, UsersRound } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

@@ -1,4 +1,4 @@
-import { CheckCircle, Edit, List, MessagesSquare, Timer } from "@/components/icons";
+import { CheckCircle, Edit, List, MessagesSquare, Timer } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

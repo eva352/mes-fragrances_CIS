@@ -1,4 +1,4 @@
-import { Cable, Workflow, Wrench } from "@/components/icons";
+import { Cable, Workflow, Wrench } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

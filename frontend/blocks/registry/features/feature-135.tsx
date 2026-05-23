@@ -1,4 +1,4 @@
-import type { LucideIcon } from "@/components/icons";
+import type { LucideIcon } from "lucide-react";
 import {
   Calendar,
   Check,
@@ -7,7 +7,7 @@ import {
   MessagesSquare,
   Star,
   Users,
-} from "@/components/icons";
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

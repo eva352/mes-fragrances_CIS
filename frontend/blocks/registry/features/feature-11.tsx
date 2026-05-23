@@ -1,4 +1,4 @@
-import { ChevronRight, CircleCheckBig } from "@/components/icons";
+import { ChevronRight, CircleCheckBig } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

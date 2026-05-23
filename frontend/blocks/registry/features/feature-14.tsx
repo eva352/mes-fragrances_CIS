@@ -1,4 +1,4 @@
-import { CheckCircle } from "@/components/icons";
+import { CheckCircle } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

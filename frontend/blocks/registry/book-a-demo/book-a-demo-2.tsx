@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, MousePointer2 } from "@/components/icons";
+import { ArrowLeft, ArrowRight, MousePointer2 } from "lucide-react";
 import React, { useState } from "react";
 
 import { cn } from "@/lib/utils";

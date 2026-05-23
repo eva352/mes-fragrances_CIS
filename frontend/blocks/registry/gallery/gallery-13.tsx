@@ -1,6 +1,6 @@
 "use client";
 
-import { Palette, Sparkles, Star } from "@/components/icons";
+import { Palette, Sparkles, Star } from "lucide-react";
 import { startTransition, useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";

@@ -1,6 +1,6 @@
 "use client";
 
-import { Infinity as InfinityIcon, Laptop, Zap, ZoomIn } from "@/components/icons";
+import { Infinity as InfinityIcon, Laptop, Zap, ZoomIn } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

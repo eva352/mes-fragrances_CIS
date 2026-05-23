@@ -1,4 +1,4 @@
-import { BadgeCheck } from "@/components/icons";
+import { BadgeCheck } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -123,4 +123,4 @@ export const AuroraBackground = ({
   );
 };
 
-export default Feature271;
+export default AuroraBackground;

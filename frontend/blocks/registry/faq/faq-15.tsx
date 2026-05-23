@@ -1,5 +1,5 @@
-import type { LucideIcon } from "@/components/icons";
-import { Clock, Heart, Home, Wallet } from "@/components/icons";
+import type { LucideIcon } from "lucide-react";
+import { Clock, Heart, Home, Wallet } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

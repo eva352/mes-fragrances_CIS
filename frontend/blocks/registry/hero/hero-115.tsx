@@ -1,4 +1,4 @@
-import { Wifi, Zap } from "@/components/icons";
+import { Wifi, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

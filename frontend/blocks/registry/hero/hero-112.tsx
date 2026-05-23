@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, PenTool, Play } from "@/components/icons";
+import { BookOpen, PenTool, Play } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

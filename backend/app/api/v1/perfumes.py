@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from collections.abc import Iterable
 from decimal import Decimal
@@ -8,8 +8,9 @@ from fastapi import APIRouter, HTTPException, Query, status
 from sqlalchemy.orm import Session
 
 from app.api.deps import DBSession
+from app.models.advertiser import Advertiser
+from app.models.affiliate_offer import AffiliateOffer
 from app.models.perfume import Perfume
-from app.models.perfume_offer import PerfumeOffer
 from app.schemas.perfume import (
     PerfumeCardRead,
     PerfumeDetailRead,
@@ -287,34 +288,74 @@ def _to_float(value: Decimal | float | int | None) -> float | None:
     return float(value)
 
 
-def _load_offers_map(db: Session, perfume_ids: Iterable[Any]) -> dict[Any, list[PerfumeOffer]]:
+def _offer_sort_key(row: tuple[AffiliateOffer, Advertiser]) -> tuple[int, float, int, str, int]:
+    offer, advertiser = row
+    total_price = _to_float(offer.total_price)
+    price = _to_float(offer.price) or 0.0
+    advertiser_priority = advertiser.priority if advertiser.priority is not None else 100
+    return (
+        0 if offer.in_stock is True else 1,
+        total_price if total_price is not None else price,
+        advertiser_priority,
+        advertiser.name.casefold(),
+        int(offer.id),
+    )
+
+
+def _group_offers(rows: Iterable[tuple[AffiliateOffer, Advertiser]]) -> dict[Any, list[tuple[AffiliateOffer, Advertiser]]]:
+    grouped: dict[Any, list[tuple[AffiliateOffer, Advertiser]]] = {}
+    for row in sorted(rows, key=lambda item: (str(item[0].perfume_id), _offer_sort_key(item))):
+        grouped.setdefault(row[0].perfume_id, []).append(row)
+    return grouped
+
+
+def _load_offers_map(db: Session, perfume_ids: Iterable[Any]) -> dict[Any, list[tuple[AffiliateOffer, Advertiser]]]:
     ids = list(perfume_ids)
     if not ids:
         return {}
-    offers = (
-        db.query(PerfumeOffer)
-        .filter(PerfumeOffer.perfume_id.in_(ids), PerfumeOffer.is_active.is_(True))
-        .order_by(PerfumeOffer.price.asc(), PerfumeOffer.merchant_name.asc())
+
+    rows = (
+        db.query(AffiliateOffer, Advertiser)
+        .join(Advertiser, Advertiser.id == AffiliateOffer.advertiser_id)
+        .filter(
+            AffiliateOffer.perfume_id.in_(ids),
+            AffiliateOffer.active.is_(True),
+            Advertiser.active.is_(True),
+        )
         .all()
     )
-    by_perfume: dict[Any, list[PerfumeOffer]] = {}
-    for offer in offers:
-        by_perfume.setdefault(offer.perfume_id, []).append(offer)
-    return by_perfume
+    return _group_offers(rows)
 
 
-def _build_offer(offer: PerfumeOffer) -> PerfumeOfferRead:
+def _build_offer(offer: AffiliateOffer, advertiser: Advertiser) -> PerfumeOfferRead:
     return PerfumeOfferRead(
-        merchant_name=offer.merchant_name,
+        id=int(offer.id),
+        advertiser_name=advertiser.name,
+        title=offer.title,
         price=_to_float(offer.price) or 0.0,
         currency=offer.currency,
-        availability=offer.availability,
+        delivery_cost=_to_float(offer.delivery_cost),
+        total_price=_to_float(offer.total_price),
         affiliate_url=offer.affiliate_url,
+        merchant_url=offer.merchant_url,
+        image_url=offer.image_url,
+        in_stock=offer.in_stock,
+        stock_status=offer.stock_status,
+        last_seen_at=offer.last_seen_at,
+        last_price_change_at=offer.last_price_change_at,
     )
 
 
-def _build_card(perfume: Perfume, offers: list[PerfumeOffer]) -> PerfumeCardRead:
-    lowest_offer = min(offers, key=lambda item: item.price) if offers else None
+def _offer_list_price(row: tuple[AffiliateOffer, Advertiser]) -> float | None:
+    offer, _advertiser = row
+    total_price = _to_float(offer.total_price)
+    if total_price is not None:
+        return total_price
+    return _to_float(offer.price)
+
+
+def _build_card(perfume: Perfume, offers: list[tuple[AffiliateOffer, Advertiser]]) -> PerfumeCardRead:
+    lowest_offer = offers[0] if offers else None
     return PerfumeCardRead(
         slug=perfume.slug,
         name=perfume.name,
@@ -323,8 +364,8 @@ def _build_card(perfume: Perfume, offers: list[PerfumeOffer]) -> PerfumeCardRead
         short_description=perfume.short_description,
         olfactive_family=perfume.olfactive_family,
         budget_tier=perfume.budget_tier,
-        lowest_price=_to_float(lowest_offer.price) if lowest_offer else None,
-        currency=lowest_offer.currency if lowest_offer else None,
+        lowest_price=_offer_list_price(lowest_offer) if lowest_offer else None,
+        currency=lowest_offer[0].currency if lowest_offer else None,
         is_new_arrival=bool(perfume.is_new_arrival),
         is_best_seller=bool(perfume.is_best_seller),
     )
@@ -501,7 +542,7 @@ def read_perfume(slug: str, db: DBSession):
         top_notes=[str(item) for item in (perfume.top_notes or [])],
         heart_notes=[str(item) for item in (perfume.heart_notes or [])],
         base_notes=[str(item) for item in (perfume.base_notes or [])],
-        offers=[_build_offer(offer) for offer in offers],
+        offers=[_build_offer(offer, advertiser) for offer, advertiser in offers],
     )
 
 
@@ -515,7 +556,7 @@ def read_perfume_offers(slug: str, db: DBSession):
     if not perfume:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Perfume not found")
     offers = _load_offers_map(db, [perfume.id]).get(perfume.id, [])
-    return [_build_offer(offer) for offer in offers]
+    return [_build_offer(offer, advertiser) for offer, advertiser in offers]
 
 
 @router.post("/quiz/recommendations", response_model=QuizRecommendationResponse, tags=["perfumes"])
@@ -552,4 +593,3 @@ def get_quiz_recommendations(payload: QuizRecommendationRequest, db: DBSession):
         )
 
     return QuizRecommendationResponse(profile=profile, recommendations=recommendations)
-

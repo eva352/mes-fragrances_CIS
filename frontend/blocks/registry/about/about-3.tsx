@@ -1,4 +1,4 @@
-import { CircleArrowRight, Files, Settings } from "@/components/icons";
+import { CircleArrowRight, Files, Settings } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

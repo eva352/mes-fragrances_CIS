@@ -1,6 +1,6 @@
 "use client";
 
-import { MoveRight } from "@/components/icons";
+import { MoveRight } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

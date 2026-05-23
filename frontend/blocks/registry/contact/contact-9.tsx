@@ -1,4 +1,4 @@
-import { Building, ChevronRight, Mail, Phone } from "@/components/icons";
+import { Building, ChevronRight, Mail, Phone } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";

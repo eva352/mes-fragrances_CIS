@@ -1,7 +1,7 @@
 "use client";
 
 import AutoScroll from "embla-carousel-auto-scroll";
-import { MoveRight } from "@/components/icons";
+import { MoveRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

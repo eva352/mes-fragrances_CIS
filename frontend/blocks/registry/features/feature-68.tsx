@@ -1,4 +1,4 @@
-import { CloudLightning, Compass, Gift, Shield, Star, Zap } from "@/components/icons";
+import { CloudLightning, Compass, Gift, Shield, Star, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

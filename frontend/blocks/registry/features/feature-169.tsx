@@ -1,4 +1,4 @@
-import { CircleHelp, Eye, Lightbulb, Volume2 } from "@/components/icons";
+import { CircleHelp, Eye, Lightbulb, Volume2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

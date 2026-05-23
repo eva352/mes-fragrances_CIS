@@ -1,4 +1,4 @@
-import { PersonStanding, Timer, Zap, ZoomIn } from "@/components/icons";
+import { PersonStanding, Timer, Zap, ZoomIn } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

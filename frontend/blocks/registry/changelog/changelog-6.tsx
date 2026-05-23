@@ -1,4 +1,4 @@
-import { Copy, ExternalLink, GitPullRequest, Maximize2 } from "@/components/icons";
+import { Copy, ExternalLink, GitPullRequest, Maximize2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

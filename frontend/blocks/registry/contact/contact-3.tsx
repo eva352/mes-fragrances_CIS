@@ -3,7 +3,7 @@ import {
   MessagesSquare,
   ScanFace,
   Users,
-} from "@/components/icons";
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

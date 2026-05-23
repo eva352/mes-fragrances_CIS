@@ -9,7 +9,7 @@ import {
   Moon,
   Sun,
   Twitter,
-} from "@/components/icons";
+} from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

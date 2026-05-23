@@ -1,4 +1,4 @@
-import { Blocks, ChartPie, ChevronRight, Layout, Target } from "@/components/icons";
+import { Blocks, ChartPie, ChevronRight, Layout, Target } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

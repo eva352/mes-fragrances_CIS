@@ -1,4 +1,4 @@
-import { MoveRight } from "@/components/icons";
+import { MoveRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

@@ -1,4 +1,4 @@
-import { CornerDownRight } from "@/components/icons";
+import { CornerDownRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

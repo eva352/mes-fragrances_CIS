@@ -7,7 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { Pause, Play, RotateCcw } from "@/components/icons";
+import { Pause, Play, RotateCcw } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";

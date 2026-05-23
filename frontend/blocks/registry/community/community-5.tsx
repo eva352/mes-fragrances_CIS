@@ -1,4 +1,4 @@
-import { GitBranch, Star, Users } from "@/components/icons";
+import { GitBranch, Star, Users } from "lucide-react";
 import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 import { cn } from "@/lib/utils";

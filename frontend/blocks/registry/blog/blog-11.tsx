@@ -1,4 +1,4 @@
-import { FileText } from "@/components/icons";
+import { FileText } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

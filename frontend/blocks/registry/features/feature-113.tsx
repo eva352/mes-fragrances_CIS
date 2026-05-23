@@ -1,4 +1,4 @@
-import { CreditCard, Layout, Menu, Pointer, Zap } from "@/components/icons";
+import { CreditCard, Layout, Menu, Pointer, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

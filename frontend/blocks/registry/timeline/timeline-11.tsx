@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, FlagIcon, LocateFixed, RocketIcon } from "@/components/icons";
+import { Cpu, FlagIcon, LocateFixed, RocketIcon } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";

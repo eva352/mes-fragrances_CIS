@@ -1,6 +1,6 @@
 "use client";
-import type { LucideIcon } from "@/components/icons";
-import { ArrowRight, Eye, ScanFace, Users, View } from "@/components/icons";
+import type { LucideIcon } from "lucide-react";
+import { ArrowRight, Eye, ScanFace, Users, View } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

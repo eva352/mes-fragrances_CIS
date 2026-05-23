@@ -1,4 +1,4 @@
-import { Layout, Pointer, Zap } from "@/components/icons";
+import { Layout, Pointer, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

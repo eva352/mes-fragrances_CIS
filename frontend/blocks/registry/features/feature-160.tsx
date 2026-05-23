@@ -1,6 +1,6 @@
 "use client";
 
-import { Code, GitBranch, List, WandSparkles } from "@/components/icons";
+import { Code, GitBranch, List, WandSparkles } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

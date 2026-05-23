@@ -1,6 +1,6 @@
 "use client";
 
-import { Code, MessageCircle, Text } from "@/components/icons";
+import { Code, MessageCircle, Text } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

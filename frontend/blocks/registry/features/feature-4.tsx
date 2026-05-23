@@ -1,4 +1,4 @@
-import { Code, GitBranch } from "@/components/icons";
+import { Code, GitBranch } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

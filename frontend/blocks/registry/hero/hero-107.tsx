@@ -1,4 +1,4 @@
-import { MoonStar, Sparkles } from "@/components/icons";
+import { MoonStar, Sparkles } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

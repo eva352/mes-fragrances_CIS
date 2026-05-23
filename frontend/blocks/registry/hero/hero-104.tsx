@@ -1,5 +1,5 @@
 "use client";
-import { Check, Play, Star, Zap } from "@/components/icons";
+import { Check, Play, Star, Zap } from "lucide-react";
 import { Fragment, useState } from "react";
 
 import { cn } from "@/lib/utils";

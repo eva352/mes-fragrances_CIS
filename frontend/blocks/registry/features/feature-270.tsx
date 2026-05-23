@@ -247,4 +247,4 @@ export const PinPerspective = ({
   );
 };
 
-export default Feature270;
+export default PinContainer;
