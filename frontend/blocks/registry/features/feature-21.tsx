@@ -1,4 +1,4 @@
-import { Sparkles, SquareDashedMousePointer } from "@/components/icons";
+import { Sparkles, SquareDashedMousePointer } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

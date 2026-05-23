@@ -1,4 +1,4 @@
-import { Map } from "@/components/icons";
+import { Map } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

@@ -1,4 +1,4 @@
-import { Calendar, ChevronRight, Terminal, Timer, Wallet } from "@/components/icons";
+import { Calendar, ChevronRight, Terminal, Timer, Wallet } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -80,5 +80,3 @@ export function Feature194() {
     </section>
   );
 }
-
-export default Feature194;

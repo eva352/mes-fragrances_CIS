@@ -1,4 +1,4 @@
-import { ArrowRight, Clock, MapPin, Target } from "@/components/icons";
+import { ArrowRight, Clock, MapPin, Target } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

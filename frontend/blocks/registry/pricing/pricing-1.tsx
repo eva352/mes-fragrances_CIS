@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckIcon, Info, MinusIcon } from "@/components/icons";
+import { CheckIcon, Info, MinusIcon } from "lucide-react";
 import { Fragment, useState } from "react";
 
 import { cn } from "@/lib/utils";

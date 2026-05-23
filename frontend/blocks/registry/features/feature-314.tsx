@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Plus } from "@/components/icons";
+import { ArrowUpRight, Plus } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

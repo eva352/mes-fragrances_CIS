@@ -9,7 +9,7 @@ import {
   Languages,
   Linkedin,
   Twitter,
-} from "@/components/icons";
+} from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Donut } from "@/components/icons";
+import { ArrowRight, Donut } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

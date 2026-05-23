@@ -1,4 +1,4 @@
-import { Timer, Zap, ZoomIn } from "@/components/icons";
+import { Timer, Zap, ZoomIn } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

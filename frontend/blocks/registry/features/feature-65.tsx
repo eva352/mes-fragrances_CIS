@@ -6,8 +6,8 @@ import {
   ChevronUp,
   GanttChartSquareIcon,
   SwatchBook,
-} from "@/components/icons";
-import { GitBranch, Sparkles } from "@/components/icons";
+} from "lucide-react";
+import { GitBranch, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

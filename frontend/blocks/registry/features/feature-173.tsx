@@ -1,4 +1,4 @@
-import { Bell, Bug, Sparkles } from "@/components/icons";
+import { Bell, Bug, Sparkles } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

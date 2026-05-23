@@ -1,6 +1,6 @@
 "use client";
 
-import { Database, LockKeyhole, Sparkles } from "@/components/icons";
+import { Database, LockKeyhole, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

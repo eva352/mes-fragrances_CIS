@@ -1,4 +1,4 @@
-import { ArrowUpRight, BookOpen, Zap } from "@/components/icons";
+import { ArrowUpRight, BookOpen, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

@@ -1,4 +1,4 @@
-import { MoveRight } from "@/components/icons";
+import { MoveRight } from "lucide-react";
 import { Fragment } from "react";
 
 import { cn } from "@/lib/utils";

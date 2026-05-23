@@ -1,4 +1,4 @@
-import { Calendar, ChevronRight } from "@/components/icons";
+import { Calendar, ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, BadgeCheck, Pyramid, Sparkle, Zap } from "@/components/icons";
+import { ArrowRight, BadgeCheck, Pyramid, Sparkle, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

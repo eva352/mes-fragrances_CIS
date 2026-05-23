@@ -1,6 +1,6 @@
 "use client";
 
-import { AlignLeft, CheckCircle2, Lightbulb } from "@/components/icons";
+import { AlignLeft, CheckCircle2, Lightbulb } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 

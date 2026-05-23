@@ -1,4 +1,4 @@
-import { Mail, MapPin, MessageCircle, Phone } from "@/components/icons";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

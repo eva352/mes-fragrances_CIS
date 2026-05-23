@@ -1,4 +1,4 @@
-import { HandHelping, Users } from "@/components/icons";
+import { HandHelping, Users } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

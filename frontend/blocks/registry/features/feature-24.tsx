@@ -1,4 +1,4 @@
-import { ChevronRight, LayoutTemplate } from "@/components/icons";
+import { ChevronRight, LayoutTemplate } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

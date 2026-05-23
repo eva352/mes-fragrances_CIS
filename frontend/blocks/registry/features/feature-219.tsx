@@ -1,5 +1,5 @@
-import type { LucideIcon } from "@/components/icons";
-import { AudioLines, AudioWaveform } from "@/components/icons";
+import type { LucideIcon } from "lucide-react";
+import { AudioLines, AudioWaveform } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

@@ -6,7 +6,7 @@ import {
   Hourglass,
   Layout,
   ShieldCheck,
-} from "@/components/icons";
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

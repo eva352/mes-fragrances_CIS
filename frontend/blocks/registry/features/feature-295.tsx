@@ -1,6 +1,6 @@
 "use client";
 
-import { GitPullRequest, Star } from "@/components/icons";
+import { GitPullRequest, Star } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

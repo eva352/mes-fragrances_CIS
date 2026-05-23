@@ -1,4 +1,4 @@
-import { AppWindowMac, Zap } from "@/components/icons";
+import { AppWindowMac, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

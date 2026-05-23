@@ -1,6 +1,6 @@
 "use client";
 
-import { Code, GitBranch, Sparkle } from "@/components/icons";
+import { Code, GitBranch, Sparkle } from "lucide-react";
 import { startTransition, useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";

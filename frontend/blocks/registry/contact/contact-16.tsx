@@ -1,4 +1,4 @@
-import { CornerDownRight, Mail, Smartphone } from "@/components/icons";
+import { CornerDownRight, Mail, Smartphone } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

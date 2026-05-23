@@ -57,5 +57,3 @@ export const Careers7 = () => {
     </section>
   );
 };
-
-export default Careers7;

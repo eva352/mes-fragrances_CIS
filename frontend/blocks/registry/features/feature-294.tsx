@@ -1,4 +1,4 @@
-import { AudioLines, Box, Globe, ShieldUser, Users } from "@/components/icons";
+import { AudioLines, Box, Globe, ShieldUser, Users } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";

@@ -1,4 +1,4 @@
-import { ShoppingCartIcon } from "@/components/icons";
+import { ShoppingCartIcon } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";

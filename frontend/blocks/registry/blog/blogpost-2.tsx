@@ -1,4 +1,4 @@
-import { ChevronLeft } from "@/components/icons";
+import { ChevronLeft } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

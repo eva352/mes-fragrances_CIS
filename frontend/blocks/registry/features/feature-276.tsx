@@ -8,7 +8,7 @@ import {
   Plug2,
   Snowflake,
   Zap,
-} from "@/components/icons";
+} from "lucide-react";
 import React, { useState } from "react";
 
 import { cn } from "@/lib/utils";

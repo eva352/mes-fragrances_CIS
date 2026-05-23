@@ -1,4 +1,4 @@
-import { BadgeCheck } from "@/components/icons";
+import { BadgeCheck } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";

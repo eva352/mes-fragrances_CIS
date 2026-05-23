@@ -1,5 +1,5 @@
 "use client";
-import { Linkedin, LucideIcon, Twitter } from "@/components/icons";
+import { Linkedin, LucideIcon, Twitter } from "lucide-react";
 import { Fragment, useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";

@@ -8,7 +8,7 @@ import {
   Phone,
   Plus,
   Send,
-} from "@/components/icons";
+} from "lucide-react";
 import { Fragment } from "react";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";

@@ -1,4 +1,4 @@
-import { Infinity as InfinityIcon, MessagesSquare, Target } from "@/components/icons";
+import { Infinity as InfinityIcon, MessagesSquare, Target } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

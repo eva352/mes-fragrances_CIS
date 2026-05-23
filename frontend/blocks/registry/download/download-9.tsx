@@ -1,4 +1,4 @@
-import { Check } from "@/components/icons";
+import { Check } from "lucide-react";
 import {
   FaAndroid,
   FaApple,

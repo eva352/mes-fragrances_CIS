@@ -1,4 +1,4 @@
-import { Lightbulb, ShieldCheck } from "@/components/icons";
+import { Lightbulb, ShieldCheck } from "lucide-react";
 import { FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 

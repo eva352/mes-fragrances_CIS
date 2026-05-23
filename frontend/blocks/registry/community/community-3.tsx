@@ -1,4 +1,4 @@
-import { Users } from "@/components/icons";
+import { Users } from "lucide-react";
 import { FaDiscord, FaGithub, FaXTwitter } from "react-icons/fa6";
 
 import { cn } from "@/lib/utils";

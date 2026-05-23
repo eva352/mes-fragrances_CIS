@@ -186,5 +186,3 @@ const PlusSigns = ({ className, ...props }: PlusSignsProps) => {
     </svg>
   );
 };
-
-export default Feature193;

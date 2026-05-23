@@ -1,7 +1,7 @@
 "use client";
 
 import AutoScroll from "embla-carousel-auto-scroll";
-import { Atom, ChevronRight, ShieldCheck, Star, Zap } from "@/components/icons";
+import { Atom, ChevronRight, ShieldCheck, Star, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, ExternalLink } from "@/components/icons";
+import { Download, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { FaLinux, FaWindows } from "react-icons/fa";
 

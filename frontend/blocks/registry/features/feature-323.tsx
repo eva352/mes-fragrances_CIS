@@ -7,7 +7,7 @@ import {
   ChevronRight,
   ChevronUp,
   PlusCircle,
-} from "@/components/icons";
+} from "lucide-react";
 import React, { useState } from "react";
 
 import { cn } from "@/lib/utils";

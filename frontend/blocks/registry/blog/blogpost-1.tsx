@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { Lightbulb } from "@/components/icons";
+import { Lightbulb } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

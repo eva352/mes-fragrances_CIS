@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Home, Lightbulb, Linkedin, Twitter } from "@/components/icons";
+import { Facebook, Home, Lightbulb, Linkedin, Twitter } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";

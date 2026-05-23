@@ -1,4 +1,4 @@
-import { ArrowUpRight, Facebook, Instagram, Twitter } from "@/components/icons";
+import { ArrowUpRight, Facebook, Instagram, Twitter } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

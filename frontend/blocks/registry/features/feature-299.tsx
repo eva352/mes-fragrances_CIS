@@ -1,4 +1,4 @@
-import { Box, Globe, Rocket, ShieldUser, User, Users } from "@/components/icons";
+import { Box, Globe, Rocket, ShieldUser, User, Users } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

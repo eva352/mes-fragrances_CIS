@@ -1,4 +1,4 @@
-import { CircleCheckBig } from "@/components/icons";
+import { CircleCheckBig } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

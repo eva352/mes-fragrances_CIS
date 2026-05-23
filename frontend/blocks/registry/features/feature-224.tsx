@@ -1,5 +1,5 @@
 "use client";
-import type { LucideIcon } from "@/components/icons";
+import type { LucideIcon } from "lucide-react";
 import {
   Globe,
   Lock,
@@ -7,7 +7,7 @@ import {
   SlidersHorizontal,
   Sparkles,
   Workflow,
-} from "@/components/icons";
+} from "lucide-react";
 import { startTransition, useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";

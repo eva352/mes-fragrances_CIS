@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, ShoppingCart } from "@/components/icons";
+import { ArrowRight, ShoppingCart } from "lucide-react";
 import React, { useState } from "react";
 
 import { cn } from "@/lib/utils";

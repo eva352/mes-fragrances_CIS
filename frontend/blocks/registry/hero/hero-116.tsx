@@ -1,5 +1,5 @@
 "use client";
-import { Play } from "@/components/icons";
+import { Play } from "lucide-react";
 import { Fragment, useState } from "react";
 
 import { cn } from "@/lib/utils";

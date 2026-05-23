@@ -664,7 +664,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`
 - Imports magicui: _aucun_
 - Déps externes: _aucune_
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Blog
 - Catégorie: `blog`
@@ -672,7 +672,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `breadcrumb`, `button`, `card`, `checkbox`, `field`, `label`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`, `react`, `react-hook-form`, `zod`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Blog
 - Catégorie: `blog`
@@ -1048,7 +1048,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `badge`, `card`
 - Imports magicui: `grid-pattern`
 - Déps externes: `lucide-react`, `react-icons/fa6`
-- Manquants (frontend): `magicui/grid-pattern`
+- Manquants (frontend): _aucun_
 
 ## Community
 - Catégorie: `community`
@@ -1152,7 +1152,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `badge`, `button`, `table`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Compare-products
 - Catégorie: `compare`
@@ -1160,7 +1160,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `badge`, `button`, `table`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Compare-products
 - Catégorie: `compare`
@@ -1536,7 +1536,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `button`
 - Imports magicui: `border-beam`
 - Déps externes: _aucune_
-- Manquants (frontend): `magicui/border-beam`
+- Manquants (frontend): _aucun_
 
 ## Download
 - Catégorie: `download`
@@ -1593,7 +1593,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `badge`
 - Imports magicui: `iphone`
 - Déps externes: _aucune_
-- Manquants (frontend): `magicui/iphone`
+- Manquants (frontend): _aucun_
 
 ## Download
 - Catégorie: `download`
@@ -2705,7 +2705,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `tabs`
 - Imports magicui: _aucun_
 - Déps externes: _aucune_
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -2721,7 +2721,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `card`, `carousel`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`, `react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature215a
 - Catégorie: `features`
@@ -2729,7 +2729,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `card`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`, `react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature215b
 - Catégorie: `features`
@@ -2737,7 +2737,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `button`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`, `react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -2745,7 +2745,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `button`, `tabs`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`, `react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -2753,7 +2753,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature217a
 - Catégorie: `features`
@@ -2761,7 +2761,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature217b
 - Catégorie: `features`
@@ -2777,7 +2777,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `button`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -2785,7 +2785,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -2801,7 +2801,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `button`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature220a
 - Catégorie: `features`
@@ -2809,7 +2809,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `badge`, `button`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature220b
 - Catégorie: `features`
@@ -2817,7 +2817,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `button`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -2913,7 +2913,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `button`
 - Imports magicui: `shine-border`
 - Déps externes: `lucide-react`
-- Manquants (frontend): `magicui/shine-border`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -2921,7 +2921,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `button`
 - Imports magicui: `shine-border`
 - Déps externes: `framer-motion`, `lucide-react`, `react`
-- Manquants (frontend): `magicui/shine-border`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -3057,7 +3057,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `card`
 - Imports magicui: `globe`
 - Déps externes: `motion/react`, `react`
-- Manquants (frontend): `magicui/globe`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -3065,7 +3065,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `button`
 - Imports magicui: `ripple`
 - Déps externes: `react`
-- Manquants (frontend): `magicui/ripple`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -3073,7 +3073,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `button`
 - Imports magicui: `globe`
 - Déps externes: `lucide-react`, `react`
-- Manquants (frontend): `magicui/globe`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -3081,7 +3081,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `button`
 - Imports magicui: `orbiting-circles`
 - Déps externes: `lucide-react`, `react`
-- Manquants (frontend): `magicui/orbiting-circles`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -3369,7 +3369,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: _aucun_
 - Imports magicui: `safari`
 - Déps externes: `lucide-react`
-- Manquants (frontend): `magicui/safari`
+- Manquants (frontend): _aucun_
 
 ## Feature
 - Catégorie: `features`
@@ -3985,7 +3985,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `accordion`, `aspect-ratio`, `button`, `card`, `field`, `input`, `select`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`, `react`, `react-hook-form`, `zod`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Ecommerce-footer
 - Catégorie: `footer`
@@ -4097,7 +4097,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `separator`
 - Imports magicui: `globe`
 - Déps externes: _aucune_
-- Manquants (frontend): `magicui/globe`
+- Manquants (frontend): _aucun_
 
 ## Footer
 - Catégorie: `footer`
@@ -4153,7 +4153,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: _aucun_
 - Imports magicui: `rainbow-button`
 - Déps externes: `lucide-react`
-- Manquants (frontend): `magicui/rainbow-button`
+- Manquants (frontend): _aucun_
 
 ## Footer
 - Catégorie: `footer`
@@ -4513,7 +4513,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `button`, `dialog`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`, `react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Hero
 - Catégorie: `hero`
@@ -4537,7 +4537,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `button`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Hero
 - Catégorie: `hero`
@@ -4561,7 +4561,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `button`, `field`, `input`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`, `react-hook-form`, `zod`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Hero
 - Catégorie: `hero`
@@ -4585,7 +4585,7 @@ Ce fichier est généré depuis `shared/blocks/**/block.tsx`.
 - Imports UI: `aspect-ratio`, `button`, `dialog`
 - Imports magicui: _aucun_
 - Déps externes: `lucide-react`, `react`
-- Manquants (frontend): `ui/aspect-ratio`
+- Manquants (frontend): _aucun_
 
 ## Hero
 - Catégorie: `hero`

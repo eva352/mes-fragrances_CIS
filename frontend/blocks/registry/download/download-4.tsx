@@ -1,4 +1,4 @@
-import { Download, Monitor, Shield, Users, Zap } from "@/components/icons";
+import { Download, Monitor, Shield, Users, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

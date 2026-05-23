@@ -1,5 +1,5 @@
 "use client";
-import { Facebook, Github, Linkedin, Twitter } from "@/components/icons";
+import { Facebook, Github, Linkedin, Twitter } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
