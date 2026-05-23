@@ -76,7 +76,7 @@ export function OfferList({ offers }: { offers: PerfumeOffer[] }) {
           </div>
           <Button asChild className="rounded-full px-5 shadow-[0_16px_28px_rgba(178,140,146,0.18)]">
             <a href={offer.affiliateUrl} target="_blank" rel="sponsored nofollow noopener noreferrer">
-              Voir l&apos;offre
+              Voir l&apos;offre partenaire
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>

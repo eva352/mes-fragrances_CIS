@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    app_name: str = "Pilot"
+    app_name: str = "mes-fragrances"
     debug: bool = True
     database_url: PostgresDsn
     api_v1_prefix: str = "/api/v1"

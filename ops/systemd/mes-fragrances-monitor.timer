@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Mes Fragrances server supervision every 30 minutes
+
+[Timer]
+OnBootSec=10m
+OnUnitActiveSec=30m
+Persistent=true
+Unit=mes-fragrances-monitor.service
+
+[Install]
+WantedBy=timers.target

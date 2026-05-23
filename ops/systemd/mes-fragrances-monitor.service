@@ -1,0 +1,13 @@
+[Unit]
+Description=Mes Fragrances server supervision report
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=eva
+WorkingDirectory=/home/eva/mes-fragrances_CIS
+ExecStart=/usr/bin/python3 /home/eva/mes-fragrances_CIS/ops/report_server.py --config /home/eva/.config/mes-fragrances-monitor/monitor.env
+
+[Install]
+WantedBy=multi-user.target

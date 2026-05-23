@@ -211,6 +211,19 @@ def infer_budget_tier(price: float | None) -> str | None:
     return "premium"
 
 
+def normalize_gender(value: str | None) -> str | None:
+    normalized = ascii_fold(value)
+    if normalized == "femme":
+        return "femme"
+    if normalized == "homme":
+        return "homme"
+    if normalized in {"mixte", "unisexe", "unisex"}:
+        return "unisex"
+    if normalized == "enfant":
+        return "enfant"
+    return None
+
+
 def infer_quiz_tags(source: SourcePerfume, olfactive_family: str | None) -> list[str]:
     tags: set[str] = set()
     family_text = ascii_fold(olfactive_family)
@@ -306,6 +319,8 @@ def build_perfume_model(brand: SourceBrand, source: SourcePerfume) -> Perfume:
         image_url=None,
         short_description=build_short_description(source, olfactive_family),
         description=build_description(brand, source, olfactive_family),
+        gender=normalize_gender(source.gender),
+        source_price=source.price,
         olfactive_family=olfactive_family,
         budget_tier=infer_budget_tier(source.price),
         top_notes=top_notes,

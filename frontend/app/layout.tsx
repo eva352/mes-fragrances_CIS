@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
-import Script from "next/script";
 import { ThemeProvider } from "@/lib/theme";
 import { AuthProvider } from "@/lib/auth/context";
 import {
@@ -9,14 +8,24 @@ import {
   DEFAULT_AURORA_THEME_ID,
 } from "@/lib/aurora-theme/themes";
 import { AURORA_THEME_COOKIE_NAME } from "@/lib/aurora-theme/constants";
+import { GTM_HEAD_SNIPPET, GTM_ID } from "@/lib/gtm";
 import "./globals.css";
 import "./aurora-themes.css";
 import { Toaster } from "@/components/ui/sonner";
 import { AuroraThemeProjectSync } from "@/components/aurora-theme-project-sync";
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_PILOT_APP_NAME ?? "Pilot",
-  description: "Pilot - Gestion de tickets",
+  title: process.env.NEXT_PUBLIC_PILOT_APP_NAME?.trim() || "mes-fragrances",
+  description: "mes-fragrances - Decouverte de parfums et comparaison d'offres",
+  icons: {
+    icon: [
+      { url: "/branding/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/branding/favicon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/branding/favicon-bottle.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/branding/favicon-96.png",
+    apple: "/branding/apple-touch-icon.png",
+  },
 };
 
 export default async function RootLayout({
@@ -42,14 +51,7 @@ export default async function RootLayout({
     cookieThemeId && isValidThemeId(cookieThemeId)
       ? cookieThemeId
       : DEFAULT_AURORA_THEME_ID;
-
-  return (
-    <html
-      lang="fr"
-      suppressHydrationWarning
-      data-aurora-theme={initialThemeId}
-    >
-      <Script id="aurora-theme-init" strategy="beforeInteractive">{`
+  const themeInitScript = `
 (() => {
   try {
     const DEFAULT = ${JSON.stringify(DEFAULT_AURORA_THEME_ID)};
@@ -71,11 +73,38 @@ export default async function RootLayout({
     document.documentElement.dataset.auroraTheme = t;
   } catch {}
 })();
-      `}</Script>
+  `;
+
+  return (
+    <html
+      lang="fr"
+      suppressHydrationWarning
+      data-aurora-theme={initialThemeId}
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: GTM_HEAD_SNIPPET,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: themeInitScript,
+          }}
+        />
+      </head>
       <body
         suppressHydrationWarning
         className="min-h-screen bg-background text-foreground font-sans"
       >
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

@@ -1,5 +1,5 @@
 import { DashboardExample } from "@/components/dashboard-example";
 
-export default function DashboardHome() {
+export default function DashboardHomePage() {
   return <DashboardExample />;
 }

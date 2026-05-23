@@ -12,7 +12,7 @@ class AuroraTheme(BaseModel):
 
 class AuroraProjectInfo(BaseModel):
     id: str = "pilot"
-    title: str = "Pilot"
+    title: str = "mes-fragrances"
     theme: AuroraTheme = Field(default_factory=AuroraTheme)
 
 

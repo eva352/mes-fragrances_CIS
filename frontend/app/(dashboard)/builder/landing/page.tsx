@@ -51,6 +51,7 @@ import { auroraBlockCatalog } from "@/blocks/manifest";
 import { suggestWebsiteStructure, type AvailableBlock, type SuggestedBlock } from "@/lib/api/structure";
 import { getMaxUiProductTypes } from "@/lib/api/max-ui";
 import { getProjectBrief, upsertProjectBrief, type ProjectBrief } from "@/lib/api/project-brief";
+import { toPublicSiteUrl } from "@/lib/site/public-url";
 import { cn } from "@/lib/utils";
 
 const RESERVED_SLUGS = new Set([
@@ -107,7 +108,7 @@ function buildUniqueSlug(title: string, pages: SitePage[]) {
 }
 
 function getPageHref(page: SitePage) {
-  return page.is_home ? "/site" : `/site/${page.slug}`;
+  return toPublicSiteUrl(page.is_home ? "/" : `/${page.slug}`);
 }
 
 function sortPages(pages: SitePage[]) {
