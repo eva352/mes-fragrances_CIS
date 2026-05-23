@@ -7,7 +7,7 @@ import {
   CodeXml,
   Plug2,
   Snowflake,
-} from "@/components/icons";
+} from "lucide-react";
 import React, { useState } from "react";
 
 import { cn } from "@/lib/utils";

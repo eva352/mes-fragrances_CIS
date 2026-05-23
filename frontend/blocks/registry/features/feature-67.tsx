@@ -5,7 +5,7 @@ import {
   MessagesSquare,
   Rocket,
   Star,
-} from "@/components/icons";
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

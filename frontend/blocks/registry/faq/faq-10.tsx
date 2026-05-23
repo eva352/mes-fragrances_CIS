@@ -1,4 +1,4 @@
-import { MessageCircleQuestion } from "@/components/icons";
+import { MessageCircleQuestion } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

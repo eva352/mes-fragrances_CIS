@@ -1,5 +1,4 @@
 export type PerfumeGender = "femme" | "homme" | "unisex" | "enfant";
-
 export type PerfumeCard = {
   slug: string;
   name: string;
@@ -17,11 +16,20 @@ export type PerfumeCard = {
 };
 
 export type PerfumeOffer = {
-  merchantName: string;
+  id: number;
+  advertiserName: string;
+  title: string;
   price: number;
   currency: string;
-  availability?: string | null;
+  deliveryCost?: number | null;
+  totalPrice?: number | null;
   affiliateUrl: string;
+  merchantUrl?: string | null;
+  imageUrl?: string | null;
+  inStock?: boolean | null;
+  stockStatus?: string | null;
+  lastSeenAt?: string | null;
+  lastPriceChangeAt?: string | null;
 };
 
 export type PerfumeDetail = PerfumeCard & {

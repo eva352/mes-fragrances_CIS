@@ -1,4 +1,4 @@
-import { ChevronRight, Menu } from "@/components/icons";
+import { ChevronRight, Menu } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

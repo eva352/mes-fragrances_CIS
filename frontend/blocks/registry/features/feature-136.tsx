@@ -1,4 +1,4 @@
-import { Calendar, Target, Trophy, Users } from "@/components/icons";
+import { Calendar, Target, Trophy, Users } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

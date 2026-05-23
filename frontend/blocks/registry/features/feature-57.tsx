@@ -1,6 +1,6 @@
 "use client";
 
-import { Bolt, Cloud, MessagesSquare, Star } from "@/components/icons";
+import { Bolt, Cloud, MessagesSquare, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "@/components/icons";
+import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";

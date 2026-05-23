@@ -1,4 +1,4 @@
-import { Globe, Hash, NotebookText } from "@/components/icons";
+import { Globe, Hash, NotebookText } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

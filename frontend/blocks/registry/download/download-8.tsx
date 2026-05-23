@@ -1,6 +1,6 @@
 "use client";
 
-import { Download } from "@/components/icons";
+import { Download } from "lucide-react";
 import { FaApple, FaGooglePlay, FaLinux, FaWindows } from "react-icons/fa";
 import { SiDebian } from "react-icons/si";
 

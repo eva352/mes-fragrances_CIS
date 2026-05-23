@@ -1,4 +1,4 @@
-import { Check, ChevronRight } from "@/components/icons";
+import { Check, ChevronRight } from "lucide-react";
 import { type SVGProps, useId } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -78,6 +78,8 @@ export function Feature195() {
   );
 }
 
+export default Feature195;
+
 interface PlusSignsProps extends SVGProps<SVGSVGElement> {
   className?: string;
 }
@@ -122,5 +124,3 @@ const PlusSigns = ({ className, ...props }: PlusSignsProps) => {
     </svg>
   );
 };
-
-export default PlusSigns;

@@ -6,7 +6,7 @@ import {
   Infinity as InfinityIcon,
   Laptop,
   ListEnd,
-} from "@/components/icons";
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

@@ -161,4 +161,4 @@ const PlusSigns = ({ className, ...props }: PlusSignsProps) => {
   );
 };
 
-export default PlusSigns;
+export default Faq14;

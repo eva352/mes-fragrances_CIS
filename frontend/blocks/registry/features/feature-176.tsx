@@ -7,7 +7,7 @@ import {
   ChartNoAxesColumnIncreasing,
   Share,
   X,
-} from "@/components/icons";
+} from "lucide-react";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
 import { cn } from "@/lib/utils";

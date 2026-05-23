@@ -1,4 +1,4 @@
-import { CircleCheck, LifeBuoy, Linkedin } from "@/components/icons";
+import { CircleCheck, LifeBuoy, Linkedin } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

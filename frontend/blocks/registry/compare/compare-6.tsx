@@ -1,6 +1,6 @@
 "use client";
 
-import { CircleCheck, CircleMinus, CircleX } from "@/components/icons";
+import { CircleCheck, CircleMinus, CircleX } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

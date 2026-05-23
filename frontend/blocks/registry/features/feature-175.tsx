@@ -1,5 +1,5 @@
-import type { LucideIcon } from "@/components/icons";
-import { Blend, ChartNoAxesColumn, CircleDot, Diamond } from "@/components/icons";
+import type { LucideIcon } from "lucide-react";
+import { Blend, ChartNoAxesColumn, CircleDot, Diamond } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

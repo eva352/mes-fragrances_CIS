@@ -11,7 +11,7 @@ import {
   ShieldCheck,
   Users,
   Zap,
-} from "@/components/icons";
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

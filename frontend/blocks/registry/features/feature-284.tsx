@@ -1,4 +1,4 @@
-import { HelpCircleIcon } from "@/components/icons";
+import { HelpCircleIcon } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";

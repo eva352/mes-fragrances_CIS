@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle, Minus, XCircle } from "@/components/icons";
+import { CheckCircle, Minus, XCircle } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

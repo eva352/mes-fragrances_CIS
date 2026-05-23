@@ -1,4 +1,4 @@
-import { DollarSign, KeyRound, Timer } from "@/components/icons";
+import { DollarSign, KeyRound, Timer } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

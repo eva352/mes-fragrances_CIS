@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Twitter } from "@/components/icons";
+import { Facebook, Linkedin, Twitter } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

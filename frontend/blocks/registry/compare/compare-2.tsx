@@ -8,8 +8,8 @@ import {
   Moon,
   Settings2,
   Type,
-} from "@/components/icons";
-import { Check, X } from "@/components/icons";
+} from "lucide-react";
+import { Check, X } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";

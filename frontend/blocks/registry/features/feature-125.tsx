@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, ChevronRight } from "@/components/icons";
+import { Check, ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

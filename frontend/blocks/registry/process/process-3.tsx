@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown } from "@/components/icons";
+import { ArrowDown } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";

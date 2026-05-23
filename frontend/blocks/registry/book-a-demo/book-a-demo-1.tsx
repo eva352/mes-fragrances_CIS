@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "@/components/icons";
+import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 

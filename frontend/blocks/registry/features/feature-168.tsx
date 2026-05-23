@@ -1,4 +1,4 @@
-import { PocketKnife } from "@/components/icons";
+import { PocketKnife } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

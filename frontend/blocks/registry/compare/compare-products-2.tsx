@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, X as XIcon } from "@/components/icons";
+import { Check, X as XIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

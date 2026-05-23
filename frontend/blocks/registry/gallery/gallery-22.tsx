@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "@/components/icons";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { FaXTwitter } from "react-icons/fa6";
 import type { Swiper as SwiperType } from "swiper";

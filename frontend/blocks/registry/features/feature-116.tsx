@@ -1,4 +1,4 @@
-import { Atom, ChevronRight, Settings, Zap } from "@/components/icons";
+import { Atom, ChevronRight, Settings, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

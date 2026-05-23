@@ -1,5 +1,5 @@
 "use client";
-import { ChevronUp, Flag, Pyramid, Users, Workflow, Zap } from "@/components/icons";
+import { ChevronUp, Flag, Pyramid, Users, Workflow, Zap } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";

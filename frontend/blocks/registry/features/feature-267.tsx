@@ -1,4 +1,4 @@
-import { Sparkles } from "@/components/icons";
+import { Sparkles } from "lucide-react";
 import React from "react";
 
 import { cn } from "@/lib/utils";

@@ -1,4 +1,4 @@
-import { BarChart, Heart, Monitor, Plus, TrendingUp } from "@/components/icons";
+import { BarChart, Heart, Monitor, Plus, TrendingUp } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

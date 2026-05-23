@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Check, Copy, Download } from "@/components/icons";
+import { ArrowRight, Check, Copy, Download } from "lucide-react";
 import { useState } from "react";
 import { FaWindows } from "react-icons/fa";
 

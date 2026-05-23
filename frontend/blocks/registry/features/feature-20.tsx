@@ -1,4 +1,4 @@
-import { ChevronRight, SquareDashedMousePointer } from "@/components/icons";
+import { ChevronRight, SquareDashedMousePointer } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

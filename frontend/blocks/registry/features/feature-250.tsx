@@ -1,6 +1,6 @@
 "use client";
 
-import { Cpu, Zap } from "@/components/icons";
+import { Cpu, Zap } from "lucide-react";
 import { motion } from "motion/react";
 import type { RefObject} from "react";
 import React, { useRef } from "react";

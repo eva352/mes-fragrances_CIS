@@ -10,7 +10,7 @@ import {
   Rocket,
   Share2,
   Users,
-} from "@/components/icons";
+} from "lucide-react";
 import { startTransition, useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";

@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ChevronUp, Clock, LucideIcon, MapPin, Phone } from "@/components/icons";
+import { ChevronUp, Clock, LucideIcon, MapPin, Phone } from "lucide-react";
 import { Fragment } from "react";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";

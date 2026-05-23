@@ -1,4 +1,4 @@
-import { CirclePlus } from "@/components/icons";
+import { CirclePlus } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

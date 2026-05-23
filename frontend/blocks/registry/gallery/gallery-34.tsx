@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AudioLines, Globe, Heart, TrophyIcon } from "@/components/icons";
+import { AudioLines, Globe, Heart, TrophyIcon } from "lucide-react";
 import React, { useState } from "react";
 
 import { cn } from "@/lib/utils";

@@ -1,4 +1,4 @@
-import { Cpu, Database, Globe, ShieldCheck } from "@/components/icons";
+import { Cpu, Database, Globe, ShieldCheck } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

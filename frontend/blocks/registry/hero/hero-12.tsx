@@ -1,4 +1,4 @@
-import { ExternalLink } from "@/components/icons";
+import { ExternalLink } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
