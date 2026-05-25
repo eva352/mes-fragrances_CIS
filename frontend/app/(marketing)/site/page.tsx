@@ -51,7 +51,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SiteHomePage() {
-  const [project, catalogPreview] = await Promise.all([getPublicProjectInfo(), loadCatalogPerfumes(8)]);
+  const [project, catalogPreview] = await Promise.all([
+    getPublicProjectInfo(),
+    loadCatalogPerfumes(8, { withOffersOnly: true }),
+  ]);
 
   return (
     <div className="pb-20">
@@ -128,7 +131,7 @@ export default async function SiteHomePage() {
           </div>
         ) : (
           <div className="rounded-[2.2rem] border border-dashed border-[rgba(154,78,99,0.22)] bg-[rgba(255,255,255,0.62)] p-8 text-sm leading-7 text-[hsl(var(--mf-ink-soft))] backdrop-blur-[6px]">
-            Les parfums apparaîtront ici à mesure que le catalogue sera enrichi.
+            Aucune sélection avec offre partenaire n&apos;est disponible pour le moment.
           </div>
         )}
       </section>

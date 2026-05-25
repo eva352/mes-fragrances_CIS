@@ -333,7 +333,7 @@ export function QuizWizard() {
     setError(null);
 
     try {
-      const next = await getQuizRecommendations(answers);
+      const next = await getQuizRecommendations(answers, { withOffersOnly: true });
       startTransition(() => {
         setResult(next);
       });
@@ -413,16 +413,22 @@ export function QuizWizard() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-3">
-            {result.recommendations.map((item) => (
-              <div key={item.perfume.slug} className="space-y-3">
-                <PerfumeCard perfume={item.perfume} />
-                <div className="rounded-[1.5rem] border border-white/70 bg-white/80 p-4 text-sm leading-7 text-zinc-600 shadow-[0_16px_40px_rgba(120,83,98,0.10)]">
-                  {item.explanation}
+          {result.recommendations.length ? (
+            <div className="grid gap-5 lg:grid-cols-3">
+              {result.recommendations.map((item) => (
+                <div key={item.perfume.slug} className="space-y-3">
+                  <PerfumeCard perfume={item.perfume} />
+                  <div className="rounded-[1.5rem] border border-white/70 bg-white/80 p-4 text-sm leading-7 text-zinc-600 shadow-[0_16px_40px_rgba(120,83,98,0.10)]">
+                    {item.explanation}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-[1.5rem] border border-dashed border-zinc-300 bg-white/80 p-6 text-sm leading-7 text-zinc-600 shadow-[0_16px_40px_rgba(120,83,98,0.10)]">
+              Aucune recommandation avec offre disponible pour le moment.
+            </div>
+          )}
         </div>
       </div>
     );
