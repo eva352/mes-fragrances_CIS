@@ -48,12 +48,20 @@ export default async function PerfumeDetailPage({
     notFound();
   }
 
+  const firstOfferImage = perfume.offers.find((offer) => offer.imageUrl)?.imageUrl ?? null;
+  const visualImageUrl = perfume.imageUrl || firstOfferImage || null;
+
   return (
     <div className="container py-10 md:py-14">
       <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="space-y-5">
           <div className="rounded-[2rem] border border-[hsla(var(--mf-line),0.9)] bg-[hsla(var(--mf-cream),0.86)] p-4 shadow-[0_24px_60px_rgba(168,135,131,0.12)] backdrop-blur">
-            <PerfumeVisual name={perfume.name} brand={perfume.brand} imageUrl={perfume.imageUrl} />
+            <PerfumeVisual
+              name={perfume.name}
+              brand={perfume.brand}
+              imageUrl={visualImageUrl}
+              alt={`${perfume.brand} ${perfume.name}`}
+            />
           </div>
           <div className="rounded-[2rem] border border-[hsla(var(--mf-line),0.9)] bg-[hsla(var(--mf-cream),0.82)] p-5 shadow-[0_20px_48px_rgba(168,135,131,0.10)] backdrop-blur">
             <p className="text-xs uppercase tracking-[0.2em] text-[hsl(var(--mf-ink-soft))]">Famille</p>
@@ -110,6 +118,11 @@ export default async function PerfumeDetailPage({
               <p className="mt-3 max-w-2xl text-sm leading-7 text-[hsl(var(--mf-ink-soft))]">
                 Lorsque des offres sont disponibles, elles apparaissent ici pour prolonger la découverte du parfum plus simplement.
               </p>
+              {perfume.offerCount > 0 ? (
+                <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[hsl(var(--mf-ink-soft))]">
+                  {perfume.offerCount} offre{perfume.offerCount > 1 ? "s" : ""} active{perfume.offerCount > 1 ? "s" : ""}
+                </p>
+              ) : null}
             </div>
             <OfferList offers={perfume.offers} />
           </section>

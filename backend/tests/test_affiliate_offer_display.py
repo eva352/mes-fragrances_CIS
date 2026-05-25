@@ -95,11 +95,41 @@ class AffiliateOfferDisplayTests(unittest.TestCase):
         )
         grouped = perfumes._group_offers([
             (
-                SimpleNamespace(id=1, perfume_id="p", in_stock=True, total_price=84.9, price=79.9, currency="EUR"),
+                SimpleNamespace(
+                    id=1,
+                    perfume_id="p",
+                    in_stock=True,
+                    total_price=84.9,
+                    price=79.9,
+                    currency="EUR",
+                    title="Offer A",
+                    delivery_cost=5.0,
+                    affiliate_url="https://awin.example/a",
+                    merchant_url="https://merchant.example/a",
+                    image_url="https://merchant.example/a.jpg",
+                    stock_status="En stock",
+                    last_seen_at=None,
+                    last_price_change_at=None,
+                ),
                 SimpleNamespace(name="Boutique A", priority=100),
             ),
             (
-                SimpleNamespace(id=2, perfume_id="p", in_stock=True, total_price=81.9, price=81.9, currency="EUR"),
+                SimpleNamespace(
+                    id=2,
+                    perfume_id="p",
+                    in_stock=True,
+                    total_price=81.9,
+                    price=81.9,
+                    currency="EUR",
+                    title="Offer B",
+                    delivery_cost=0.0,
+                    affiliate_url="https://awin.example/b",
+                    merchant_url="https://merchant.example/b",
+                    image_url="https://merchant.example/b.jpg",
+                    stock_status="En stock",
+                    last_seen_at=None,
+                    last_price_change_at=None,
+                ),
                 SimpleNamespace(name="Boutique B", priority=100),
             ),
         ])["p"]
@@ -108,6 +138,10 @@ class AffiliateOfferDisplayTests(unittest.TestCase):
 
         self.assertEqual(card.lowest_price, 81.9)
         self.assertEqual(card.currency, "EUR")
+        self.assertEqual(card.offer_count, 2)
+        self.assertIsNotNone(card.best_offer)
+        self.assertEqual(card.best_offer.advertiser_name, "Boutique B")
+        self.assertEqual(card.best_offer.total_price, 81.9)
 
     def test_offer_loading_logic_is_perfume_based_and_not_comas_specific(self):
         source = inspect.getsource(perfumes._load_offers_map)

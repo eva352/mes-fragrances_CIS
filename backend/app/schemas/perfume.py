@@ -34,6 +34,8 @@ class PerfumeCardRead(BaseModel):
     budget_tier: str | None = Field(default=None, alias="budgetTier")
     lowest_price: float | None = Field(default=None, alias="lowestPrice")
     currency: str | None = None
+    best_offer: PerfumeOfferRead | None = Field(default=None, alias="bestOffer")
+    offer_count: int = Field(default=0, alias="offerCount")
     is_new_arrival: bool = Field(default=False, alias="isNewArrival")
     is_best_seller: bool = Field(default=False, alias="isBestSeller")
 

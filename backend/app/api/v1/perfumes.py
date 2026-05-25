@@ -367,6 +367,7 @@ def _offer_list_price(row: tuple[AffiliateOffer, Advertiser]) -> float | None:
 
 def _build_card(perfume: Perfume, offers: list[tuple[AffiliateOffer, Advertiser]]) -> PerfumeCardRead:
     lowest_offer = offers[0] if offers else None
+    best_offer = _build_offer(*lowest_offer) if lowest_offer else None
     fallback_price = _to_float(getattr(perfume, "source_price", None))
     key_notes: list[str] = []
 
@@ -393,7 +394,9 @@ def _build_card(perfume: Perfume, offers: list[tuple[AffiliateOffer, Advertiser]
         key_notes=key_notes,
         budget_tier=getattr(perfume, "budget_tier", None),
         lowest_price=_offer_list_price(lowest_offer) if lowest_offer else fallback_price,
-        currency=lowest_offer[0].currency if lowest_offer else ("EUR" if fallback_price is not None else None),
+        currency=best_offer.currency if best_offer else ("EUR" if fallback_price is not None else None),
+        best_offer=best_offer,
+        offer_count=len(offers),
         is_new_arrival=bool(getattr(perfume, "is_new_arrival", False)),
         is_best_seller=bool(getattr(perfume, "is_best_seller", False)),
     )

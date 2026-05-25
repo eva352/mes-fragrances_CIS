@@ -11,6 +11,8 @@ export type PerfumeCard = {
   budgetTier?: string | null;
   lowestPrice?: number | null;
   currency?: string | null;
+  bestOffer?: PerfumeOffer | null;
+  offerCount: number;
   isNewArrival: boolean;
   isBestSeller: boolean;
 };
