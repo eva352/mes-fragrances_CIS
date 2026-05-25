@@ -69,6 +69,11 @@ export type PublicPerfumeSearchOptions = {
   families?: string[];
   minPrice?: number | null;
   maxPrice?: number | null;
+  withOffersOnly?: boolean;
+};
+
+export type QuizRecommendationOptions = {
+  withOffersOnly?: boolean;
 };
 
 export type QuizAnswers = {
@@ -139,8 +144,13 @@ async function publicFetch<T>(path: string, init?: RequestInit): Promise<T> {
   return res.json();
 }
 
-export async function getFeaturedPerfumes(): Promise<FeaturedPerfumes> {
-  return publicFetch<FeaturedPerfumes>("/perfumes/featured");
+export async function getFeaturedPerfumes(options: { withOffersOnly?: boolean } = {}): Promise<FeaturedPerfumes> {
+  const params = new URLSearchParams();
+  if (options.withOffersOnly) {
+    params.set("withOffersOnly", "true");
+  }
+  const suffix = params.size ? `?${params.toString()}` : "";
+  return publicFetch<FeaturedPerfumes>(`/perfumes/featured${suffix}`);
 }
 
 export async function getPublicPerfumeFilters(): Promise<PerfumeFilterOptions> {
@@ -180,6 +190,10 @@ export async function searchPublicPerfumes(
     params.set("maxPrice", String(resolved.maxPrice));
   }
 
+  if (resolved.withOffersOnly) {
+    params.set("withOffersOnly", "true");
+  }
+
   return publicFetch<PerfumeCard[]>(`/perfumes/search?${params.toString()}`);
 }
 
@@ -187,8 +201,13 @@ export async function getPublicPerfume(slug: string): Promise<PerfumeDetail> {
   return publicFetch<PerfumeDetail>(`/perfumes/${encodeURIComponent(slug)}`);
 }
 
-export async function getQuizRecommendations(answers: QuizAnswers): Promise<QuizResult> {
-  return publicFetch<QuizResult>("/quiz/recommendations", {
+export async function getQuizRecommendations(answers: QuizAnswers, options: QuizRecommendationOptions = {}): Promise<QuizResult> {
+  const params = new URLSearchParams();
+  if (options.withOffersOnly) {
+    params.set("withOffersOnly", "true");
+  }
+  const suffix = params.size ? `?${params.toString()}` : "";
+  return publicFetch<QuizResult>(`/quiz/recommendations${suffix}`, {
     method: "POST",
     body: JSON.stringify(answers),
   });

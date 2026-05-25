@@ -89,10 +89,10 @@ function sortForCatalog(perfumes: PerfumeCard[], featured: FeaturedPerfumes) {
   });
 }
 
-export async function loadFeaturedPerfumes(): Promise<FeaturedPerfumes> {
+export async function loadFeaturedPerfumes({ withOffersOnly = false }: { withOffersOnly?: boolean } = {}): Promise<FeaturedPerfumes> {
   const [featuredResult, catalogResult] = await Promise.allSettled([
-    getFeaturedPerfumes(),
-    searchPublicPerfumes("", { limit: CATALOG_LIMIT }),
+    getFeaturedPerfumes({ withOffersOnly }),
+    searchPublicPerfumes("", { limit: CATALOG_LIMIT, withOffersOnly }),
   ]);
 
   const featured = featuredResult.status === "fulfilled" ? featuredResult.value : { newArrivals: [], bestSellers: [] };
@@ -109,10 +109,10 @@ export async function loadFeaturedPerfumes(): Promise<FeaturedPerfumes> {
   };
 }
 
-export async function loadCatalogPerfumes(limit = 12): Promise<PerfumeCard[]> {
+export async function loadCatalogPerfumes(limit = 12, { withOffersOnly = false }: { withOffersOnly?: boolean } = {}): Promise<PerfumeCard[]> {
   const [featuredResult, catalogResult] = await Promise.allSettled([
-    getFeaturedPerfumes(),
-    searchPublicPerfumes("", { limit: CATALOG_LIMIT }),
+    getFeaturedPerfumes({ withOffersOnly }),
+    searchPublicPerfumes("", { limit: CATALOG_LIMIT, withOffersOnly }),
   ]);
 
   const featured = featuredResult.status === "fulfilled" ? featuredResult.value : { newArrivals: [], bestSellers: [] };

@@ -331,6 +331,7 @@ def _load_offers_map(db: Session, perfume_ids: Iterable[Any]) -> dict[Any, list[
         .filter(
             AffiliateOffer.perfume_id.in_(ids),
             AffiliateOffer.active.is_(True),
+            AffiliateOffer.affiliate_url.is_not(None),
             Advertiser.active.is_(True),
         )
         .all()
@@ -440,13 +441,24 @@ def _matches_query(perfume: Perfume, query: str) -> bool:
     return all(token in haystack for token in tokens)
 
 
-def _candidate_perfumes(db: Session) -> list[Perfume]:
-    return (
-        db.query(Perfume)
-        .filter(Perfume.is_published.is_(True))
-        .order_by(Perfume.is_best_seller.desc(), Perfume.name.asc())
-        .all()
-    )
+def _candidate_perfumes(db: Session, with_offers_only: bool = False) -> list[Perfume]:
+    query = db.query(Perfume).filter(Perfume.is_published.is_(True))
+
+    if with_offers_only:
+        displayable_offer_exists = (
+            db.query(AffiliateOffer.id)
+            .join(Advertiser, Advertiser.id == AffiliateOffer.advertiser_id)
+            .filter(
+                AffiliateOffer.perfume_id == Perfume.id,
+                AffiliateOffer.active.is_(True),
+                AffiliateOffer.affiliate_url.is_not(None),
+                Advertiser.active.is_(True),
+            )
+            .exists()
+        )
+        query = query.filter(displayable_offer_exists)
+
+    return query.order_by(Perfume.is_best_seller.desc(), Perfume.name.asc()).all()
 
 
 def _normalize_family_values(values: Iterable[str] | None) -> set[str]:
@@ -502,12 +514,13 @@ def _search_cards(
     families: Iterable[str] | None = None,
     min_price: float | None = None,
     max_price: float | None = None,
+    with_offers_only: bool = False,
 ) -> list[PerfumeCardRead]:
     normalized_genders = _normalize_gender_values(genders)
     normalized_families = _normalize_family_values(families)
     min_price, max_price = _normalize_price_bounds(min_price, max_price)
 
-    perfumes = _candidate_perfumes(db)
+    perfumes = _candidate_perfumes(db, with_offers_only=with_offers_only)
     offers_map = _load_offers_map(db, [perfume.id for perfume in perfumes])
     results: list[PerfumeCardRead] = []
 
@@ -621,6 +634,7 @@ def search_perfumes(
     family: list[str] | None = Query(default=None),
     min_price: float | None = Query(default=None, alias="minPrice", ge=0),
     max_price: float | None = Query(default=None, alias="maxPrice", ge=0),
+    with_offers_only: bool = Query(default=False, alias="withOffersOnly"),
 ):
     query = _normalize(q)
     return _search_cards(
@@ -631,6 +645,7 @@ def search_perfumes(
         families=family,
         min_price=min_price,
         max_price=max_price,
+        with_offers_only=with_offers_only,
     )
 
 
@@ -679,8 +694,11 @@ def perfume_filters(db: DBSession):
 
 
 @router.get("/perfumes/featured", response_model=PerfumeFeaturedRead, tags=["perfumes"])
-def featured_perfumes(db: DBSession):
-    perfumes = _candidate_perfumes(db)
+def featured_perfumes(
+    db: DBSession,
+    with_offers_only: bool = Query(default=False, alias="withOffersOnly"),
+):
+    perfumes = _candidate_perfumes(db, with_offers_only=with_offers_only)
     offers_map = _load_offers_map(db, [perfume.id for perfume in perfumes])
 
     new_arrivals = [
@@ -733,8 +751,12 @@ def read_perfume_offers(slug: str, db: DBSession):
 
 
 @router.post("/quiz/recommendations", response_model=QuizRecommendationResponse, tags=["perfumes"])
-def get_quiz_recommendations(payload: QuizRecommendationRequest, db: DBSession):
-    perfumes = _candidate_perfumes(db)
+def get_quiz_recommendations(
+    payload: QuizRecommendationRequest,
+    db: DBSession,
+    with_offers_only: bool = Query(default=False, alias="withOffersOnly"),
+):
+    perfumes = _candidate_perfumes(db, with_offers_only=with_offers_only)
     profile_key = _resolve_profile(payload)
     profile = _build_profile(profile_key)
     labels = _match_labels(payload)

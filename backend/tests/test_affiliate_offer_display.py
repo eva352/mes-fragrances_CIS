@@ -8,6 +8,7 @@ import unittest
 import uuid
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
 
 
 def _load_perfumes_module():
@@ -148,7 +149,95 @@ class AffiliateOfferDisplayTests(unittest.TestCase):
 
         self.assertIn("AffiliateOffer.perfume_id", source)
         self.assertIn("Advertiser.active", source)
+        self.assertIn("AffiliateOffer.affiliate_url", source)
+        self.assertNotIn("perfume_offers", source)
         self.assertNotIn("product_id", source)
+        self.assertNotIn("105475", source)
+        self.assertNotIn("97867", source)
+
+    def test_search_cards_with_offers_only_filters_out_perfumes_without_offers(self):
+        with_offer = SimpleNamespace(
+            id="with-offer",
+            slug="with-offer",
+            name="With Offer",
+            brand="Brand A",
+            image_url=None,
+            short_description="",
+            olfactive_family=None,
+            budget_tier=None,
+            is_new_arrival=False,
+            is_best_seller=False,
+            top_notes=[],
+            heart_notes=[],
+            base_notes=[],
+            gender=None,
+            source_price=None,
+        )
+        without_offer = SimpleNamespace(
+            id="without-offer",
+            slug="without-offer",
+            name="Without Offer",
+            brand="Brand B",
+            image_url=None,
+            short_description="",
+            olfactive_family=None,
+            budget_tier=None,
+            is_new_arrival=False,
+            is_best_seller=False,
+            top_notes=[],
+            heart_notes=[],
+            base_notes=[],
+            gender=None,
+            source_price=None,
+        )
+
+        def fake_candidate_perfumes(_db, with_offers_only=False):
+            return [with_offer] if with_offers_only else [with_offer, without_offer]
+
+        def fake_load_offers_map(_db, perfume_ids):
+            offers = {}
+            if with_offer.id in perfume_ids:
+                offers[with_offer.id] = [
+                    (
+                        SimpleNamespace(
+                            id=10,
+                            perfume_id=with_offer.id,
+                            in_stock=True,
+                            total_price=49.9,
+                            price=49.9,
+                            currency="EUR",
+                            title="Offer",
+                            delivery_cost=None,
+                            affiliate_url="https://awin.example/offer",
+                            merchant_url="https://merchant.example/offer",
+                            image_url=None,
+                            stock_status=None,
+                            last_seen_at=None,
+                            last_price_change_at=None,
+                        ),
+                        SimpleNamespace(name="Retailer", priority=100),
+                    )
+                ]
+            return offers
+
+        with (
+            patch.object(perfumes, "_candidate_perfumes", side_effect=fake_candidate_perfumes),
+            patch.object(perfumes, "_load_offers_map", side_effect=fake_load_offers_map),
+        ):
+            unfiltered = perfumes._search_cards(db=None, query="", limit=10, with_offers_only=False)
+            filtered = perfumes._search_cards(db=None, query="", limit=10, with_offers_only=True)
+
+        self.assertEqual([item.slug for item in unfiltered], ["with-offer", "without-offer"])
+        self.assertEqual([item.slug for item in filtered], ["with-offer"])
+        self.assertEqual(filtered[0].offer_count, 1)
+
+    def test_candidate_perfumes_filter_is_offer_based_and_not_comas_specific(self):
+        source = inspect.getsource(perfumes._candidate_perfumes)
+
+        self.assertIn("AffiliateOffer.perfume_id", source)
+        self.assertIn("Advertiser.active", source)
+        self.assertIn("AffiliateOffer.affiliate_url", source)
+        self.assertNotIn("perfume_offers", source)
         self.assertNotIn("105475", source)
         self.assertNotIn("97867", source)
 
