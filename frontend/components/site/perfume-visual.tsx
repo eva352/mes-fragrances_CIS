@@ -18,12 +18,14 @@ export function PerfumeVisual({
   name,
   brand,
   imageUrl,
+  alt,
   className,
   compact = false,
 }: {
   name: string;
   brand: string;
   imageUrl?: string | null;
+  alt?: string;
   className?: string;
   compact?: boolean;
 }) {
@@ -41,7 +43,7 @@ export function PerfumeVisual({
         <>
           <img
             src={imageUrl ?? ""}
-            alt={`${name} de ${brand}`}
+            alt={alt || `${brand} ${name}`}
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,251,248,0.08),rgba(255,246,244,0.18)_50%,rgba(255,246,244,0.34)_100%)]" />

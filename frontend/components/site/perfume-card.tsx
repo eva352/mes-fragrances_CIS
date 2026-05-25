@@ -30,18 +30,33 @@ function formatBudgetTier(value?: string | null) {
 
 export function PerfumeCard({
   perfume,
-  ctaLabel = "Découvrir le parfum",
+  ctaLabel,
 }: {
   perfume: PerfumeCardType;
   ctaLabel?: string;
 }) {
-  const price = formatPrice(perfume.lowestPrice, perfume.currency);
+  const bestOfferPrice = formatPrice(
+    perfume.bestOffer?.totalPrice ?? perfume.bestOffer?.price,
+    perfume.bestOffer?.currency ?? perfume.currency,
+  );
+  const fallbackPrice = formatPrice(perfume.lowestPrice, perfume.currency);
   const budgetLabel = formatBudgetTier(perfume.budgetTier);
   const keyNotes = perfume.keyNotes.slice(0, 3);
+  const offerImageUrl = perfume.bestOffer?.imageUrl ?? null;
+  const displayImageUrl = perfume.imageUrl || offerImageUrl || null;
+  const offerCount = perfume.offerCount ?? 0;
+  const additionalOffers = offerCount > 1 ? offerCount - 1 : 0;
+  const buttonLabel = ctaLabel || (perfume.bestOffer ? "Voir les offres" : "Découvrir le parfum");
 
   return (
     <article className="group rounded-[2.1rem] border border-[rgba(154,78,99,0.22)] bg-[rgba(255,255,255,0.62)] p-4 shadow-[0_24px_56px_rgba(168,135,131,0.10)] backdrop-blur-[6px] transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_72px_rgba(176,138,139,0.14)]">
-      <PerfumeVisual name={perfume.name} brand={perfume.brand} imageUrl={perfume.imageUrl} compact />
+      <PerfumeVisual
+        name={perfume.name}
+        brand={perfume.brand}
+        imageUrl={displayImageUrl}
+        alt={`${perfume.brand} ${perfume.name}`}
+        compact
+      />
 
       <div className="mt-4 flex flex-wrap gap-2">
         {perfume.isNewArrival ? (
@@ -93,16 +108,26 @@ export function PerfumeCard({
       </dl>
 
       <div className="mt-5 flex items-center justify-between gap-3">
-        <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-[hsl(var(--mf-ink-soft))]">Prix indicatif</p>
-          <p className="text-lg font-semibold text-[hsl(var(--mf-ink))]">{price ?? "Prix à venir"}</p>
+        <div className="min-w-0">
+          <p className="text-xs uppercase tracking-[0.18em] text-[hsl(var(--mf-ink-soft))]">
+            {perfume.bestOffer ? "Meilleure offre" : "Prix indicatif"}
+          </p>
+          <p className="text-lg font-semibold text-[hsl(var(--mf-ink))]">
+            {perfume.bestOffer && bestOfferPrice ? `Dès ${bestOfferPrice}` : fallbackPrice ?? "Prix à venir"}
+          </p>
+          {perfume.bestOffer?.advertiserName ? (
+            <p className="truncate text-sm text-[hsl(var(--mf-ink-soft))]">chez {perfume.bestOffer.advertiserName}</p>
+          ) : null}
+          {additionalOffers > 0 ? (
+            <p className="text-xs uppercase tracking-[0.16em] text-[hsl(var(--mf-ink-soft))]">+ {additionalOffers} offres</p>
+          ) : null}
         </div>
 
         <Button
           asChild
           className="rounded-full px-5 shadow-[0_16px_28px_rgba(178,140,146,0.18)] transition duration-300 group-hover:shadow-[0_18px_30px_rgba(178,140,146,0.24)]"
         >
-          <Link href={PUBLIC_PATHS.perfume(perfume.slug)}>{ctaLabel}</Link>
+          <Link href={PUBLIC_PATHS.perfume(perfume.slug)}>{buttonLabel}</Link>
         </Button>
       </div>
     </article>
