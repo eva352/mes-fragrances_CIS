@@ -1,18 +1,11 @@
--- Proposed staging import
--- Goal: populate public.perfume_insert_candidates from
+-- Populate or refresh public.perfume_insert_candidates from
 -- public.product_match_candidates without writing into public.perfumes.
 --
--- This script is intentionally conservative:
--- - it only inserts rows with review_status = pending
--- - it does not overwrite already reviewed rows
--- - it stages only SAFE_INSERT_CANDIDATE and NEEDS_MANUAL_REVIEW by default
--- - it is safe to re-run because rows with the same source_candidate_id are skipped
---
--- Important:
--- - the exact CSV audit classification is not reproduced bit-for-bit here
--- - this SQL uses the same conservative heuristic family as the audit
--- - if a validated CSV review workflow is preferred, use this script as the
---   table contract and import the reviewed CSV into a temp table first
+-- Conservative staging rules:
+-- - stage only SAFE_INSERT_CANDIDATE and NEEDS_MANUAL_REVIEW
+-- - preserve manual review decisions
+-- - on repeated sightings, update last_seen_at and seen_count
+-- - only refresh candidate fields when review_status is still pending
 
 begin;
 
@@ -78,11 +71,21 @@ with candidates as (
         (p.brand_norm = c.brand_norm) as brand_match,
         (p.brand_norm = c.brand_norm and p.name_norm = c.name_norm) as exact_name_match,
         (p.brand_norm = c.brand_norm and c.name_base_norm <> '' and p.name_base_norm = c.name_base_norm) as base_name_match,
-        (p.brand_norm = c.brand_norm and c.name_base_norm <> '' and p.name_base_norm <> '' and (position(p.name_base_norm in c.name_base_norm) > 0 or position(c.name_base_norm in p.name_base_norm) > 0)) as partial_name_match,
-        ((c.candidate_ean is not null and p.ean = c.candidate_ean)
-          or (c.candidate_gtin is not null and p.gtin = c.candidate_gtin)
-          or (c.candidate_upc is not null and p.upc = c.candidate_upc)
-          or (c.candidate_mpn is not null and p.mpn = c.candidate_mpn)) as identifier_match
+        (
+            p.brand_norm = c.brand_norm
+            and c.name_base_norm <> ''
+            and p.name_base_norm <> ''
+            and (
+                position(p.name_base_norm in c.name_base_norm) > 0
+                or position(c.name_base_norm in p.name_base_norm) > 0
+            )
+        ) as partial_name_match,
+        (
+            (c.candidate_ean is not null and p.ean = c.candidate_ean)
+            or (c.candidate_gtin is not null and p.gtin = c.candidate_gtin)
+            or (c.candidate_upc is not null and p.upc = c.candidate_upc)
+            or (c.candidate_mpn is not null and p.mpn = c.candidate_mpn)
+        ) as identifier_match
     from candidates c
     join perfumes p
       on p.brand_norm = c.brand_norm
@@ -232,7 +235,10 @@ insert into public.perfume_insert_candidates (
     duplicate_reason,
     nearest_perfume_id,
     nearest_perfume_brand,
-    nearest_perfume_name
+    nearest_perfume_name,
+    first_seen_at,
+    last_seen_at,
+    seen_count
 )
 select
     source_candidate_id,
@@ -254,57 +260,93 @@ select
     duplicate_reason,
     nearest_perfume_id,
     nearest_perfume_brand,
-    nearest_perfume_name
+    nearest_perfume_name,
+    now(),
+    now(),
+    1
 from staged s
 where s.classification in ('SAFE_INSERT_CANDIDATE', 'NEEDS_MANUAL_REVIEW')
-  and not exists (
-      select 1
-      from public.perfume_insert_candidates pic
-      where pic.source_candidate_id = s.source_candidate_id
-  );
+on conflict (source_candidate_id)
+    where source_candidate_id is not null
+do update
+set candidate_brand = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_brand
+        else public.perfume_insert_candidates.candidate_brand
+    end,
+    candidate_name = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_name
+        else public.perfume_insert_candidates.candidate_name
+    end,
+    candidate_concentration = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_concentration
+        else public.perfume_insert_candidates.candidate_concentration
+    end,
+    candidate_volume_ml = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_volume_ml
+        else public.perfume_insert_candidates.candidate_volume_ml
+    end,
+    candidate_category = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_category
+        else public.perfume_insert_candidates.candidate_category
+    end,
+    candidate_ean = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_ean
+        else public.perfume_insert_candidates.candidate_ean
+    end,
+    candidate_gtin = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_gtin
+        else public.perfume_insert_candidates.candidate_gtin
+    end,
+    candidate_upc = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_upc
+        else public.perfume_insert_candidates.candidate_upc
+    end,
+    candidate_mpn = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_mpn
+        else public.perfume_insert_candidates.candidate_mpn
+    end,
+    candidate_image_url = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_image_url
+        else public.perfume_insert_candidates.candidate_image_url
+    end,
+    candidate_source_title = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_source_title
+        else public.perfume_insert_candidates.candidate_source_title
+    end,
+    candidate_affiliate_url = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.candidate_affiliate_url
+        else public.perfume_insert_candidates.candidate_affiliate_url
+    end,
+    classification = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.classification
+        else public.perfume_insert_candidates.classification
+    end,
+    confidence = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.confidence
+        else public.perfume_insert_candidates.confidence
+    end,
+    duplicate_risk = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.duplicate_risk
+        else public.perfume_insert_candidates.duplicate_risk
+    end,
+    duplicate_reason = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.duplicate_reason
+        else public.perfume_insert_candidates.duplicate_reason
+    end,
+    nearest_perfume_id = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.nearest_perfume_id
+        else public.perfume_insert_candidates.nearest_perfume_id
+    end,
+    nearest_perfume_brand = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.nearest_perfume_brand
+        else public.perfume_insert_candidates.nearest_perfume_brand
+    end,
+    nearest_perfume_name = case
+        when public.perfume_insert_candidates.review_status = 'pending' then excluded.nearest_perfume_name
+        else public.perfume_insert_candidates.nearest_perfume_name
+    end,
+    last_seen_at = now(),
+    seen_count = coalesce(public.perfume_insert_candidates.seen_count, 1) + 1,
+    updated_at = now();
 
 commit;
-
--- Optional reviewed CSV import skeleton
--- Use this workflow if manual CSV review becomes the source of truth:
---
--- 1. \copy the reviewed CSV into a temp table with the same candidate fields.
--- 2. insert into public.perfume_insert_candidates using review_status = 'pending'
---    or a reviewed value.
--- 3. do not overwrite rows where review_status <> 'pending'.
---
--- Example skeleton:
---
--- create temp table tmp_reviewed_perfume_insert_candidates (
---     source_candidate_id bigint,
---     candidate_brand text,
---     candidate_name text,
---     candidate_concentration text,
---     candidate_volume_ml numeric(8, 2),
---     candidate_category text,
---     candidate_ean text,
---     candidate_gtin text,
---     candidate_upc text,
---     candidate_mpn text,
---     candidate_image_url text,
---     candidate_source_title text,
---     candidate_affiliate_url text,
---     classification text,
---     confidence numeric(5, 4),
---     duplicate_risk text,
---     duplicate_reason text,
---     nearest_perfume_id uuid,
---     nearest_perfume_brand text,
---     nearest_perfume_name text
--- );
---
--- \copy tmp_reviewed_perfume_insert_candidates from '/path/to/reviewed.csv' with csv header;
---
--- insert into public.perfume_insert_candidates (...)
--- select ...
--- from tmp_reviewed_perfume_insert_candidates src
--- where not exists (
---     select 1
---     from public.perfume_insert_candidates pic
---     where pic.source_candidate_id = src.source_candidate_id
--- );
