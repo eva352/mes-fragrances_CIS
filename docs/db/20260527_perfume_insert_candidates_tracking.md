@@ -143,6 +143,9 @@ Ce script :
 - initialise `first_seen_at`, `last_seen_at`, `seen_count` ;
 - transforme en `promoted` les lignes actuellement `approved` qui correspondent
   déjà sans ambiguïté à un parfum existant par `lower(brand)+lower(name)` ;
+- utilise une résolution déterministe basée sur `row_number()` / `count() over`
+  au lieu d'un agrégat sur UUID ;
+- laisse les cas ambigus en `approved` ;
 - ne touche pas aux lignes `pending`, `rejected` ou `needs_more_info`.
 
 ## Commandes d'exécution
