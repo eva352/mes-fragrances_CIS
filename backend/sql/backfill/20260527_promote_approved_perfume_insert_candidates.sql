@@ -1,17 +1,19 @@
--- Proposed promotion script
--- Goal: insert approved staging rows into public.perfumes without touching
--- non-approved candidates and without promoting obvious duplicates.
+-- Promote approved perfume_insert_candidates into public.perfumes and track
+-- which staging rows were promoted or merged into an existing perfume.
 --
--- Important:
--- - this script inserts into public.perfumes only
--- - it does not change review_status automatically
--- - follow-up review bookkeeping remains a manual or later application step
+-- Conservative behavior:
+-- - only review_status = 'approved' is eligible
+-- - rows already marked 'promoted' are ignored
+-- - obvious duplicates are not inserted again
+-- - rows with an unambiguous existing perfume match are marked
+--   'merged_existing'
+-- - rows inserted into perfumes are marked 'promoted'
 
 begin;
 
 with approved as (
     select
-        pic.id,
+        pic.id as candidate_id,
         pic.candidate_brand,
         pic.candidate_name,
         pic.candidate_concentration,
@@ -24,44 +26,75 @@ with approved as (
     from public.perfume_insert_candidates pic
     where pic.review_status = 'approved'
       and pic.classification in ('SAFE_INSERT_CANDIDATE', 'NEEDS_MANUAL_REVIEW')
-), deduped as (
+), exact_existing_matches as (
+    select
+        a.candidate_id,
+        min(p.id) as perfume_id,
+        count(*) as perfume_match_count
+    from approved a
+    join public.perfumes p
+      on lower(p.brand) = lower(a.candidate_brand)
+     and lower(p.name) = lower(a.candidate_name)
+    group by a.candidate_id
+), exact_existing_resolved as (
+    select
+        candidate_id,
+        perfume_id
+    from exact_existing_matches
+    where perfume_match_count = 1
+), identifier_existing_matches as (
+    select
+        a.candidate_id,
+        min(p.id) as perfume_id,
+        count(*) as perfume_match_count
+    from approved a
+    join public.perfumes p
+      on (a.candidate_ean is not null and p.ean = a.candidate_ean)
+      or (a.candidate_gtin is not null and p.gtin = a.candidate_gtin)
+      or (a.candidate_upc is not null and p.upc = a.candidate_upc)
+      or (a.candidate_mpn is not null and p.mpn = a.candidate_mpn)
+    group by a.candidate_id
+), identifier_existing_resolved as (
+    select
+        candidate_id,
+        perfume_id
+    from identifier_existing_matches
+    where perfume_match_count = 1
+      and candidate_id not in (select candidate_id from exact_existing_resolved)
+), insertable as (
     select
         a.*,
-        trim(regexp_replace(lower(coalesce(a.candidate_brand, '') || ' ' || coalesce(a.candidate_name, '')), '[^[:alnum:]]+', '-', 'g')) as slug_base
+        trim(
+            regexp_replace(
+                lower(coalesce(a.candidate_brand, '') || ' ' || coalesce(a.candidate_name, '')),
+                '[^[:alnum:]]+',
+                '-',
+                'g'
+            )
+        ) as slug_base
     from approved a
     where coalesce(btrim(a.candidate_brand), '') <> ''
       and coalesce(btrim(a.candidate_name), '') <> ''
-      and not exists (
-          select 1
-          from public.perfumes p
-          where lower(p.brand) = lower(a.candidate_brand)
-            and lower(p.name) = lower(a.candidate_name)
-      )
-      and not exists (
-          select 1
-          from public.perfumes p
-          where (a.candidate_ean is not null and p.ean = a.candidate_ean)
-             or (a.candidate_gtin is not null and p.gtin = a.candidate_gtin)
-             or (a.candidate_upc is not null and p.upc = a.candidate_upc)
-             or (a.candidate_mpn is not null and p.mpn = a.candidate_mpn)
-      )
+      and a.candidate_id not in (select candidate_id from exact_existing_resolved)
+      and a.candidate_id not in (select candidate_id from identifier_existing_resolved)
 ), numbered as (
     select
-        d.*,
-        row_number() over (partition by d.slug_base order by d.id) as slug_rank
-    from deduped d
+        i.*,
+        row_number() over (partition by i.slug_base order by i.candidate_id) as slug_rank
+    from insertable i
 ), prepared as (
     select
+        n.candidate_id,
         (
-            substr(md5('perfume_insert_candidate:' || n.id::text), 1, 8) || '-' ||
-            substr(md5('perfume_insert_candidate:' || n.id::text), 9, 4) || '-' ||
-            substr(md5('perfume_insert_candidate:' || n.id::text), 13, 4) || '-' ||
-            substr(md5('perfume_insert_candidate:' || n.id::text), 17, 4) || '-' ||
-            substr(md5('perfume_insert_candidate:' || n.id::text), 21, 12)
-        )::uuid as id,
+            substr(md5('perfume_insert_candidate:' || n.candidate_id::text), 1, 8) || '-' ||
+            substr(md5('perfume_insert_candidate:' || n.candidate_id::text), 9, 4) || '-' ||
+            substr(md5('perfume_insert_candidate:' || n.candidate_id::text), 13, 4) || '-' ||
+            substr(md5('perfume_insert_candidate:' || n.candidate_id::text), 17, 4) || '-' ||
+            substr(md5('perfume_insert_candidate:' || n.candidate_id::text), 21, 12)
+        )::uuid as perfume_id,
         case
             when n.slug_rank = 1 then n.slug_base
-            else n.slug_base || '-' || n.id::text
+            else n.slug_base || '-' || n.candidate_id::text
         end as slug,
         n.candidate_name as name,
         n.candidate_brand as brand,
@@ -79,41 +112,77 @@ with approved as (
           from public.perfumes p
           where p.slug = case
               when n.slug_rank = 1 then n.slug_base
-              else n.slug_base || '-' || n.id::text
+              else n.slug_base || '-' || n.candidate_id::text
           end
       )
+), inserted as (
+    insert into public.perfumes (
+        id,
+        slug,
+        name,
+        brand,
+        image_url,
+        concentration,
+        volume_ml,
+        ean,
+        gtin,
+        upc,
+        mpn
+    )
+    select
+        p.perfume_id,
+        p.slug,
+        p.name,
+        p.brand,
+        p.image_url,
+        p.concentration,
+        p.volume_ml,
+        p.ean,
+        p.gtin,
+        p.upc,
+        p.mpn
+    from prepared p
+    returning id
+), inserted_resolved as (
+    select
+        p.candidate_id,
+        p.perfume_id
+    from prepared p
+    join inserted i on i.id = p.perfume_id
+), resolved as (
+    select
+        candidate_id,
+        perfume_id,
+        'merged_existing'::text as target_review_status,
+        'Marked as merged_existing after exact match to an already existing perfume.'::text as note
+    from exact_existing_resolved
+
+    union all
+
+    select
+        candidate_id,
+        perfume_id,
+        'merged_existing'::text as target_review_status,
+        'Marked as merged_existing after identifier match to an already existing perfume.'::text as note
+    from identifier_existing_resolved
+
+    union all
+
+    select
+        candidate_id,
+        perfume_id,
+        'promoted'::text as target_review_status,
+        'Promoted into public.perfumes by controlled approved-candidate script.'::text as note
+    from inserted_resolved
 )
-insert into public.perfumes (
-    id,
-    slug,
-    name,
-    brand,
-    image_url,
-    concentration,
-    volume_ml,
-    ean,
-    gtin,
-    upc,
-    mpn
-)
-select
-    p.id,
-    p.slug,
-    p.name,
-    p.brand,
-    p.image_url,
-    p.concentration,
-    p.volume_ml,
-    p.ean,
-    p.gtin,
-    p.upc,
-    p.mpn
-from prepared p
-returning id, slug, brand, name;
+update public.perfume_insert_candidates pic
+set promoted_perfume_id = r.perfume_id,
+    promoted_at = coalesce(pic.promoted_at, now()),
+    review_status = r.target_review_status,
+    updated_at = now(),
+    review_notes = coalesce(pic.review_notes || E'\n', '') || r.note
+from resolved r
+where pic.id = r.candidate_id
+  and pic.review_status = 'approved';
 
 commit;
-
--- Manual follow-up after promotion:
--- - review the returned inserted rows
--- - if needed, set public.perfume_insert_candidates.review_status manually to a
---   post-promotion state once a reliable promotion-tracking convention exists
