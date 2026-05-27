@@ -57,44 +57,76 @@ where pic.id = r.candidate_id
   and pic.promoted_perfume_id is null;
 
 select
-    'approved_remaining' as metric,
-    count(*) as value
-from public.perfume_insert_candidates
-where review_status = 'approved'
+    metric,
+    value
+from (
+    with exact_matches_ranked as (
+        select
+            pic.id as candidate_id,
+            p.id as perfume_id,
+            row_number() over (
+                partition by pic.id
+                order by p.id::text
+            ) as perfume_rank,
+            count(*) over (
+                partition by pic.id
+            ) as perfume_match_count
+        from public.perfume_insert_candidates pic
+        join public.perfumes p
+          on lower(p.brand) = lower(pic.candidate_brand)
+         and lower(p.name) = lower(pic.candidate_name)
+        where pic.review_status = 'approved'
+    ), ambiguous as (
+        select distinct
+            candidate_id
+        from exact_matches_ranked
+        where perfume_match_count > 1
+    ), matched_any as (
+        select distinct
+            candidate_id
+        from exact_matches_ranked
+    )
+    select
+        'approved_remaining' as metric,
+        count(*)::bigint as value
+    from public.perfume_insert_candidates
+    where review_status = 'approved'
 
-union all
+    union all
 
-select
-    'promoted_with_link' as metric,
-    count(*) as value
-from public.perfume_insert_candidates
-where review_status = 'promoted'
-  and promoted_perfume_id is not null
+    select
+        'promoted_with_link' as metric,
+        count(*)::bigint as value
+    from public.perfume_insert_candidates
+    where review_status = 'promoted'
+      and promoted_perfume_id is not null
 
-union all
+    union all
 
-select
-    'approved_ambiguous_matches' as metric,
-    count(*) as value
-from public.perfume_insert_candidates pic
-where pic.review_status = 'approved'
-  and exists (
-      select 1
-      from ambiguous a
-      where a.candidate_id = pic.id
-  )
+    select
+        'approved_ambiguous_matches' as metric,
+        count(*)::bigint as value
+    from public.perfume_insert_candidates pic
+    where pic.review_status = 'approved'
+      and exists (
+          select 1
+          from ambiguous a
+          where a.candidate_id = pic.id
+      )
 
-union all
+    union all
 
-select
-    'approved_without_match' as metric,
-    count(*) as value
-from public.perfume_insert_candidates pic
-where pic.review_status = 'approved'
-  and not exists (
-      select 1
-      from exact_matches_ranked emr
-      where emr.candidate_id = pic.id
-  );
+    select
+        'approved_without_match' as metric,
+        count(*)::bigint as value
+    from public.perfume_insert_candidates pic
+    where pic.review_status = 'approved'
+      and not exists (
+          select 1
+          from matched_any m
+          where m.candidate_id = pic.id
+      )
+) diagnostics
+order by metric;
 
 commit;
