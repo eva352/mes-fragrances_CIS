@@ -29,37 +29,49 @@ with approved as (
 ), exact_existing_matches as (
     select
         a.candidate_id,
-        min(p.id) as perfume_id,
-        count(*) as perfume_match_count
+        p.id as perfume_id,
+        row_number() over (
+            partition by a.candidate_id
+            order by p.id::text
+        ) as rn,
+        count(*) over (
+            partition by a.candidate_id
+        ) as perfume_match_count
     from approved a
     join public.perfumes p
       on lower(p.brand) = lower(a.candidate_brand)
      and lower(p.name) = lower(a.candidate_name)
-    group by a.candidate_id
 ), exact_existing_resolved as (
     select
         candidate_id,
         perfume_id
     from exact_existing_matches
     where perfume_match_count = 1
+      and rn = 1
 ), identifier_existing_matches as (
     select
         a.candidate_id,
-        min(p.id) as perfume_id,
-        count(*) as perfume_match_count
+        p.id as perfume_id,
+        row_number() over (
+            partition by a.candidate_id
+            order by p.id::text
+        ) as rn,
+        count(*) over (
+            partition by a.candidate_id
+        ) as perfume_match_count
     from approved a
     join public.perfumes p
       on (a.candidate_ean is not null and p.ean = a.candidate_ean)
       or (a.candidate_gtin is not null and p.gtin = a.candidate_gtin)
       or (a.candidate_upc is not null and p.upc = a.candidate_upc)
       or (a.candidate_mpn is not null and p.mpn = a.candidate_mpn)
-    group by a.candidate_id
 ), identifier_existing_resolved as (
     select
         candidate_id,
         perfume_id
     from identifier_existing_matches
     where perfume_match_count = 1
+      and rn = 1
       and candidate_id not in (select candidate_id from exact_existing_resolved)
 ), insertable as (
     select
@@ -186,3 +198,79 @@ where pic.id = r.candidate_id
   and pic.review_status = 'approved';
 
 commit;
+
+with remaining_approved as (
+    select
+        pic.id as candidate_id,
+        pic.candidate_brand,
+        pic.candidate_name,
+        pic.candidate_ean,
+        pic.candidate_gtin,
+        pic.candidate_upc,
+        pic.candidate_mpn
+    from public.perfume_insert_candidates pic
+    where pic.review_status = 'approved'
+      and pic.classification in ('SAFE_INSERT_CANDIDATE', 'NEEDS_MANUAL_REVIEW')
+), exact_match_stats as (
+    select
+        ra.candidate_id,
+        count(*) as perfume_match_count
+    from remaining_approved ra
+    join public.perfumes p
+      on lower(p.brand) = lower(ra.candidate_brand)
+     and lower(p.name) = lower(ra.candidate_name)
+    group by ra.candidate_id
+), identifier_match_stats as (
+    select
+        ra.candidate_id,
+        count(*) as perfume_match_count
+    from remaining_approved ra
+    join public.perfumes p
+      on (ra.candidate_ean is not null and p.ean = ra.candidate_ean)
+      or (ra.candidate_gtin is not null and p.gtin = ra.candidate_gtin)
+      or (ra.candidate_upc is not null and p.upc = ra.candidate_upc)
+      or (ra.candidate_mpn is not null and p.mpn = ra.candidate_mpn)
+    group by ra.candidate_id
+)
+select 'promoted_count' as metric, count(*)::text as value
+from public.perfume_insert_candidates
+where review_status = 'promoted'
+
+union all
+
+select 'promoted_with_link' as metric, count(*)::text as value
+from public.perfume_insert_candidates
+where review_status = 'promoted'
+  and promoted_perfume_id is not null
+
+union all
+
+select 'approved_remaining' as metric, count(*)::text as value
+from public.perfume_insert_candidates
+where review_status = 'approved'
+
+union all
+
+select 'merged_existing_count' as metric, count(*)::text as value
+from public.perfume_insert_candidates
+where review_status = 'merged_existing'
+
+union all
+
+select 'approved_ambiguous_matches' as metric, count(*)::text as value
+from remaining_approved ra
+left join exact_match_stats ems on ems.candidate_id = ra.candidate_id
+left join identifier_match_stats ims on ims.candidate_id = ra.candidate_id
+where coalesce(ems.perfume_match_count, 0) > 1
+   or coalesce(ims.perfume_match_count, 0) > 1
+
+union all
+
+select 'approved_without_match' as metric, count(*)::text as value
+from remaining_approved ra
+left join exact_match_stats ems on ems.candidate_id = ra.candidate_id
+left join identifier_match_stats ims on ims.candidate_id = ra.candidate_id
+where coalesce(ems.perfume_match_count, 0) = 0
+  and coalesce(ims.perfume_match_count, 0) = 0
+
+order by metric;
