@@ -224,11 +224,13 @@ class AffiliateOfferDisplayTests(unittest.TestCase):
             patch.object(perfumes, "_candidate_perfumes", side_effect=fake_candidate_perfumes),
             patch.object(perfumes, "_load_offers_map", side_effect=fake_load_offers_map),
         ):
-            unfiltered = perfumes._search_cards(db=None, query="", limit=10, with_offers_only=False)
-            filtered = perfumes._search_cards(db=None, query="", limit=10, with_offers_only=True)
+            unfiltered, unfiltered_total = perfumes._search_cards(db=None, query="", limit=10, with_offers_only=False)
+            filtered, filtered_total = perfumes._search_cards(db=None, query="", limit=10, with_offers_only=True)
 
         self.assertEqual([item.slug for item in unfiltered], ["with-offer", "without-offer"])
+        self.assertEqual(unfiltered_total, 2)
         self.assertEqual([item.slug for item in filtered], ["with-offer"])
+        self.assertEqual(filtered_total, 1)
         self.assertEqual(filtered[0].offer_count, 1)
 
     def test_search_cards_filters_by_brand(self):
@@ -271,9 +273,10 @@ class AffiliateOfferDisplayTests(unittest.TestCase):
             patch.object(perfumes, "_candidate_perfumes", return_value=[lancome, dior]),
             patch.object(perfumes, "_load_offers_map", return_value={}),
         ):
-            filtered = perfumes._search_cards(db=None, query="", limit=10, brands=["LANCÔME"])
+            filtered, total = perfumes._search_cards(db=None, query="", limit=10, brands=["LANCÔME"])
 
         self.assertEqual([item.slug for item in filtered], ["la-vie-est-belle"])
+        self.assertEqual(total, 1)
 
     def test_search_cards_offset_loads_offers_only_for_visible_page(self):
         perfumes_page = [
@@ -339,9 +342,10 @@ class AffiliateOfferDisplayTests(unittest.TestCase):
             patch.object(perfumes, "_candidate_perfumes", return_value=perfumes_page),
             patch.object(perfumes, "_load_offers_map", side_effect=fake_load_offers_map),
         ):
-            results = perfumes._search_cards(db=None, query="", limit=2, offset=1)
+            results, total = perfumes._search_cards(db=None, query="", limit=2, offset=1)
 
         self.assertEqual([item.slug for item in results], ["two", "three"])
+        self.assertEqual(total, 3)
         self.assertEqual(loaded_ids, [["two", "three"]])
 
     def test_candidate_perfumes_filter_is_offer_based_and_not_comas_specific(self):

@@ -4,7 +4,7 @@ from collections.abc import Iterable
 from decimal import Decimal
 from typing import Any
 
-from fastapi import APIRouter, HTTPException, Query, status
+from fastapi import APIRouter, HTTPException, Query, Response, status
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 
@@ -562,7 +562,7 @@ def _search_cards(
     min_price: float | None = None,
     max_price: float | None = None,
     with_offers_only: bool = False,
-) -> list[PerfumeCardRead]:
+) -> tuple[list[PerfumeCardRead], int]:
     normalized_genders = _normalize_gender_values(genders)
     normalized_brands = _normalize_brand_values(brands)
     normalized_families = _normalize_family_values(families)
@@ -592,13 +592,12 @@ def _search_cards(
             matched_count += 1
             continue
 
-        selected_perfumes.append(perfume)
         matched_count += 1
-        if len(selected_perfumes) >= limit:
-            break
+        if len(selected_perfumes) < limit:
+            selected_perfumes.append(perfume)
 
     offers_map = _load_offers_map(db, [perfume.id for perfume in selected_perfumes])
-    return [_build_card(perfume, offers_map.get(perfume.id, [])) for perfume in selected_perfumes]
+    return [_build_card(perfume, offers_map.get(perfume.id, [])) for perfume in selected_perfumes], matched_count
 
 
 def _build_profile(profile_key: str) -> QuizPersonalityProfileRead:
@@ -692,6 +691,7 @@ def _score_perfume(payload: QuizRecommendationRequest, perfume: Perfume, profile
 @router.get("/perfumes/search", response_model=list[PerfumeCardRead], tags=["perfumes"])
 def search_perfumes(
     db: DBSession,
+    response: Response,
     q: str = Query(default="", min_length=0, max_length=100),
     limit: int = Query(default=18, ge=1, le=5000),
     offset: int = Query(default=0, ge=0),
@@ -703,7 +703,7 @@ def search_perfumes(
     with_offers_only: bool = Query(default=False, alias="withOffersOnly"),
 ):
     query = _normalize(q)
-    return _search_cards(
+    cards, total = _search_cards(
         db=db,
         query=query,
         limit=limit,
@@ -715,6 +715,8 @@ def search_perfumes(
         max_price=max_price,
         with_offers_only=with_offers_only,
     )
+    response.headers["X-Total-Count"] = str(total)
+    return cards
 
 
 @router.get("/perfumes/filters", response_model=PerfumeFilterOptionsRead, tags=["perfumes"])

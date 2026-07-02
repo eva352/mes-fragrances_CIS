@@ -75,6 +75,11 @@ export type PublicPerfumeSearchOptions = {
   withOffersOnly?: boolean;
 };
 
+export type PublicPerfumeSearchResult = {
+  items: PerfumeCard[];
+  total: number;
+};
+
 export type QuizRecommendationOptions = {
   withOffersOnly?: boolean;
 };
@@ -147,24 +152,25 @@ async function publicFetch<T>(path: string, init?: RequestInit): Promise<T> {
   return res.json();
 }
 
-export async function getFeaturedPerfumes(options: { withOffersOnly?: boolean } = {}): Promise<FeaturedPerfumes> {
-  const params = new URLSearchParams();
-  if (options.withOffersOnly) {
-    params.set("withOffersOnly", "true");
+async function publicFetchResponse(path: string, init?: RequestInit): Promise<Response> {
+  const res = await fetch(`${getPublicApiBaseUrl()}${path}`, {
+    cache: "no-store",
+    ...init,
+    headers: {
+      ...(init?.body ? { "Content-Type": "application/json" } : {}),
+      ...(init?.headers ?? {}),
+    },
+  });
+
+  if (!res.ok) {
+    const errorBody = await res.json().catch(() => ({ detail: `API error: ${res.status}` }));
+    throw new Error(errorBody.detail || `API error: ${res.status}`);
   }
-  const suffix = params.size ? `?${params.toString()}` : "";
-  return publicFetch<FeaturedPerfumes>(`/perfumes/featured${suffix}`);
+
+  return res;
 }
 
-export async function getPublicPerfumeFilters(): Promise<PerfumeFilterOptions> {
-  return publicFetch<PerfumeFilterOptions>("/perfumes/filters");
-}
-
-export async function searchPublicPerfumes(
-  queryOrOptions: string | PublicPerfumeSearchOptions = "",
-  options: Omit<PublicPerfumeSearchOptions, "q"> = {},
-): Promise<PerfumeCard[]> {
-  const resolved = typeof queryOrOptions === "string" ? { q: queryOrOptions, ...options } : queryOrOptions;
+function buildPerfumeSearchParams(resolved: PublicPerfumeSearchOptions) {
   const params = new URLSearchParams();
 
   params.set("q", resolved.q?.trim() ?? "");
@@ -207,7 +213,45 @@ export async function searchPublicPerfumes(
     params.set("withOffersOnly", "true");
   }
 
+  return params;
+}
+
+export async function getFeaturedPerfumes(options: { withOffersOnly?: boolean } = {}): Promise<FeaturedPerfumes> {
+  const params = new URLSearchParams();
+  if (options.withOffersOnly) {
+    params.set("withOffersOnly", "true");
+  }
+  const suffix = params.size ? `?${params.toString()}` : "";
+  return publicFetch<FeaturedPerfumes>(`/perfumes/featured${suffix}`);
+}
+
+export async function getPublicPerfumeFilters(): Promise<PerfumeFilterOptions> {
+  return publicFetch<PerfumeFilterOptions>("/perfumes/filters");
+}
+
+export async function searchPublicPerfumes(
+  queryOrOptions: string | PublicPerfumeSearchOptions = "",
+  options: Omit<PublicPerfumeSearchOptions, "q"> = {},
+): Promise<PerfumeCard[]> {
+  const resolved = typeof queryOrOptions === "string" ? { q: queryOrOptions, ...options } : queryOrOptions;
+  const params = buildPerfumeSearchParams(resolved);
+
   return publicFetch<PerfumeCard[]>(`/perfumes/search?${params.toString()}`);
+}
+
+export async function searchPublicPerfumePage(
+  queryOrOptions: string | PublicPerfumeSearchOptions = "",
+  options: Omit<PublicPerfumeSearchOptions, "q"> = {},
+): Promise<PublicPerfumeSearchResult> {
+  const resolved = typeof queryOrOptions === "string" ? { q: queryOrOptions, ...options } : queryOrOptions;
+  const params = buildPerfumeSearchParams(resolved);
+  const response = await publicFetchResponse(`/perfumes/search?${params.toString()}`);
+  const total = Number(response.headers.get("X-Total-Count") ?? "0");
+
+  return {
+    items: (await response.json()) as PerfumeCard[],
+    total: Number.isFinite(total) ? total : 0,
+  };
 }
 
 export async function getPublicPerfume(slug: string): Promise<PerfumeDetail> {

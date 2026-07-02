@@ -4,7 +4,7 @@ import { PerfumeCard } from "@/components/site/perfume-card";
 import { PerfumeFiltersForm } from "@/components/site/perfume-filters-form";
 import { SearchInlineForm } from "@/components/site/search-inline-form";
 import { Button } from "@/components/ui/button";
-import { getPublicPerfumeFilters, searchPublicPerfumes } from "@/lib/api/public-perfumes";
+import { getPublicPerfumeFilters, searchPublicPerfumePage } from "@/lib/api/public-perfumes";
 import { PUBLIC_PATHS } from "@/lib/site/public-paths";
 import { getPublicProjectInfo } from "@/lib/site/project";
 
@@ -171,10 +171,10 @@ export async function PerfumeCatalogPage({
   const hasFilters = Boolean(query || selectedGenders.length || selectedBrands.length || selectedFamilies.length || minPrice != null || maxPrice != null);
   const offset = (page - 1) * CATALOG_PAGE_SIZE;
 
-  const [project, filters, perfumes] = await Promise.all([
+  const [project, filters, searchResult] = await Promise.all([
     getPublicProjectInfo(),
     getPublicPerfumeFilters(),
-    searchPublicPerfumes({
+    searchPublicPerfumePage({
       q: query,
       genders: selectedGenders,
       brands: selectedBrands,
@@ -186,6 +186,9 @@ export async function PerfumeCatalogPage({
     }),
   ]);
 
+  const perfumes = searchResult.items;
+  const totalMatches = searchResult.total;
+  const totalPages = totalMatches > 0 ? Math.ceil(totalMatches / CATALOG_PAGE_SIZE) : 0;
   const hasNextPage = perfumes.length > CATALOG_PAGE_SIZE;
   const displayedPerfumes = perfumes.slice(0, CATALOG_PAGE_SIZE);
   const previousPageHref =
@@ -279,17 +282,17 @@ export async function PerfumeCatalogPage({
             <div className="rounded-[1.8rem] border border-[hsla(var(--mf-line),0.76)] bg-white/55 px-5 py-4 text-sm text-[hsl(var(--mf-ink-soft))]">
               {hasFilters ? (
                 <p>
-                  {displayedPerfumes.length} résultat{displayedPerfumes.length > 1 ? "s" : ""} affiché{displayedPerfumes.length > 1 ? "s" : ""}
+                  {totalMatches} parfum{totalMatches > 1 ? "s" : ""} disponible{totalMatches > 1 ? "s" : ""}
                   {query ? (
                     <>
                       {" "}pour <span className="font-medium text-[hsl(var(--mf-ink))]">“{query}”</span>
                     </>
                   ) : null}
-                  . Page {page}.
+                  .
                 </p>
               ) : (
                 <p>
-                  {displayedPerfumes.length} parfum{displayedPerfumes.length > 1 ? "s" : ""} affiché{displayedPerfumes.length > 1 ? "s" : ""} dans le catalogue public. Page {page}.
+                  {totalMatches} parfum{totalMatches > 1 ? "s" : ""} disponible{totalMatches > 1 ? "s" : ""}.
                 </p>
               )}
             </div>
@@ -310,7 +313,14 @@ export async function PerfumeCatalogPage({
 
             {previousPageHref || nextPageHref ? (
               <div className="flex flex-wrap items-center justify-between gap-3 rounded-[1.8rem] border border-[hsla(var(--mf-line),0.76)] bg-white/55 px-5 py-4">
-                <p className="text-sm text-[hsl(var(--mf-ink-soft))]">Navigation catalogue</p>
+                <div className="space-y-1">
+                  <p className="text-sm text-[hsl(var(--mf-ink-soft))]">Navigation catalogue</p>
+                  {totalPages > 1 ? (
+                    <p className="text-xs uppercase tracking-[0.16em] text-[hsl(var(--mf-ink-soft))]">
+                      {page} sur {totalPages}
+                    </p>
+                  ) : null}
+                </div>
                 <div className="flex flex-wrap gap-3">
                   {previousPageHref ? (
                     <Button asChild variant="outline" className="rounded-full px-5">
