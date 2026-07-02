@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const project = await getPublicProjectInfo();
   return {
     title: `Nos parfums | ${project.title}`,
-    description: `Le catalogue parfum de ${project.title} avec recherche avancée et filtres par genre, prix et famille olfactive.`,
+    description: `Le catalogue parfum de ${project.title} avec recherche avancée et filtres par genre, marque, prix et famille olfactive.`,
   };
 }
 

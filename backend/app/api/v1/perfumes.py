@@ -5,6 +5,7 @@ from decimal import Decimal
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, Query, status
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 from app.api.deps import DBSession
@@ -339,6 +340,37 @@ def _load_offers_map(db: Session, perfume_ids: Iterable[Any]) -> dict[Any, list[
     return _group_offers(rows)
 
 
+def _load_lowest_offer_prices(db: Session, perfume_ids: Iterable[Any]) -> dict[Any, float]:
+    ids = list(perfume_ids)
+    if not ids:
+        return {}
+
+    offer_price = func.coalesce(AffiliateOffer.total_price, AffiliateOffer.price)
+    rows = (
+        db.query(
+            AffiliateOffer.perfume_id,
+            func.min(offer_price),
+        )
+        .join(Advertiser, Advertiser.id == AffiliateOffer.advertiser_id)
+        .filter(
+            AffiliateOffer.perfume_id.in_(ids),
+            AffiliateOffer.active.is_(True),
+            AffiliateOffer.affiliate_url.is_not(None),
+            Advertiser.active.is_(True),
+            offer_price.is_not(None),
+        )
+        .group_by(AffiliateOffer.perfume_id)
+        .all()
+    )
+
+    prices: dict[Any, float] = {}
+    for perfume_id, price in rows:
+        normalized_price = _to_float(price)
+        if normalized_price is not None:
+            prices[perfume_id] = normalized_price
+    return prices
+
+
 def _build_offer(offer: AffiliateOffer, advertiser: Advertiser) -> PerfumeOfferRead:
     return PerfumeOfferRead(
         id=int(offer.id),
@@ -465,6 +497,10 @@ def _normalize_family_values(values: Iterable[str] | None) -> set[str]:
     return {_normalize(value) for value in (values or []) if _normalize(value)}
 
 
+def _normalize_brand_values(values: Iterable[str] | None) -> set[str]:
+    return {_normalize(value) for value in (values or []) if _normalize(value)}
+
+
 def _normalize_gender_values(values: Iterable[str] | None) -> set[str]:
     normalized: set[str] = set()
     for value in values or []:
@@ -480,17 +516,27 @@ def _normalize_price_bounds(min_price: float | None, max_price: float | None) ->
     return min_price, max_price
 
 
+def _candidate_lowest_price(perfume: Perfume, lowest_offer_prices: dict[Any, float]) -> float | None:
+    return lowest_offer_prices.get(perfume.id, _to_float(getattr(perfume, "source_price", None)))
+
+
 def _matches_filters(
     perfume: Perfume,
-    card: PerfumeCardRead,
     genders: set[str],
+    brands: set[str],
     families: set[str],
     min_price: float | None,
     max_price: float | None,
+    lowest_price: float | None = None,
 ) -> bool:
     if genders:
         perfume_gender = _normalize_gender(perfume.gender)
         if perfume_gender not in genders:
+            return False
+
+    if brands:
+        perfume_brand = _normalize(perfume.brand or "")
+        if perfume_brand not in brands:
             return False
 
     if families:
@@ -498,10 +544,9 @@ def _matches_filters(
         if perfume_family not in families:
             return False
 
-    price = card.lowest_price
-    if min_price is not None and (price is None or price < min_price):
+    if min_price is not None and (lowest_price is None or lowest_price < min_price):
         return False
-    if max_price is not None and (price is None or price > max_price):
+    if max_price is not None and (lowest_price is None or lowest_price > max_price):
         return False
     return True
 
@@ -510,31 +555,50 @@ def _search_cards(
     db: Session,
     query: str,
     limit: int,
+    offset: int = 0,
     genders: Iterable[str] | None = None,
+    brands: Iterable[str] | None = None,
     families: Iterable[str] | None = None,
     min_price: float | None = None,
     max_price: float | None = None,
     with_offers_only: bool = False,
 ) -> list[PerfumeCardRead]:
     normalized_genders = _normalize_gender_values(genders)
+    normalized_brands = _normalize_brand_values(brands)
     normalized_families = _normalize_family_values(families)
     min_price, max_price = _normalize_price_bounds(min_price, max_price)
 
     perfumes = _candidate_perfumes(db, with_offers_only=with_offers_only)
-    offers_map = _load_offers_map(db, [perfume.id for perfume in perfumes])
-    results: list[PerfumeCardRead] = []
+    needs_price_filter = min_price is not None or max_price is not None
+    lowest_offer_prices = _load_lowest_offer_prices(db, [perfume.id for perfume in perfumes]) if needs_price_filter else {}
+    selected_perfumes: list[Perfume] = []
+    matched_count = 0
 
     for perfume in perfumes:
         if not _matches_query(perfume, query):
             continue
-        card = _build_card(perfume, offers_map.get(perfume.id, []))
-        if not _matches_filters(perfume, card, normalized_genders, normalized_families, min_price, max_price):
+        lowest_price = _candidate_lowest_price(perfume, lowest_offer_prices) if needs_price_filter else None
+        if not _matches_filters(
+            perfume,
+            normalized_genders,
+            normalized_brands,
+            normalized_families,
+            min_price,
+            max_price,
+            lowest_price=lowest_price,
+        ):
             continue
-        results.append(card)
-        if len(results) >= limit:
+        if matched_count < offset:
+            matched_count += 1
+            continue
+
+        selected_perfumes.append(perfume)
+        matched_count += 1
+        if len(selected_perfumes) >= limit:
             break
 
-    return results
+    offers_map = _load_offers_map(db, [perfume.id for perfume in selected_perfumes])
+    return [_build_card(perfume, offers_map.get(perfume.id, [])) for perfume in selected_perfumes]
 
 
 def _build_profile(profile_key: str) -> QuizPersonalityProfileRead:
@@ -630,7 +694,9 @@ def search_perfumes(
     db: DBSession,
     q: str = Query(default="", min_length=0, max_length=100),
     limit: int = Query(default=18, ge=1, le=5000),
+    offset: int = Query(default=0, ge=0),
     gender: list[str] | None = Query(default=None),
+    brand: list[str] | None = Query(default=None),
     family: list[str] | None = Query(default=None),
     min_price: float | None = Query(default=None, alias="minPrice", ge=0),
     max_price: float | None = Query(default=None, alias="maxPrice", ge=0),
@@ -641,7 +707,9 @@ def search_perfumes(
         db=db,
         query=query,
         limit=limit,
+        offset=offset,
         genders=gender,
+        brands=brand,
         families=family,
         min_price=min_price,
         max_price=max_price,
@@ -652,9 +720,10 @@ def search_perfumes(
 @router.get("/perfumes/filters", response_model=PerfumeFilterOptionsRead, tags=["perfumes"])
 def perfume_filters(db: DBSession):
     perfumes = _candidate_perfumes(db)
-    offers_map = _load_offers_map(db, [perfume.id for perfume in perfumes])
+    lowest_offer_prices = _load_lowest_offer_prices(db, [perfume.id for perfume in perfumes])
 
     gender_counts: dict[str, int] = {}
+    brand_counts: dict[str, int] = {}
     family_counts: dict[str, int] = {}
     min_price: float | None = None
     max_price: float | None = None
@@ -664,11 +733,15 @@ def perfume_filters(db: DBSession):
         if gender:
             gender_counts[gender] = gender_counts.get(gender, 0) + 1
 
+        brand_label = " ".join((perfume.brand or "").strip().split())
+        if brand_label:
+            brand_counts[brand_label] = brand_counts.get(brand_label, 0) + 1
+
         family_label = " ".join((perfume.olfactive_family or "").strip().split())
         if family_label:
             family_counts[family_label] = family_counts.get(family_label, 0) + 1
 
-        lowest_price = _build_card(perfume, offers_map.get(perfume.id, [])).lowest_price
+        lowest_price = _candidate_lowest_price(perfume, lowest_offer_prices)
         if lowest_price is None:
             continue
         if min_price is None or lowest_price < min_price:
@@ -684,6 +757,10 @@ def perfume_filters(db: DBSession):
                 count=count,
             )
             for value, count in sorted(gender_counts.items(), key=lambda item: (item[0] != "femme", item[0] != "homme", item[0]))
+        ],
+        brands=[
+            PerfumeFilterValueRead(value=value, label=value, count=count)
+            for value, count in sorted(brand_counts.items(), key=lambda item: item[0].lower())
         ],
         families=[
             PerfumeFilterValueRead(value=value, label=value, count=count)

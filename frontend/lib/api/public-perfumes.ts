@@ -55,6 +55,7 @@ export type PerfumeFilterValue = {
 
 export type PerfumeFilterOptions = {
   genders: PerfumeFilterValue[];
+  brands: PerfumeFilterValue[];
   families: PerfumeFilterValue[];
   priceRange: {
     min: number | null;
@@ -65,7 +66,9 @@ export type PerfumeFilterOptions = {
 export type PublicPerfumeSearchOptions = {
   q?: string;
   limit?: number;
+  offset?: number;
   genders?: string[];
+  brands?: string[];
   families?: string[];
   minPrice?: number | null;
   maxPrice?: number | null;
@@ -170,9 +173,19 @@ export async function searchPublicPerfumes(
     params.set("limit", String(resolved.limit));
   }
 
+  if (resolved.offset != null && resolved.offset > 0) {
+    params.set("offset", String(resolved.offset));
+  }
+
   for (const gender of resolved.genders ?? []) {
     if (gender) {
       params.append("gender", gender);
+    }
+  }
+
+  for (const brand of resolved.brands ?? []) {
+    if (brand) {
+      params.append("brand", brand);
     }
   }
 

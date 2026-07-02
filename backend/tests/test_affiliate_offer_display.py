@@ -231,6 +231,119 @@ class AffiliateOfferDisplayTests(unittest.TestCase):
         self.assertEqual([item.slug for item in filtered], ["with-offer"])
         self.assertEqual(filtered[0].offer_count, 1)
 
+    def test_search_cards_filters_by_brand(self):
+        lancome = SimpleNamespace(
+            id="lancome",
+            slug="la-vie-est-belle",
+            name="La Vie Est Belle",
+            brand="Lancôme",
+            image_url=None,
+            short_description="",
+            olfactive_family="Floral",
+            budget_tier=None,
+            is_new_arrival=False,
+            is_best_seller=False,
+            top_notes=[],
+            heart_notes=[],
+            base_notes=[],
+            gender="femme",
+            source_price=79.9,
+        )
+        dior = SimpleNamespace(
+            id="dior",
+            slug="jadore",
+            name="J'adore",
+            brand="Dior",
+            image_url=None,
+            short_description="",
+            olfactive_family="Floral",
+            budget_tier=None,
+            is_new_arrival=False,
+            is_best_seller=False,
+            top_notes=[],
+            heart_notes=[],
+            base_notes=[],
+            gender="femme",
+            source_price=89.9,
+        )
+
+        with (
+            patch.object(perfumes, "_candidate_perfumes", return_value=[lancome, dior]),
+            patch.object(perfumes, "_load_offers_map", return_value={}),
+        ):
+            filtered = perfumes._search_cards(db=None, query="", limit=10, brands=["LANCÔME"])
+
+        self.assertEqual([item.slug for item in filtered], ["la-vie-est-belle"])
+
+    def test_search_cards_offset_loads_offers_only_for_visible_page(self):
+        perfumes_page = [
+            SimpleNamespace(
+                id="one",
+                slug="one",
+                name="One",
+                brand="Brand A",
+                image_url=None,
+                short_description="",
+                olfactive_family=None,
+                budget_tier=None,
+                is_new_arrival=False,
+                is_best_seller=False,
+                top_notes=[],
+                heart_notes=[],
+                base_notes=[],
+                gender=None,
+                source_price=None,
+            ),
+            SimpleNamespace(
+                id="two",
+                slug="two",
+                name="Two",
+                brand="Brand B",
+                image_url=None,
+                short_description="",
+                olfactive_family=None,
+                budget_tier=None,
+                is_new_arrival=False,
+                is_best_seller=False,
+                top_notes=[],
+                heart_notes=[],
+                base_notes=[],
+                gender=None,
+                source_price=None,
+            ),
+            SimpleNamespace(
+                id="three",
+                slug="three",
+                name="Three",
+                brand="Brand C",
+                image_url=None,
+                short_description="",
+                olfactive_family=None,
+                budget_tier=None,
+                is_new_arrival=False,
+                is_best_seller=False,
+                top_notes=[],
+                heart_notes=[],
+                base_notes=[],
+                gender=None,
+                source_price=None,
+            ),
+        ]
+        loaded_ids: list[list[str]] = []
+
+        def fake_load_offers_map(_db, perfume_ids):
+            loaded_ids.append(list(perfume_ids))
+            return {}
+
+        with (
+            patch.object(perfumes, "_candidate_perfumes", return_value=perfumes_page),
+            patch.object(perfumes, "_load_offers_map", side_effect=fake_load_offers_map),
+        ):
+            results = perfumes._search_cards(db=None, query="", limit=2, offset=1)
+
+        self.assertEqual([item.slug for item in results], ["two", "three"])
+        self.assertEqual(loaded_ids, [["two", "three"]])
+
     def test_candidate_perfumes_filter_is_offer_based_and_not_comas_specific(self):
         source = inspect.getsource(perfumes._candidate_perfumes)
 

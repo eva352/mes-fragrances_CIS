@@ -4,7 +4,7 @@ import { PerfumeCatalogPage, type CatalogSearchParams } from "@/components/site/
 
 export const metadata: Metadata = {
   title: "Recherche parfum",
-  description: "Recherche avancée dans le catalogue parfum avec filtres par genre, prix et famille olfactive.",
+  description: "Recherche avancée dans le catalogue parfum avec filtres par genre, marque, prix et famille olfactive.",
   robots: {
     index: false,
     follow: true,

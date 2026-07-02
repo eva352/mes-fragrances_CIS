@@ -111,7 +111,7 @@ export default async function PerfumeDetailPage({
             <p className="mt-4 text-base leading-8 text-[hsl(var(--mf-ink-soft))]">{perfume.description || perfume.shortDescription}</p>
           </div>
 
-          <section className="space-y-4">
+          <section id="offres" className="space-y-4 scroll-mt-28">
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-[hsl(var(--mf-ink-soft))]">Où le découvrir ou l&apos;acheter</p>
               <h2 className="mt-2 font-serif text-3xl text-[hsl(var(--mf-ink))]">Offres partenaires</h2>

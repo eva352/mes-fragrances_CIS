@@ -70,6 +70,7 @@ class PerfumePriceRangeRead(BaseModel):
 
 class PerfumeFilterOptionsRead(BaseModel):
     genders: list[PerfumeFilterValueRead] = Field(default_factory=list)
+    brands: list[PerfumeFilterValueRead] = Field(default_factory=list)
     families: list[PerfumeFilterValueRead] = Field(default_factory=list)
     price_range: PerfumePriceRangeRead = Field(default_factory=PerfumePriceRangeRead, alias="priceRange")
 
