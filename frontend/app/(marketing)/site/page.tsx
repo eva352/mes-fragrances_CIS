@@ -12,27 +12,27 @@ export const dynamic = "force-dynamic";
 
 const FRAGRANCE_UNIVERSES = [
   {
-    title: "Floral poudré",
+    title: "Floral",
     description: "Des sillages délicats, romantiques et lumineux pour une féminité douce.",
-    query: "floral poudre",
+    query: "floral",
     highlights: ["doux", "romantique", "lumineux"],
   },
   {
-    title: "Musqué propre",
+    title: "Musqué",
     description: "Une sensation de peau élégante, moderne et rassurante au quotidien.",
-    query: "musque propre",
+    query: "musqué",
     highlights: ["propre", "moderne", "quotidien"],
   },
   {
-    title: "Boisé velours",
+    title: "Boisé",
     description: "Des signatures plus profondes, raffinées et sensuelles sans lourdeur.",
-    query: "boise ambre",
+    query: "boisé",
     highlights: ["profond", "sensuel", "raffiné"],
   },
   {
-    title: "Fruité chic",
+    title: "Fruité",
     description: "Un éclat plus vivant, féminin et joyeux avec une gourmandise maîtrisée.",
-    query: "fruite floral",
+    query: "fruité",
     highlights: ["petillant", "feminin", "joyeux"],
   },
 ];
